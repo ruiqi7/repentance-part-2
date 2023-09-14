@@ -4784,7 +4784,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -4874,7 +4874,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 3.438353, y: 4.114273, z: 8.002508}
-  m_Center: {x: 0.18029465, y: 8.5, z: 0.22702013}
+  m_Center: {x: -0.1802946, y: 8.2, z: 0.2270201}
 --- !u!224 &738874853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6934391289992700239, guid: 081107ad1c37dc74d9d02df74e0cc170, type: 3}
@@ -10577,15 +10577,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 68e056f3b35924c8a9823373188dd939, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e056f3b35924c8a9823373188dd939, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e056f3b35924c8a9823373188dd939, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e056f3b35924c8a9823373188dd939, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10593,7 +10593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e056f3b35924c8a9823373188dd939, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.66
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68e056f3b35924c8a9823373188dd939, type: 3}
       propertyPath: m_LocalPosition.z
