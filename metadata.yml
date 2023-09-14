@@ -3,29 +3,30 @@
 # that you only replace the placeholder text, not the keys (e.g. TeamName, etc.)
 
 # 1. Your team's GitHub repository URL for project 2 (*not* project 1)
-RepoURL: https://github.com/COMP30019/...
+RepoURL: https://github.com/COMP30019/project-2-not-minecraft
 
 # 2. Since you are working in the same team for project 2, you should copy the
 #    below keys/values *verbatim* from your project 1 metadata.yml -- do not
 #    change them unless you have permission from the teaching team.
-TeamName: <team name>
+TeamName: Not Minecraft  
 TeamMembers:
-  - Name: <student name 1>
-    Email: ...@student.unimelb.edu.au
-  - Name: <student name 2>
-    Email: ...@student.unimelb.edu.au
-  - Name: <student name 3>
-    Email: ...@student.unimelb.edu.au
-  - Name: <student name 4>
-    Email: ...@student.unimelb.edu.au
-
+  - Name: Jessica Pollard
+    Email: jlpollard@student.unimelb.edu.au
+  - Name: Elyse Tan
+    Email: taney@student.unimelb.edu.au
+  - Name: Tin Ruiqi
+    Email: tinr@student.unimelb.edu.au
+  - Name: Vincent Khuat
+    Email: vkhuat@student.unimelb.edu.au
+    
 # 3. The below keys must be filled out by the given milestone deadlines, and
 #    you must also re-submit on Gradescope to register these changes officially
 #    (like in project 1). Read the specification for details.
 
 # Milestone 1 entries
-GameTitle: <your game title>
-GameBlurb: <a short description of your game (max 200 words)>
+GameTitle: Repentance
+GameBlurb: Repentance is a single-player survival game. Trapped in a maze with vengeful monsters that were once victims of the player’s family, 
+the player’s primary objective is to stay alive for 5 minutes. At the same time, the player’s role is to confront their family’s dark past and make decisions that could shape their own fate.
 
 # Milestone 2 entries
 GameplayVideo: <a link to your YouTube video>
