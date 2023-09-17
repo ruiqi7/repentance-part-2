@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour
 {   
-    [SerializeField] private List<Image> items;
+    [SerializeField] private List<Image> itemImages;
     [SerializeField] private Sprite unoccupiedBox;
     [SerializeField] private Sprite occupiedBox;
     
@@ -29,6 +29,13 @@ public class InventoryController : MonoBehaviour
     {
         capacity = transform.childCount;
         AddToInventory(0);
+        AddToInventory(1);
+        AddToInventory(2);
+        AddToInventory(3);
+        AddToInventory(4);
+        AddToInventory(5);
+        AddToInventory(6);
+        AddToInventory(7);
     }
     
     void Update()
@@ -44,12 +51,12 @@ public class InventoryController : MonoBehaviour
 
     public void AddToInventory(int itemIndex)
     {
-        Image item = items[itemIndex];
+        Image itemImage = itemImages[itemIndex];
         if (numberOfItems < capacity)
         {
             Transform inventoryBox = transform.GetChild(numberOfItems);
             AddShadow(inventoryBox.gameObject);
-            Instantiate(item, inventoryBox);
+            Instantiate(itemImage, inventoryBox);
             numberOfItems += 1;
         }
     }
@@ -59,8 +66,8 @@ public class InventoryController : MonoBehaviour
         if (boxIndex >= 0 && boxIndex < numberOfItems)
         {
             Transform inventoryBox = transform.GetChild(boxIndex);
-            Transform item = inventoryBox.GetChild(0);
-            Destroy(item.gameObject);
+            Transform itemImage = inventoryBox.GetChild(0);
+            Destroy(itemImage.gameObject);
             numberOfItems -= 1;
             RemoveShadow(inventoryBox.gameObject);
         }
