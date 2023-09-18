@@ -6,11 +6,23 @@ using UnityEngine.UI;
 public class InventoryController : MonoBehaviour
 {   
     [SerializeField] private List<Image> itemImages;
+    [SerializeField] private List<GameObject> items;
     [SerializeField] private Sprite unoccupiedBox;
     [SerializeField] private Sprite occupiedBox;
     
     private int capacity;
     private int numberOfItems = 0;
+    private Dictionary<string, int> itemIndexDict = new Dictionary<string, int>()
+    {
+        {"Heirloom", 0},
+        {"Flashlight", 1},
+        {"Eyeballs", 2},
+        {"Doll", 3},
+        {"Candle", 4},
+        {"Flower", 5},
+        {"Letter", 6},
+        {"Salt", 7}
+    };
     private KeyCode[] keyCodes =
     {
 		KeyCode.Alpha1,
@@ -28,14 +40,8 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         capacity = transform.childCount;
-        AddToInventory(0);
-        AddToInventory(1);
-        AddToInventory(2);
-        AddToInventory(3);
-        AddToInventory(4);
-        AddToInventory(5);
-        AddToInventory(6);
-        AddToInventory(7);
+        AddToInventory("Heirloom");
+        AddToInventory("Flashlight");
     }
     
     void Update()
@@ -44,13 +50,20 @@ public class InventoryController : MonoBehaviour
         {
             if (Input.GetKeyDown(keyCodes[i]))
             {
-                // user-item interaction
+                Transform inventoryBox = transform.GetChild(i);
+                Transform itemImage = inventoryBox.GetChild(0);
+                int itemIndex = itemIndexDict[itemImage.name.Substring(0, itemImage.name.Length - "(Clone)".Length)];
+                GameObject item = items[itemIndex];
+                ItemHandlerInterface itemHandler = item.GetComponent<ItemHandlerInterface>();
+                itemHandler.HandleBehavior();
+                RemoveFromInventory(i);
             }
         }
     }
 
-    public void AddToInventory(int itemIndex)
+    public void AddToInventory(string itemName)
     {
+        int itemIndex = itemIndexDict[itemName];
         Image itemImage = itemImages[itemIndex];
         if (numberOfItems < capacity)
         {
