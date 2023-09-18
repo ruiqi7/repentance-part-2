@@ -5,13 +5,12 @@ using UnityEngine;
 public class ItemInteract : InteractableInterface
 {
     [SerializeField] private string itemName;
-    [SerializeField] private GameObject inventoryFrame;
     
     private InventoryController inventoryController;
 
     void Start()
     {
-        inventoryController = inventoryFrame.GetComponent<InventoryController>();
+        inventoryController = GameObject.Find("InventoryFrame").GetComponent<InventoryController>();
     }
 
     public override void interact()

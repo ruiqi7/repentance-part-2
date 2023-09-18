@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3384532}
   - component: {fileID: 2301484}
   - component: {fileID: 6407434}
+  - component: {fileID: -2813479994165976666}
   - component: {fileID: -8246712206315969900}
   m_Layer: 0
   m_Name: HorrorDoll
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 56c8253302244df4ca65f2a7ca71b55f, type: 3}
+--- !u!114 &-2813479994165976666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a9a2d3ca320ae48b544febfe2e3153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: C O L L E C T [E]
+  font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
+  itemName: Doll
 --- !u!114 &-8246712206315969900
 MonoBehaviour:
   m_ObjectHideFlags: 0
