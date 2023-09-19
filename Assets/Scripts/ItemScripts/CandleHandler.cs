@@ -29,9 +29,7 @@ public class CandleHandler : ItemHandlerInterface
         Vector3 posBack = tombstonePos - tombstoneDir * 0.6f;
         posBack.y = 0.0f;
 
-        GameObject player = GameObject.FindWithTag("Player");
-        Vector3 playerPos = player.transform.position;
-        if (Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack))
+        if (isObjectFrontFacing(posFront, posBack))
         {
             Instantiate(gameObject, posFront, Quaternion.identity);
         }
@@ -39,5 +37,12 @@ public class CandleHandler : ItemHandlerInterface
         {
             Instantiate(gameObject, posBack, Quaternion.identity);
         }
+    }
+
+    private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        Vector3 playerPos = player.transform.position;
+        return Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack);
     }
 }

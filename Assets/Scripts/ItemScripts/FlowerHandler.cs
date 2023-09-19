@@ -23,8 +23,27 @@ public class FlowerHandler : ItemHandlerInterface
     private void PlaceFlower(GameObject tombstone)
     {
         Vector3 tombstonePos = tombstone.transform.position;
-        Vector3 displacement = new Vector3(0.15f, -0.15f, -0.7f);
-        Vector3 pos = tombstonePos + displacement;
-        Instantiate(gameObject, pos, Quaternion.Euler(0.0f, -90.0f, 0.0f));
+        Vector3 tombstoneDir = tombstone.transform.up;
+        Vector3 posFront = tombstonePos + tombstoneDir * 0.6f;
+        posFront.y = -0.15f;
+        Vector3 posBack = tombstonePos - tombstoneDir * 0.6f;
+        posBack.y = -0.15f;
+
+        Vector3 tombstoneRot = tombstone.transform.localEulerAngles;
+        if (isObjectFrontFacing(posFront, posBack))
+        {
+            Instantiate(gameObject, posFront, Quaternion.Euler(0.0f, tombstoneRot.y - 90.0f, 0.0f));
+        }
+        else
+        {
+            Instantiate(gameObject, posBack, Quaternion.Euler(0.0f, tombstoneRot.y + 90.0f, 0.0f));
+        }
+    }
+
+    private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        Vector3 playerPos = player.transform.position;
+        return Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack);
     }
 }

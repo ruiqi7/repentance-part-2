@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3427276010977648627}
   - component: {fileID: 3588949404909888808}
   m_Layer: 0
-  m_Name: TestFlower
+  m_Name: Flower
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
