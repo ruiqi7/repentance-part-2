@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class ItemHandlerInterface : MonoBehaviour
 {
-    public virtual void HandleBehavior() {}
+    public abstract bool HandleBehavior();
 }

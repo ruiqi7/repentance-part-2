@@ -51,12 +51,19 @@ public class InventoryController : MonoBehaviour
             if (Input.GetKeyDown(keyCodes[i]))
             {
                 Transform inventoryBox = transform.GetChild(i);
+                if (inventoryBox.childCount == 0)
+                {
+                    return;
+                }
                 Transform itemImage = inventoryBox.GetChild(0);
                 int itemIndex = itemIndexDict[itemImage.name.Substring(0, itemImage.name.Length - "(Clone)".Length)];
                 GameObject item = items[itemIndex];
                 ItemHandlerInterface itemHandler = item.GetComponent<ItemHandlerInterface>();
-                itemHandler.HandleBehavior();
-                RemoveFromInventory(i);
+                bool itemUsed = itemHandler.HandleBehavior();
+                if (itemUsed)
+                {
+                    RemoveFromInventory(i);
+                }
             }
         }
     }
