@@ -81,7 +81,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void RemoveFromInventory(int boxIndex)
+    private void RemoveFromInventory(int boxIndex)
     {
         if (boxIndex >= 0 && boxIndex < numberOfItems)
         {
@@ -89,8 +89,32 @@ public class InventoryController : MonoBehaviour
             Transform itemImage = inventoryBox.GetChild(0);
             Destroy(itemImage.gameObject);
             numberOfItems -= 1;
-            RemoveShadow(inventoryBox.gameObject);
+
+            if (boxIndex < numberOfItems)
+            {
+                shiftItemsLeft(boxIndex);
+            }
+            else
+            {
+                RemoveShadow(inventoryBox.gameObject);
+            }
         }
+    }
+
+    private void shiftItemsLeft(int boxIndex)
+    {
+        Transform newInventoryBox;
+        Transform currInventoryBox = null;
+        Transform currItemImage;
+
+        for (int i = boxIndex; i < numberOfItems; i++)
+        {
+            newInventoryBox = transform.GetChild(i);
+            currInventoryBox = transform.GetChild(i + 1);
+            currItemImage = currInventoryBox.GetChild(0);
+            currItemImage.SetParent(newInventoryBox, false);
+        }
+        RemoveShadow(currInventoryBox.gameObject);
     }
 
     private void AddShadow(GameObject box)
