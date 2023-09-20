@@ -29,14 +29,16 @@ public class CandleHandler : ItemHandlerInterface
         Vector3 posBack = tombstonePos - tombstoneDir * 0.6f;
         posBack.y = 0.0f;
 
+        GameObject candle = null;
         if (isObjectFrontFacing(posFront, posBack))
         {
-            Instantiate(gameObject, posFront, Quaternion.identity);
+            candle = Instantiate(gameObject, posFront, Quaternion.identity);
         }
         else
         {
-            Instantiate(gameObject, posBack, Quaternion.identity);
+            candle = Instantiate(gameObject, posBack, Quaternion.identity);
         }
+        candle.tag = "Untagged";
     }
 
     private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
