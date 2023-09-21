@@ -16,7 +16,7 @@ public class FlowerHandler : ItemHandlerInterface
                 return true;
             }
         }
-        // show some UI text
+        ShowMonologue();
         return false;
     }
 

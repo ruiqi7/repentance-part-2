@@ -16,7 +16,7 @@ public class CandleHandler : ItemHandlerInterface
                 return true;
             }
         }
-        // show some UI text
+        ShowMonologue();
         return false;
     }
 

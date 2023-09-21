@@ -234,7 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de95bdf8904a1ae4983998beb294f180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - I think I may have passed by a tombstone...
+  - Should I place this candle on it?
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.05
   interactDistance: 2
