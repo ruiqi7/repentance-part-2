@@ -4,8 +4,9 @@ using UnityEngine;
 
 public abstract class ItemHandlerInterface : MonoBehaviour
 {
-    [SerializeField] public string[] lines;
-    [SerializeField] public Color dialogueColor = Color.white;
+    [SerializeField] private string[] lines;
+    [SerializeField] private Color dialogueColor = Color.white;
+    [SerializeField] private float dialogueSpeed = 0.05f;
     
     private GameObject dialogueBox;
     private DialogueController dialogueController;
@@ -14,6 +15,7 @@ public abstract class ItemHandlerInterface : MonoBehaviour
     {
         dialogueBox = box;
         dialogueController = controller;
+        dialogueController.textSpeed = dialogueSpeed;
         return HandleBehavior();
     }
 

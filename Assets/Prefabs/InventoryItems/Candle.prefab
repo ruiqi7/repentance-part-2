@@ -234,6 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de95bdf8904a1ae4983998beb294f180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lines: []
+  dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  dialogueSpeed: 0.05
   interactDistance: 2
 --- !u!65 &4054458760708575915
 BoxCollider:

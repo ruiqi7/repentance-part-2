@@ -6,7 +6,7 @@ public class FlashlightHandler : ItemHandlerInterface
 {
     public override bool HandleBehavior()
     {
-        // show some UI text
+        ShowMonologue();
         return false;
     }
 }

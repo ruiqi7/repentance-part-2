@@ -166,3 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c7526fdfaee2d438ae6fb107a577b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lines: []
+  dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  dialogueSpeed: 0.05

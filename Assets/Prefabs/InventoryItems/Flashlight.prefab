@@ -44,3 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e63f106f74ff114bb2fb6c93648df80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lines:
+  - It's so dark here...
+  - Thank goodness for this flashlight!
+  - I can use it to see what lurks around here...
+  dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  dialogueSpeed: 0.05
