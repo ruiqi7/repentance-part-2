@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         generator = GetComponent<MazeConstructor>();      // 2
-        generator.GenerateNewMaze(13, 15);
+        generator.GenerateNewMaze(31, 31);
     }
 }
 

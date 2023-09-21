@@ -183,7 +183,7 @@ MonoBehaviour:
   showDebug: 1
   mazeMat1: {fileID: 2100000, guid: f9fe5d3864f4b4c7da03a0e831649cb9, type: 2}
   mazeMat2: {fileID: 2100000, guid: 3c534a0d9ca97458f9f380f41d8d0ba8, type: 2}
-  startMat: {fileID: 2100000, guid: 89726b83d2e3c22418ba8751edbcfee1, type: 2}
+  startMat: {fileID: 2100000, guid: f9fe5d3864f4b4c7da03a0e831649cb9, type: 2}
 --- !u!1 &1181933787
 GameObject:
   m_ObjectHideFlags: 0
