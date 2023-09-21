@@ -10,6 +10,9 @@ public class InventoryController : MonoBehaviour
     [SerializeField] private List<GameObject> items;
     [SerializeField] private Sprite unoccupiedBox;
     [SerializeField] private Sprite occupiedBox;
+
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private DialogueController dialogueController;
     
     private int capacity;
     private int numberOfUniqueItems = 0;
@@ -65,7 +68,7 @@ public class InventoryController : MonoBehaviour
                 int itemIndex = itemIndexDict[itemImage.name.Substring(0, itemImage.name.Length - "(Clone)".Length)];
                 GameObject item = items[itemIndex];
                 ItemHandlerInterface itemHandler = item.GetComponent<ItemHandlerInterface>();
-                bool itemUsed = itemHandler.HandleBehavior();
+                bool itemUsed = itemHandler.InitHandler(dialogueBox, dialogueController);
                 if (itemUsed)
                 {
                     RemoveFromInventory(i);

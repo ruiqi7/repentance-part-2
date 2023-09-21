@@ -13011,6 +13011,8 @@ MonoBehaviour:
   - {fileID: 7758474417588674381, guid: 21593c0cb4531494599ea2629f8c8123, type: 3}
   unoccupiedBox: {fileID: 21300000, guid: 94c75e9785bbbc844a2dc3c6adbb3b75, type: 3}
   occupiedBox: {fileID: 21300000, guid: a6ecd3ca9dce78040a0409f7090601d5, type: 3}
+  dialogueBox: {fileID: 1864267746}
+  dialogueController: {fileID: 1864267747}
 --- !u!114 &1831116224
 MonoBehaviour:
   m_ObjectHideFlags: 0
