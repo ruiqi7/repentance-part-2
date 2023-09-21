@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Interactable
   - Enemy
+  - Generated
   layers:
   - Default
   - TransparentFX
