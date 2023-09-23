@@ -39,7 +39,9 @@ public class FlowerHandler : ItemHandlerInterface
         {
             flower = Instantiate(gameObject, posBack, Quaternion.Euler(0.0f, tombstoneRot.y + 90.0f, 0.0f));
         }
-        flower.tag = "Untagged";
+        
+        tombstone.tag = "Untagged"; // cannot place another candle / flower on this tombstone
+        flower.tag = "Untagged"; // cannot pick up the flower once used
     }
 
     private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)

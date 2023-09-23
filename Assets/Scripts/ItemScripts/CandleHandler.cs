@@ -38,7 +38,9 @@ public class CandleHandler : ItemHandlerInterface
         {
             candle = Instantiate(gameObject, posBack, Quaternion.identity);
         }
-        candle.tag = "Untagged";
+
+        tombstone.tag = "Untagged"; // cannot place another candle / flower on this tombstone
+        candle.tag = "Untagged"; // cannot pick up the candle once used
     }
 
     private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)

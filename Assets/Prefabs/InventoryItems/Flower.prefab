@@ -167,8 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - What could this flower be used for?
-  - Oh... maybe on a tombstone?
+  - I think I've passed by a few tombstones...
+  - Were they for victims of my family?
+  - I should offer this flower as a token of repentance...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.05
   interactDistance: 2

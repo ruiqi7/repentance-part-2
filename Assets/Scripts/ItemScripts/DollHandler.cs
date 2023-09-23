@@ -10,9 +10,19 @@ public class DollHandler : ItemHandlerInterface
         Vector3 playerPos = player.transform.position;
         Vector3 playerDir = player.transform.forward;
         Vector3 pos = playerPos + playerDir;
-        pos.y = 0.4f;
+        pos.y = 0.25f;
+        Vector3 size = GetComponent<MeshRenderer>().bounds.size;
         Quaternion playerRot = player.transform.rotation;
-        Instantiate(gameObject, pos, playerRot * Quaternion.Euler(-90.0f, 180.0f, 0.0f)); // need to check if there is space to spawn
-        return true;
+        Quaternion rot = playerRot * Quaternion.Euler(-90.0f, 180.0f, 0.0f);
+        if (CheckSpace(pos, size, rot))
+        {
+            Instantiate(gameObject, pos, rot);
+            return true;
+        }
+        else
+        {
+            ShowMonologue();
+            return false;
+        }
     }
 }

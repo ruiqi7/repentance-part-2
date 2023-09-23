@@ -31,5 +31,10 @@ public abstract class ItemHandlerInterface : MonoBehaviour
         dialogueController.StartDialogue();
     }
 
+    public bool CheckSpace(Vector3 center, Vector3 size, Quaternion rotation)
+    {
+        return !Physics.CheckBox(center, size / 2, rotation);
+    }
+
     public abstract bool HandleBehavior();
 }

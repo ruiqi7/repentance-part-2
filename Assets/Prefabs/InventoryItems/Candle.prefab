@@ -235,8 +235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - I think I may have passed by a tombstone...
-  - Should I place this candle on it?
+  - There were tombstones around the area...
+  - Could they be tombstones of my family's victims?
+  - Perhaps I should offer this candle as a symbol of remorse....
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.05
   interactDistance: 2
