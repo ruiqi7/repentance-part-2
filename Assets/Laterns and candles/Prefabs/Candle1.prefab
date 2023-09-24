@@ -131,8 +131,6 @@ GameObject:
   - component: {fileID: 4585060622950652}
   - component: {fileID: 33555718183585764}
   - component: {fileID: 23183915565728068}
-  - component: {fileID: 3582306326355532600}
-  - component: {fileID: 1061309548336219420}
   m_Layer: 0
   m_Name: Candle1
   m_TagString: Interactable
@@ -206,30 +204,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3582306326355532600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683205079487892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a9a2d3ca320ae48b544febfe2e3153, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: C O L L E C T [E]
-  font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  itemName: Candle
---- !u!114 &1061309548336219420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683205079487892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de95bdf8904a1ae4983998beb294f180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
