@@ -13,10 +13,11 @@ public class FlowerHandler : ItemHandlerInterface
         if (Physics.Raycast(ray, out hit, interactDistance)) {
             if (hit.collider.CompareTag("Tombstone")) {
                 PlaceFlower(hit.collider.gameObject);
+                ShowMonologue(true);
                 return true;
             }
         }
-        ShowMonologue();
+        ShowMonologue(false);
         return false;
     }
 

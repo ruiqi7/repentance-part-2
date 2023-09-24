@@ -17,11 +17,12 @@ public class SaltHandler : ItemHandlerInterface
         if (CheckSpace(pos, scaledSize, rot))
         {
             Instantiate(gameObject, pos, rot);
+            ShowMonologue(true);
             return true;
         }
         else
         {
-            ShowMonologue();
+            ShowMonologue(false);
             return false;
         }
     }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class ItemHandlerInterface : MonoBehaviour
 {
-    [SerializeField] private string[] lines;
+    [SerializeField] private string[] linesWhenItemUsed;
+    [SerializeField] private string[] linesWhenItemNotUsed;
     [SerializeField] private Color dialogueColor = Color.white;
     [SerializeField] private float dialogueSpeed = 0.05f;
     
@@ -19,13 +20,20 @@ public abstract class ItemHandlerInterface : MonoBehaviour
         return HandleBehavior();
     }
 
-    public void ShowMonologue()
+    public void ShowMonologue(bool itemUsed)
     {
         // reset dialogue
         dialogueBox.SetActive(false);
         
         // start dialogue
-        dialogueController.lines = lines;
+        if (itemUsed)
+        {
+            dialogueController.lines = linesWhenItemUsed;
+        }
+        else
+        {
+            dialogueController.lines = linesWhenItemNotUsed;
+        }
         dialogueController.textColor = dialogueColor;
         dialogueBox.SetActive(true);
         dialogueController.StartDialogue();

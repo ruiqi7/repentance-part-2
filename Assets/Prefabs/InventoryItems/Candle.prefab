@@ -234,10 +234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de95bdf8904a1ae4983998beb294f180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
+  linesWhenItemUsed:
+  - Here's my token of remorse for the sins of my family...
+  linesWhenItemNotUsed:
   - There were tombstones around the area...
+  - Perhaps I should offer this candle as a symbol of remorse...
   - Could they be tombstones of my family's victims?
-  - Perhaps I should offer this candle as a symbol of remorse....
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.05
   interactDistance: 2

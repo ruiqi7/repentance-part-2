@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579d490ca7d2ad4da6549701eb8de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
+  linesWhenItemUsed: []
+  linesWhenItemNotUsed:
   - An old knife?
   - This heirloom seems burdened with secrets.
   - I wonder if it once served in acts of heroism or something far more sinister...

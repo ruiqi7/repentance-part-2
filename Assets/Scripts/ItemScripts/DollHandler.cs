@@ -17,11 +17,12 @@ public class DollHandler : ItemHandlerInterface
         if (CheckSpace(pos, size, rot))
         {
             Instantiate(gameObject, pos, rot);
+            ShowMonologue(true);
             return true;
         }
         else
         {
-            ShowMonologue();
+            ShowMonologue(false);
             return false;
         }
     }

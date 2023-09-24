@@ -166,7 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23a4aca7c490294197c9ab518b79520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
+  linesWhenItemUsed:
+  - I hope you find peace...
+  linesWhenItemNotUsed:
   - I think I've passed by a few tombstones...
   - Were they for victims of my family?
   - I should offer this flower as a token of repentance...

@@ -25,8 +25,7 @@ public class InventoryController : MonoBehaviour
         {"Doll", 3},
         {"Candle", 4},
         {"Flower", 5},
-        {"Letter", 6},
-        {"Salt", 7}
+        {"Salt", 6}
     };
     private KeyCode[] keyCodes =
     {

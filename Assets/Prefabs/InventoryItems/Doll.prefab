@@ -135,7 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23615ed1ed50e4844aa93586edb2c5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
+  linesWhenItemUsed:
+  - This should momentarily distract the monster child...
+  - Time to head somewhere else before it comes this way!
+  linesWhenItemNotUsed:
   - I need more space to put this doll down...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.05

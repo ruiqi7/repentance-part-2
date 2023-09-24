@@ -6,7 +6,7 @@ public class HeirloomHandler : ItemHandlerInterface
 {
     public override bool HandleBehavior()
     {
-        ShowMonologue();
+        ShowMonologue(false);
         return false;
     }
 }
