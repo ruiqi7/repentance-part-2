@@ -108,7 +108,17 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    private void RemoveFromInventory(int boxIndex)
+    public bool CheckInventory(string item) {
+        int itemIndex = itemIndexDict[item];
+        return itemPositions.Contains(itemIndex);
+    }
+
+    public int GetItemIndex(string item) {
+        int index = itemIndexDict[item];
+        return itemPositions.IndexOf(index);
+    }
+
+    public void RemoveFromInventory(int boxIndex)
     {
         if (boxIndex >= 0 && boxIndex < numberOfUniqueItems)
         {
