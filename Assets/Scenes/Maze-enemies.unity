@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.070943795, g: 0.07876261, b: 0.14394015, a: 1}
+  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8774,7 +8774,7 @@ Transform:
   m_GameObject: {fileID: 1380829762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1, z: -4.9}
+  m_LocalPosition: {x: 59.5, y: 1, z: 9.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15701,9 +15701,11 @@ MonoBehaviour:
   lines:
   - You shouldn't have come here...
   - They will get revenge...
+  - You must die..
   dialogueBox: {fileID: 1864267746}
   dialogueController: {fileID: 1864267747}
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  flashlight: {fileID: 1637090997}
 --- !u!4 &6393974795555483649
 Transform:
   m_ObjectHideFlags: 0
