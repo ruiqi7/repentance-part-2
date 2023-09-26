@@ -1,3 +1,5 @@
+// Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+
 using UnityEngine;
 
 public class MazeConstructor : MonoBehaviour
@@ -45,21 +47,21 @@ public class MazeConstructor : MonoBehaviour
     }
 
     private void DisplayMaze()
-{
-    GameObject go = new GameObject();
-    go.transform.position = Vector3.zero;
-    go.name = "Procedural Maze";
-    go.tag = "Generated";
+    {
+        GameObject go = new GameObject();
+        go.transform.position = Vector3.zero;
+        go.name = "Procedural Maze";
+        go.tag = "Generated";
 
-    MeshFilter mf = go.AddComponent<MeshFilter>();
-    mf.mesh = meshGenerator.FromData(data);
+        MeshFilter mf = go.AddComponent<MeshFilter>();
+        mf.mesh = meshGenerator.FromData(data);
     
-    MeshCollider mc = go.AddComponent<MeshCollider>();
-    mc.sharedMesh = mf.mesh;
+        MeshCollider mc = go.AddComponent<MeshCollider>();
+        mc.sharedMesh = mf.mesh;
 
-    MeshRenderer mr = go.AddComponent<MeshRenderer>();
-    mr.materials = new Material[2] {mazeMat1, mazeMat2};
-}
+        MeshRenderer mr = go.AddComponent<MeshRenderer>();
+        mr.materials = new Material[2] {mazeMat1, mazeMat2};
+    }
 
 
     void OnGUI()

@@ -1,3 +1,5 @@
+// Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +17,7 @@ public class MazeMeshGenerator
     }
 
     public Mesh FromData(int[,] data)
-{
+    {
     Mesh maze = new Mesh();
 
     //3
@@ -95,12 +97,12 @@ public class MazeMeshGenerator
     maze.RecalculateNormals();
 
     return maze;
-}
+    }
 
-//1, 2
-private void AddQuad(Matrix4x4 matrix, ref List<Vector3> newVertices,
+    //1, 2
+    private void AddQuad(Matrix4x4 matrix, ref List<Vector3> newVertices,
     ref List<Vector2> newUVs, ref List<int> newTriangles)
-{
+    {
     int index = newVertices.Count;
 
     // corners before transforming
@@ -126,6 +128,6 @@ private void AddQuad(Matrix4x4 matrix, ref List<Vector3> newVertices,
     newTriangles.Add(index+3);
     newTriangles.Add(index+2);
     newTriangles.Add(index);
-}
+    }
 
 }

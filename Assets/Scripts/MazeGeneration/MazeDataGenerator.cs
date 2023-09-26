@@ -1,3 +1,5 @@
+// Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+
 using System.Collections.Generic;
 using UnityEngine;
 
