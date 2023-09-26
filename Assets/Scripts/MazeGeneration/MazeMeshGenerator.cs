@@ -1,4 +1,5 @@
 // Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+// Parts of the code from the tutorial have been modified 
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,8 @@ public class MazeMeshGenerator
 
     public MazeMeshGenerator()
     {
-        width = 3.75f;
-        height = 15.5f;
+        width = 9f;
+        height = 30.5f;
     }
 
     public Mesh FromData(int[,] data)
