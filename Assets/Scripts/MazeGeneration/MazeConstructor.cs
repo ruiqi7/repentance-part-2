@@ -42,9 +42,17 @@ public class MazeConstructor : MonoBehaviour
     {
         Debug.LogError("Odd numbers work better for dungeon size.");
     }
-
+    DisposeOldMaze();
     data = dataGenerator.FromDimensions(sizeRows, sizeCols);
     DisplayMaze();
+    }
+
+    public void DisposeOldMaze()
+    {
+    GameObject[] objects = GameObject.FindGameObjectsWithTag("Generated");
+    foreach (GameObject go in objects) {
+        Destroy(go);
+    }
     }
 
     private void DisplayMaze()
