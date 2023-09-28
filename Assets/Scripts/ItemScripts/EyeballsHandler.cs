@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EyeballsHandler : ItemHandlerInterface
+{
+    public override bool HandleBehavior()
+    {
+        ShowMonologue(false);
+        return false;
+    }
+}
