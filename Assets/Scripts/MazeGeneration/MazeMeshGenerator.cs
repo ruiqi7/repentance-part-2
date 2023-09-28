@@ -9,7 +9,7 @@ public class MazeMeshGenerator
     // generator params
     public float width;     // how wide are hallways
     public float height;    // how tall are hallways
-    
+
 
     public MazeMeshGenerator()
     {
@@ -84,6 +84,14 @@ public class MazeMeshGenerator
                         new Vector3(width, height, 1)
                     ), ref newVertices, ref newUVs, ref wallTriangles);
                 }
+
+                /*
+                // Marks Enemy Spawn Point  
+                if (data[i,j] == -1){
+                    GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    cube.transform.position = new Vector3(j * width, 0, i * width);
+                }
+                */
             }
         }
     }
