@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class NPCInteractInventory : InteractableInterface
 {
@@ -12,8 +16,9 @@ public class NPCInteractInventory : InteractableInterface
     [SerializeField] public Light flashlight;
     [SerializeField] public string item;
     [SerializeField] public GameObject inventory;
+    [SerializeField] private Slider batteryBar;
     private bool started = false;
-
+    private bool hadItem = false;
     private bool isTalking = false;
 
     public override void interact(){
@@ -26,6 +31,7 @@ public class NPCInteractInventory : InteractableInterface
         isTalking = !isTalking;
         if(inventory.GetComponent<InventoryController>().CheckInventory(item)) {
             dialogueController.lines = linesWithItem;
+            hadItem = true;
         } else {
             dialogueController.lines = linesWithoutItem;
         }
@@ -40,9 +46,10 @@ public class NPCInteractInventory : InteractableInterface
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
-            if(started) {
+            if(started && hadItem) {
                 int index = inventory.GetComponent<InventoryController>().GetItemIndex(item);
                 inventory.GetComponent<InventoryController>().RemoveFromInventory(index);
+                batteryBar.value += 25;
                 started = false;
             }
         }
