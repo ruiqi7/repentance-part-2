@@ -16,7 +16,6 @@ public class DoorInteract : InteractableInterface
             close();
             isOpen = false;
         }
-        Debug.Log("Doored");
     }
     public void open(){
         door.SetBool("open", true);
