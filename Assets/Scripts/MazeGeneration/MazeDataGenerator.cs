@@ -38,7 +38,7 @@ public class MazeDataGenerator
             
             //3 (Adds Empty Spaces for Enemy Spawn Points)
             else if ((i == 6 && j == 6) || (i == 27 && j == 6) || (i == 15 && j == 27)  ){
-                maze[i,j] = -1;
+                //maze[i,j] = -1;
             }
             
             //4
@@ -51,9 +51,7 @@ public class MazeDataGenerator
 
                     int a = Random.value < .5 ? 0 : (Random.value < .5 ? -1 : 1);
                     int b = a != 0 ? 0 : (Random.value < .5 ? -1 : 1);
-                    if(maze[i+a,j+b]!=2 && maze[i+a,j+b]!=3 && maze[i+a,j+b]!=4 && maze[i+a,j+b]!=5 && maze[i+a,j+b]!=6){
-                        maze[i+a, j+b] = 1;
-                    }
+                    maze[i+a, j+b] = 1;                   
                 } 
             }
             

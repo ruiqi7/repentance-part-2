@@ -34,8 +34,6 @@ public class MazeConstructor : MonoBehaviour
     private MazeMeshGenerator meshGenerator;
 
     private float width = 9f;
-    private float height = 30.5f;
-
 
     //2
     public int[,] data
@@ -111,7 +109,7 @@ public class MazeConstructor : MonoBehaviour
                 } 
                 else if (maze[i, j] == 3 && dollCount<dollNum)
                 {
-                    Instantiate(doll, new Vector3(i*width, 0, j*width), Quaternion.identity);
+                    Instantiate(doll, new Vector3(i*width, 0.2f, j*width), Quaternion.Euler(new Vector3(270, 0, 0)));
                     dollCount++;
                 }
                 else if (maze[i, j] == 4 && saltCount<saltNum)
@@ -152,12 +150,10 @@ public class MazeConstructor : MonoBehaviour
     {
         for (int j = 0; j <= cMax; j++)
         {
-            if (maze[i, j] == 0 || maze[i,j] == -1)
+            if (maze[i, j] != 1)
             {
                 msg += "....";
-            } else if (maze[i,j] == 2){
-                msg += "---";
-            }
+            } 
             else
             {
                 msg += "==";
