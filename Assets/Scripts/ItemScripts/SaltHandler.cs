@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SaltHandler : ItemHandlerInterface
 {
+    [SerializeField] private float dissolveSpeed;
+    
     public override bool HandleBehavior()
     {
         GameObject player = GameObject.FindWithTag("Player");
@@ -16,7 +18,8 @@ public class SaltHandler : ItemHandlerInterface
         Quaternion rot = player.transform.rotation;
         if (CheckSpace(pos, scaledSize, rot))
         {
-            Instantiate(gameObject, pos, rot);
+            GameObject salt = Instantiate(gameObject, pos, rot);
+            salt.tag = "Untagged"; // cannot pick up the salt once used
             ShowMonologue(true);
             return true;
         }
@@ -25,5 +28,19 @@ public class SaltHandler : ItemHandlerInterface
             ShowMonologue(false);
             return false;
         }
+    }
+
+    void Update()
+    {
+        if (gameObject.tag == "Interactable")
+        {
+            return;
+        }
+
+        if (transform.localScale.x < 0.01f)
+        {
+            Destroy(gameObject);
+        }
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, dissolveSpeed * Time.deltaTime);
     }
 }
