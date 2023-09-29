@@ -12,7 +12,7 @@ public class MazeDataGenerator
     public MazeDataGenerator()
     {
         placementThreshold = .15f;
-        itemSpawnChance = .008f;                               // 1
+        itemSpawnChance = .02f;                               // 1
     }
 
     public int[,] FromDimensions(int sizeRows, int sizeCols)    // 2
@@ -56,9 +56,10 @@ public class MazeDataGenerator
                     }
                 } 
             }
-
+            
             //5 (Item Spawn Chance)
-            else if (Random.value < itemSpawnChance) {
+            if(maze[i,j]!=1){
+            if (Random.value < itemSpawnChance) {
                     maze[i, j] = 2; // candle
             }
             else if (Random.value < itemSpawnChance) {
@@ -72,6 +73,7 @@ public class MazeDataGenerator
             }
             else if (Random.value < itemSpawnChance) {
                     maze[i, j] = 6; // withered flower
+            }
             }
 
         }

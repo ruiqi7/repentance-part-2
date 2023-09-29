@@ -22,7 +22,7 @@ public class MazeConstructor : MonoBehaviour
     private int dollNum = 5;
     private int saltNum = 7;
     private int eyeballsJarNum = 3;
-    private int witheredFlowerNum = 4;
+    private int witheredFlowerNum = 5;
 
     private static int candleCount = 0;
     private static int dollCount = 0;
