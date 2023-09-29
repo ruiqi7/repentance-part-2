@@ -7,10 +7,12 @@ using UnityEngine;
 public class MazeDataGenerator
 {
     public float placementThreshold;    // chance of empty space
+    public float itemSpawnChance;
 
     public MazeDataGenerator()
     {
-        placementThreshold = .2f;                               // 1
+        placementThreshold = .15f;
+        itemSpawnChance = .008f;                               // 1
     }
 
     public int[,] FromDimensions(int sizeRows, int sizeCols)    // 2
@@ -25,7 +27,7 @@ public class MazeDataGenerator
         {
             //1
             if (i == 0 || j == 0 || i == rMax || j == cMax)
-            {
+            {   
                 maze[i, j] = 1;
             }
             
@@ -36,7 +38,7 @@ public class MazeDataGenerator
             
             //3 (Adds Empty Spaces for Enemy Spawn Points)
             else if ((i == 6 && j == 6) || (i == 27 && j == 6) || (i == 15 && j == 27)  ){
-                /*maze[i,j] = -1;*/
+                maze[i,j] = -1;
             }
             
             //4
@@ -47,11 +49,31 @@ public class MazeDataGenerator
                     //3
                     maze[i, j] = 1;
 
-                    int a = Random.value < .6 ? 0 : (Random.value < .5 ? -1 : 1);
-                    int b = a != 0 ? 0 : (Random.value < .6 ? -1 : 1);
-                    maze[i+a, j+b] = 1;
-                }
+                    int a = Random.value < .5 ? 0 : (Random.value < .5 ? -1 : 1);
+                    int b = a != 0 ? 0 : (Random.value < .5 ? -1 : 1);
+                    if(maze[i+a,j+b]!=2 && maze[i+a,j+b]!=3 && maze[i+a,j+b]!=4 && maze[i+a,j+b]!=5 && maze[i+a,j+b]!=6){
+                        maze[i+a, j+b] = 1;
+                    }
+                } 
             }
+
+            //5 (Item Spawn Chance)
+            else if (Random.value < itemSpawnChance) {
+                    maze[i, j] = 2; // candle
+            }
+            else if (Random.value < itemSpawnChance) {
+                    maze[i, j] = 3; // doll
+            }
+            else if (Random.value < itemSpawnChance) {
+                    maze[i, j] = 4; // salt
+            }
+            else if (Random.value < itemSpawnChance) {
+                    maze[i, j] = 5; // jar of eyeballs
+            }
+            else if (Random.value < itemSpawnChance) {
+                    maze[i, j] = 6; // withered flower
+            }
+
         }
     }
 

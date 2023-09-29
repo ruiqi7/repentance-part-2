@@ -92,6 +92,8 @@ public class MazeMeshGenerator
                     cube.transform.position = new Vector3(j * width, 0, i * width);
                 }
                 */
+                
+                
             }
         }
     }

@@ -12,8 +12,29 @@ public class MazeConstructor : MonoBehaviour
     [SerializeField] private Material mazeMat2;
     [SerializeField] private Material startMat;
 
+    public GameObject candle;
+    public GameObject doll;
+    public GameObject salt;
+    public GameObject eyeballsJar;
+    public GameObject witheredFlower;
+
+    private int candleNum = 5;
+    private int dollNum = 5;
+    private int saltNum = 7;
+    private int eyeballsJarNum = 3;
+    private int witheredFlowerNum = 4;
+
+    private static int candleCount = 0;
+    private static int dollCount = 0;
+    private static int saltCount = 0;
+    private static int eyeballsJarCount = 0;
+    private static int witheredFlowerCount = 0;
+
     private MazeDataGenerator dataGenerator;
     private MazeMeshGenerator meshGenerator;
+
+    private float width = 9f;
+    private float height = 30.5f;
 
 
     //2
@@ -42,9 +63,9 @@ public class MazeConstructor : MonoBehaviour
     {
         Debug.LogError("Odd numbers work better for dungeon size.");
     }
-    DisposeOldMaze();
     data = dataGenerator.FromDimensions(sizeRows, sizeCols);
     DisplayMaze();
+    SpawnItems();
     }
 
     public void DisposeOldMaze()
@@ -72,6 +93,44 @@ public class MazeConstructor : MonoBehaviour
         mr.materials = new Material[2] {mazeMat1, mazeMat2};
     }
 
+    private void SpawnItems()
+    {
+        int[,] maze = data;
+        int rMax = maze.GetUpperBound(0);
+        int cMax = maze.GetUpperBound(1);
+
+
+        for (int i = rMax; i >= 0; i--)
+        {
+            for (int j = 0; j <= cMax; j++)
+            {
+                if (maze[i, j] == 2 && candleCount<candleNum)
+                {
+                    Instantiate(candle, new Vector3(i*width, 0, j*width), Quaternion.identity);
+                    candleCount++;
+                } 
+                else if (maze[i, j] == 3 && dollCount<dollNum)
+                {
+                    Instantiate(doll, new Vector3(i*width, 0, j*width), Quaternion.identity);
+                    dollCount++;
+                }
+                else if (maze[i, j] == 4 && saltCount<saltNum)
+                {
+                    Instantiate(salt, new Vector3(i*width, 0, j*width), Quaternion.identity);
+                    saltCount++;
+                }
+                else if (maze[i, j] == 5 && eyeballsJarCount<eyeballsJarNum)
+                {
+                    eyeballsJarCount++;
+                }
+                else if (maze[i, j] == 6 && witheredFlowerCount<witheredFlowerNum)
+                {
+                    Instantiate(witheredFlower, new Vector3(i*width, 0, j*width), Quaternion.identity);
+                    witheredFlowerCount++;
+                }
+            }
+        }
+    }
 
     void OnGUI()
     {
@@ -79,7 +138,7 @@ public class MazeConstructor : MonoBehaviour
         if (!showDebug)
         {
         return;
-    }
+        }
 
     //2
     int[,] maze = data;
@@ -93,9 +152,11 @@ public class MazeConstructor : MonoBehaviour
     {
         for (int j = 0; j <= cMax; j++)
         {
-            if (maze[i, j] == 0)
+            if (maze[i, j] == 0 || maze[i,j] == -1)
             {
                 msg += "....";
+            } else if (maze[i,j] == 2){
+                msg += "---";
             }
             else
             {
