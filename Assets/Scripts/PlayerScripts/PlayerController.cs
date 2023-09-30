@@ -66,4 +66,10 @@ public class PlayerController : MonoBehaviour
             uiManagerScript.GameOver();
         }
     }
+
+    public void ChangeSpeed(float value)
+    {
+        baseSpeed += value;
+        sprintSpeed += value;
+    }
 }

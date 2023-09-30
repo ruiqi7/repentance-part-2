@@ -5,7 +5,11 @@ using UnityEngine;
 public class CandleHandler : ItemHandlerInterface
 {
     [SerializeField] private int interactDistance = 2;
+    [SerializeField] private float speedIncrement = 0.05f;
     
+    private GameObject player;
+    private PlayerController playerController;
+
     public override bool HandleBehavior()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -42,11 +46,14 @@ public class CandleHandler : ItemHandlerInterface
 
         tombstone.tag = "Untagged"; // cannot place another candle / flower on this tombstone
         candle.tag = "Untagged"; // cannot pick up the candle once used
+
+        playerController = player.GetComponent<PlayerController>();
+        playerController.ChangeSpeed(speedIncrement);
     }
 
     private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
     {
-        GameObject player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         Vector3 playerPos = player.transform.position;
         return Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack);
     }
