@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2131086619381522484}
   - component: {fileID: -3928291839260842452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Heirloom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

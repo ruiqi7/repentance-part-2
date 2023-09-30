@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2474265842794064511}
   - component: {fileID: 5471775149385614199}
   - component: {fileID: 4973327343604356891}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7806546229863374082}
   - component: {fileID: 8876488697933917506}
   - component: {fileID: 8393263345968188860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Salt
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 119

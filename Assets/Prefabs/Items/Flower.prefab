@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8970747306416694848}
   - component: {fileID: 107015087989069402}
   - component: {fileID: 5067868834513099711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WitheredFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7353959277552173524}
   - component: {fileID: 3427276010977648627}
   - component: {fileID: 3588949404909888808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flower
   m_TagString: Interactable
   m_Icon: {fileID: 0}

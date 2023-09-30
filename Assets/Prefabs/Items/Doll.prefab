@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4480311130303326278}
   - component: {fileID: 8963251825208941720}
   - component: {fileID: 2528172211753949143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Doll
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008667684173930863}
   - component: {fileID: 3316629516814819199}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DistractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

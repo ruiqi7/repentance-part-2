@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8555504437705094968}
   - component: {fileID: 8640464434663988066}
   - component: {fileID: 6949344433424350987}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: red_flame_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6976092347346320891}
   - component: {fileID: 8482847369328607942}
   - component: {fileID: 4054458760708575915}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Candle
   m_TagString: Interactable
   m_Icon: {fileID: 0}
