@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Slider staminaBar;
     [SerializeField] private float maxStamina;
 
+    private bool conserveStamina = false;
+
     void Start()
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
@@ -40,7 +42,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {   
             speed = sprintSpeed;
-            staminaBar.value -= 0.005f;
+            if (!conserveStamina)
+            {
+                staminaBar.value -= 0.005f;
+            }
             if(staminaBar.value <= 0){
                 speed = baseSpeed;
             }
@@ -71,5 +76,18 @@ public class PlayerController : MonoBehaviour
     {
         baseSpeed += value;
         sprintSpeed += value;
+    }
+
+    public void ConserveStamina()
+    {
+        if (!conserveStamina)
+        {
+            conserveStamina = true;
+            Invoke("ConserveStamina", 20.0f);
+        }
+        else
+        {
+            conserveStamina = false;
+        }
     }
 }

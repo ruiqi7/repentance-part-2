@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linesWhenItemUsed:
   - I hope you find peace...
+  - It seems like the spirits have blessed me with a temporary conservation of stamina!
   linesWhenItemNotUsed:
   - I think I've passed by a few tombstones...
   - Were they for victims of my family?

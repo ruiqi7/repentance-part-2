@@ -6,6 +6,8 @@ public class FlowerHandler : ItemHandlerInterface
 {
     [SerializeField] private int interactDistance = 2;
     
+    private GameObject player;
+    
     public override bool HandleBehavior()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -43,11 +45,14 @@ public class FlowerHandler : ItemHandlerInterface
         
         tombstone.tag = "Untagged"; // cannot place another candle / flower on this tombstone
         flower.tag = "Untagged"; // cannot pick up the flower once used
+
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        playerController.ConserveStamina();
     }
 
     private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
     {
-        GameObject player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         Vector3 playerPos = player.transform.position;
         return Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack);
     }

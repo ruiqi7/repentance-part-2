@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linesWhenItemUsed:
   - Here's my token of remorse for the sins of my family...
+  - Turns out I've been given granted a speed boost in return!
   linesWhenItemNotUsed:
   - There were tombstones around the area...
   - Perhaps I should offer this candle as a symbol of remorse...
@@ -243,6 +244,7 @@ MonoBehaviour:
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.05
   interactDistance: 2
+  speedIncrement: 5
 --- !u!65 &4054458760708575915
 BoxCollider:
   m_ObjectHideFlags: 0
