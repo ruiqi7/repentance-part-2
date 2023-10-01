@@ -18,6 +18,11 @@ public class DialogueController : MonoBehaviour
             textBox.text = String.Empty;
             StartCoroutine(IntroDialogue());
         }
+        else if (SceneManager.GetActiveScene().name == "Maze-enemies")
+        {
+            textBox.text = String.Empty;
+            StartCoroutine(InstructionsDialogue());
+        }
         
     }
 
@@ -47,6 +52,10 @@ public class DialogueController : MonoBehaviour
     }
     IEnumerator IntroDialogue(){
         yield return new WaitForSeconds(5);
+        StartDialogue();
+    }
+    IEnumerator InstructionsDialogue(){
+        yield return new WaitForSeconds(1);
         StartDialogue();
     }
 }

@@ -14492,7 +14492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1864267747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14506,7 +14506,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 235193036}
-  lines: []
+  lines:
+  - This dark place is giving me the creeps...
+  - Oh but at least I have a flashlight with me... [F]
+  - It feels like danger just lurks around the corner...
+  - I must be prepared to run at any moment... [Left Shift]
+  - There seems to be items scattered around here...
+  - I should collect and utilize them well... [Numpad]
+  - I will find out why I have been brought to this place...
+  - And survive till the end...
   textSpeed: 0.1
   textColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!224 &1864267748
