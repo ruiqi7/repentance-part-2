@@ -34,7 +34,7 @@ public class ChaseCamera : MonoBehaviour
         Vector3 direction = target.transform.position - transform.position;
         Debug.DrawRay(transform.position, direction, Color.yellow);
         if(Physics.Raycast(transform.position, direction, out hit)) {
-            if(hit.collider.tag == "Wall") {
+            if(hit.collider.tag == "Wall" || hit.collider.name == "RepelArea") {
                 moveRandom();
             } else if(hit.collider.tag == "Player") {
                 if(!handling) {
@@ -58,7 +58,7 @@ public class ChaseCamera : MonoBehaviour
         Vector3 direction = targetPosition - transform.position;
         Debug.DrawRay(transform.position, direction, Color.green);
         if(Physics.Raycast(transform.position, direction, out hit, 1.0f)) {
-            if(hit.collider.tag == "Wall") {
+            if(hit.collider.tag == "Wall" || hit.collider.name == "RepelArea") {
                 targetPosition = GetRandomTarget();
             }
         }

@@ -10,7 +10,6 @@ public class WalkInArea : MonoBehaviour
     
     private ChaseCamera chaseCamera;
     private Rigidbody rb;
-    private Vector3 dollPosition = Vector3.negativeInfinity;
     private Vector3 targetPosition;
     private float minX, maxX, minZ, maxZ;
     
@@ -26,7 +25,7 @@ public class WalkInArea : MonoBehaviour
         {
             Invoke("EndDistraction", distractDuration);
             chaseCamera.enabled = false;
-            dollPosition = collider.gameObject.transform.parent.position;
+            Vector3 dollPosition = collider.gameObject.transform.parent.position;
             minX = dollPosition.x - moveRadius;
             maxX = dollPosition.x + moveRadius;
             minZ = dollPosition.z - moveRadius;
@@ -38,13 +37,13 @@ public class WalkInArea : MonoBehaviour
 
     void Update()
     {
-        if (dollPosition.x == Mathf.NegativeInfinity)
+        if (chaseCamera.enabled)
         {
             return;
         }
-
+        
         RaycastHit hit;
-        Vector3 direction = dollPosition - transform.position;
+        Vector3 direction = targetPosition - transform.position;
         if (Physics.Raycast(transform.position, direction, out hit))
         {
             MoveRandom();
@@ -77,7 +76,6 @@ public class WalkInArea : MonoBehaviour
 
     private void EndDistraction()
     {
-        dollPosition = Vector3.negativeInfinity;
         chaseCamera.enabled = true;
     }
 }
