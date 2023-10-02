@@ -25,7 +25,7 @@ public class FlashLightController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(flashlight.enabled) {
             batteryBar.value -= 0.0075f;
