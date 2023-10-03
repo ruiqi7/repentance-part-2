@@ -119,6 +119,7 @@ public class MazeConstructor : MonoBehaviour
                 }
                 else if (maze[i, j] == 5 && eyeballsJarCount<eyeballsJarNum)
                 {
+                    Instantiate(eyeballsJar, new Vector3(j*width, -0.11f, i*width), Quaternion.identity);
                     eyeballsJarCount++;
                 }
                 else if (maze[i, j] == 6 && witheredFlowerCount<witheredFlowerNum)

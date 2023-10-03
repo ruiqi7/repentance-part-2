@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78616c3b8d30eb642a224c883588b8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1094900897}
+  target: {fileID: 1064079130}
   speed: 0.07
   minX: 1
   maxX: 89
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   candle: {fileID: 1233580066405178, guid: 6b93fd896c90c094c8577de7399669b5, type: 3}
   doll: {fileID: 129278, guid: 848098b20205e584ba1d61f0ce0ffb61, type: 3}
   salt: {fileID: 3635718222938586492, guid: 9bbe7cd39104f4ffdb27a53e2c16caac, type: 3}
-  eyeballsJar: {fileID: 0}
+  eyeballsJar: {fileID: 4226598594411500458, guid: 335ba55af27d04e16a27cd88636c8505, type: 3}
   witheredFlower: {fileID: 7399533884499506382, guid: 8b3a66066562e4a2e8269dc47b68b6e2, type: 3}
 --- !u!4 &833475590 stripped
 Transform:
@@ -2943,7 +2943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78616c3b8d30eb642a224c883588b8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1094900897}
+  target: {fileID: 1064079130}
   speed: 0.02
   minX: -5
   maxX: 5
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78616c3b8d30eb642a224c883588b8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1094900897}
+  target: {fileID: 1064079130}
   speed: 0.07
   minX: 1
   maxX: 89
