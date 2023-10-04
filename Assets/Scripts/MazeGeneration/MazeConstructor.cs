@@ -17,21 +17,23 @@ public class MazeConstructor : MonoBehaviour
     public GameObject salt;
     public GameObject eyeballsJar;
     public GameObject witheredFlower;
-    public GameObject NPC;
+    public GameObject NPC1;
+    public GameObject NPC2;
 
     private int candleNum = 4;
     private int dollNum = 3;
-    private int saltNum = 5;
+    private int saltNum = 3;
     private int eyeballsJarNum = 2;
     private int witheredFlowerNum = 4;
-    private int NPCNum = 2;
+    private int NPCNum = 1;
 
     private static int candleCount = 0;
     private static int dollCount = 0;
     private static int saltCount = 0;
     private static int eyeballsJarCount = 0;
     private static int witheredFlowerCount = 0;
-    private static int NPCCount = 0;
+    private static int NPC1Count = 0;
+    private static int NPC2Count = 0;
 
     private MazeDataGenerator dataGenerator;
     private MazeMeshGenerator meshGenerator;
@@ -66,7 +68,6 @@ public class MazeConstructor : MonoBehaviour
     }
     data = dataGenerator.FromDimensions(sizeRows, sizeCols);
     DisplayMaze();
-    SpawnItems();
     SpawnItems();
     }
 
@@ -110,7 +111,7 @@ public class MazeConstructor : MonoBehaviour
                 {
                     Instantiate(candle, new Vector3(j*width, 0, i*width), Quaternion.identity);
                     candleCount++;
-                    maze[i,j] = -1;
+                    maze[i,j] = -1; 
                 } 
                 else if (maze[i, j] == 3 && dollCount<dollNum)
                 {
@@ -136,11 +137,44 @@ public class MazeConstructor : MonoBehaviour
                     witheredFlowerCount++;
                     maze[i,j] = -1;
                 }
-                else if (maze[i, j] == 7 && NPCCount<NPCNum)
+                else if (maze[i, j] == 7 && NPC1Count<NPCNum)
                 {
-                    Instantiate(NPC, new Vector3(j*width, 0, i*width), Quaternion.identity);
-                    NPCCount++;
+                    Instantiate(NPC1, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC1Count++;
                     maze[i,j] = -1;
+                }
+                else if (maze[i, j] == 7 && NPC2Count<NPCNum)
+                {
+                    Instantiate(NPC2, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC2Count++;
+                    maze[i,j] = -1;
+                }
+                // Spawns NPCs at first possible spot if random generation fails
+                if(NPC1Count == 0 && i==0){
+                    for (int m = rMax-10; m >= 0; m--)
+                    {
+                        for (int n = 7; n <= cMax; n++)
+                        {
+                            if(maze[m,n] != 1 && maze[m,n] != -1 && NPC1Count == 0){
+                                Instantiate(NPC1, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                NPC1Count++;
+                                maze[m,n] = -1;
+                            }
+                        }
+                    }
+                }
+                if(NPC2Count == 0 && i==0){
+                    for (int m = rMax-5; m >= 0; m--)
+                    {
+                        for (int n = 5; n <= cMax; n++)
+                        {
+                            if(maze[m,n] != 1 && maze[m,n] != -1  && NPC2Count == 0){
+                                Instantiate(NPC2, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                NPC2Count++;
+                                maze[m,n] = -1;
+                            }
+                        }
+                    }
                 }                   
             }
         }

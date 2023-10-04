@@ -8,11 +8,25 @@ public class MazeDataGenerator
 {
     public float placementThreshold;    // chance of empty space
     public float itemSpawnChance;
+    public float NPCSpawnChance;
+
+    private int candleNum = 4;
+    private int dollNum = 3;
+    private int saltNum = 3;
+    private int eyeballsJarNum = 2;
+    private int witheredFlowerNum = 4;
+
+    private static int candleCount = 0;
+    private static int dollCount = 0;
+    private static int saltCount = 0;
+    private static int eyeballsJarCount = 0;
+    private static int witheredFlowerCount = 0;
 
     public MazeDataGenerator()
     {
         placementThreshold = .15f;
-        itemSpawnChance = .01f;                               // 1
+        itemSpawnChance = .0101f;   
+        NPCSpawnChance = .01f;                               // 1
     }
 
     public int[,] FromDimensions(int sizeRows, int sizeCols)    // 2
@@ -55,25 +69,31 @@ public class MazeDataGenerator
             }
 
             //5 (Item Spawn Chance)
-            else if (Random.value < itemSpawnChance) {
+            else if (Random.value < itemSpawnChance && candleCount<candleNum) {
                 maze[i, j] = 2; //candle
+                candleCount++;
             }
-            else if (Random.value < itemSpawnChance) {
+            else if (Random.value < itemSpawnChance && dollCount<dollNum) {
                 maze[i, j] = 3; //doll
+                dollCount++;
             }
-            else if (Random.value < itemSpawnChance) {
+            else if (Random.value < itemSpawnChance && saltCount<saltNum) {
                 maze[i, j] = 4; //salt
+                saltCount++;
             }
-            else if (Random.value < itemSpawnChance) {
+            else if (Random.value < itemSpawnChance && eyeballsJarCount<eyeballsJarNum) {
                 maze[i, j] = 5; //jar of eyeballs
+                eyeballsJarCount++;
             }
-            else if (Random.value < itemSpawnChance) {
+            else if (Random.value < itemSpawnChance && witheredFlowerCount<witheredFlowerNum) {
                 maze[i, j] = 6; //withered flower
-            }
-            else if (Random.value < itemSpawnChance) {
-                maze[i, j] = 7; //NPC
+                witheredFlowerCount++;
             }
 
+            //6 (NPC Spawn Chance)
+            else if (Random.value < NPCSpawnChance) {
+                maze[i, j] = 7; //NPC
+            }
         }
     }
 
