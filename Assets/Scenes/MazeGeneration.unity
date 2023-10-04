@@ -2393,6 +2393,7 @@ MonoBehaviour:
   salt: {fileID: 3635718222938586492, guid: 9bbe7cd39104f4ffdb27a53e2c16caac, type: 3}
   eyeballsJar: {fileID: 4226598594411500458, guid: 335ba55af27d04e16a27cd88636c8505, type: 3}
   witheredFlower: {fileID: 7399533884499506382, guid: 8b3a66066562e4a2e8269dc47b68b6e2, type: 3}
+  NPC: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
 --- !u!4 &833475590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4585060622950652, guid: 86d84285ef39db64c986f37878b14861, type: 3}
@@ -2528,15 +2529,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
       propertyPath: m_LocalPosition.x

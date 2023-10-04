@@ -70,6 +70,9 @@ public class MazeDataGenerator
             else if (Random.value < itemSpawnChance) {
                 maze[i, j] = 6; //withered flower
             }
+            else if (Random.value < itemSpawnChance) {
+                maze[i, j] = 7; //NPC
+            }
 
         }
     }
