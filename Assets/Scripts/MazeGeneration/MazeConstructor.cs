@@ -18,11 +18,11 @@ public class MazeConstructor : MonoBehaviour
     public GameObject eyeballsJar;
     public GameObject witheredFlower;
 
-    private int candleNum = 3;
+    private int candleNum = 4;
     private int dollNum = 3;
     private int saltNum = 5;
     private int eyeballsJarNum = 2;
-    private int witheredFlowerNum = 3;
+    private int witheredFlowerNum = 4;
 
     private static int candleCount = 0;
     private static int dollCount = 0;
@@ -63,6 +63,7 @@ public class MazeConstructor : MonoBehaviour
     }
     data = dataGenerator.FromDimensions(sizeRows, sizeCols);
     DisplayMaze();
+    SpawnItems();
     SpawnItems();
     }
 
@@ -106,26 +107,31 @@ public class MazeConstructor : MonoBehaviour
                 {
                     Instantiate(candle, new Vector3(j*width, 0, i*width), Quaternion.identity);
                     candleCount++;
+                    maze[i,j] = -1;
                 } 
                 else if (maze[i, j] == 3 && dollCount<dollNum)
                 {
                     Instantiate(doll, new Vector3(j*width, 0.2f, i*width), Quaternion.Euler(new Vector3(270, 0, 0)));
                     dollCount++;
+                    maze[i,j] = -1;
                 }
                 else if (maze[i, j] == 4 && saltCount<saltNum)
                 {
                     Instantiate(salt, new Vector3(j*width, 0, i*width), Quaternion.identity);
                     saltCount++;
+                    maze[i,j] = -1;
                 }
                 else if (maze[i, j] == 5 && eyeballsJarCount<eyeballsJarNum)
                 {
                     Instantiate(eyeballsJar, new Vector3(j*width, -0.11f, i*width), Quaternion.identity);
                     eyeballsJarCount++;
+                    maze[i,j] = -1;
                 }
                 else if (maze[i, j] == 6 && witheredFlowerCount<witheredFlowerNum)
                 {
                     Instantiate(witheredFlower, new Vector3(j*width, 0, i*width), Quaternion.identity);
                     witheredFlowerCount++;
+                    maze[i,j] = -1;
                 }                
             }
         }
