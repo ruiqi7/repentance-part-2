@@ -71,15 +71,15 @@ Post-task walkthroughs
   - Duration of player engagement (Do players play until the 5 minutes is up or do they feel bored halfway through?)
   - Difficulty (How many people succeed, how many times does it take for them to win)
   - Replayability (Do players want to play multiple rounds?)
-  - Do the gameplay elements compliment each other: Thematically, Does the art and music fit.
+  - Do the gameplay elements complement each other: Thematically, Does the art and music fit.
   - How ‘Scary’ is the game? How is the player feeling whilst playing through the game. What parts specifically made them feel this way?
   - Are the players able to make sense of the story / themes that are being presented?
   - Are there any bugs in the game?
 ### Timeline
-  - Ideally the evaluation should be completed early enough to allow time to make any necessary changes to the game (2 weeks → 17 October). Changes to the game will be made after completing the evaluations and discussing results.
+  - Ideally, the evaluation should be completed early enough to allow time to make any necessary changes to the game (2 weeks → 17 October). Changes to the game will be made after completing the evaluations and discussing results.
   - Due date of evaluation report: Tuesday 31 October
 ### Responsibilities
-A list of tasks have been created and will be equally delegated to each team member depending on workload. However, certain tasks may be done in a joint effort or will be compartmentalised. For example each team member will be responsible for interviewing and collecting the data for their chosen particapants.
+A list of tasks has been created and will be equally delegated to each team member depending on workload. However, certain tasks may be done in a joint effort or will be compartmentalized. For example, each team member will be responsible for interviewing and collecting the data for their chosen participants.
   - Create questionnaire 
     - On a scale of never to always / 1 to 5
       - Gameplay
@@ -115,7 +115,7 @@ A list of tasks have been created and will be equally delegated to each team mem
       - How did you feel about the NPCs in this game?
       - How would you describe the monsters in this game?
       - Was there anything in the game that felt out of place? If there was, please describe.
-      - What would you consider to be the strongest aspect of this game? (Art , Music, Atmosphere, Story, Gameplay)
+      - What would you consider to be the strongest aspect of this game? (Art, Music, Atmosphere, Story, Gameplay)
       - What would you consider to be the weakest aspect of this game?
       - If there was one thing you could add to this game, what would it be?
 
