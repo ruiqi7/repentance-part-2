@@ -50,12 +50,8 @@ fixed4 frag(vertOut v) : SV_Target
 {
 
     
-    #if defined(SPOT)
-        fixed4 unlitColor = tex2D(_MainTex, v.uv);
-    #else 
-        float2 pixelatedUV = floor(v.uv * _PixelSize) / _PixelSize;
-        fixed4 unlitColor = tex2D(_MainTex, pixelatedUV);
-    #endif
+    float2 pixelatedUV = floor(v.uv * _PixelSize) / _PixelSize;
+    fixed4 unlitColor = tex2D(_MainTex, pixelatedUV);
 
     float3 interpNormal = normalize(v.worldNormal);
 
