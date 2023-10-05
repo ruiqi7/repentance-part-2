@@ -25,6 +25,19 @@ public class DialogueController : MonoBehaviour
         }
         
     }
+    public void Update(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            if (textBox.text == lines[lineIndex]){
+                NextLine();
+            }
+            else{
+                StopAllCoroutines();
+                textBox.text = lines[lineIndex];
+                StartCoroutine(WaitLine());
+            }
+        }
+    }
+
 
     public void StartDialogue(){
         textBox.text = String.Empty;
@@ -57,5 +70,9 @@ public class DialogueController : MonoBehaviour
     IEnumerator InstructionsDialogue(){
         yield return new WaitForSeconds(1);
         StartDialogue();
+    }
+    IEnumerator WaitLine(){
+        yield return new WaitForSeconds(2);
+        NextLine();
     }
 }

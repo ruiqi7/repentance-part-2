@@ -7,8 +7,10 @@ public class DoorInteract : InteractableInterface
     // Code credited https://youtu.be/oCv14L3Ew4w?si=yCkoPQE278BF7nSt
     public bool isOpen = false;
     public Animator door;
-
     public override void interact(){
+        if(clip){
+            AudioSource.PlayClipAtPoint(clip, this.transform.position);
+        }
         if(!isOpen){
             open();
             isOpen = true;
@@ -16,7 +18,6 @@ public class DoorInteract : InteractableInterface
             close();
             isOpen = false;
         }
-        Debug.Log("Doored");
     }
     public void open(){
         door.SetBool("open", true);
