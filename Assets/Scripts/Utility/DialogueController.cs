@@ -18,7 +18,6 @@ public class DialogueController : MonoBehaviour
             textBox.text = String.Empty;
             StartCoroutine(IntroDialogue());
         }
-        
     }
     public void Update(){
         if(Input.GetKeyDown(KeyCode.Space)){
@@ -28,6 +27,7 @@ public class DialogueController : MonoBehaviour
             else{
                 StopAllCoroutines();
                 textBox.text = lines[lineIndex];
+                StartCoroutine(WaitLine());
             }
         }
     }
@@ -60,5 +60,9 @@ public class DialogueController : MonoBehaviour
     IEnumerator IntroDialogue(){
         yield return new WaitForSeconds(5);
         StartDialogue();
+    }
+    IEnumerator WaitLine(){
+        yield return new WaitForSeconds(2);
+        NextLine();
     }
 }
