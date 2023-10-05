@@ -12452,8 +12452,16 @@ PrefabInstance:
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5913604676613299105, guid: e079d4758bad567419a86129be4e49c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913604676613299105, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913604676613299105, guid: e079d4758bad567419a86129be4e49c0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6430192328962791910, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_Pivot.x
@@ -12537,11 +12545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6625036036038497704, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7445314499864151212, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7882620099485363915, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_Name
@@ -12552,8 +12560,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7976597476496149157, guid: e079d4758bad567419a86129be4e49c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976597476496149157, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15013,7 +15025,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

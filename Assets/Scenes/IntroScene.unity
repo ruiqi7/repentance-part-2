@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e984841ebfb75428fa4b84db4ff06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: O  P  E  N
+  interactText: O  P  E  N [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   isOpen: 0
   door: {fileID: 432614748}
@@ -1761,7 +1761,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -4146,7 +4146,15 @@ PrefabInstance:
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5913604676613299105, guid: e079d4758bad567419a86129be4e49c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913604676613299105, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913604676613299105, guid: e079d4758bad567419a86129be4e49c0, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6430192328962791910, guid: e079d4758bad567419a86129be4e49c0, type: 3}
@@ -4231,11 +4239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6625036036038497704, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7445314499864151212, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7882620099485363915, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_Name
@@ -4244,6 +4252,10 @@ PrefabInstance:
     - target: {fileID: 7882620099485363915, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7976597476496149157, guid: e079d4758bad567419a86129be4e49c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7976597476496149157, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6065,7 +6077,7 @@ RectTransform:
   m_GameObject: {fileID: 1817489250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.66875, y: 0.66875, z: 0.66875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1479796659}
@@ -6074,7 +6086,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 636, y: 323.4486}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817489252
 MonoBehaviour:
@@ -7663,6 +7675,7 @@ MonoBehaviour:
     Arrived'
   player: {fileID: 165251168}
   cameraController: {fileID: 1773207377}
+  isOpen: 0
 --- !u!33 &3469287837834072985
 MeshFilter:
   m_ObjectHideFlags: 0
