@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        SetMaxStamina(difficulty);
         staminaBar.value = maxStamina;
     }
     
@@ -88,6 +90,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             conserveStamina = false;
+        }
+    }
+
+    private void SetMaxStamina(string difficulty)
+    {
+        if (difficulty == "Hard")
+        {
+            staminaBar.maxValue *= 0.5f;
         }
     }
 }

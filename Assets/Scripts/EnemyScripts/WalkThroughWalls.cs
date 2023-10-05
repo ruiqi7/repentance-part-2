@@ -16,6 +16,8 @@ public class WalkThroughWalls : MonoBehaviour
     private bool handling = false;
     void Start()
     {
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        SetEnemySpeed(difficulty);
         transform.LookAt(target.transform.position);
         animator = GetComponent<Animator>();
     }
@@ -51,5 +53,13 @@ public class WalkThroughWalls : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
+    }
+
+    private void SetEnemySpeed(string difficulty)
+    {
+        if (difficulty == "Hard")
+        {
+            speed *= 1.5f;
+        }
     }
 }

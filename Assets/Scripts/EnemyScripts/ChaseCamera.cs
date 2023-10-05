@@ -15,6 +15,8 @@ public class ChaseCamera : MonoBehaviour
     private Animator animator;
     void Start()
     {
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        SetEnemySpeed(difficulty);
         transform.LookAt(target.transform.position);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -71,5 +73,13 @@ public class ChaseCamera : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
+    }
+
+    private void SetEnemySpeed(string difficulty)
+    {
+        if (difficulty == "Hard")
+        {
+            speed *= 1.5f;
+        }
     }
 }
