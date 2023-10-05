@@ -20,6 +20,18 @@ public class DialogueController : MonoBehaviour
         }
         
     }
+    public void Update(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            if (textBox.text == lines[lineIndex]){
+                NextLine();
+            }
+            else{
+                StopAllCoroutines();
+                textBox.text = lines[lineIndex];
+            }
+        }
+    }
+
 
     public void StartDialogue(){
         textBox.text = String.Empty;
