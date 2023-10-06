@@ -1102,12 +1102,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.438353, y: 4.114273, z: 8.002508}
-  m_Center: {x: 0.1, y: 2, z: 2}
+  m_Size: {x: 3.438353, y: 10.375935, z: 8.905439}
+  m_Center: {x: 0.100000024, y: 5.130806, z: 2.4514444}
 --- !u!54 &94079773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1190,11 +1190,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1064079130}
   speed: 0.07
-  minX: 1
-  maxX: 89
-  minZ: 1
+  minX: 6
+  maxX: 260
+  minZ: 4
   maxZ: 92
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 612437550}
 --- !u!4 &94079777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac162a9aebfaf4ea0ba022c916f9e855, type: 3}
@@ -5328,19 +5328,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931394960}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c566d31c62244ad4ab3f74b0ef777175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1094900897}
+  target: {fileID: 1064079130}
   speed: 0.07
   distance: 30
-  minX: -87
-  maxX: -1.8
-  minZ: -91
-  maxZ: 94
-  audioSource: {fileID: 0}
+  minX: 150
+  maxX: 260
+  minZ: 3
+  maxZ: 100
+  audioSource: {fileID: 612437550}
 --- !u!95 &931394963
 Animator:
   serializedVersion: 5
@@ -5383,25 +5383,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.1082368, y: 3.6452637, z: 7.1884627}
   m_Center: {x: 0.0013329085, y: 6.6662354, z: 0.68831205}
---- !u!114 &931394965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931394960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78616c3b8d30eb642a224c883588b8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1064079130}
-  speed: 0.02
-  minX: -5
-  maxX: 5
-  minZ: -5
-  maxZ: 5
-  audioSource: {fileID: 0}
 --- !u!1 &972352168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,26 +5633,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &1025090471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025090469}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c566d31c62244ad4ab3f74b0ef777175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 2
-  distance: 100
-  minX: -5
-  maxX: 5
-  minZ: -5
-  maxZ: 5
-  audioSource: {fileID: 0}
 --- !u!95 &1025090472
 Animator:
   serializedVersion: 5
@@ -5708,7 +5669,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5728,11 +5689,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1064079130}
   speed: 0.07
-  minX: 1
-  maxX: 89
-  minZ: 1
-  maxZ: 92
-  audioSource: {fileID: 0}
+  minX: 150
+  maxX: 260
+  minZ: 3
+  maxZ: 265
+  audioSource: {fileID: 612437550}
 --- !u!1 &1028559766
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,9 +7501,6 @@ PrefabInstance:
     - {fileID: -8700617353114198275, guid: a88401ab56f38415ab7ffcfe65eab51f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a88401ab56f38415ab7ffcfe65eab51f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 931394965}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a88401ab56f38415ab7ffcfe65eab51f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 931394964}
@@ -10276,9 +10234,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc4cc5e4d2944aacbdcd3575f3e5660, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025090472}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc4cc5e4d2944aacbdcd3575f3e5660, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1025090471}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc4cc5e4d2944aacbdcd3575f3e5660, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025090470}
