@@ -52,7 +52,7 @@ A mix of techniques will be used as listed:
 Set in a maze with horror elements, the game is targeted at players who are drawn to experiencing thrill in a controlled environment. Additionally, the 5-minute time constraint on the game makes it suitable for players who prefer or can only afford to play in short bursts.
 
 #### Participants
-Since it is difficult to find participants who specifically match our target audience, the requirement for participants is broadened to be people who enjoy computer games.
+Since it is difficult to find participants who specifically match our target audience, the requirement for participants is broadened to be people who enjoy computer games. In addition, Participants who are not well-versed in horror games may provide unique viewpoints and the horror elements they experience may be more effective.
 
 #### Recruitment 
 Recruiting of participants will be primarily done through friends
