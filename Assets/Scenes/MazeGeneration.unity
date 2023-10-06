@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1191415}
   - component: {fileID: 1191414}
   m_Layer: 0
-  m_Name: Letter8
+  m_Name: Letter8(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 98475818}
   - component: {fileID: 98475817}
   m_Layer: 0
-  m_Name: Letter3
+  m_Name: Letter3(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4240,7 +4240,7 @@ Transform:
   m_GameObject: {fileID: 794513873}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1728.157, y: -729.85, z: 146.049}
+  m_LocalPosition: {x: -1627.7, y: -729.8, z: 135}
   m_LocalScale: {x: 0.39999998, y: 0.6999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4515,6 +4515,14 @@ MonoBehaviour:
   witheredFlower: {fileID: 7399533884499506382, guid: 8b3a66066562e4a2e8269dc47b68b6e2, type: 3}
   NPC1: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
   NPC2: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+  eyeballLetter: {fileID: 65701115}
+  letter1: {fileID: 1247243236}
+  letter3: {fileID: 98475815}
+  letter5: {fileID: 1167175818}
+  letter6: {fileID: 1404560114}
+  letter8: {fileID: 1191412}
+  letter9: {fileID: 1558085256}
+  letter10: {fileID: 1901674575}
 --- !u!114 &833108984 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4261601176336357568, guid: e079d4758bad567419a86129be4e49c0, type: 3}
@@ -6694,7 +6702,7 @@ GameObject:
   - component: {fileID: 1167175821}
   - component: {fileID: 1167175820}
   m_Layer: 0
-  m_Name: Letter5
+  m_Name: Letter5(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7362,7 +7370,7 @@ GameObject:
   - component: {fileID: 1247243238}
   - component: {fileID: 1247243237}
   m_Layer: 0
-  m_Name: Letter1
+  m_Name: Letter1(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7472,13 +7480,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247243236}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1728.7, y: -729.85, z: 146.05}
+  m_LocalRotation: {x: 0.7010574, y: 0.09229593, z: -0.09229593, w: 0.7010574}
+  m_LocalPosition: {x: -1708, y: -729.8, z: 237.2}
   m_LocalScale: {x: 0.39999998, y: 0.6999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1177889835}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 15, z: 0}
 --- !u!1001 &1253885943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8245,7 +8253,7 @@ GameObject:
   - component: {fileID: 1404560117}
   - component: {fileID: 1404560116}
   m_Layer: 0
-  m_Name: Letter6
+  m_Name: Letter6(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9004,7 +9012,7 @@ GameObject:
   - component: {fileID: 1558085259}
   - component: {fileID: 1558085258}
   m_Layer: 0
-  m_Name: Letter9
+  m_Name: Letter9(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9420,13 +9428,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659180634}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1728.7, y: -729.85, z: 145.108}
+  m_LocalRotation: {x: 0.6903456, y: -0.15304585, z: 0.15304585, w: 0.6903456}
+  m_LocalPosition: {x: -1743.94, y: -729.85, z: 134.18}
   m_LocalScale: {x: 0.39999998, y: 0.6999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1177889835}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -25, z: 0}
 --- !u!65 &1659180636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10283,7 +10291,7 @@ GameObject:
   - component: {fileID: 1901674578}
   - component: {fileID: 1901674577}
   m_Layer: 0
-  m_Name: Letter10
+  m_Name: Letter10(random)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
