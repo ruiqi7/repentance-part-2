@@ -122,8 +122,9 @@ The participant will rank each question on a scale of 1-5
   - Based on the averages of results for each question, construct priority list of changes that can be made to address the issues identified
 
 ### Timeline
-  - Ideally, the evaluation should be completed early enough to allow time to make any necessary changes to the game (2 weeks → 17 October). Changes to the game will be made after completing the evaluations and discussing results.
-  - Due date of evaluation report: Tuesday 31 October
+
+<img width="806" alt="image" src="https://github.com/COMP30019/project-2-not-minecraft/assets/127174477/8b5c4dd2-dc27-47fe-9ded-4b93d66e6d21">
+
 ### Responsibilities
 A list of tasks has been created and will be equally delegated to each team member depending on workload. However, certain tasks may be done in a joint effort or will be compartmentalized. For example, each team member will be responsible for interviewing and collecting the data for their chosen participants.
 
