@@ -2353,13 +2353,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3757368589235821785, guid: c8e288abfd6ad90458715c5c30fc68c3, type: 3}
+  - {fileID: 3757368589235821785, guid: 9bc65e1ed06c792438e358f0867b4644, type: 3}
+  - {fileID: 3757368589235821785, guid: 681a2eacc877368448aabccca2838b6d, type: 3}
+  - {fileID: 3757368589235821785, guid: 05c4f5800c4f18942968fba65e869156, type: 3}
+  - {fileID: 3757368589235821785, guid: 7f2067d9b04db9d4c96627cdd300ff87, type: 3}
+  - {fileID: 3757368589235821785, guid: e4ae0b0b124c6f14a871f7dc245d1d83, type: 3}
+  - {fileID: 3757368589235821785, guid: 1693add80244dfd4fa3620f8e77f3403, type: 3}
   items:
   - {fileID: 5519869971037501503, guid: 63f38be9af60dd5409a4997176de1cad, type: 3}
   - {fileID: 2466163803468920858, guid: bd96b0671342bc24583fb19be40e5473, type: 3}
@@ -4651,11 +4651,11 @@ MonoBehaviour:
   mazeMat1: {fileID: 2100000, guid: f9fe5d3864f4b4c7da03a0e831649cb9, type: 2}
   mazeMat2: {fileID: 2100000, guid: 3c534a0d9ca97458f9f380f41d8d0ba8, type: 2}
   startMat: {fileID: 2100000, guid: f9fe5d3864f4b4c7da03a0e831649cb9, type: 2}
-  candle: {fileID: 1233580066405178, guid: 6b93fd896c90c094c8577de7399669b5, type: 3}
-  doll: {fileID: 129278, guid: 848098b20205e584ba1d61f0ce0ffb61, type: 3}
-  salt: {fileID: 3635718222938586492, guid: 9bbe7cd39104f4ffdb27a53e2c16caac, type: 3}
-  eyeballsJar: {fileID: 4226598594411500458, guid: 335ba55af27d04e16a27cd88636c8505, type: 3}
-  witheredFlower: {fileID: 7399533884499506382, guid: 8b3a66066562e4a2e8269dc47b68b6e2, type: 3}
+  candle: {fileID: 7389238761370878761, guid: 0da85bec1b45baf488fb363cf878cec5, type: 3}
+  doll: {fileID: 3200742480441153622, guid: 0c2e3527204b1bc4a9d232becf4c6d5f, type: 3}
+  salt: {fileID: 2990223106058727067, guid: 8fa6ec9e393d5c14c84e8cc88512b11f, type: 3}
+  eyeballsJar: {fileID: 744538769819870383, guid: 4be6f8c40a603f8429df8468c220943b, type: 3}
+  witheredFlower: {fileID: 5445750326216136529, guid: 26eaaf135204cc34791eb0c251d47b19, type: 3}
   NPC1: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
   NPC2: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
   eyeballLetter: {fileID: 65701115}
@@ -11192,15 +11192,15 @@ RectTransform:
   m_GameObject: {fileID: 1940639380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1479872603}
   m_Father: {fileID: 489062839}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1010, y: 215}
+  m_AnchoredPosition: {x: -10, y: -277}
   m_SizeDelta: {x: 1620, y: 330}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940639382
