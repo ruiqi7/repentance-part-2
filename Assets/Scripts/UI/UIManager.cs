@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
     private float timePassed = 0;
     private CameraController cameraController;
 
+    public float getTimePassed() {
+        return timePassed;
+    }
+
     void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
