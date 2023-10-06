@@ -33,18 +33,18 @@ placeholder for it [here](GDD.md).
 ### Evaluation techniques
 A mix of techniques will be used as listed: 
 #### Querying Techniques
-    - Interviews — Able to ask more open-ended questions
-    - Questionnaires — Easier to quantify the results
+  - Interviews — Able to ask more open-ended questions
+  - Questionnaires — Easier to quantify the results
 #### Observational Techniques
-    - Think aloud — Can help to uncover usability issues
-    - Cooperative Evaluation — A two-way communication allows for a deeper understanding of the user's thought processes and allows the experimenter to clarify any uncertainties; the experimenter can gain insight into the user's intentions and goals
+  - Think aloud — Can help to uncover usability issues
+  - Cooperative Evaluation — A two-way communication allows for a deeper understanding of the user's thought processes and allows the experimenter to clarify any uncertainties; the experimenter can gain insight into the user's intentions and goals
    
 #### Tasks to Perform
-    1. Find and collect the heirloom
-    2. Collect items for the graves
-    3. Complete a task from an NPC
-    4. Find and use at least 3 different items
-    5. Find all NPCs
+  1. Find and collect the heirloom
+  2. Collect items for the graves
+  3. Complete a task from an NPC
+  4. Find and use at least 3 different items
+  5. Find all NPCs
 
 ### Participants 
 
@@ -85,10 +85,10 @@ Recruiting of participants will be primarily done through friends
       - If there was one thing you could add to this game, what would it be?
 
 ##### Interview Results Table
-    [**Interviewee Name**]
-    | Question | Answer |
-    | ---- | ----|
-    | … | … |
+  [**Interviewee Name**]
+  | Question | Answer |
+  | ---- | ----|
+  | … | … |
 
 #### Questionnaire Questions 
 The participant will rank each question on a scale of 1-5
@@ -96,43 +96,30 @@ The participant will rank each question on a scale of 1-5
 | Question | Scale |
 |----|----|
 |I found the game challenging | Strongly disagree - strongly agree|
-|----|----|
 |I found the game enjoyable | Strongly disagree - strongly agree|
-|----|----|
 |I found the maze to be of a reasonable size and complexity | Strongly disagree - strongly agree|
-|----|----|
 |I found finding items... | Very difficult - very easy |
-|----|----|
 |I found the items.. | Not useful - very useful |
-|----|----|
 |I understood the storyline | Not at all - completely |
-|----|----|
 |I found the storyline engaging | not at all - very |
-|----|----|
 |I found the game controls... | Confusing - intuitive |
-|----|----|
 |I felt that the art and assets used were fitting to the theme of the game | Strongly disagree - strongly agree |
-|----|----|
 |I found the monsters scary | Not at all - extremely |
-|----|----|
 |I found the atmosphere and environment scary | Not at all - extremely |
-|----|----|
 |The game audio contributed to the horror experience | Not at all - a lot |
-|----|----|
 |I felt that 'Repentance' was a unique gaming experience | Strongly disagree - strongly agree |
-|----|----|
 |I would play the game again | Never - definitely |
 
 ### Data analysis
 #### Analysing the qualitative data
-    - Data will be categorised so that common themes can be seen
-    - Within each theme look for commonalities to link them
-    - Determine how the different themes relate to each other
-    - Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
+  - Data will be categorised so that common themes can be seen
+  - Within each theme look for commonalities to link them
+  - Determine how the different themes relate to each other
+  - Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
 #### Analysing the quantitative data
-    - Look for trends in responses 
-    - Construct graphs to aid visualization of the result
-    - Based on the averages of results for each question, construct priority list of changes that can be made to address the issues identified
+  - Look for trends in responses 
+  - Construct graphs to aid visualization of the result
+  - Based on the averages of results for each question, construct priority list of changes that can be made to address the issues identified
 
 ### Timeline
   - Ideally, the evaluation should be completed early enough to allow time to make any necessary changes to the game (2 weeks → 17 October). Changes to the game will be made after completing the evaluations and discussing results.
