@@ -64,6 +64,8 @@ Recruiting of participants will be primarily done through friends
   - Quantitative from questionnaires
 
 #### Collection Methods and Tools
+  - Tools such as Zoom / Discord will be used with screen sharing and webcam for observational techniques
+  - OBS Studio or Other screen recording software may be used to record participant gameplay 
   - Google forms for the questionnaire (https://forms.gle/xW9pgmztwRhmoVDX6)
   - Note down the results on a Google Document for the interview and observations
 
