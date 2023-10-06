@@ -112,28 +112,24 @@ The participant will rank each question on a scale of 1-5
 
 ### Data analysis
 #### Analysing the qualitative data
-  - Data will be categorised so that common themes can be seen
-  - Within each theme look for commonalities to link them
-  - Determine how the different themes relate to each other
-  - Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
+- Data will be categorised so that common themes can be seen
+- Within each theme look for commonalities to link them
+- Determine how the different themes relate to each other
+- Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
 #### Analysing the quantitative data
-  - Look for trends in responses 
-  - Construct graphs to aid visualization of the result
-  - Based on the averages of results for each question, construct priority list of changes that can be made to address the issues identified
+- Look for trends in responses 
+- Construct graphs to aid visualization of the result
+- Based on the averages of results for each question, construct priority list of changes that can be made to address the issues identified
 
 ### Timeline
 
 <img width="806" alt="image" src="https://github.com/COMP30019/project-2-not-minecraft/assets/127174477/8b5c4dd2-dc27-47fe-9ded-4b93d66e6d21">
 
 ### Responsibilities
-A list of tasks has been created and will be equally delegated to each team member depending on workload. However, certain tasks may be done in a joint effort or will be compartmentalized. For example, each team member will be responsible for interviewing and collecting the data for their chosen participants.
-
-  - Conduct the evaluations and gather participants
-  - Analyse observability results
-  - Analyse questionnaire results
-  - Analyse interview results
-  - Summarize findings from all analysis 
-  - Discuss game changes / improvements and discuss priorities
+- Each team member will manage their own participants
+- Each team member will have at least 4 participants (2 for querying and 2 for observabilities)
+- The team will work together to complete the data analysis and construct the priority list for changes to be made
+- The team will allocate tasks for the changes to be made to each member based on their current workload and available time
   
 
 
