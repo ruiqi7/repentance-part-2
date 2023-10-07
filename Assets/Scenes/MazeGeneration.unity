@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
+  m_IndirectSpecularColor: {r: 0.071000196, g: 0.07882018, b: 0.1439682, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4656,7 +4656,7 @@ MonoBehaviour:
   salt: {fileID: 2990223106058727067, guid: 8fa6ec9e393d5c14c84e8cc88512b11f, type: 3}
   eyeballsJar: {fileID: 744538769819870383, guid: 4be6f8c40a603f8429df8468c220943b, type: 3}
   witheredFlower: {fileID: 5445750326216136529, guid: 26eaaf135204cc34791eb0c251d47b19, type: 3}
-  NPC1: {fileID: 8341829918827141145, guid: 928b66006fecfed40b47f556f74bce7b, type: 3}
+  NPC3: {fileID: 8341829918827141145, guid: 928b66006fecfed40b47f556f74bce7b, type: 3}
   NPC2: {fileID: 7062151776241769715, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
   eyeballLetter: {fileID: 65701115}
   letter1: {fileID: 1247243236}
@@ -6367,7 +6367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80.51646, y: 0}
+  m_AnchoredPosition: {x: 80.51636, y: 0}
   m_SizeDelta: {x: 139.4978, y: 0}
   m_Pivot: {x: 0.000000014901161, y: 0.5}
 --- !u!1 &1108320394

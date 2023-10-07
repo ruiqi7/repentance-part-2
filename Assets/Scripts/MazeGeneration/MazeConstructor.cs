@@ -17,7 +17,7 @@ public class MazeConstructor : MonoBehaviour
     public GameObject salt;
     public GameObject eyeballsJar;
     public GameObject witheredFlower;
-    public GameObject NPC1;
+    public GameObject NPC3;
     public GameObject NPC2;
     public GameObject eyeballLetter;
     public GameObject letter1;
@@ -42,7 +42,7 @@ public class MazeConstructor : MonoBehaviour
     private static int saltCount = 0;
     private static int eyeballsJarCount = 0;
     private static int witheredFlowerCount = 0;
-    private static int NPC1Count = 0;
+    private static int NPC3Count = 0;
     private static int NPC2Count = 0;
     private static int letterCount = 0;
 
@@ -158,10 +158,10 @@ public class MazeConstructor : MonoBehaviour
                     witheredFlowerCount++;
                     maze[i,j] = -1;
                 }
-                else if (maze[i, j] == 7 && NPC1Count<NPCNum)
+                else if (maze[i, j] == 7 && NPC3Count<NPCNum)
                 {
-                    Instantiate(NPC1, new Vector3(j*width, 0, i*width), Quaternion.identity);
-                    NPC1Count++;
+                    Instantiate(NPC3, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC3Count++;
                     maze[i,j] = -1;
                 }
                 else if (maze[i, j] == 7 && NPC2Count<NPCNum)
@@ -189,14 +189,14 @@ public class MazeConstructor : MonoBehaviour
                     letterCount++;
                 }
                 // Spawns NPCs and eyeball jar at first possible spot if random generation fails
-                if(NPC1Count == 0 && i==0){
+                if(NPC3Count == 0 && i==0){
                     for (int m = rMax-10; m >= 0; m--)
                     {
                         for (int n = 7; n <= cMax; n++)
                         {
-                            if(maze[m,n] != 1 && maze[m,n] != -1 && NPC1Count == 0){
-                                Instantiate(NPC1, new Vector3(n*width, 0, m*width), Quaternion.identity);
-                                NPC1Count++;
+                            if(maze[m,n] != 1 && maze[m,n] != -1 && NPC3Count == 0){
+                                Instantiate(NPC3, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                NPC3Count++;
                                 maze[m,n] = -1;
                             }
                         }

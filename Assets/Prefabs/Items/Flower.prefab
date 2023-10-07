@@ -112,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: -0.15, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8970747306416694848}
@@ -153,6 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: C O L L E C T [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
+  particle: {fileID: 0}
+  clip: {fileID: 0}
   itemName: Flower
 --- !u!114 &3588949404909888808
 MonoBehaviour:
