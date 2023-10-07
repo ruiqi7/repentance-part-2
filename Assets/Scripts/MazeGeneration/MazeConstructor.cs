@@ -160,13 +160,15 @@ public class MazeConstructor : MonoBehaviour
                 }
                 else if (maze[i, j] == 7 && NPC3Count<NPCNum)
                 {
-                    Instantiate(NPC3, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    //Instantiate(NPC3, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC3.transform.position = new Vector3(j*width, 0, i*width);
                     NPC3Count++;
                     maze[i,j] = -1;
                 }
                 else if (maze[i, j] == 7 && NPC2Count<NPCNum)
                 {
-                    Instantiate(NPC2, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    //Instantiate(NPC2, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC2.transform.position = new Vector3(j*width, 0, i*width);
                     NPC2Count++;
                     maze[i,j] = -1;
                 }
@@ -195,7 +197,8 @@ public class MazeConstructor : MonoBehaviour
                         for (int n = 7; n <= cMax; n++)
                         {
                             if(maze[m,n] != 1 && maze[m,n] != -1 && NPC3Count == 0){
-                                Instantiate(NPC3, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                //Instantiate(NPC3, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                NPC3.transform.position = new Vector3(n*width, 0, m*width);
                                 NPC3Count++;
                                 maze[m,n] = -1;
                             }
@@ -208,11 +211,10 @@ public class MazeConstructor : MonoBehaviour
                     for (int n = 5; n <= cMax; n++)
                     {
                         if(maze[m,n] != 1 && maze[m,n] != -1  && NPC2Count == 0){
-                            Instantiate(NPC2, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                            //Instantiate(NPC2, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                            NPC2.transform.position = new Vector3(n*width, 0, m*width);
                             NPC2Count++;
                             maze[m,n] = -1;
-                            m--;
-                            n++;
                         }
                         else if(maze[m,n] != 1 && maze[m,n] != -1  && eyeballsJarCount == 0){
                             Instantiate(eyeballsJar, new Vector3(n*width, 0, m*width), Quaternion.identity);
