@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7980559195701633442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 128.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 142.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_Name
+      value: NPC2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3673555499081163877}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9140519678138615256}
+  m_SourcePrefab: {fileID: 100100000, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+--- !u!1 &7062151776241769715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c91eddb9706f54b4c8e4487b7b88c557, type: 3}
+  m_PrefabInstance: {fileID: 7980559195701633442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3673555499081163877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062151776241769715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0834656, y: 4.268325, z: 1.5664368}
+  m_Center: {x: 0.078948975, y: 1.6341622, z: 0.044891357}
+--- !u!114 &9140519678138615256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062151776241769715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a3b16862443f3469c8af65313f695b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: I N T E R A C T [E]
+  font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
+  particle: {fileID: 0}
+  clip: {fileID: 0}
+  linesWithoutItem:
+  - Bring me the child's doll...
+  linesWithItem:
+  - Here is your reward...
+  - Your flashlight will not fail you so soon...
+  dialogueBox: {fileID: 0}
+  dialogueController: {fileID: 0}
+  dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  flashlight: {fileID: 0}
+  item: Doll
+  inventory: {fileID: 0}
+  batteryBar: {fileID: 0}

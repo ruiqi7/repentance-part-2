@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1280693014517384426
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7062151776241769715, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_Name
+      value: NPC3 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 128.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 142.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586908628187645513, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7062151776241769715, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4916641009668907032}
+  m_SourcePrefab: {fileID: 100100000, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+--- !u!1 &8341829918827141145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7062151776241769715, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+  m_PrefabInstance: {fileID: 1280693014517384426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4916641009668907032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8341829918827141145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ce5ed5bceaa7b4ab7b338dd41a7088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: I N T E R A C T [E]
+  font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
+  particle: {fileID: 0}
+  clip: {fileID: 0}
+  lines:
+  - You shouldn't have come here...
+  - They will get revenge...
+  - You must die...
+  dialogueBox: {fileID: 0}
+  dialogueController: {fileID: 0}
+  dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  flashlight: {fileID: 0}
