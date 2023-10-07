@@ -58,8 +58,11 @@ public class ChaseCamera : MonoBehaviour
         }
         RaycastHit hit;
         Vector3 direction = targetPosition - transform.position;
-        Debug.DrawRay(transform.position, direction, Color.green);
-        if(Physics.Raycast(transform.position, direction, out hit, 1.0f)) {
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, Color.green);
+        Debug.Log("drawing ray");
+        if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, out hit, 4.0f)) {
+            Debug.Log("hit something");
+            Debug.Log(hit.collider.tag);
             if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
                 targetPosition = GetRandomTarget();
             }

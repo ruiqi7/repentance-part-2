@@ -105,6 +105,15 @@ public class MazeConstructor : MonoBehaviour
 
         MeshRenderer mr = go.AddComponent<MeshRenderer>();
         mr.materials = new Material[2] {mazeMat1, mazeMat2};
+
+        Rigidbody rb = go.AddComponent<Rigidbody>();
+        rb.mass = 0;
+        rb.drag = 0;
+        rb.angularDrag = 0.05f;
+        rb.isKinematic = true;
+        rb.useGravity = true;
+        rb.automaticCenterOfMass = true;
+        rb.automaticInertiaTensor = true;
     }
 
     private void SpawnItems()

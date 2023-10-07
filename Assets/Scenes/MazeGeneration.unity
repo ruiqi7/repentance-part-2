@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.071000196, g: 0.07882018, b: 0.1439682, a: 1}
+  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1102,7 +1102,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   minX: 6
   maxX: 260
   minZ: 4
-  maxZ: 92
+  maxZ: 260
   audioSource: {fileID: 612437550}
 --- !u!4 &94079777 stripped
 Transform:
@@ -5336,10 +5336,10 @@ MonoBehaviour:
   target: {fileID: 1064079130}
   speed: 0.07
   distance: 30
-  minX: 150
+  minX: 6
   maxX: 260
-  minZ: 3
-  maxZ: 100
+  minZ: 6
+  maxZ: 260
   audioSource: {fileID: 612437550}
 --- !u!95 &931394963
 Animator:
@@ -5362,27 +5362,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &931394964
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931394960}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.1082368, y: 3.6452637, z: 7.1884627}
-  m_Center: {x: 0.0013329085, y: 6.6662354, z: 0.68831205}
 --- !u!1 &972352168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,12 +5648,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.917341, y: 4.0844975, z: 7.8912396}
-  m_Center: {x: -0.1286833, y: 6.488214, z: 0.66294575}
+  m_Size: {x: 2.917341, y: 4.074579, z: 10.615192}
+  m_Center: {x: -0.12868334, y: 6.4930606, z: 0.25386232}
 --- !u!114 &1025090474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5689,10 +5668,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1064079130}
   speed: 0.07
-  minX: 150
+  minX: 6
   maxX: 260
-  minZ: 3
-  maxZ: 265
+  minZ: 4
+  maxZ: 260
   audioSource: {fileID: 612437550}
 --- !u!1 &1028559766
 GameObject:
@@ -7501,9 +7480,6 @@ PrefabInstance:
     - {fileID: -8700617353114198275, guid: a88401ab56f38415ab7ffcfe65eab51f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a88401ab56f38415ab7ffcfe65eab51f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 931394964}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a88401ab56f38415ab7ffcfe65eab51f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 931394963}
