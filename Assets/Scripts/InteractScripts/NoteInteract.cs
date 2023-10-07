@@ -35,7 +35,7 @@ public class NoteInteract : InteractableInterface
         Cursor.visible = false;
         isOpen = false;
         if(SceneManager.GetActiveScene().name == "IntroScene"){
-            SceneManager.LoadScene("Maze-enemies");
+            SceneManager.LoadScene("MazeGeneration");
         }
     }
     private void Update(){
