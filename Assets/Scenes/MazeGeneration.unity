@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.071000196, g: 0.07882018, b: 0.1439682, a: 1}
+  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1201,10 +1201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1064079130}
   speed: 0.07
-  minX: 6
-  maxX: 260
-  minZ: 4
-  maxZ: 260
+  minX: 5
+  maxX: 234
+  minZ: 5
+  maxZ: 234
   audioSource: {fileID: 612437550}
 --- !u!4 &94079777 stripped
 Transform:
@@ -5397,11 +5397,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1064079130}
   speed: 0.07
-  distance: 30
-  minX: 6
-  maxX: 260
-  minZ: 6
-  maxZ: 260
+  distance: 20
+  minX: 5
+  maxX: 234
+  minZ: 5
+  maxZ: 234
   audioSource: {fileID: 612437550}
 --- !u!95 &931394963
 Animator:
@@ -5756,10 +5756,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1064079130}
   speed: 0.07
-  minX: 6
-  maxX: 260
-  minZ: 4
-  maxZ: 260
+  minX: 5
+  maxX: 234
+  minZ: 5
+  maxZ: 234
   audioSource: {fileID: 612437550}
 --- !u!1 &1028559766
 GameObject:
