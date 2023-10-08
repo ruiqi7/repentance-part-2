@@ -11,10 +11,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private int gameOverPageIndex = 0;
     [SerializeField] private int gameWonPageIndex = 0;
     [SerializeField] private GameObject audioManager;
+    [SerializeField] private GameObject dialogueBox;
 
     private bool isPaused = false;
     private float timePassed = 0;
     private CameraController cameraController;
+
+    public float getTimePassed() {
+        return timePassed;
+    }
 
     void Start()
     {
@@ -30,11 +35,11 @@ public class UIManager : MonoBehaviour
         {
             TogglePause();
         }
-        if (!isPaused && currentScene.name == "Maze-enemies")
+        if (!isPaused && currentScene.name == "MazeGeneration")
         {
             timePassed += Time.deltaTime;
         }
-        if (currentScene.name == "Maze-enemies" && timePassed >= 300 && !isPaused)
+        if (currentScene.name == "MazeGeneration" && timePassed >= 300 && !isPaused)
         {
             GameWon();
         } 
@@ -86,6 +91,7 @@ public class UIManager : MonoBehaviour
 
     public void GameOver()
     {
+        dialogueBox.SetActive(false);
         ChangePage(gameOverPageIndex);
         PauseGame();
         allowPause = false;
@@ -94,6 +100,7 @@ public class UIManager : MonoBehaviour
 
     private void GameWon()
     {
+        dialogueBox.SetActive(false);
         ChangePage(gameWonPageIndex);
         PauseGame();
         allowPause = false;

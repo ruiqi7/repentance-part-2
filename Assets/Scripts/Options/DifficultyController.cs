@@ -2,49 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DifficultyController : MonoBehaviour
 {
-    private Color color;
-
     void Start()
     {
         if (!PlayerPrefs.HasKey("difficulty"))
         {
-            PlayerPrefs.SetInt("difficulty", 0);
+            PlayerPrefs.SetString("difficulty", "Easy");
         }
         LoadDifficulty();
     }
 
     public void AdjustDifficulty()
     {
-        int index = transform.GetSiblingIndex();
-        SaveDifficulty(index);
+        string difficulty = gameObject.name.Substring(0, 4);
+        SaveDifficulty(difficulty);
         LoadDifficulty();
     }
 
     private void LoadDifficulty()
     {
-        int difficulty = PlayerPrefs.GetInt("difficulty");
-        for (int i = 0; i < transform.parent.childCount; i++)
+        TextMeshProUGUI selectedDifficultyText;
+        TextMeshProUGUI unselectedDifficultyText;
+        
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        if (difficulty == "Easy")
         {
-            Transform sibling = transform.parent.GetChild(i);
-            Image siblingImage = sibling.gameObject.GetComponent<Image>();
-            Color siblingColor = siblingImage.color;
-            if (i <= difficulty)
-            {
-                siblingColor.a = 1.0f;
-            }
-            else
-            {
-                siblingColor.a = 0.5f;
-            }
-            siblingImage.color = siblingColor;
+            selectedDifficultyText = transform.parent.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+            unselectedDifficultyText = transform.parent.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         }
+        else
+        {
+            selectedDifficultyText = transform.parent.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+            unselectedDifficultyText = transform.parent.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        }
+        selectedDifficultyText.color = new Color(255, 255, 255, 200);
+        unselectedDifficultyText.color = new Color(255, 255, 255, 0.5f);
     }
 
-    private void SaveDifficulty(int difficulty)
+    private void SaveDifficulty(string difficulty)
     {
-        PlayerPrefs.SetInt("difficulty", difficulty);
+        PlayerPrefs.SetString("difficulty", difficulty);
     }
 }

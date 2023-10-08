@@ -13,7 +13,7 @@ public class NoteInteract : InteractableInterface
     [SerializeField] [TextArea] private string noteText;
     [SerializeField] CharacterController player;
     [SerializeField] CameraController cameraController;
-    private bool isOpen = false;
+    public bool isOpen = false;
     public override void interact(){
         if(!isOpen){ShowNote();}    
     }
@@ -35,7 +35,7 @@ public class NoteInteract : InteractableInterface
         Cursor.visible = false;
         isOpen = false;
         if(SceneManager.GetActiveScene().name == "IntroScene"){
-            SceneManager.LoadScene("Maze-enemies");
+            SceneManager.LoadScene("MazeGeneration");
         }
     }
     private void Update(){

@@ -24,12 +24,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Slider staminaBar;
     [SerializeField] private float maxStamina;
 
+    private bool conserveStamina = false;
+    private bool speedBoost = false;
+
     void Start()
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
     }
-    
+
     void FixedUpdate()
     {
         // Keyboard Input
@@ -40,7 +43,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {   
             speed = sprintSpeed;
-            staminaBar.value -= 0.005f;
+            if (!conserveStamina)
+            {
+                string difficulty = PlayerPrefs.GetString("difficulty");
+                if (difficulty == "Easy")
+                {
+                    staminaBar.value -= 0.005f;
+                }
+                else
+                {
+                    staminaBar.value -= 0.01f;
+                }
+            }
             if(staminaBar.value <= 0){
                 speed = baseSpeed;
             }
@@ -64,6 +78,36 @@ public class PlayerController : MonoBehaviour
             Vector3 enemyPosition = collision.gameObject.transform.position;
             transform.LookAt(new Vector3(enemyPosition.x, enemyPosition.y + 1.5f, enemyPosition.z));
             uiManagerScript.GameOver();
+        }
+    }
+
+    public void SpeedBoost()
+    {
+        if (!speedBoost)
+        {
+            speedBoost = true;
+            baseSpeed += 0.05f;
+            sprintSpeed += 0.05f;
+            Invoke("SpeedBoost", 20.0f);
+        }
+        else
+        {
+            speedBoost = false;
+            baseSpeed -= 0.05f;
+            sprintSpeed -= 0.05f;
+        }
+    }
+
+    public void ConserveStamina()
+    {
+        if (!conserveStamina)
+        {
+            conserveStamina = true;
+            Invoke("ConserveStamina", 20.0f);
+        }
+        else
+        {
+            conserveStamina = false;
         }
     }
 }

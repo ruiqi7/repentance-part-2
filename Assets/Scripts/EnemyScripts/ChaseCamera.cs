@@ -34,7 +34,7 @@ public class ChaseCamera : MonoBehaviour
         Vector3 direction = target.transform.position - transform.position;
         Debug.DrawRay(transform.position, direction, Color.yellow);
         if(Physics.Raycast(transform.position, direction, out hit)) {
-            if(hit.collider.tag == "Wall") {
+            if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
                 moveRandom();
             } else if(hit.collider.tag == "Player") {
                 if(!handling) {
@@ -56,13 +56,22 @@ public class ChaseCamera : MonoBehaviour
         }
         RaycastHit hit;
         Vector3 direction = targetPosition - transform.position;
-        Debug.DrawRay(transform.position, direction, Color.green);
-        if(Physics.Raycast(transform.position, direction, out hit, 1.0f)) {
-            if(hit.collider.tag == "Wall") {
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, Color.green);
+        if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, out hit, 4.0f)) {
+            if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
                 targetPosition = GetRandomTarget();
             }
         }
-        Vector3 newPos = Vector3.MoveTowards(transform.position, targetPosition, speed);
+        Vector3 newPos;
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        if (difficulty == "Easy")
+        {
+            newPos = Vector3.MoveTowards(transform.position, targetPosition, speed);
+        }
+        else
+        {
+            newPos = Vector3.MoveTowards(transform.position, targetPosition, speed*1.5f);
+        }
         rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
     }
 
