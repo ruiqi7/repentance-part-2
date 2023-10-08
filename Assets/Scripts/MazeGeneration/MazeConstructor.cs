@@ -27,6 +27,7 @@ public class MazeConstructor : MonoBehaviour
     public GameObject letter8;
     public GameObject letter9;
     public GameObject letter10;
+    public BoxCollider boxCol;
 
 
     private int candleNum = 4;
@@ -224,6 +225,9 @@ public class MazeConstructor : MonoBehaviour
                         }
                     }
                 }
+                }
+                if(maze[i,j]==1){
+                    Instantiate(boxCol, new Vector3(j*width, 0, i*width), Quaternion.identity);
                 }
 
             }                   
