@@ -30,11 +30,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
-        string difficulty = PlayerPrefs.GetString("difficulty");
-        SetMaxStamina(difficulty);
         staminaBar.value = maxStamina;
     }
-    
+
     void FixedUpdate()
     {
         // Keyboard Input
@@ -47,7 +45,15 @@ public class PlayerController : MonoBehaviour
             speed = sprintSpeed;
             if (!conserveStamina)
             {
-                staminaBar.value -= 0.005f;
+                string difficulty = PlayerPrefs.GetString("difficulty");
+                if (difficulty == "Easy")
+                {
+                    staminaBar.value -= 0.005f;
+                }
+                else
+                {
+                    staminaBar.value -= 0.01f;
+                }
             }
             if(staminaBar.value <= 0){
                 speed = baseSpeed;
@@ -102,14 +108,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             conserveStamina = false;
-        }
-    }
-
-    private void SetMaxStamina(string difficulty)
-    {
-        if (difficulty == "Hard")
-        {
-            staminaBar.maxValue *= 0.5f;
         }
     }
 }
