@@ -69,7 +69,7 @@ MonoBehaviour:
   - Oh gosh... eyeballs?
   - Whoever lost them would probably want them back...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.05
+  dialogueSpeed: 0.1
 --- !u!65 &8285589159403783325
 BoxCollider:
   m_ObjectHideFlags: 0
