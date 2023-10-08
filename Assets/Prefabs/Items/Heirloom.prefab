@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linesWhenItemUsed: []
   linesWhenItemNotUsed:
-  - An old knife?
-  - This heirloom seems burdened with secrets.
-  - I wonder if it once served in acts of heroism or something far more sinister...
+  - This heirloom is stained with the blood of its victims...
+  - A haunting reminder of the darkness that runs in my family's veins...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.05
+  dialogueSpeed: 0.1

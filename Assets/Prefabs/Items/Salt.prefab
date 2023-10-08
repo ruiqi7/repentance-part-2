@@ -251,7 +251,7 @@ MonoBehaviour:
   linesWhenItemNotUsed:
   - I need more space to scatter the salt around...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.05
+  dialogueSpeed: 0.1
   dissolveSpeed: 0.1
 --- !u!65 &8393263345968188860
 BoxCollider:

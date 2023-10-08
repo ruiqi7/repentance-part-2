@@ -50,4 +50,4 @@ MonoBehaviour:
   - Thank goodness for this flashlight!
   - I can use it to see what lurks around here...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.05
+  dialogueSpeed: 0.1
