@@ -233,7 +233,7 @@ MonoBehaviour:
   clip: {fileID: 0}
   noteCanvas: {fileID: 1554092060}
   noteTextArea: {fileID: 766279053}
-  noteText: "\n17 OCTOBER 1732\n\n02:00   A loud bang\n\n02:05   Bone-chilling screams\n\n02:10   
+  noteText: "\n17 OCTOBER 1744\n\n02:00   A loud bang\n\n02:05   Bone-chilling screams\n\n02:10   
     Cries of horror \n\n02:20    Footsteps running into the distance\n\n02:25   
     Dead Silence     \n"
   player: {fileID: 1064079134}
