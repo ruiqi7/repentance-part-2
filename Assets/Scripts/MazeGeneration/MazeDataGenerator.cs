@@ -47,11 +47,11 @@ public class MazeDataGenerator
             
             //2 (Adds Empty Space in Middle of Maze as Spawn Area)
             else if (i > rMax/2 - 3 && i < rMax/2 + 3 && j > cMax/2 - 3 && j < cMax/2 + 3){
-
+                //maze[i,j] = -1;
             } 
             
             //3 (Adds Empty Spaces for Enemy Spawn Points)
-            else if ((i == 6 && j == 6) || (i == 27 && j == 6) || (i == 15 && j == 27)  ){
+            else if ((i == 3 && j == 3) || (i == 11 && j == 24) || (i == 24 && j == 3)  ){
                 //maze[i,j] = -1;
             }
             
