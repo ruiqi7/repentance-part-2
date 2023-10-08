@@ -11,7 +11,7 @@ public class FlowerHandler : ItemHandlerInterface
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance)) {
-            if (hit.collider.transform.parent.name == "Graves") {
+            if (hit.collider.transform.parent != null && hit.collider.transform.parent.name == "Graves") {
                 bool placed = PlaceFlower(hit.collider.gameObject);
                 if (placed)
                 {
