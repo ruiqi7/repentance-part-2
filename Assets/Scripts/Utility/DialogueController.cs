@@ -18,7 +18,7 @@ public class DialogueController : MonoBehaviour
             textBox.text = String.Empty;
             StartCoroutine(IntroDialogue());
         }
-        else if (SceneManager.GetActiveScene().name == "Maze-enemies")
+        else if (SceneManager.GetActiveScene().name == "MazeGeneration")
         {
             textBox.text = String.Empty;
             StartCoroutine(InstructionsDialogue());
