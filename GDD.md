@@ -183,7 +183,7 @@ In order to make the game more engaging for multiple attempts, a different maze 
 
 ### 4.1 Game World 
 
-The world seen by the player is a maze with an aesthetic style inspired by the Maze Runner. It is 3D and will be displayed on a single screen. Only one level will be available, but the maze will be randomly generated and changed each time the game is played. This allows the game to be replayed multiple times. The player will also be able to change the difficulty. The player starts in the centre of the maze and will have to navigate through the maze by exploring and avoiding monsters. Hints may be available to the player if they find them in the maze. However, no map/minimap will be available as it would defeat the purpose of the maze. 
+The world seen by the player is a maze with an aesthetic style inspired by the Maze Runner. It is 3D and will be displayed on a single screen. Only one level will be available, but the maze will be randomly generated and changes each time the game is played. This allows the game to be replayed multiple times. The player will also be able to change the difficulty. The player starts in the centre of the maze and will have to navigate through the maze by exploring and avoiding monsters. Hints may be available to the player if they find them in the maze. However, no map/minimap will be available as it would defeat the purpose of the maze. 
 
 <p align="center">
   <img src="Images/MazeDiagram.png" width=400>
@@ -231,10 +231,14 @@ The world seen by the player is a maze with an aesthetic style inspired by the M
 
 ### 4.3 Physics 
 
-- Players will collide with the walls of the maze.
+- Player will collide with the walls of the maze.
 - Player will accelerate up to a certain speed when they sprint. 
 - Player will decelerate to normal speed when they stop sprinting or run out of stamina. 
-- Players will collide with tombstones.
+- Player will collide with tombstones.
+- Player will collide with items.
+- Player will collide with NPCs.
+- Enemies will collide with the walls of the maze
+- Enemies will collide with the player
 
 ## 5. Art and Audio
 
