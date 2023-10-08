@@ -39,7 +39,7 @@ public class FlowerHandler : ItemHandlerInterface
         Vector3 gravePos = grave.transform.position;
         Vector3 graveDir = grave.transform.up;
         Vector3 pos = gravePos + graveDir * 0.6f;
-        pos.y = -0.15f;
+        pos.y = -0.05f;
 
         Vector3 graveRot = grave.transform.localEulerAngles;
         GameObject flower = Instantiate(gameObject, pos, Quaternion.Euler(0.0f, graveRot.y - 90.0f, 0.0f));

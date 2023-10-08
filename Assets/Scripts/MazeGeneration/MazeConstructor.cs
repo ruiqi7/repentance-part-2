@@ -135,7 +135,7 @@ public class MazeConstructor : MonoBehaviour
                 } 
                 else if (maze[i, j] == 3 && dollCount<dollNum)
                 {
-                    Instantiate(doll, new Vector3(j*width, 0.2f, i*width), Quaternion.Euler(new Vector3(270, 0, 0)));
+                    Instantiate(doll, new Vector3(j*width, 0.25f, i*width), Quaternion.Euler(new Vector3(270, 0, 0)));
                     dollCount++;
                     maze[i,j] = -1;
                 }
@@ -147,14 +147,14 @@ public class MazeConstructor : MonoBehaviour
                 }
                 else if (maze[i, j] == 5 && eyeballsJarCount<eyeballsJarNum)
                 {
-                    Instantiate(eyeballsJar, new Vector3(j*width, -0.11f, i*width), Quaternion.identity);
+                    Instantiate(eyeballsJar, new Vector3(j*width, -0.19f, i*width), Quaternion.identity);
                     eyeballLetter.transform.position = new Vector3(j*width+0.25f, 0.01f, i*width+0.25f);
                     eyeballsJarCount++;
                     maze[i,j] = -1;
                 }
                 else if (maze[i, j] == 6 && witheredFlowerCount<witheredFlowerNum)
                 {
-                    Instantiate(witheredFlower, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    Instantiate(witheredFlower, new Vector3(j*width, -0.05f, i*width), Quaternion.identity);
                     witheredFlowerCount++;
                     maze[i,j] = -1;
                 }
