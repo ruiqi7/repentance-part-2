@@ -183,7 +183,7 @@ In order to make the game more engaging for multiple attempts, a different maze 
 
 ### 4.1 Game World 
 
-The world seen by the player is a maze with an aesthetic style inspired by the Maze Runner. It is 3D and will be displayed on a single screen. There is only one level, however, the maze will be randomly generated and changed each time the game is played. This allows the game to be replayed multiple times. The player will also be able to change the difficulty between easy and hard. The player starts in the centre of the maze and will have to navigate through the maze by exploring and avoiding monsters. Letters containing lore will be found inside the maze alongside other useful items. However, no map/minimap will be available as it would defeat the purpose of the maze. 
+The world seen by the player is a maze with an aesthetic style inspired by the Maze Runner. It is 3D and will be displayed on a single screen. There is only one level, however, the maze will be randomly generated and changed each time the game is played. This allows the game to be replayed multiple times. The player will also be able to change the difficulty between easy and hard. In the hard mode, the player's stamina and flashlight battery will be depleted at a faster rate, and the monsters will move at a higher speed. The player starts in the centre of the maze and will have to navigate through the maze by exploring and avoiding monsters. Letters containing lore will be found inside the maze alongside other useful items. However, no map/minimap will be available as it would defeat the purpose of the maze. 
 
 <p align="center">
   <img src="Images/MazeDiagram.png" width=400>
