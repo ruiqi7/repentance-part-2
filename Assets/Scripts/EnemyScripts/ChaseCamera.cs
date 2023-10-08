@@ -15,8 +15,6 @@ public class ChaseCamera : MonoBehaviour
     private Animator animator;
     void Start()
     {
-        string difficulty = PlayerPrefs.GetString("difficulty");
-        SetEnemySpeed(difficulty);
         transform.LookAt(target.transform.position);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -64,7 +62,16 @@ public class ChaseCamera : MonoBehaviour
                 targetPosition = GetRandomTarget();
             }
         }
-        Vector3 newPos = Vector3.MoveTowards(transform.position, targetPosition, speed);
+        Vector3 newPos;
+        string difficulty = PlayerPrefs.GetString("difficulty");
+        if (difficulty == "Easy")
+        {
+            newPos = Vector3.MoveTowards(transform.position, targetPosition, speed);
+        }
+        else
+        {
+            newPos = Vector3.MoveTowards(transform.position, targetPosition, speed*1.5f);
+        }
         rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
     }
 
@@ -73,13 +80,5 @@ public class ChaseCamera : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
-    }
-
-    private void SetEnemySpeed(string difficulty)
-    {
-        if (difficulty == "Hard")
-        {
-            speed *= 1.5f;
-        }
     }
 }

@@ -16,8 +16,6 @@ public class WalkThroughWalls : MonoBehaviour
     private bool handling = false;
     void Start()
     {
-        string difficulty = PlayerPrefs.GetString("difficulty");
-        SetEnemySpeed(difficulty);
         transform.LookAt(target.transform.position);
         animator = GetComponent<Animator>();
     }
@@ -38,7 +36,16 @@ public class WalkThroughWalls : MonoBehaviour
             startTime = Time.time;
             targetPosition = GetRandomTarget();
         } else {
-            Vector3 newPos = Vector3.MoveTowards(transform.position, targetPosition, speed);
+            Vector3 newPos;
+            string difficulty = PlayerPrefs.GetString("difficulty");
+            if (difficulty == "Easy")
+            {
+                newPos = Vector3.MoveTowards(transform.position, targetPosition, speed);
+            }
+            else
+            {
+                newPos = Vector3.MoveTowards(transform.position, targetPosition, speed*1.5f);
+            }
             transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
             transform.LookAt(targetPosition);
         }
@@ -53,13 +60,5 @@ public class WalkThroughWalls : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
-    }
-
-    private void SetEnemySpeed(string difficulty)
-    {
-        if (difficulty == "Hard")
-        {
-            speed *= 1.5f;
-        }
     }
 }
