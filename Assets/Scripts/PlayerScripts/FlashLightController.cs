@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class FlashLightController : MonoBehaviour
 {
@@ -21,13 +22,15 @@ public class FlashLightController : MonoBehaviour
         batteryBar.maxValue = maxBattery;
         batteryBar.value = maxBattery;
         batteryBar.minValue = 0f;
-        barFill.color = Color.green;
+        if(SceneManager.GetActiveScene().name == "MazeGeneration") {
+            barFill.color = Color.green;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(flashlight.enabled) {
+        if(flashlight.enabled && SceneManager.GetActiveScene().name == "MazeGeneration") {
             batteryBar.value -= 0.0075f;
         }
         transform.position = Camera.position;
@@ -40,10 +43,10 @@ public class FlashLightController : MonoBehaviour
             flashlight.enabled = false;
         }
 
-        if(batteryBar.value < (0.5*maxBattery)) {
+        if(batteryBar.value < (0.5*maxBattery) && SceneManager.GetActiveScene().name == "MazeGeneration") {
             barFill.color = new Color(211f,84f,0f);
         }
-        if(batteryBar.value < (0.25*maxBattery)) {
+        if(batteryBar.value < (0.25*maxBattery) && SceneManager.GetActiveScene().name == "MazeGeneration") {
             barFill.color = Color.red;
         }
     }
