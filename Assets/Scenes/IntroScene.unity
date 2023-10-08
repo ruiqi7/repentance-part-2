@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.75727856, g: 0.33971328, b: 0.03020359, a: 1}
+  m_IndirectSpecularColor: {r: 0.7572785, g: 0.3397133, b: 0.03020359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23142,23 +23142,24 @@ MonoBehaviour:
   clip: {fileID: 0}
   noteCanvas: {fileID: 2101130331}
   noteTextArea: {fileID: 1982722067}
-  noteText: '1732 They Left their belongings Here
+  noteText: 'If you have stumbled across this house, you must be a descendant of
+    the monsters involved in the sinister events that occured here...
 
 
-    1740 They returned to pay
-    their Debt
+    In 1744,
+    your ancestors came and rained terror upon our innocent familly...
 
 
-    1744 They lost their dignity
+    Murdering
+    us all in our home where you now stand...
 
 
-    ...
+    With our own treasured heirloom,
+    a knife passed down for generations...
 
-    ...
 
-
-    1990 You
-    Arrived'
+    Several centuries have passed and
+    we are waiting to get our revenge...'
   player: {fileID: 165251168}
   cameraController: {fileID: 1773207377}
   isOpen: 0
