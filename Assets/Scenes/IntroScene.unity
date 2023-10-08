@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7572785, g: 0.3397133, b: 0.03020359, a: 1}
+  m_IndirectSpecularColor: {r: 0.75727856, g: 0.33971328, b: 0.03020359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1296,7 +1296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: O  P  E  N [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 8300000, guid: f42f47b976eee3c419ad7ffd95ee50e6, type: 3}
   isOpen: 0
   door: {fileID: 432614748}
@@ -1914,6 +1915,10 @@ PrefabInstance:
       propertyPath: allowPause
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3012028706347158955, guid: 703111c91e5148d4faff5956bc73e4e0, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1358457422}
     - target: {fileID: 3012028706347158955, guid: 703111c91e5148d4faff5956bc73e4e0, type: 3}
       propertyPath: audioManager
       value: 
@@ -13025,7 +13030,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: 
   font: {fileID: 0}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
 --- !u!4 &1117041495 stripped
 Transform:
@@ -14090,7 +14096,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: They're Not Here...
   font: {fileID: 11400000, guid: 8b084d56abf890d46aa7ef869ae75e86, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
 --- !u!1 &1450706981
 GameObject:
@@ -15008,7 +15015,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: Read [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
   noteCanvas: {fileID: 2101130331}
   noteTextArea: {fileID: 1982722067}
@@ -22203,7 +22211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: He's Not Here...
   font: {fileID: 11400000, guid: 8b084d56abf890d46aa7ef869ae75e86, type: 2}
-  particle: {fileID: 6092157959377134483, guid: 72b7fb1caed3f1d4996eaaa88643b953, type: 3}
+  particle:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   clip: {fileID: 0}
 --- !u!1 &2003948372
 GameObject:
@@ -22525,7 +22536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: She's Not Here...
   font: {fileID: 11400000, guid: 8b084d56abf890d46aa7ef869ae75e86, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
 --- !u!1 &2071979632
 GameObject:
@@ -23138,7 +23150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: Read [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
   noteCanvas: {fileID: 2101130331}
   noteTextArea: {fileID: 1982722067}
@@ -23292,7 +23305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: DONT LOOK
   font: {fileID: 11400000, guid: 8b084d56abf890d46aa7ef869ae75e86, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
 --- !u!1 &5280334568758825147
 GameObject:
