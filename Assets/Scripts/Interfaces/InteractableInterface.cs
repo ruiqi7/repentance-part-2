@@ -6,7 +6,7 @@ public abstract class InteractableInterface : MonoBehaviour
 {
     public string interactText;
     [SerializeField] public TMP_FontAsset font;
-    [SerializeField] public ParticleSystem particle;
+    [SerializeField] public ParticleSystem[] particle;
     [SerializeField] public AudioClip clip;
     public virtual void interact() {}
 

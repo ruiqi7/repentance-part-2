@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using TMPro;
+using System.Linq;
 
 public class NPCInteractTimer : InteractableInterface
 {
@@ -16,9 +18,17 @@ public class NPCInteractTimer : InteractableInterface
     [SerializeField] public Color dialogueColor = Color.white;
     [SerializeField] public GameObject UIManager;
     private bool isTalking = false;
-
     public override void interact(){
         if(!isTalking){
+            interactText = "";
+            if(this.particle[0]){
+                for(int i = 0;i < this.particle.Count();i ++){
+                    this.particle[i].Play();
+                }
+                if(clip){
+                    AudioSource.PlayClipAtPoint(clip, this.transform.position);
+                }
+            }
             speak();
         }
     }
@@ -42,6 +52,7 @@ public class NPCInteractTimer : InteractableInterface
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
+            interactText = "Interact [E]";
         }
     }
 }

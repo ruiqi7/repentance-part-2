@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using System.Linq;
 
 public class NPCInteractInventory : InteractableInterface
 {
@@ -24,6 +25,7 @@ public class NPCInteractInventory : InteractableInterface
     public override void interact(){
         if(!isTalking){
             started = true;
+            interactText = "";
             speak();
         }
     }
@@ -32,8 +34,20 @@ public class NPCInteractInventory : InteractableInterface
         if(inventory.GetComponent<InventoryController>().CheckInventory(item)) {
             dialogueController.lines = linesWithItem;
             hadItem = true;
+             if(this.particle[0]){
+                for(int i = 0;i < this.particle.Count();i ++){
+                    this.particle[i].Play();
+                }
+                if(clip){
+                    AudioSource.PlayClipAtPoint(clip, this.transform.position);
+                }
+            }
+            
         } else {
             dialogueController.lines = linesWithoutItem;
+           if(this.particle[0]){
+                this.particle[0].Play();
+            }
         }
         dialogueController.textColor = dialogueColor;
         dialogueBox.SetActive(true);
@@ -46,6 +60,7 @@ public class NPCInteractInventory : InteractableInterface
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
+            interactText = "I N T E R A C T [E]";
             if(started && hadItem) {
                 int index = inventory.GetComponent<InventoryController>().GetItemIndex(item);
                 inventory.GetComponent<InventoryController>().RemoveFromInventory(index);
