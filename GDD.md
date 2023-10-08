@@ -210,7 +210,7 @@ Tombstones and the house are located at the start of the maze. An NPC can also b
     <p align="center">
     <img src="Images/Eyeballs.png" width=200>
     </p>
-  - Broken Doll (Distracts the monster child)
+  - Broken Doll (Distracts the monster child or can be given to NPC)
     <p align="center">
     <img src="Images/Doll.png" width=200>
     </p>
