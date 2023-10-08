@@ -121,11 +121,12 @@ Standard story implementation into the game through use of cut scenes and dialog
 - NPC : These can be encountered in the maze, they can either help the player or increase the difficulty of the game.
 
 
-#### 2.3.1 NPC Drafting
+#### 2.3.1 NPC Drafting and Model
 
-This particular NPC is mute, and has no eyes, but will return an item when given the Jar of Eyeballs
+This particular NPC is mute, and has no eyes, but will return an item when given the Jar of Eyeballs. The NPCs are ghosts and are therefore transparent.
 <p align="center">
     <img src="Images/npc_draft.png" width=400>
+    <img src="Images/NPC.png" width=300>
 </p>
 
 #### 2.3.2 Monster Drafting and Models
