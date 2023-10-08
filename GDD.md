@@ -117,7 +117,7 @@ Standard story implementation into the game through use of cut scenes and dialog
 - Monster : There are three monsters, these represent the victim family
   - Parent : Chases if the player is too close
   - Parent : Teleports randomly
-  - Child : Hide and seek, the player needs to hide
+  - Child : Chases if the player is too close 
 - NPC : These can be encountered in the maze, they can either help the player or increase the difficulty of the game.
 
 
@@ -193,7 +193,7 @@ Tombstones and the house are located at the start of the maze. An NPC can also b
 
 ### 4.2 Objects 
 
-- Tombstones. Player can destroy tombstones or interact with them in some way to unlock lore. 
+- Tombstones. Player can interact with the tombstones using a candle or withered flower. 
   <p align="center">
   <img src="Images/Tombstone.png" width=300>
   </p>
