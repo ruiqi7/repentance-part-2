@@ -31,13 +31,17 @@ placeholder for it [here](GDD.md).
 ## Evaluation Plan
 
 ### Evaluation techniques
-A mix of techniques will be used as listed: 
 #### Querying Techniques
-  - Interviews — Able to ask more open-ended questions
-  - Questionnaires — Easier to quantify the results
+  - Interviews 
+  - Questionnaires
+
+In order to get the most impactful data through querying techniques we will use both questionnaires and interviews. After the participant has completed the assigned tasks in the game, they will be sent a google forms questionnaire that will ask them to rate different statements on a scale of 1-5. This will allow us to collect quantitative data that can be analysed in a deterministic way. After completing the questionnaire, the participant will be interviewed. Through an interview we will be able to collect more detailed qualitative data that can be analysed to provide deeper insights into that participants experience. The questionnaire and interview questions are discussed in more detail in [Data Collection](#data-collection), whilst the analysis methods are discussed further in [Data Analysis](#data-analysis).
+
 #### Observational Techniques
-  - Think aloud — Can help to uncover usability issues
-  - Cooperative Evaluation — A two-way communication allows for a deeper understanding of the user's thought processes and allows the experimenter to clarify any uncertainties; the experimenter can gain insight into the user's intentions and goals
+  - Think aloud
+  - Post-task walkthrough
+  
+  In order to get the most impactful data through observational techniques we will use a combination of think aloud and post-task walkthrough. Since the game is a horror game, the ambience created throughout the game must be maintained. Therefore, whilst think aloud will be used to allow the participant to clarify anything they need help with, hence allowing us to identify usability issues, any other discussion throughout game play will be kept to a minimum. Post-task walkthrough will be carried out by asking the participant about their thought process for a task immediately after the task is completed. The team member will take notes on different things that occured throughout game play and will discuss these with the participant after. The use of post-task walkthrough will allow us to gauge the memorability of our game and evaluate if these points are positive or negative. The post-task walkthrough notes are discussed further in [Data Collection](#data-collection), whilst the analysis methods are discussed further in [Data Analysis](#data-analysis).
    
 #### Tasks to Perform
   1. Find and collect the heirloom
@@ -52,10 +56,10 @@ A mix of techniques will be used as listed:
 Set in a maze with horror elements, the game is targeted at players who are drawn to experiencing thrill in a controlled environment. Additionally, the 5-minute time constraint on the game makes it suitable for players who prefer or can only afford to play in short bursts.
 
 #### Participants
-Since it is difficult to find participants who specifically match our target audience, the requirement for participants is broadened to be people who enjoy computer games. In addition, Participants who are not well-versed in horror games may provide unique viewpoints and the horror elements they experience may be more effective.
+Since it is difficult to find participants who specifically match our target audience, the requirement for participants is broadened to be people who enjoy computer games. In addition, participants who are not well-versed in horror games may provide unique viewpoints and the horror elements they experience may be more effective.
 
 #### Recruitment 
-Recruiting of participants will be primarily done through friends
+Recruiting of participants will be primarily done through friends.
 
 ### Data collection
 
@@ -112,11 +116,19 @@ The participant will rank each question on a scale of 1-5
 |I felt that 'Repentance' was a unique gaming experience | Strongly disagree - strongly agree |
 |I would play the game again | Never - definitely |
 
+#### Note Taking for Post-task Walkthrough
+
+- the team member must take notes on events throughout gameplay that can be considered significant
+- a significant event will be anything that lead the participant to either be confused or stuck, or an interesting method used to complete a task
+- the team member should also note down events that lead the participant to ask questions or anything that lead to an unusual reaction from the participant
+- responses to the questions asked by the team member should be recorded onto a google docs page
+
 ### Data analysis
 #### Analysing the qualitative data
 - Data will be categorised so that common themes can be seen
 - Within each theme look for commonalities to link them
 - Determine how the different themes relate to each other
+- identify common terms and phrases across different responses
 - Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
 #### Analysing the quantitative data
 - Look for trends in responses 
