@@ -31,7 +31,15 @@ public class FlashLightController : MonoBehaviour
     void FixedUpdate()
     {
         if(flashlight.enabled && SceneManager.GetActiveScene().name == "MazeGeneration") {
-            batteryBar.value -= 0.0075f;
+            string difficulty = PlayerPrefs.GetString("difficulty");
+            if (difficulty == "Easy")
+            {
+                batteryBar.value -= 0.0075f;
+            }
+            else
+            {
+                batteryBar.value -= 0.015f;
+            }
         }
         transform.position = Camera.position;
         transform.rotation= Camera.rotation;

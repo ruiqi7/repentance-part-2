@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.071000196, g: 0.07882018, b: 0.1439682, a: 1}
+  m_IndirectSpecularColor: {r: 0.070943795, g: 0.07876261, b: 0.14394015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: allowPause
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3012028706347158955, guid: 703111c91e5148d4faff5956bc73e4e0, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1740489106}
     - target: {fileID: 3012028706347158955, guid: 703111c91e5148d4faff5956bc73e4e0, type: 3}
       propertyPath: audioManager
       value: 
