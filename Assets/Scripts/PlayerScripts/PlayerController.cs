@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxStamina;
 
     private bool conserveStamina = false;
+    private bool speedBoost = false;
 
     void Start()
     {
@@ -74,10 +75,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ChangeSpeed(float value)
+    public void SpeedBoost()
     {
-        baseSpeed += value;
-        sprintSpeed += value;
+        if (!speedBoost)
+        {
+            speedBoost = true;
+            baseSpeed += 0.05f;
+            sprintSpeed += 0.05f;
+            Invoke("SpeedBoost", 20.0f);
+        }
+        else
+        {
+            speedBoost = false;
+            baseSpeed -= 0.05f;
+            sprintSpeed -= 0.05f;
+        }
     }
 
     public void ConserveStamina()
