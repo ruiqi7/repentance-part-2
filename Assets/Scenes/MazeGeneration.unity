@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
+  m_IndirectSpecularColor: {r: 0.070943795, g: 0.07876261, b: 0.14394015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -770,6 +770,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3147712186644961905, guid: c8c9d353d05915b4d864dd708cfbfa0f, type: 3}
   m_PrefabInstance: {fileID: 40259474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &40259478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7624085904166251509, guid: c8c9d353d05915b4d864dd708cfbfa0f, type: 3}
+  m_PrefabInstance: {fileID: 40259474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40259475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2dd90eef783dd4e88e074e5c9b06fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &65701115
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 3658537544381437641, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 40259478}
     - target: {fileID: 3658537544381437641, guid: e079d4758bad567419a86129be4e49c0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AdjustVolume
@@ -11266,12 +11277,12 @@ GameObject:
   - component: {fileID: 1940639383}
   - component: {fileID: 1940639382}
   m_Layer: 5
-  m_Name: DialogueBox (1)
+  m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1940639381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11279,18 +11290,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940639380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.90036225, y: 0.90036225, z: 0.90036225}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1479872603}
   m_Father: {fileID: 489062839}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -277}
-  m_SizeDelta: {x: 1620, y: 330}
+  m_AnchoredPosition: {x: 45.01828, y: -292.61865}
+  m_SizeDelta: {x: -108.70117, y: -630.4867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940639382
 MonoBehaviour:
