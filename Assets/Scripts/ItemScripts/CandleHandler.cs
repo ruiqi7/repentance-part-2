@@ -5,56 +5,49 @@ using UnityEngine;
 public class CandleHandler : ItemHandlerInterface
 {
     [SerializeField] private int interactDistance = 2;
-    [SerializeField] private float speedIncrement = 0.05f;
     
-    private GameObject player;
-    private PlayerController playerController;
-
     public override bool HandleBehavior()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance)) {
-            if (hit.collider.CompareTag("Tombstone")) {
-                PlaceCandle(hit.collider.gameObject);
-                ShowMonologue(true);
-                return true;
+            if (hit.collider.transform.parent.name == "Graves") {
+                bool placed = PlaceCandle(hit.collider.gameObject);
+                if (placed)
+                {
+                    ShowMonologue(true);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         ShowMonologue(false);
         return false;
     }
 
-    private void PlaceCandle(GameObject tombstone)
+    private bool PlaceCandle(GameObject grave)
     {
-        Vector3 tombstonePos = tombstone.transform.position;
-        Vector3 tombstoneDir = tombstone.transform.up;
-        Vector3 posFront = tombstonePos + tombstoneDir * 0.6f;
-        posFront.y = 0.0f;
-        Vector3 posBack = tombstonePos - tombstoneDir * 0.6f;
-        posBack.y = 0.0f;
-
-        GameObject candle = null;
-        if (isObjectFrontFacing(posFront, posBack))
+        GraveHandler graveHandler = grave.GetComponent<GraveHandler>();
+        if (graveHandler.occupied)
         {
-            candle = Instantiate(gameObject, posFront, Quaternion.identity);
-        }
-        else
-        {
-            candle = Instantiate(gameObject, posBack, Quaternion.identity);
+            return false;
         }
 
-        tombstone.tag = "Untagged"; // cannot place another candle / flower on this tombstone
+        Vector3 gravePos = grave.transform.position;
+        Vector3 graveDir = grave.transform.up;
+        Vector3 pos = gravePos + graveDir * 0.6f;
+        pos.y = 0.0f;
+        GameObject candle = Instantiate(gameObject, pos, Quaternion.identity);
         candle.tag = "Untagged"; // cannot pick up the candle once used
+        graveHandler.occupied = true;
 
-        playerController = player.GetComponent<PlayerController>();
-        playerController.ChangeSpeed(speedIncrement);
-    }
-
-    private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
-    {
-        player = GameObject.FindWithTag("Player");
-        Vector3 playerPos = player.transform.position;
-        return Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack);
+        GameObject player = GameObject.FindWithTag("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        playerController.SpeedBoost();
+        
+        return true;
     }
 }

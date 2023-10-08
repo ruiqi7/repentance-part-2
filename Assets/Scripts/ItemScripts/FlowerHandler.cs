@@ -6,54 +6,50 @@ public class FlowerHandler : ItemHandlerInterface
 {
     [SerializeField] private int interactDistance = 2;
     
-    private GameObject player;
-    
     public override bool HandleBehavior()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance)) {
-            if (hit.collider.CompareTag("Tombstone")) {
-                PlaceFlower(hit.collider.gameObject);
-                ShowMonologue(true);
-                return true;
+            if (hit.collider.transform.parent.name == "Graves") {
+                bool placed = PlaceFlower(hit.collider.gameObject);
+                if (placed)
+                {
+                    ShowMonologue(true);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         ShowMonologue(false);
         return false;
     }
 
-    private void PlaceFlower(GameObject tombstone)
+    private bool PlaceFlower(GameObject grave)
     {
-        Vector3 tombstonePos = tombstone.transform.position;
-        Vector3 tombstoneDir = tombstone.transform.up;
-        Vector3 posFront = tombstonePos + tombstoneDir * 0.6f;
-        posFront.y = -0.15f;
-        Vector3 posBack = tombstonePos - tombstoneDir * 0.6f;
-        posBack.y = -0.15f;
-
-        GameObject flower = null;
-        Vector3 tombstoneRot = tombstone.transform.localEulerAngles;
-        if (isObjectFrontFacing(posFront, posBack))
+        GraveHandler graveHandler = grave.GetComponent<GraveHandler>();
+        if (graveHandler.occupied)
         {
-            flower = Instantiate(gameObject, posFront, Quaternion.Euler(0.0f, tombstoneRot.y - 90.0f, 0.0f));
-        }
-        else
-        {
-            flower = Instantiate(gameObject, posBack, Quaternion.Euler(0.0f, tombstoneRot.y + 90.0f, 0.0f));
+            return false;
         }
         
-        tombstone.tag = "Untagged"; // cannot place another candle / flower on this tombstone
-        flower.tag = "Untagged"; // cannot pick up the flower once used
+        Vector3 gravePos = grave.transform.position;
+        Vector3 graveDir = grave.transform.up;
+        Vector3 pos = gravePos + graveDir * 0.6f;
+        pos.y = -0.15f;
 
+        Vector3 graveRot = grave.transform.localEulerAngles;
+        GameObject flower = Instantiate(gameObject, pos, Quaternion.Euler(0.0f, graveRot.y - 90.0f, 0.0f));
+        flower.tag = "Untagged"; // cannot pick up the flower once used
+        grave.GetComponent<GraveHandler>().occupied = true;
+
+        GameObject player = GameObject.FindWithTag("Player");
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.ConserveStamina();
-    }
 
-    private bool isObjectFrontFacing(Vector3 posFront, Vector3 posBack)
-    {
-        player = GameObject.FindWithTag("Player");
-        Vector3 playerPos = player.transform.position;
-        return Vector3.Distance(playerPos, posFront) < Vector3.Distance(playerPos, posBack);
+        return true;
     }
 }
