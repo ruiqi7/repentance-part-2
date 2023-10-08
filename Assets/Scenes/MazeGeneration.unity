@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.070943795, g: 0.07876261, b: 0.14394015, a: 1}
+  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8914,6 +8914,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: item
+      value: Eyeballs
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 303495860}
@@ -8949,6 +8953,34 @@ PrefabInstance:
       propertyPath: particle.Array.data[2]
       value: 
       objectReference: {fileID: 83152412}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithItem.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithItem.Array.data[0]
+      value: Thank you...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithItem.Array.data[1]
+      value: Through the eyes of the lost...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithItem.Array.data[2]
+      value: You shall find light anew...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithoutItem.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithoutItem.Array.data[0]
+      value: My eyes...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140519678138615256, guid: 499a2af28a17d3840acb66d02c75f839, type: 3}
+      propertyPath: linesWithoutItem.Array.data[1]
+      value: They stole my eyes...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
