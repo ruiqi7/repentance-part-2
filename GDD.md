@@ -64,10 +64,11 @@ Inspired by the dystopian science fiction film ‘Maze Runner’, the game featu
 </p>
 
 #### 1.4.3 Unique Mechanics
-_Repentance_ includes player stamina as a gameplay mechanic that reflects a realistic physical limitation of the player’s character and heightens the challenge of the game. Stamina allows the player to run away from the monsters and gradually replenishes when the player walks. Having to balance multiple resources adds depth to the gameplay and encourages the player to think strategically.
+_Repentance_ includes player stamina as a gameplay mechanic that reflects a realistic physical limitation of the player’s character and heightens the challenge of the game. Stamina allows the player to run away from the monsters and gradually replenishes when the player walks. Having to balance multiple resources adds depth to the gameplay and encourages the player to think strategically.  
+The player also has a flashlight which has limited battery. The battery is intended to last approximately 3 minutes and makes the game significantly more challenging for the player. The player has the opportunity to interact and complete tasks set by NPCs to refill some of the flashlights battery.
 
 <p align="center">
-    <img src="Images/Stamina_Bar.png" width=300>
+    <img src="Images/Game_UI.png" width=300>
 </p>
 
 ## 2. Story and Narrative
@@ -90,6 +91,8 @@ The story starts with the player receiving the will of their estranged parents, 
 <p align="center">
     <img src="Images/gamedia2.png" width=300>
     <img src="Images/gamedia1.png" width=300>
+    <img src="Images/House.png" width=300>
+    <img src="Images/StartLetter.png" width=300>
 </p>
 
 ### 2.2 Story and Game Progression
@@ -114,22 +117,29 @@ Standard story implementation into the game through use of cut scenes and dialog
 - Monster : There are three monsters, these represent the victim family
   - Parent : Chases if the player is too close
   - Parent : Teleports randomly
-  - Child : Hide and seek, the player needs to hide
+  - Child : Chases if the player is too close 
 - NPC : These can be encountered in the maze, they can either help the player or increase the difficulty of the game.
 
 
-#### 2.3.1 NPC Drafting
+#### 2.3.1 NPC Drafting and Model
 
-This particular NPC is mute, and has no eyes, but will return an item when given the Jar of Eyeballs
+This particular NPC is mute, and has no eyes, but will return an item when given the Jar of Eyeballs. The NPCs are ghosts and are therefore transparent.
 <p align="center">
     <img src="Images/npc_draft.png" width=400>
+    <img src="Images/NPC.png" width=300>
 </p>
 
-#### 2.3.2 Monster Drafting
+#### 2.3.2 Monster Drafting and Models
 <p align="center">
     <img src="Images/monster_draft_1.png" width=400 height=350>
     <img src="Images/monster_draft_2.png" width=400 height=350>
 </p>
+
+| Description | Model |
+| --- | --- |
+| Parent #1: This monster will chase the player when they get too close and randomly teleport throughout the maze. | <p><img src="Images/Monster1.png" width=300></p> |
+| Parent #2: This monster will immediately chase the player once it sees them | <p><img src="Images/Monster2.png" width=300></p> |
+| Child: This monster will immediately chase the player once it sees them. Their legs were brutally cut off. | <p><img src="Images/Monster3.png" width=300></p> |
 
 ## 3. Game Mechanics
 
@@ -160,28 +170,30 @@ First-person perspective where the player’s view is defined by the camera. The
 - Esc -> open game menu
 
 ### 3.3 Progression
-The player becomes trapped within the maze when the game begins and they must survive 5 minutes until the sun rises in order to win.
-The maze is broken into three main sections each containing different monsters. Each monster has a different attack style and the player must avoid these monsters as one attack from any monster will kill the player. 
-Throughout the maze, the player will find tombstones that belong to the monsters. The player will have the opportunity to interact with the tombstone, allowing them to uncover different parts of the backstory. The player will also come across different NPCs throughout the maze. The player can interact with the NPCs in the form of a conversation with multiple options that will have different impacts on the difficulty of the game. The game may become easier or harder for the player depending on the choices they make.
+The player begins in an introduction scene where they need to walk to the house to find a letter and the heirloom. After reading the letter the player becomes trapped within the maze and they must survive 5 minutes until in order to win.
+The maze contains 3 monsters. Each monster has a different attack style and the player must avoid these monsters as one attack from any monster will kill the player. 
+Behind the house in the maze, the player will find tombstones that belong to the mosnters. The player will have the opportunity to interact with the tombstone using different items found throughout the game. The player will also come across different NPCs throughout the maze. The player can interact with the NPCs. The 3 NPCs have different functions. The NPC found next to the house at the start of the maze is neutral. It can give the player hints as to how long the game has left. The second NPC wants the players help to find it's eyes that were stolen. If the player interacts with the NPC whilst they have the eyeballs in their inventory, they will recieve a reward. The third NPC is against the player. Interacting with this NPC will put the player at some disadvantage.
 
 ### 3.4 Gameplay Mechanics
-The player is able to walk (using WASD) or sprint (using WASD + shift). The sprint capability is limited by a stamina bar that is depleted and slowly refilled. Additionally, the player is able to use the F key to equip a flashlight in areas of the maze that are too dark for the player to be able to see in. The player will come across different tombstones and NPCs throughout the maze that they can interact with using the E key.
-The limitation of the sprint ability, along with the use of different light levels within the maze will make the game more challenging for the player.
+The player is able to walk (using WASD) or sprint (using WASD + shift). The sprint capability is limited by a stamina bar that is depleted and slowly refilled. Additionally, the player is able to use the F key to equip a flashlight in areas of the maze that are too dark for the player to be able to see in. The player will come across different tombstones, items and NPCs throughout the maze that they can interact with using the E key.
+The limitation of the sprint ability and the flashlight battery, along with the limited light within the maze will make the game more challenging for the player.
 In order to make the game more engaging for multiple attempts, a different maze will be created in each run of the game.
 
 ## 4. Levels and World Design
 
 ### 4.1 Game World 
 
-The world seen by the player is a maze with an aesthetic style inspired by the Maze Runner. It is 3D and will be displayed on a single screen. Only one level will be available, but the maze will be randomly generated and changed each time the game is played. This allows the game to be replayed multiple times. The player will also be able to change the difficulty. The player starts in the centre of the maze and will have to navigate through the maze by exploring and avoiding monsters. Hints may be available to the player if they find them in the maze. However, no map/minimap will be available as it would defeat the purpose of the maze. 
+The world seen by the player is a maze with an aesthetic style inspired by the Maze Runner. It is 3D and will be displayed on a single screen. There is only one level, however, the maze will be randomly generated and changed each time the game is played. This allows the game to be replayed multiple times. The player will also be able to change the difficulty between easy and hard. In the hard mode, the player's stamina and flashlight battery will be depleted at a faster rate, and the monsters will move at a higher speed. The player starts in the centre of the maze and will have to navigate through the maze by exploring and avoiding monsters. Letters containing lore will be found inside the maze alongside other useful items. However, no map/minimap will be available as it would defeat the purpose of the maze. 
 
 <p align="center">
   <img src="Images/MazeDiagram.png" width=400>
 </p>
 
+Tombstones and the house are located at the start of the maze. An NPC can also be found at the start of the maze.
+
 ### 4.2 Objects 
 
-- Tombstones. Player can destroy tombstones or interact with them in some way to unlock lore. 
+- Tombstones. Player can interact with the tombstones using a candle or withered flower. 
   <p align="center">
   <img src="Images/Tombstone.png" width=300>
   </p>
@@ -198,7 +210,7 @@ The world seen by the player is a maze with an aesthetic style inspired by the M
     <p align="center">
     <img src="Images/Eyeballs.png" width=200>
     </p>
-  - Broken Doll (Distracts the monster child)
+  - Broken Doll (Distracts the monster child or can be given to NPC)
     <p align="center">
     <img src="Images/Doll.png" width=200>
     </p>
@@ -221,10 +233,14 @@ The world seen by the player is a maze with an aesthetic style inspired by the M
 
 ### 4.3 Physics 
 
-- Players will collide with the walls of the maze.
+- Player will collide with the walls of the maze.
 - Player will accelerate up to a certain speed when they sprint. 
 - Player will decelerate to normal speed when they stop sprinting or run out of stamina. 
-- Players will collide with tombstones.
+- Player will collide with tombstones.
+- Player will collide with items.
+- Player will collide with NPCs.
+- Enemies will collide with the walls of the maze
+- Enemies will collide with the player
 
 ## 5. Art and Audio
 
@@ -285,6 +301,7 @@ In terms of utilising pre-built assets, they will typically be sourced from the 
 - [Wall Texture](https://www.textures.com/download/ConcreteMossy0114/128583)
 - [Dirt Texture](https://www.deviantart.com/fabooguy/art/Dirt-Ground-Texture-Tileable-2048x2048-441212191)
 - [Withered Flower Texture](https://unsplash.com/photos/jY9rX-E7ztU)
+- [Eyeball Texture](https://www.filterforge.com/filters/1174.html)
 
 ## 6. User Interface
 
@@ -294,7 +311,6 @@ The initial screen will allow the user to start the game, access an about page, 
     <img src="Images/Main_Menu.png" width=400>
     <img src="Images/About.png" width=400>
     <img src="Images/Options.png" width=400>
-    <img src="Images/Controls.png" width=400>
 </p>
 
 ### 6.2 In-Game Screens

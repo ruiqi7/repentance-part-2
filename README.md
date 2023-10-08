@@ -31,87 +31,58 @@ placeholder for it [here](GDD.md).
 ## Evaluation Plan
 
 ### Evaluation techniques
-A mix of techniques will be used as listed: 
-  - Querying: 
-    - Interviews — Able to ask more open-ended questions
-    - Questionnaires — Easier to quantify the results
-  - Observational: 
-    - Think aloud — Can help to uncover usability issues
-    - Cooperative Evaluation — A two-way communication allows for a deeper understanding of the user's thought processes and allows the experimenter to clarify any uncertainties; the experimenter can gain insight into the user's intentions and goals 
-Post-task walkthroughs
+#### Querying Techniques
+  - Interviews 
+  - Questionnaires
 
+In order to get the most impactful data through querying techniques we will use both questionnaires and interviews. After the participant has completed the assigned tasks in the game, they will be sent a google forms questionnaire that will ask them to rate different statements on a scale of 1-5. This will allow us to collect quantitative data that can be analysed in a deterministic way. After completing the questionnaire, the participant will be interviewed. Through an interview we will be able to collect more detailed qualitative data that can be analysed to provide deeper insights into that participants experience. The questionnaire and interview questions are discussed in more detail in [Data Collection](#data-collection), whilst the analysis methods are discussed further in [Data Analysis](#data-analysis).
+
+#### Observational Techniques
+  - Think aloud
+  - Post-task walkthrough
+  
+  In order to get the most impactful data through observational techniques we will use a combination of think aloud and post-task walkthrough. Since the game is a horror game, the ambience created throughout the game must be maintained. Therefore, whilst think aloud will be used to allow the participant to clarify anything they need help with, hence allowing us to identify usability issues, any other discussion throughout game play will be kept to a minimum. Post-task walkthrough will be carried out by asking the participant about their thought process for a task immediately after the task is completed. The team member will take notes on different things that occured throughout game play and will discuss these with the participant after. The use of post-task walkthrough will allow us to gauge the memorability of our game and evaluate if these points are positive or negative. The post-task walkthrough notes are discussed further in [Data Collection](#data-collection), whilst the analysis methods are discussed further in [Data Analysis](#data-analysis).
+   
+#### Tasks to Perform
+  1. Find and collect the heirloom
+  2. Collect items for the graves
+  3. Complete a task from an NPC
+  4. Find and use at least 3 different items
+  5. Find all NPCs
 
 ### Participants 
-  - Target audience: Set in a maze with horror elements, the game is targeted at players who are drawn to experiencing thrill in a controlled environment. Additionally, the 5-minute time constraint on the game makes it suitable for players who prefer or can only afford to play in short bursts.
-  - Participants: Anybody who has an interest in gaming — as their experience is still relevant for our evaluation
-  - Recruitment: Recruiting of participants will be primarily done through friends
+
+#### Target audience 
+Set in a maze with horror elements, the game is targeted at players who are drawn to experiencing thrill in a controlled environment. Additionally, the 5-minute time constraint on the game makes it suitable for players who prefer or can only afford to play in short bursts.
+
+#### Participants
+Since it is difficult to find participants who specifically match our target audience, the requirement for participants is broadened to be people who enjoy computer games. In addition, participants who are not well-versed in horror games may provide unique viewpoints and the horror elements they experience may be more effective.
+
+#### Recruitment 
+Recruiting of participants will be primarily done through friends.
+
 ### Data collection
-  - Qualitative (from observation and interview) and quantitative from questionnaires 
-  - Google forms for the questionnaire https://forms.gle/xW9pgmztwRhmoVDX6
-  - Note down the results on a Google Document - Table to record responses / notes for each participant
 
+#### Types of Data Collected
+  - Qualitative (from observational techniques and interview)
+  - Quantitative from questionnaires
 
-    [**Interviewee Name**]
-    | Question | Answer |
-    | ---- | ----|
-    | … | … |
+#### Collection Methods and Tools
+  - Tools such as Zoom / Discord will be used with screen sharing and webcam for observational techniques
+  - OBS Studio or Other screen recording software may be used to record participant gameplay 
+  - Google forms for the questionnaire (https://forms.gle/xW9pgmztwRhmoVDX6)
+  - Note down the results on a Google Document for the interview and observations
 
-### Data analysis
-  - Analysing the qualitative data
-    - https://condens.io/user-interview-analysis/ (Good resource for methods on analysing user interview responses)
-    - Data can be categorised so that common themes can be seen
-    - Within each theme look for commonalities to link them
-    - Determine how the different themes relate to each other
-    - Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
-  - Analysing the quantitative data
-    - Look for trends in responses 
-    - Construct graphs to aid visualization of the result
-    - Based on the trends found, construct priority list of changes that can be made to address the issues identified
-  - How intuitive is the interface / gameplay (Do new players need help with understanding how the game works? Are players confused / forget about / struggle with the controls while playing the game?)
-  - Duration of player engagement (Do players play until the 5 minutes is up or do they feel bored halfway through?)
-  - Difficulty (How many people succeed, how many times does it take for them to win)
-  - Replayability (Do players want to play multiple rounds?)
-  - Do the gameplay elements complement each other: Thematically, Does the art and music fit.
-  - How ‘Scary’ is the game? How is the player feeling whilst playing through the game. What parts specifically made them feel this way?
-  - Are the players able to make sense of the story / themes that are being presented?
-  - Are there any bugs in the game?
-### Timeline
-  - Ideally, the evaluation should be completed early enough to allow time to make any necessary changes to the game (2 weeks → 17 October). Changes to the game will be made after completing the evaluations and discussing results.
-  - Due date of evaluation report: Tuesday 31 October
-### Responsibilities
-A list of tasks has been created and will be equally delegated to each team member depending on workload. However, certain tasks may be done in a joint effort or will be compartmentalized. For example, each team member will be responsible for interviewing and collecting the data for their chosen participants.
-  - Create questionnaire 
-    - On a scale of never to always / 1 to 5
-      - Gameplay
-        - How challenging did you find the game? / Was the difficulty level appropriate?
-        - How exciting/thrilling/enjoyable was the game?
-        - Was the maze of a reasonable size and complexity?
-        - How easy was it to find items?
-        - Were the items helpful?
-      - Story / Narrative
-        - How well do you understand the storyline of the game?
-        - How engaging was the storyline of the game?
-      - Usability of Interface
-        - How difficult was it to understand the controls of the game?
-        - How intuitive are the game controls?
-      - Art / Music
-        - How terrifying did you find the monster designs?
-        - How would you rate the audio and sound effects in contributing to the overall horror experience?
-        - Were the art and assets used fitting to the theme of the game?
-        - How scary was the atmosphere and environment in the game?
-      - Game Experience
-        - How likely are you to play the game again?
-        - Was 'Repentance' a unique gaming experience?
-  - Create interview questions
-    - Gameplay
+#### Interview Questions
+  - Gameplay
       - What did you like most about the gameplay mechanics and dynamics in the game? 
       - What did you not like most about the gameplay mechanics and dynamics in the game?
       - Were there any aspects of the gameplay that you found confusing or frustrating? If so, please describe.
-    - Story / Narrative
+  - Story / Narrative
       - How would you summarize the storyline of the game?
-    - Usability of interface
+  - Usability of interface
       - Were you at any point in the game confused or lost about what to do?
-    - Game Experience
+  - Game Experience
       - How did you feel about the NPCs in this game?
       - How would you describe the monsters in this game?
       - Was there anything in the game that felt out of place? If there was, please describe.
@@ -119,22 +90,60 @@ A list of tasks has been created and will be equally delegated to each team memb
       - What would you consider to be the weakest aspect of this game?
       - If there was one thing you could add to this game, what would it be?
 
+##### Interview Results Table
+  [**Interviewee Name**]
+  | Question | Answer |
+  | ---- | ----|
+  | … | … |
 
+#### Questionnaire Questions 
+The participant will rank each question on a scale of 1-5
 
-  - Design tasks for observability 
-    - Find and collect the heirloom
-    - Collect items for the graves
-    - Complete a task from an NPC
-    - Find and use at least 3 different items
-    - Find all NPCs
-  - Design structure for observability 
-    - Ask to complete tasks and encourage them to think out loud / ask questions
-  - Conduct the evaluations and gather participants
-  - Analyse observability results
-  - Analyse questionnaire results
-  - Analyse interview results
-  - Summarize findings from all analysis 
-  - Discuss game changes / improvements and discuss priorities
+| Question | Scale |
+|----|----|
+|I found the game challenging | Strongly disagree - strongly agree|
+|I found the game enjoyable | Strongly disagree - strongly agree|
+|I found the maze to be of a reasonable size and complexity | Strongly disagree - strongly agree|
+|I found finding items... | Very difficult - very easy |
+|I found the items.. | Not useful - very useful |
+|I understood the storyline | Not at all - completely |
+|I found the storyline engaging | not at all - very |
+|I found the game controls... | Confusing - intuitive |
+|I felt that the art and assets used were fitting to the theme of the game | Strongly disagree - strongly agree |
+|I found the monsters scary | Not at all - extremely |
+|I found the atmosphere and environment scary | Not at all - extremely |
+|The game audio contributed to the horror experience | Not at all - a lot |
+|I felt that 'Repentance' was a unique gaming experience | Strongly disagree - strongly agree |
+|I would play the game again | Never - definitely |
+
+#### Note Taking for Post-task Walkthrough
+
+- the team member must take notes on events throughout gameplay that can be considered significant
+- a significant event will be anything that lead the participant to either be confused or stuck, or an interesting method used to complete a task
+- the team member should also note down events that lead the participant to ask questions or anything that lead to an unusual reaction from the participant
+- responses to the questions asked by the team member should be recorded onto a google docs page
+
+### Data analysis
+#### Analysing the qualitative data
+- Data will be categorised so that common themes can be seen
+- Within each theme look for commonalities to link them
+- Determine how the different themes relate to each other
+- identify common terms and phrases across different responses
+- Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
+#### Analysing the quantitative data
+- Look for trends in responses 
+- Construct graphs to aid visualization of the result
+- Based on the averages of results for each question, construct priority list of changes that can be made to address the issues identified
+
+### Timeline
+
+<img width="806" alt="image" src="https://github.com/COMP30019/project-2-not-minecraft/assets/127174477/8b5c4dd2-dc27-47fe-9ded-4b93d66e6d21">
+
+### Responsibilities
+- Each team member will manage their own participants
+- Each team member will have at least 4 participants (2 for querying and 2 for observabilities)
+- The team will work together to complete the data analysis and construct the priority list for changes to be made
+- The team will allocate tasks for the changes to be made to each member based on their current workload and available time
   
 
 
