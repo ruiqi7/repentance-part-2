@@ -30,11 +30,11 @@ public class MazeConstructor : MonoBehaviour
     public BoxCollider boxCol;
 
 
-    private int candleNum = 4;
-    private int dollNum = 3;
-    private int saltNum = 3;
-    private int eyeballsJarNum = 1;
-    private int witheredFlowerNum = 4;
+    private int candleNum = 5;
+    private int dollNum = 5;
+    private int saltNum = 7;
+    private int eyeballsJarNum = 5;
+    private int witheredFlowerNum = 5;
     private int NPCNum = 1;
     private int letterNum = 7;
 
