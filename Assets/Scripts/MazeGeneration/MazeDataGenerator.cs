@@ -25,7 +25,7 @@ public class MazeDataGenerator
     public MazeDataGenerator()
     {
         placementThreshold = .15f;
-        itemSpawnChance = .0127f;   
+        itemSpawnChance = .018f;   
         NPCSpawnChance = .01f;                               // 1
     }
 
