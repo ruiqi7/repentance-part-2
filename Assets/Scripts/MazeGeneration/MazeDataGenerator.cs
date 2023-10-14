@@ -10,22 +10,22 @@ public class MazeDataGenerator
     public float itemSpawnChance;
     public float NPCSpawnChance;
 
-    private int candleNum = 5;
-    private int dollNum = 5;
-    private int saltNum = 7;
+    private int candleNum = 7;
+    private int dollNum = 6;
+    private int saltNum = 8;
     private int eyeballsJarNum = 5;
-    private int witheredFlowerNum = 5;
+    private int witheredFlowerNum = 7;
 
-    private static int candleCount = 0;
-    private static int dollCount = 0;
-    private static int saltCount = 0;
-    private static int eyeballsJarCount = 0;
-    private static int witheredFlowerCount = 0;
+    private int candleCount = 0;
+    private int dollCount = 0;
+    private int saltCount = 0;
+    private int eyeballsJarCount = 0;
+    private int witheredFlowerCount = 0;
 
     public MazeDataGenerator()
     {
         placementThreshold = .15f;
-        itemSpawnChance = .0124f;   
+        itemSpawnChance = .0127f;   
         NPCSpawnChance = .01f;                               // 1
     }
 

@@ -30,11 +30,11 @@ public class MazeConstructor : MonoBehaviour
     public BoxCollider boxCol;
 
 
-    private int candleNum = 5;
-    private int dollNum = 5;
-    private int saltNum = 7;
+    private int candleNum = 7;
+    private int dollNum = 6;
+    private int saltNum = 8;
     private int eyeballsJarNum = 5;
-    private int witheredFlowerNum = 5;
+    private int witheredFlowerNum = 7;
     private int NPCNum = 1;
     private int letterNum = 7;
 
@@ -79,6 +79,7 @@ public class MazeConstructor : MonoBehaviour
         Debug.LogError("Odd numbers work better for dungeon size.");
     }
     data = dataGenerator.FromDimensions(sizeRows, sizeCols);
+    DisposeOldMaze();
     DisplayMaze();
     SpawnItems();
     }
@@ -232,6 +233,14 @@ public class MazeConstructor : MonoBehaviour
 
             }                   
         }
+        candleCount=0;
+        dollCount=0;
+        NPC2Count=0;
+        NPC3Count=0;
+        eyeballsJarCount=0;
+        saltCount=0;
+        witheredFlowerCount=0;
+        letterCount=0;
     }
 
     void OnGUI()
