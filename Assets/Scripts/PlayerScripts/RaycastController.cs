@@ -9,29 +9,34 @@ public class RaycastController : MonoBehaviour
     public int interactDistance = 2;
     //[SerializeField] public TextMeshProUGUI promptText;
     public PlayerUI playerUI;
-    void Start()
-    {
-        
-    }
+    private InteractableInterface interact;
 
     // Update is called once per 
-    void Update()
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if(interact){
+                interact.interact();
+            }
+        }
+    }    
+    void FixedUpdate()
     {
         // Creates a Ray from the center of the viewport
         playerUI.updateText(string.Empty);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Debug.DrawRay(ray.origin, ray.direction * 10);
         RaycastHit hit;
-  
+
         if (Physics.Raycast(ray, out hit, interactDistance)) {
             if (hit.collider.CompareTag("Interactable")) { 
-                InteractableInterface interact = hit.collider.GetComponent<InteractableInterface>();
+                interact = hit.collider.GetComponent<InteractableInterface>();
                 playerUI.updateText(interact.interactText);
                 playerUI.updateFont(interact.font);
-                if (Input.GetKeyDown(KeyCode.E)) {
-                    interact.interact();
-                }
+                // if (Input.GetKeyDown(KeyCode.E)) {
+                //     interact.interact();
+                // }
             }
         }
     }
+    
 }

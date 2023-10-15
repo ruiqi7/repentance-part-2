@@ -28,6 +28,12 @@ public class FlashLightController : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update(){
+         if (Input.GetKeyDown(KeyCode.F) && batteryBar.value > 0)
+        {
+            flashlight.enabled = !flashlight.enabled;
+        }
+    }
     void FixedUpdate()
     {
         if(flashlight.enabled && SceneManager.GetActiveScene().name == "MazeGeneration") {
@@ -43,10 +49,10 @@ public class FlashLightController : MonoBehaviour
         }
         transform.position = Camera.position;
         transform.rotation= Camera.rotation;
-        if (Input.GetKeyDown(KeyCode.F) && batteryBar.value > 0)
-        {
-            flashlight.enabled = !flashlight.enabled;
-        }
+        // if (Input.GetKeyDown(KeyCode.F) && batteryBar.value > 0)
+        // {
+        //     flashlight.enabled = !flashlight.enabled;
+        // }
         if(batteryBar.value <= 0) {
             flashlight.enabled = false;
         }
