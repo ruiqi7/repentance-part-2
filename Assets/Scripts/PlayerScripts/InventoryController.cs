@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,7 +17,8 @@ public class InventoryController : MonoBehaviour
     
     private int capacity;
     private int numberOfUniqueItems = 0;
-    private List<int> itemPositions = new List<int>();
+    private int[] inventory;
+    private int firstUnoccupiedBox = 0;
     private Dictionary<string, int> itemIndexDict = new Dictionary<string, int>()
     {
         {"Heirloom", 0},
@@ -44,9 +46,10 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         capacity = transform.childCount;
+        inventory = new int[capacity];
         for (int i = 0; i < capacity; i++)
         {
-            itemPositions.Add(-1);
+            inventory[i] = -1;
         }
         AddToInventory("Heirloom");
         AddToInventory("Flashlight");
@@ -82,9 +85,9 @@ public class InventoryController : MonoBehaviour
         GameObject itemImage = itemImages[itemIndex];
         if (numberOfUniqueItems < capacity)
         {
-            if (itemPositions.Contains(itemIndex)) // quantity was 1 or more
+            if (Array.Exists(inventory, e => e == itemIndex)) // quantity was 1 or more
             {
-                int boxIndex = itemPositions.IndexOf(itemIndex);
+                int boxIndex = Array.FindIndex(inventory, e => e == itemIndex);
                 Transform inventoryBox = transform.GetChild(boxIndex);
                 TextMeshProUGUI quantityText = inventoryBox.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
                 if (!quantityText.enabled) // quantity was 1
@@ -99,8 +102,9 @@ public class InventoryController : MonoBehaviour
             }
             else // quantity was 0
             {
-                itemPositions[numberOfUniqueItems] = itemIndex;
-                Transform inventoryBox = transform.GetChild(numberOfUniqueItems);
+                FindFirstUnoccupiedBox();
+                inventory[firstUnoccupiedBox] = itemIndex;
+                Transform inventoryBox = transform.GetChild(firstUnoccupiedBox);
                 AddShadow(inventoryBox.gameObject);
                 Instantiate(itemImage, inventoryBox);
                 numberOfUniqueItems += 1;
@@ -110,17 +114,17 @@ public class InventoryController : MonoBehaviour
 
     public bool CheckInventory(string item) {
         int itemIndex = itemIndexDict[item];
-        return itemPositions.Contains(itemIndex);
+        return Array.Exists(inventory, e => e == itemIndex);
     }
 
     public int GetItemIndex(string item) {
         int index = itemIndexDict[item];
-        return itemPositions.IndexOf(index);
+        return Array.FindIndex(inventory, e => e == index);
     }
 
     public void RemoveFromInventory(int boxIndex)
     {
-        if (boxIndex >= 0 && boxIndex < numberOfUniqueItems)
+        if (boxIndex >= 0 && boxIndex < capacity)
         {
             Transform inventoryBox = transform.GetChild(boxIndex);
             TextMeshProUGUI quantityText = inventoryBox.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
@@ -128,19 +132,11 @@ public class InventoryController : MonoBehaviour
             
             if (!quantityText.enabled) // quantity was 1
             {
-                itemPositions[boxIndex] = -1;
+                inventory[boxIndex] = -1;
                 Transform itemImage = inventoryBox.GetChild(1);
                 Destroy(itemImage.gameObject);
                 numberOfUniqueItems -= 1;
-                if (boxIndex < numberOfUniqueItems)
-                {
-                    Transform itemQuantity = inventoryBox.GetChild(0);
-                    shiftItemsLeft(boxIndex, itemQuantity);
-                }
-                else
-                {
-                    RemoveShadow(inventoryBox.gameObject);
-                }
+                RemoveShadow(inventoryBox.gameObject);
             }
             else if (quantity == 2) // quantity was 2
             {
@@ -153,26 +149,16 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    private void shiftItemsLeft(int boxIndex, Transform itemQuantity)
+    private void FindFirstUnoccupiedBox()
     {
-        Transform newInventoryBox;
-        Transform currInventoryBox = null;
-        Transform currItemQuantity;
-        Transform currItemImage;
-
-        for (int i = boxIndex; i < numberOfUniqueItems; i++)
+        for (int i = 0; i < capacity; i++)
         {
-            newInventoryBox = transform.GetChild(i);
-            currInventoryBox = transform.GetChild(i + 1);
-            currItemQuantity = currInventoryBox.GetChild(0);
-            currItemImage = currInventoryBox.GetChild(1);
-            currItemQuantity.SetParent(newInventoryBox, false);
-            currItemImage.SetParent(newInventoryBox, false);
-            itemPositions[i] = itemPositions[i + 1];
+            if (inventory[i] == -1)
+            {
+                firstUnoccupiedBox = i;
+                break;
+            }
         }
-        itemQuantity.SetParent(currInventoryBox, false);
-        itemPositions[numberOfUniqueItems] = -1;
-        RemoveShadow(currInventoryBox.gameObject);
     }
 
     private void AddShadow(GameObject box)
