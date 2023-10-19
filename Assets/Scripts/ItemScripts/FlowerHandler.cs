@@ -15,7 +15,7 @@ public class FlowerHandler : ItemHandlerInterface
                 bool placed = PlaceFlower(hit.collider.gameObject);
                 if (placed)
                 {
-                    ShowMonologue(true);
+                    ShowMonologue(ItemStatus.USED, -1);
                     return true;
                 }
                 else
@@ -24,7 +24,7 @@ public class FlowerHandler : ItemHandlerInterface
                 }
             }
         }
-        ShowMonologue(false);
+        ShowMonologue(ItemStatus.NOTUSED, -1);
         return false;
     }
 

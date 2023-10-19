@@ -49,7 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: C O L L E C T [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
   itemName: Eyeballs
 --- !u!114 &351745893119215339
@@ -64,10 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6711b943ba5ca294eaa32833c6331dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesWhenItemCollected:
+  - Jar of Eyeballs
   linesWhenItemUsed: []
   linesWhenItemNotUsed:
-  - Oh gosh... eyeballs?
-  - Whoever lost them would probably want them back...
+  - Whoever lost their eyes would probably want them back...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.1
 --- !u!65 &8285589159403783325

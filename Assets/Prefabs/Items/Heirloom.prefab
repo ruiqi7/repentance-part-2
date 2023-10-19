@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579d490ca7d2ad4da6549701eb8de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesWhenItemCollected:
+  - Heirloom
   linesWhenItemUsed: []
   linesWhenItemNotUsed:
   - This heirloom is stained with the blood of its victims...

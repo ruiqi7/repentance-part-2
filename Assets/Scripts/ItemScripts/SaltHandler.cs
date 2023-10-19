@@ -20,12 +20,12 @@ public class SaltHandler : ItemHandlerInterface
         {
             GameObject salt = Instantiate(gameObject, pos, rot);
             salt.tag = "Untagged"; // cannot pick up the salt once used
-            ShowMonologue(true);
+            ShowMonologue(ItemStatus.USED, -1);
             return true;
         }
         else
         {
-            ShowMonologue(false);
+            ShowMonologue(ItemStatus.NOTUSED, -1);
             return false;
         }
     }

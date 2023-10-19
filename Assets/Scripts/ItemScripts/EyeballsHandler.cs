@@ -6,7 +6,7 @@ public class EyeballsHandler : ItemHandlerInterface
 {
     public override bool HandleBehavior()
     {
-        ShowMonologue(false);
+        ShowMonologue(ItemStatus.NOTUSED, -1);
         return false;
     }
 }

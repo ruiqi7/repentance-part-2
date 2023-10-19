@@ -55,6 +55,12 @@ public class DialogueController : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    public void FlashDialogue(){
+        textBox.color = textColor;
+        StartCoroutine(FlashLine());
+    }
+
     IEnumerator TypeLine(){
         foreach(char c in lines[lineIndex].ToCharArray()){
             textBox.text += c;
@@ -62,6 +68,11 @@ public class DialogueController : MonoBehaviour
         }
         yield return new WaitForSeconds(2);
         NextLine();
+    }
+    IEnumerator FlashLine(){
+        textBox.text = lines[0];
+        yield return new WaitForSeconds(2);
+        gameObject.SetActive(false);
     }
     IEnumerator IntroDialogue(){
         yield return new WaitForSeconds(5);
