@@ -249,11 +249,11 @@ MonoBehaviour:
   linesWhenItemCollected:
   - Salt
   linesWhenItemUsed:
-  - This will repel the monsters from this area for a short while...
+  - This will repel the monsters from this area...
   linesWhenItemNotUsed:
-  - I need more space to scatter the salt around...
+  - I need more space to scatter the salt...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07
   dissolveSpeed: 0.1
 --- !u!65 &8393263345968188860
 BoxCollider:

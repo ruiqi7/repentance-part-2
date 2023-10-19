@@ -146,7 +146,7 @@ MonoBehaviour:
   linesWhenItemNotUsed:
   - I need more space to put this down...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07
 --- !u!1 &7381485158997094534
 GameObject:
   m_ObjectHideFlags: 0

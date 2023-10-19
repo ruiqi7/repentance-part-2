@@ -50,4 +50,4 @@ MonoBehaviour:
   linesWhenItemNotUsed:
   - I can use this flashlight to see what lurks around here...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07
