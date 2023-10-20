@@ -13,6 +13,9 @@ Shader "Custom/NPC"
 		_Ks("Ks", Float) = 1.0
 		_fAtt("fAtt", Float) = 1.0
 		_specN("specN", Float) = 1.0
+
+        _BurnSize("Burn Size", range(0.0, 1.0)) = 0.15
+        _BurnMap("Burn Map (RGB)", 2D) = "white" {}
     }
     SubShader
     {

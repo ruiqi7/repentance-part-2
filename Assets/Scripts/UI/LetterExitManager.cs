@@ -26,4 +26,11 @@ public class LetterExitManager : MonoBehaviour
             }
         }
     }
+
+    // private void FirstLetter() {
+    //     GameObject temp = GameObject.Find("LetterImage");
+    //     NoteInteract noteInteract = temp.GetComponent<NoteInteract>();
+    //     noteInteract.setDissolving(true);
+    //     GetComponent<Button>().Set
+    // }
 }

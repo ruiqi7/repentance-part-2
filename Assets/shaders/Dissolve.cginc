@@ -12,7 +12,6 @@ struct appdata
 struct v2f
 {
     float2 uv : TEXCOORD0;
-    UNITY_FOG_COORDS(1)
     float4 vertex : SV_POSITION;
     float4 worldVertex : TEXCOORD1;
     float3 worldNormal : TEXCOORD2;
@@ -31,6 +30,9 @@ uniform float _Ks;
 uniform float _fAtt;
 uniform float _specN;
 
+uniform sampler2D _BurnMap;
+uniform float _BurnSize;
+
 v2f vert (appdata v)
 {
     v2f o;
@@ -40,8 +42,6 @@ v2f vert (appdata v)
 
     o.vertex = UnityObjectToClipPos(v.vertex);
     o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-
-    UNITY_TRANSFER_FOG(o,o.vertex);
 
     o.worldVertex = worldVertex;
     o.worldNormal = worldNormal;
@@ -55,8 +55,16 @@ fixed4 frag (v2f i) : SV_Target
     half dissolve_value = tex2D(_DissolveTexture, i.uv).r;
     clip(dissolve_value - _Amount);
 
+    half burn = tex2D(_DissolveTexture, i.uv).r - _Amount;
 
-    fixed4 unlitColor = tex2D(_MainTex, i.uv);
+    fixed4 unlitColor;
+
+    if(burn < _BurnSize  && _Amount > 0 && _Amount < 1) {
+        unlitColor = tex2D(_BurnMap, float2(burn*(1/_BurnSize), 0));
+    } else {
+        unlitColor = tex2D(_MainTex, i.uv);
+    }
+
     float3 interpNormal = normalize(i.worldNormal);
 
     // Calculate ambient RGB intensities
@@ -103,8 +111,6 @@ fixed4 frag (v2f i) : SV_Target
     float4 returnColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
     returnColor.rgb = amb.rgb + dif.rgb + spe.rgb;
     returnColor.a = 0.5;//unlitColor.a;
-    // apply fog
-    UNITY_APPLY_FOG(i.fogCoord, col);
     return returnColor * _Color;
 }
 

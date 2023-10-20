@@ -77,6 +77,9 @@ public class NPCInteractTimer : InteractableInterface
                 if(renderer.materials[i].GetFloat("_Amount") <= 1) {
                     renderer.materials[i].SetFloat("_Amount",  renderer.materials[i].GetFloat("_Amount") + 0.001f);
                 }
+                if(renderer.materials[i].GetFloat("_BurnSize") <= 1) {
+                    renderer.materials[i].SetFloat("_BurnSize",  renderer.materials[i].GetFloat("_BurnSize") + 0.001f);
+                }
             }
             for(int i = 0; i < renderer.materials.Length; i++) {
                 if(renderer.materials[i].GetFloat("_Amount") < 1) {

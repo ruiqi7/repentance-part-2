@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FaceNPC
-  m_Shader: {fileID: 4800000, guid: bf6d8ef48f142fc488c08300c9e445ff, type: 3}
+  m_Shader: {fileID: 4800000, guid: a97b8dc1c3081ea4882a014fafe9ee0c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -26,6 +26,10 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BurnMap:
+        m_Texture: {fileID: 2800000, guid: 1b2284f4d091f8a47a01dff24bc62d56, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -68,12 +72,16 @@ Material:
     m_Floats:
     - _Amount: 0
     - _BumpScale: 1
+    - _BurnSize: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _Ka: 1
+    - _Kd: 1
+    - _Ks: 0
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
@@ -83,6 +91,8 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 0
+    - _fAtt: 1
+    - _specN: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0.56078434}
     - _DissolveColor: {r: 0.2627451, g: 0, b: 0, a: 1}

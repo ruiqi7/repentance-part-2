@@ -68,9 +68,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Ka: 0.75
-    - _Kd: 0.5
-    - _Ks: 0
+    - _Ka: 1
+    - _Kd: 1
+    - _Ks: 0.1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
