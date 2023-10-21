@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
 
     [SerializeField] private GameObject uiManager;
+    [SerializeField] private Camera camera;
     private UIManager uiManagerScript;
 
     [SerializeField] private Slider staminaBar;
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
+        var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
+        temp.SetFloat("_Active", 0f);
     }
 
     void FixedUpdate()
@@ -77,6 +80,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy") {
             Vector3 enemyPosition = collision.gameObject.transform.position;
             transform.LookAt(new Vector3(enemyPosition.x, enemyPosition.y + 1.5f, enemyPosition.z));
+            var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
+            temp.SetFloat("_Active", 1f);
             uiManagerScript.GameOver();
         }
     }

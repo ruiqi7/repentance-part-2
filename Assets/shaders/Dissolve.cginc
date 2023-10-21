@@ -23,6 +23,7 @@ fixed4 _DissolveColor;
 sampler2D _DissolveTexture;
 half _Amount;
 fixed4 _Color;
+uniform float _PixelSize;
 
 uniform float _Ka;
 uniform float _Kd;
@@ -62,7 +63,8 @@ fixed4 frag (v2f i) : SV_Target
     if(burn < _BurnSize  && _Amount > 0 && _Amount < 1) {
         unlitColor = tex2D(_BurnMap, float2(burn*(1/_BurnSize), 0));
     } else {
-        unlitColor = tex2D(_MainTex, i.uv);
+        float2 pixelatedUV = floor(i.uv * _PixelSize) / _PixelSize;
+        unlitColor = tex2D(_MainTex, pixelatedUV);
     }
 
     float3 interpNormal = normalize(i.worldNormal);
@@ -110,7 +112,7 @@ fixed4 frag (v2f i) : SV_Target
     // Combine Phong illumination model components
     float4 returnColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
     returnColor.rgb = amb.rgb + dif.rgb + spe.rgb;
-    returnColor.a = 0.5;//unlitColor.a;
+    returnColor.a = 0.5;
     return returnColor * _Color;
 }
 

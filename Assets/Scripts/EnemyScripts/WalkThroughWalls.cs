@@ -9,11 +9,13 @@ public class WalkThroughWalls : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private float minX, maxX;
     [SerializeField] private float minZ, maxZ;
+    [SerializeField] private Camera camera;
     private Animator animator;
     private float startTime;
     private Vector3 targetPosition;
     [SerializeField] private AudioSource audioSource;
     private bool handling = false;
+    private bool flickering = false;
     void Start()
     {
         transform.LookAt(target.transform.position);
@@ -23,10 +25,12 @@ public class WalkThroughWalls : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //float normalisedSpeed = speed * (Time.time/300);
         if(Vector3.Distance(target.transform.position, transform.position) < distance) {
             if(!handling) {
                 StartCoroutine(HandleAudio());
+            }
+            if(!flickering && Vector3.Distance(target.transform.position, transform.position) < 20) {
+                StartCoroutine(ShaderFlicker());
             }
             Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
             transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
@@ -60,5 +64,20 @@ public class WalkThroughWalls : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
+    }
+    IEnumerator ShaderFlicker() {
+        flickering = true;
+        var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
+        for(int i = 0; i < 2; i ++) {
+            if(temp.GetFloat("_Active") == 1f) {
+                temp.SetFloat("_Active", 0);
+            } else {
+                temp.SetFloat("_Active", 1f);
+            }
+            float wait = Random.Range(0.1f, .2f);
+            yield return new WaitForSeconds(wait);
+        }
+        yield return new WaitForSeconds(1);
+        flickering = false;
     }
 }
