@@ -1354,6 +1354,7 @@ MonoBehaviour:
   maxX: 5
   minZ: -5
   maxZ: 5
+  camera: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!95 &94079775
 Animator:
@@ -1395,6 +1396,7 @@ MonoBehaviour:
   minZ: 5
   maxZ: 234
   audioSource: {fileID: 612437550}
+  camera: {fileID: 1094900905}
 --- !u!4 &94079777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac162a9aebfaf4ea0ba022c916f9e855, type: 3}
@@ -6129,6 +6131,7 @@ MonoBehaviour:
   maxX: 234
   minZ: 5
   maxZ: 234
+  camera: {fileID: 1094900905}
   audioSource: {fileID: 612437550}
 --- !u!95 &931394963
 Animator:
@@ -6503,6 +6506,7 @@ MonoBehaviour:
   minZ: 5
   maxZ: 234
   audioSource: {fileID: 612437550}
+  camera: {fileID: 1094900905}
 --- !u!1 &1028559766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6848,6 +6852,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   uiManager: {fileID: 675408284}
+  camera: {fileID: 1094900905}
   staminaBar: {fileID: 1512481883}
   maxStamina: 100
 --- !u!143 &1064079134
@@ -7178,10 +7183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094900897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406ee5beac4765d4c8caadecb68d6fc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7123de56fc9af8340bcf3ae6c31df492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: bd11ed61fc2a42f469e435364c121a6c, type: 2}
+  material: {fileID: 2100000, guid: 0895484f5d6f57f4dbaa0d33063fffaa, type: 2}
 --- !u!1001 &1098316161
 PrefabInstance:
   m_ObjectHideFlags: 0
