@@ -4,6 +4,7 @@ Shader "Custom/PostProcess" {
     _Active("Grayscale on", float) = 0
     _BloodTex("Texture", 2D) = "white" {}
     _Color("color", Color) = (1,1,1,1)
+    _PixelSize ("Pixel Size", Range(1,500)) = 10
   }
 
   SubShader {
@@ -18,9 +19,12 @@ Shader "Custom/PostProcess" {
       sampler2D _BloodTex;
       float _Active;
       fixed4 _Color;
+      uniform float _PixelSize;
 
       float4 frag(v2f_img input) : COLOR {
-        float3 color = tex2D(_MainTex,input.uv.xy).xyz;
+
+        float2 pixelatedUV = floor(input.uv.xy* _PixelSize) / _PixelSize;
+        fixed4 color = tex2D(_MainTex,pixelatedUV);
 
     
         if(_Active == 1.0f) {

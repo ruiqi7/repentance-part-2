@@ -46,9 +46,13 @@ public class NoteInteract : InteractableInterface
         }
     }
     private void Update(){
+        Debug.Log("updat");
         if(dissolving) {
             if(GameObject.Find("Exit")) {
                 GameObject.Find("Exit").SetActive(false);
+            }
+            if(GameObject.Find("PaperOnTable")) {
+                GameObject.Find("PaperOnTable").SetActive(false);
             }
             noteTextArea.text = string.Empty;
             if(renderer.GetFloat("_Amount") <= 1) {
@@ -68,6 +72,7 @@ public class NoteInteract : InteractableInterface
     }
 
     public void setDissolving(bool val) {
+        Debug.Log("set dissolve");
         dissolving = val;
     }
 }

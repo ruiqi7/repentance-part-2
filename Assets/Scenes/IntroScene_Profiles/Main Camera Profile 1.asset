@@ -15,8 +15,8 @@ MonoBehaviour:
   settings:
   - {fileID: 4176130452406160258}
   - {fileID: 4332342917327466890}
-  - {fileID: 3580489272689047341}
---- !u!114 &3580489272689047341
+  - {fileID: 3728637983343164409}
+--- !u!114 &3728637983343164409
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33,23 +33,23 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 1
+    overrideState: 0
     value: 0
   color:
-    overrideState: 1
+    overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
   center:
-    overrideState: 1
+    overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.455
+    value: 0.317
   smoothness:
     overrideState: 1
-    value: 0.218
+    value: 0.207
   roundness:
     overrideState: 1
-    value: 0.846
+    value: 0.97
   rounded:
     overrideState: 0
     value: 0
@@ -1392,10 +1392,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.5
+    value: 0.311
   size:
     overrideState: 1
-    value: 1.5
+    value: 1.41
   lumContrib:
     overrideState: 0
-    value: 0.8
+    value: 0

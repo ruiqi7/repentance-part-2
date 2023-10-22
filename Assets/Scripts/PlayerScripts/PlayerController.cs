@@ -32,8 +32,13 @@ public class PlayerController : MonoBehaviour
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
-        var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
-        temp.SetFloat("_Active", 0f);
+        if(camera.GetComponent<Camera>().GetComponent<PostProcess>()) {
+            var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
+            temp.SetFloat("_Active", 0f);
+        }
+        if(GameObject.Find("PaperOnTable")) {
+            GameObject.Find("PaperOnTable").SetActive(true);
+        }
     }
 
     void FixedUpdate()
