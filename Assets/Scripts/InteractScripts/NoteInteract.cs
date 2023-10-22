@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 
 public class NoteInteract : InteractableInterface
@@ -13,14 +13,21 @@ public class NoteInteract : InteractableInterface
     [SerializeField] [TextArea] private string noteText;
     [SerializeField] CharacterController player;
     [SerializeField] CameraController cameraController;
-    public bool isOpen = false;
+    private Material renderer;
+    public bool isOpen = false; 
+    public bool dissolving = false;
+    private bool dissolved = false;
+
     public override void interact(){
         if(!isOpen){ShowNote();}    
     }
     public void ShowNote(){
         noteTextArea.text = noteText;
         noteCanvas.SetActive(true);
+        renderer = noteCanvas.GetComponent<Image>().material;
         player.enabled = false;
+        renderer.SetFloat("_Amount", 0.0f);
+        renderer.SetFloat("_BurnSize", 0.0f);
         cameraController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -39,8 +46,28 @@ public class NoteInteract : InteractableInterface
         }
     }
     private void Update(){
-        if (Input.GetKeyUp(KeyCode.Escape) && isOpen) {
+        if(dissolving) {
+            if(GameObject.Find("Exit")) {
+                GameObject.Find("Exit").SetActive(false);
+            }
+            noteTextArea.text = string.Empty;
+            if(renderer.GetFloat("_Amount") <= 1) {
+                renderer.SetFloat("_Amount",  renderer.GetFloat("_Amount") + 0.005f);
+            }
+            if(renderer.GetFloat("_BurnSize") <= 1) {
+                renderer.SetFloat("_BurnSize",  renderer.GetFloat("_BurnSize") + 0.005f);
+            }
+            if(renderer.GetFloat("_Amount") >= 1) {
+                dissolved = true;
+            }
+        }
+
+        if(dissolved) {
             CloseNote();
         }
+    }
+
+    public void setDissolving(bool val) {
+        dissolving = val;
     }
 }

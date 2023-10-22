@@ -17,9 +17,20 @@ public class NPCInteractTimer : InteractableInterface
     [SerializeField] public DialogueController dialogueController;
     [SerializeField] public Color dialogueColor = Color.white;
     [SerializeField] public GameObject UIManager;
+    private bool started = false;
+    private bool dissolve = false;
+    [SerializeField] GameObject npc;
+
+    private SkinnedMeshRenderer renderer;
+
+    void Start() {
+        renderer = GetComponentsInChildren<SkinnedMeshRenderer>()[0];
+    }
+
     private bool isTalking = false;
     public override void interact(){
         if(!isTalking){
+            started = true;
             interactText = "";
             if(this.particle[0]){
                 for(int i = 0;i < this.particle.Count();i ++){
@@ -44,6 +55,7 @@ public class NPCInteractTimer : InteractableInterface
         dialogueController.textColor = dialogueColor;
         dialogueBox.SetActive(true);
         dialogueController.StartDialogue();
+
     }
 
     
@@ -53,6 +65,30 @@ public class NPCInteractTimer : InteractableInterface
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
             interactText = "Interact [E]";
+            if(started) {
+                dissolve = true;
+                started = false;
+            }
+        }
+
+        if(dissolve)  {
+            bool disable = true;
+            for(int i = 0; i < renderer.materials.Length; i++) {
+                if(renderer.materials[i].GetFloat("_Amount") <= 1) {
+                    renderer.materials[i].SetFloat("_Amount",  renderer.materials[i].GetFloat("_Amount") + 0.001f);
+                }
+                if(renderer.materials[i].GetFloat("_BurnSize") <= 1) {
+                    renderer.materials[i].SetFloat("_BurnSize",  renderer.materials[i].GetFloat("_BurnSize") + 0.001f);
+                }
+            }
+            for(int i = 0; i < renderer.materials.Length; i++) {
+                if(renderer.materials[i].GetFloat("_Amount") < 1) {
+                    disable = false;
+                }
+            }
+            if(disable) {
+                npc.SetActive(false);
+            }
         }
     }
 }

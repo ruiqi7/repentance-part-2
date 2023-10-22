@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.0023584962, g: 0.0023584962, b: 0.0023584962, a: 1}
+  m_AmbientSkyColor: {r: 0.37735844, g: 0.3764706, b: 0.3764706, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.41960785, g: 0.47843137, b: 0.627451, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 5ba172cd3918d7c44aa6d04446119a00, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.071000196, g: 0.07882018, b: 0.1439682, a: 1}
+  m_IndirectSpecularColor: {r: 0.070944615, g: 0.078762956, b: 0.14394107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,6 +240,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1191416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -972,6 +973,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &65701119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1352,6 +1354,7 @@ MonoBehaviour:
   maxX: 5
   minZ: -5
   maxZ: 5
+  camera: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!95 &94079775
 Animator:
@@ -1393,6 +1396,7 @@ MonoBehaviour:
   minZ: 5
   maxZ: 234
   audioSource: {fileID: 612437550}
+  camera: {fileID: 1094900905}
 --- !u!4 &94079777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac162a9aebfaf4ea0ba022c916f9e855, type: 3}
@@ -1589,6 +1593,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &98475819
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5098,6 +5103,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &794513877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5506,7 +5512,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8166413885788164260, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 905109620}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
@@ -5578,15 +5588,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2591787528032706776, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
-      propertyPath: m_Name
-      value: NPC1Updated
-      objectReference: {fileID: 0}
-    - target: {fileID: 2591787528032706776, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
-      propertyPath: m_TagString
-      value: Interactable
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
+    m_RemovedComponents:
+    - {fileID: 2478134942544210290, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2513896239200549801, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
@@ -5674,8 +5681,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.88292456, b: 0.6556604, a: 1}
-  m_Intensity: 10
-  m_Range: 25
+  m_Intensity: 5
+  m_Range: 40
   m_SpotAngle: 50
   m_InnerSpotAngle: 4
   m_CookieSize: 10
@@ -5867,6 +5874,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ef621b6686eb2745a0b3d24cd5a1353, type: 3}
+--- !u!1 &905109620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3962169809579841621, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+  m_PrefabInstance: {fileID: 850174498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &923706089
 GameObject:
   m_ObjectHideFlags: 0
@@ -6119,6 +6131,7 @@ MonoBehaviour:
   maxX: 234
   minZ: 5
   maxZ: 234
+  camera: {fileID: 1094900905}
   audioSource: {fileID: 612437550}
 --- !u!95 &931394963
 Animator:
@@ -6493,6 +6506,7 @@ MonoBehaviour:
   minZ: 5
   maxZ: 234
   audioSource: {fileID: 612437550}
+  camera: {fileID: 1094900905}
 --- !u!1 &1028559766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6838,6 +6852,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   uiManager: {fileID: 675408284}
+  camera: {fileID: 1094900905}
   staminaBar: {fileID: 1512481883}
   maxStamina: 100
 --- !u!143 &1064079134
@@ -6911,7 +6926,10 @@ GameObject:
   - component: {fileID: 1094900901}
   - component: {fileID: 1094900900}
   - component: {fileID: 1094900899}
-  m_Layer: 0
+  - component: {fileID: 1094900907}
+  - component: {fileID: 1094900906}
+  - component: {fileID: 1094900908}
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -6982,7 +7000,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094900897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
@@ -7004,7 +7022,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094900897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 433faa8b758afed4f9295b193c697276, type: 3}
   m_Name: 
@@ -7079,6 +7097,96 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1094900906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094900897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1094900898}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &1094900907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094900897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 799addd7b4b281b47b56f1d799142fad, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1094900908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094900897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7123de56fc9af8340bcf3ae6c31df492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 0895484f5d6f57f4dbaa0d33063fffaa, type: 2}
 --- !u!1001 &1098316161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7734,6 +7842,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1167175822
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8538,6 +8647,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1247243239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9630,6 +9740,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1404560118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10439,6 +10550,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1558085260
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11003,6 +11115,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1659180638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12380,6 +12493,7 @@ MonoBehaviour:
   player: {fileID: 1064079134}
   cameraController: {fileID: 1094900901}
   isOpen: 0
+  dissolving: 0
 --- !u!23 &1901674579
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12903,6 +13017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC 1 Eye Left
       objectReference: {fileID: 0}
+    - target: {fileID: 1084645888309200103, guid: 29b17be2d4d787c47a2d4b3128f288f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 702ef2720166048f2bd507d8a947ec56, type: 2}
     - target: {fileID: 2131891767223119725, guid: 29b17be2d4d787c47a2d4b3128f288f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05999756
