@@ -50,8 +50,8 @@ public class InventoryController : MonoBehaviour
         {
             inventory[i] = -1;
         }
-        AddToInventory("Heirloom");
-        AddToInventory("Flashlight");
+        // AddToInventory("Heirloom");
+        // AddToInventory("Flashlight");
     }
     
     void Update()

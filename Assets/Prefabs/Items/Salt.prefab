@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linesWhenItemCollected:
-  - Salt
+  - Salt - Repels monsters
   linesWhenItemUsed:
   - This will repel the monsters from this area...
   linesWhenItemNotUsed:

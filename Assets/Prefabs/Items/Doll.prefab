@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linesWhenItemCollected:
-  - Broken Doll
+  - Broken doll - Distracts monster child
   linesWhenItemUsed:
   - This will momentarily preoccupy the monster child...
   linesWhenItemNotUsed:

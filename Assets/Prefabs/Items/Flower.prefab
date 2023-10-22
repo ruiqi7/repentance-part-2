@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linesWhenItemCollected:
-  - Withered Flower
+  - Withered flower - Grave offering
   linesWhenItemUsed:
   - I'm here to pay my respects...
   - I've been blessed with a brief conservation of stamina!

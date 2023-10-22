@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linesWhenItemCollected:
-  - Candle
+  - Candle - Grave offering
   linesWhenItemUsed:
   - I'm here to pay my respects...
   - I've been granted a temporary speed boost!
