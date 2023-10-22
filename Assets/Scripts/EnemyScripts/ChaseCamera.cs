@@ -62,10 +62,9 @@ public class ChaseCamera : MonoBehaviour
             } else {
                 temp.SetFloat("_Active", 1f);
             }
-            float wait = Random.Range(0.1f, 0.2f);
+            float wait = Random.Range(0.2f, 0.4f);
             yield return new WaitForSeconds(wait);
         }
-        yield return new WaitForSeconds(1);
         flickering = false;
     }
 
