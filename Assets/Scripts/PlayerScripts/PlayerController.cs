@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
             enemyPosition = new Vector3(enemyPosition.x, 0.5f, enemyPosition.z);
             GameObject.Find("EnemyChild").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
+            camera.GetComponent<CameraController>().SetGameOver(true);
         }
         if (collision.gameObject.tag == "Enemy2") {
             gameOver = true;
@@ -110,6 +111,7 @@ public class PlayerController : MonoBehaviour
             enemyPosition = new Vector3(enemyPosition.x, 1.5f, enemyPosition.z);
             GameObject.Find("Enemy2fixed").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
+            camera.GetComponent<CameraController>().SetGameOver(true);
         }
 
         if (collision.gameObject.tag == "Enemy1") {
@@ -119,6 +121,7 @@ public class PlayerController : MonoBehaviour
             GameObject.Find("Enemy1").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
             GameObject.Find("Enemy1").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
+            camera.GetComponent<CameraController>().SetGameOver(true);
         }
     }
 

@@ -46,7 +46,6 @@ public class NoteInteract : InteractableInterface
         }
     }
     private void Update(){
-        Debug.Log("updat");
         if(dissolving) {
             if(GameObject.Find("Exit")) {
                 GameObject.Find("Exit").SetActive(false);
