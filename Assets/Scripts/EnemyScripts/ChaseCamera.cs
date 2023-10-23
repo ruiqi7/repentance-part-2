@@ -15,11 +15,19 @@ public class ChaseCamera : MonoBehaviour
     private Vector3 targetPosition;
     private Animator animator;
     private bool flickering = false;
+    public bool gameOver = false;
+    private Vector3 finalPos;
+    private bool timeOut = false;
     void Start()
     {
         transform.LookAt(target.transform.position);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        StartCoroutine(HandleStart());
+    }
+
+    public void SetGameOver(bool var) {
+        gameOver = var;
     }
 
     private Vector3 GetRandomTarget() {
@@ -28,29 +36,39 @@ public class ChaseCamera : MonoBehaviour
         return newPos;
     }
 
+    public void SetFinalPos(Vector3 pos) {
+        finalPos = pos;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        Vector3 direction = target.transform.position - transform.position;
-        Debug.DrawRay(transform.position, direction, Color.yellow);
-        if(Physics.Raycast(transform.position, direction, out hit)) {
-            if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
-                moveRandom();
-            } else if(hit.collider.tag == "Player") {
-                if(!handling) {
-                    StartCoroutine(HandleAudio());
+        if(gameOver) {
+            GetComponent<Animator>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+            transform.position = finalPos;
+        } else if(!timeOut) {
+            RaycastHit hit;
+            Vector3 direction = target.transform.position - transform.position;
+            Debug.DrawRay(transform.position, direction, Color.yellow);
+            if(Physics.Raycast(transform.position, direction, out hit)) {
+                if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
+                    moveRandom();
+                } else if(hit.collider.tag == "Player") {
+                    if(!handling) {
+                        StartCoroutine(HandleAudio());
+                    }
+                    if(!flickering && Vector3.Distance(target.transform.position, transform.position) < 20) {
+                        StartCoroutine(ShaderFlicker());
+                    }
+                    Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                    rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
+                    transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
+                } else {
+                    moveRandom();
                 }
-                if(!flickering && Vector3.Distance(target.transform.position, transform.position) < 20) {
-                    StartCoroutine(ShaderFlicker());
-                }
-                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
-                rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
-                transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
-            } else {
-                moveRandom();
-            }
-        } 
+            } 
+        }
     }
 
     IEnumerator ShaderFlicker() {
@@ -66,6 +84,12 @@ public class ChaseCamera : MonoBehaviour
             yield return new WaitForSeconds(wait);
         }
         flickering = false;
+    }
+
+    private IEnumerator HandleStart() {
+        timeOut = true;
+        yield return new WaitForSeconds(15);
+        timeOut = false;
     }
 
     private void moveRandom() {
