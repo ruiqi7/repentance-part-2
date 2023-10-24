@@ -13,6 +13,7 @@ public class ChaseCamera : MonoBehaviour
     private Rigidbody rb;
     private Vector3 targetPosition;
     private Animator animator;
+    private bool isRepelled = false;
     void Start()
     {
         transform.LookAt(target.transform.position);
@@ -30,11 +31,16 @@ public class ChaseCamera : MonoBehaviour
     void Update()
     {
         //float normalisedSpeed = speed * (Time.time/300);
+        if (isRepelled)
+        {
+            return;
+        }
+        
         RaycastHit hit;
         Vector3 direction = target.transform.position - transform.position;
         Debug.DrawRay(transform.position, direction, Color.yellow);
         if(Physics.Raycast(transform.position, direction, out hit)) {
-            if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
+            if(hit.collider.tag == "Generated") {
                 moveRandom();
             } else if(hit.collider.tag == "Player") {
                 if(!handling) {
@@ -58,7 +64,7 @@ public class ChaseCamera : MonoBehaviour
         Vector3 direction = targetPosition - transform.position;
         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, Color.green);
         if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, out hit, 4.0f)) {
-            if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
+            if(hit.collider.tag == "Generated") {
                 targetPosition = GetRandomTarget();
             }
         }
@@ -73,6 +79,22 @@ public class ChaseCamera : MonoBehaviour
             newPos = Vector3.MoveTowards(transform.position, targetPosition, speed*1.5f);
         }
         rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "RepelArea")
+        {
+            isRepelled = true;
+            rb.AddForce(collision.contacts[0].normal * 300.0f);
+            Invoke("StopRepulsion", 0.3f);
+        }
+    }
+
+    private void StopRepulsion()
+    {
+        rb.velocity = Vector3.zero;
+        isRepelled = false;
     }
 
     private IEnumerator HandleAudio() {

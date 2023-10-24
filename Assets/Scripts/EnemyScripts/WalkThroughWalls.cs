@@ -14,9 +14,12 @@ public class WalkThroughWalls : MonoBehaviour
     private Vector3 targetPosition;
     [SerializeField] private AudioSource audioSource;
     private bool handling = false;
+    private Rigidbody rb;
+    private bool isRepelled = false;
     void Start()
     {
         transform.LookAt(target.transform.position);
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
 
@@ -24,6 +27,11 @@ public class WalkThroughWalls : MonoBehaviour
     void FixedUpdate()
     {
         //float normalisedSpeed = speed * (Time.time/300);
+        if (isRepelled)
+        {
+            return;
+        }
+
         if(Vector3.Distance(target.transform.position, transform.position) < distance) {
             if(!handling) {
                 StartCoroutine(HandleAudio());
@@ -53,6 +61,22 @@ public class WalkThroughWalls : MonoBehaviour
 
      private Vector3 GetRandomTarget() {
         return new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ,maxZ));
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "RepelArea")
+        {
+            isRepelled = true;
+            rb.AddForce(collision.contacts[0].normal * 300.0f);
+            Invoke("StopRepulsion", 0.3f);
+        }
+    }
+
+    private void StopRepulsion()
+    {
+        rb.velocity = Vector3.zero;
+        isRepelled = false;
     }
 
     private IEnumerator HandleAudio() {
