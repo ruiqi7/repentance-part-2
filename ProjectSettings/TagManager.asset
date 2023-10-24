@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Tombstone
   - Generated
+  - EnemyChild
+  - Enemy1
+  - Enemy2
   layers:
   - Default
   - TransparentFX

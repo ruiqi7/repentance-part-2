@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
         isPaused = false;
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         ChangePage(gameOverPageIndex);
-        PauseGame();
+        //PauseGame();
         allowPause = false;
         audioManager.GetComponent<AudioManager>().GameOverMusic();
     }
