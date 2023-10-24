@@ -45,12 +45,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Keyboard Input
+        // Keyboard Inputs
         if(gameOver) {
             GameObject.Find("FlashLight").GetComponent<Light>().enabled = true;
             var targetDir = enemyPosition - transform.position;
             if(Vector3.Angle(transform.forward, targetDir) < 10) {
-                uiManagerScript.GameOver();
+                uiManagerScript.PauseGame();
             } 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targetDir), Time.deltaTime * 50f);
             var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
             GameObject.Find("EnemyChild").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
+            uiManagerScript.GameOver();
         }
         if (collision.gameObject.tag == "Enemy2") {
             gameOver = true;
@@ -112,16 +113,18 @@ public class PlayerController : MonoBehaviour
             GameObject.Find("Enemy2fixed").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
+            uiManagerScript.GameOver();
         }
 
         if (collision.gameObject.tag == "Enemy1") {
             gameOver = true;
             enemyPosition = collision.gameObject.transform.position;
+            GameObject.Find("Enemy1").GetComponent<WalkThroughWalls>().SetFinalPos(enemyPosition);
             enemyPosition = new Vector3(enemyPosition.x, 0.5f, enemyPosition.z);
-            GameObject.Find("Enemy1").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
-            GameObject.Find("Enemy1").GetComponent<ChaseCamera>().SetGameOver(true);
+            GameObject.Find("Enemy1").GetComponent<WalkThroughWalls>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
+            uiManagerScript.GameOver();
         }
     }
 

@@ -31,7 +31,7 @@ Shader "Custom/PostProcess" {
             half blood = tex2D(_BloodTex, input.uv).r;
 
             if(blood < 0.5) {
-                return (1.25*float4(color.r, color.g, color.b, 1.0)) * _Color;
+                return (2*float4(color.r*2, color.g*2, color.b*2, 1)) * _Color;
             }
             float grayscale = dot(color, float3(0.2126, 0.7152, 0.0722));
             return float4(grayscale,grayscale,grayscale,1.0);

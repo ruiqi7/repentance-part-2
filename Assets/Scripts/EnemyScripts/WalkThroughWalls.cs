@@ -26,6 +26,11 @@ public class WalkThroughWalls : MonoBehaviour
         StartCoroutine(HandleStart());
     }
 
+
+    public void SetGameOver(bool var) {
+        gameOver = var;
+    }
+
     public void SetFinalPos(Vector3 pos) {
         finalPos = pos;
     }
