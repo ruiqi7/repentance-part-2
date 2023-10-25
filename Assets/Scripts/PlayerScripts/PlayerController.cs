@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
     private bool conserveStamina = false;
     private bool speedBoost = false;
 
+    [SerializeField] private AudioSource walk;
+    [SerializeField] private AudioSource run;
+
+    private bool isWalking = false;
+    private bool isRunning = false;
+
     void Start()
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {   
             speed = sprintSpeed;
+            isRunning = true;
             if (!conserveStamina)
             {
                 string difficulty = PlayerPrefs.GetString("difficulty");
@@ -57,10 +64,18 @@ public class PlayerController : MonoBehaviour
             }
             if(staminaBar.value <= 0){
                 speed = baseSpeed;
+                isRunning = false;
+                isWalking = true;
             }
         } else {
             speed = baseSpeed;
+            isRunning = false;
             staminaBar.value += 0.002f;
+        }
+        if(!isRunning && (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D))){
+            isWalking = true;
+        } else {
+            isWalking = false;
         }
         
         isGrounded = Physics.Raycast(player.transform.position, Vector3.down, (player.height / 2) + 0.1f, groundMask);
@@ -71,6 +86,8 @@ public class PlayerController : MonoBehaviour
             velocity.y += -9.8f;
             player.Move(velocity * Time.deltaTime);
         }
+        HandleRunSound();
+        HandleWalkSound();
     }
 
     void OnCollisionEnter(Collision collision) {
@@ -108,6 +125,24 @@ public class PlayerController : MonoBehaviour
         else
         {
             conserveStamina = false;
+        }
+    }
+
+    private void HandleWalkSound()
+    {
+        if(isWalking && !walk.isPlaying){
+            walk.Play();
+        } else if (!isWalking){
+            walk.Stop();
+        }
+    }
+
+    private void HandleRunSound()
+    {
+        if(isRunning && !run.isPlaying){
+            run.Play();
+        } else if (!isRunning){
+            run.Stop();
         }
     }
 }
