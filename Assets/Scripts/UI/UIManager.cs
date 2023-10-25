@@ -51,10 +51,13 @@ public class UIManager : MonoBehaviour
                         running = false;
                     }
                 }   
-
-                float minutes = Mathf.FloorToInt(timeRemaining / 60);
-                float seconds = Mathf.FloorToInt(timeRemaining % 60);
-                text.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+                if(timeRemaining > 295 || (timeRemaining > 145 && timeRemaining <= 151) || (timeRemaining > 27 && timeRemaining <= 31) ) {
+                    float minutes = Mathf.FloorToInt(timeRemaining / 60);
+                    float seconds = Mathf.FloorToInt(timeRemaining % 60);
+                    text.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+                } else {
+                    text.text = "";
+                }
             }
         }
         if (currentScene.name == "MazeGeneration" && timeRemaining <= 0 && !isPaused)
