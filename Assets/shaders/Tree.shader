@@ -44,6 +44,7 @@ Shader "Custom/Tree"
 			float4 _Color;
 			float4 _LightColor0; // provided by Unity
             float4 _WorldSize;
+			float _Cutoff;
             float _WaveSpeed;
             float _WaveAmp;
             float _HeightFactor;
@@ -128,6 +129,7 @@ Shader "Custom/Tree"
 				//return float4(rgb, 1.0);
 				
 				fixed4 unlitColor = tex2D(_MainTex, v.uv);
+				clip(unlitColor.a - _Cutoff);
 				float3 interpNormal = normalize(v.worldNormal);
 
 				// Calculate ambient RGB intensities
