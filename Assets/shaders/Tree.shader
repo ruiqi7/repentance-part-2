@@ -35,6 +35,7 @@ Shader "Custom/Tree"
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma multi_compile_fwdbase // shadows
+			#pragma multi_compile_fog
             #include "UnityCG.cginc"
 			
 			// Properties
@@ -68,8 +69,9 @@ Shader "Custom/Tree"
 				float4 pos : SV_POSITION;
 				float3 normal : NORMAL;
 				float4 uv : TEXCOORD0;
-				float4 worldVertex : TEXCOORD1;
-    			float3 worldNormal : TEXCOORD2;
+				float4 worldVertex : TEXCOORD2;
+    			float3 worldNormal : TEXCOORD3;
+				UNITY_FOG_COORDS(1)
                 //float2 sp : TEXCOORD0; // test sample position
 			};
 
@@ -88,7 +90,7 @@ Shader "Custom/Tree"
 
 				output.worldVertex = worldVertex;
     			output.worldNormal = worldNormal;
-
+				UNITY_TRANSFER_FOG(output, output.pos);
 
                 // get vertex world position
                 float4 worldPos = mul(input.vertex, unity_ObjectToWorld);
@@ -176,7 +178,9 @@ Shader "Custom/Tree"
 				float4 returnColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
 				returnColor.rgb = amb.rgb + dif.rgb + spe.rgb;
 				returnColor.a = unlitColor.a;
-
+				
+				UNITY_APPLY_FOG(v.fogCoord, returnColor);
+				
 				return returnColor;
 			}
 
