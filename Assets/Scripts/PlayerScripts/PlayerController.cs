@@ -29,14 +29,21 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private AudioSource walk;
     [SerializeField] private AudioSource run;
+    [SerializeField] private AudioSource walkHouse;
+    [SerializeField] private AudioSource runHouse;
 
     private bool isWalking = false;
     private bool isRunning = false;
+
+    private InHouse inHouseScript;
+
+    public GameObject floor;
 
     void Start()
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
+        inHouseScript = floor.GetComponent<InHouse>();
     }
 
     void FixedUpdate()
@@ -132,17 +139,27 @@ public class PlayerController : MonoBehaviour
     {
         if(isWalking && !walk.isPlaying){
             walk.Play();
-        } else if (!isWalking){
+        } else if (!isWalking || inHouseScript.inHouse){
             walk.Stop();
+        }
+        if(isWalking && !walkHouse.isPlaying && inHouseScript.inHouse){
+            walkHouse.Play();
+        } else if (!isWalking || !inHouseScript.inHouse){
+            walkHouse.Stop();
         }
     }
 
     private void HandleRunSound()
     {
-        if(isRunning && !run.isPlaying){
+        if(isRunning && !inHouseScript.inHouse && !run.isPlaying){
             run.Play();
-        } else if (!isRunning){
+        } else if (!isRunning || inHouseScript.inHouse){
             run.Stop();
+        }
+        if(isRunning && !runHouse.isPlaying && inHouseScript.inHouse){
+            runHouse.Play();
+        } else if (!isRunning || !inHouseScript.inHouse){
+            runHouse.Stop();
         }
     }
 }
