@@ -58,8 +58,11 @@ public class NPCInteractTimer : InteractableInterface
         if(Vector3.Distance(player.transform.position, transform.position) < 10) {
             particleSystem1.SetActive(false);
             particleSystem2.SetActive(true);
-        } else {
+        } else if(Vector3.Distance(player.transform.position, transform.position) < 200){ 
             particleSystem1.SetActive(true);
+            particleSystem2.SetActive(false);
+        } else {
+             particleSystem1.SetActive(false);
             particleSystem2.SetActive(false);
         }
         if(dialogueController.isActiveAndEnabled == false){

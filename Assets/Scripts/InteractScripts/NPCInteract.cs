@@ -55,8 +55,10 @@ public class NPCInteract : InteractableInterface
     public void Update(){
         if(Vector3.Distance(player.transform.position, transform.position) < 10) {
             particleSystem1.SetActive(false);
-        } else {
+        } else if(Vector3.Distance(player.transform.position, transform.position) < 200){
             particleSystem1.SetActive(true);
+        } else {
+            particleSystem1.SetActive(false);
         }
         if(dialogueController.isActiveAndEnabled == false){
             dialogueController.lines = null;

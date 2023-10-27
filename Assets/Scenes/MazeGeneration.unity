@@ -5065,6 +5065,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9175922447475800573, guid: 4212c5e9c42a84937b8952d8380f7963, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 975686947}
+    - target: {fileID: 9175922447475800573, guid: 4212c5e9c42a84937b8952d8380f7963, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1064079130}
