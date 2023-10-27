@@ -27,11 +27,9 @@ struct v2f
 
 sampler2D _MainTex;
 float4 _MainTex_ST;
-fixed4 _DissolveColor;
 sampler2D _DissolveTexture;
 half _Amount;
 fixed4 _Color;
-uniform float _PixelSize;
 
 uniform float _Ka;
 uniform float _Kd;

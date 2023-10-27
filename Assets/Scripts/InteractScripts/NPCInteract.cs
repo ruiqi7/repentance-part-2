@@ -48,7 +48,9 @@ public class NPCInteract : InteractableInterface
 
     IEnumerator TurnOff() {
         flashlight.enabled = false;
+        flashlight.GetComponent<FlashLightController>().off = true;
         yield return new WaitForSeconds(10);
+        flashlight.GetComponent<FlashLightController>().off = false;
         flashlight.enabled = true;
     }
     

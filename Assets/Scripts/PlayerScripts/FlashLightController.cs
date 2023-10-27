@@ -14,6 +14,7 @@ public class FlashLightController : MonoBehaviour
     [SerializeField] private Slider batteryBar;
     [SerializeField] private float maxBattery;
     [SerializeField] private Image barFill;
+    public bool off = false;
     private Light flashlight;
     void Start()
     {
@@ -29,7 +30,7 @@ public class FlashLightController : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-         if (Input.GetKeyDown(KeyCode.F) && batteryBar.value > 0)
+         if (Input.GetKeyDown(KeyCode.F) && batteryBar.value > 0 && !off)
         {
             flashlight.enabled = !flashlight.enabled;
         }
