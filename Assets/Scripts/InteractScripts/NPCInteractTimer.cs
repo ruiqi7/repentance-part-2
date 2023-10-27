@@ -17,12 +17,18 @@ public class NPCInteractTimer : InteractableInterface
     [SerializeField] public DialogueController dialogueController;
     [SerializeField] public Color dialogueColor = Color.white;
     [SerializeField] public GameObject UIManager;
+    private UIManager UIManagerScript;
     private bool started = false;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject particleSystem1;
     [SerializeField] private GameObject particleSystem2;
 
     private bool isTalking = false;
+
+    void Start() {
+        UIManagerScript = UIManager.GetComponent<UIManager>();
+    }
+
     public override void interact(){
         if(!isTalking){
             started = true;
@@ -40,9 +46,9 @@ public class NPCInteractTimer : InteractableInterface
     }
     public void speak(){
         isTalking = !isTalking;
-        if(UIManager.GetComponent<UIManager>().getTimePassed() < 150) {
+        if(UIManagerScript.getTimePassed() < 150) {
             dialogueController.lines = beggining;
-        } else if(UIManager.GetComponent<UIManager>().getTimePassed() >= 150 && UIManager.GetComponent<UIManager>().getTimePassed() < 240) {
+        } else if(UIManagerScript.getTimePassed() >= 150 && UIManagerScript.getTimePassed() < 240) {
             dialogueController.lines = halfWay;
         } else {
             dialogueController.lines = ending;

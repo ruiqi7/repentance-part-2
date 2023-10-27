@@ -10,10 +10,12 @@ public class ChaseCamera : MonoBehaviour
     [SerializeField] private float minZ, maxZ;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Camera camera;
+    private Material cameraMat;
     private bool handling = false;
     private Rigidbody rb;
     private Vector3 targetPosition;
     private Animator animator;
+    private BoxCollider bc;
     private bool flickering = false;
     public bool gameOver = false;
     private Vector3 finalPos;
@@ -23,6 +25,8 @@ public class ChaseCamera : MonoBehaviour
         transform.LookAt(target.transform.position);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        bc = GetComponent<BoxCollider>();
+        cameraMat = camera.GetComponent<PostProcess>().material;
         StartCoroutine(HandleStart());
     }
 
@@ -44,8 +48,8 @@ public class ChaseCamera : MonoBehaviour
     void Update()
     {
         if(gameOver) {
-            GetComponent<Animator>().enabled = false;
-            GetComponent<BoxCollider>().enabled = false;
+            animator.enabled = false;
+            bc.enabled = false;
             transform.position = finalPos;
         } else if(!timeOut) {
             RaycastHit hit;
@@ -73,12 +77,11 @@ public class ChaseCamera : MonoBehaviour
 
     IEnumerator ShaderFlicker() {
         flickering = true;
-        var temp = camera.GetComponent<PostProcess>().material;
         for(int i = 0; i < 2; i ++) {
-            if(temp.GetFloat("_Active") == 1f) {
-                temp.SetFloat("_Active", 0);
+            if(cameraMat.GetFloat("_Active") == 1f) {
+                cameraMat.SetFloat("_Active", 0);
             } else {
-                temp.SetFloat("_Active", 1f);
+                cameraMat.SetFloat("_Active", 1f);
             }
             float wait = Random.Range(0.2f, 0.4f);
             yield return new WaitForSeconds(wait);

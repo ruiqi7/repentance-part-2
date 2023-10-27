@@ -27,6 +27,7 @@ public class NPCInteractInventory : InteractableInterface
     private bool started = false;
     private bool dissolve = false;
     private SkinnedMeshRenderer renderer;
+    private InventoryController inventoryController;
 
     public override void interact(){
         if(!isTalking){
@@ -38,11 +39,12 @@ public class NPCInteractInventory : InteractableInterface
 
     void Start() {
         renderer = GetComponentsInChildren<SkinnedMeshRenderer>()[0];
+        inventoryController = inventory.GetComponent<InventoryController>();
     }
 
     public void speak(){
         isTalking = !isTalking;
-        if(inventory.GetComponent<InventoryController>().CheckInventory(item)) {
+        if(inventoryController.CheckInventory(item)) {
             dialogueController.lines = linesWithItem;
             hadItem = true;
              if(this.particle[0]){
@@ -83,8 +85,8 @@ public class NPCInteractInventory : InteractableInterface
             isTalking = !isTalking;
             interactText = "I N T E R A C T [E]";
             if(started && hadItem) {
-                int index = inventory.GetComponent<InventoryController>().GetItemIndex(item);
-                inventory.GetComponent<InventoryController>().RemoveFromInventory(index);
+                int index = inventoryController.GetItemIndex(item);
+                inventoryController.RemoveFromInventory(index);
                 batteryBar.value += 25;
                 started = false;
                 dissolve = true;

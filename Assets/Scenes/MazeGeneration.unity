@@ -571,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 559402862282509530, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1560665423531972578, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18
@@ -1992,6 +1996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 559402862282509530, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1560665423531972578, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18
@@ -2958,6 +2966,10 @@ PrefabInstance:
     - target: {fileID: 559402862282509530, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
       propertyPath: m_Name
       value: GoodNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 559402862282509530, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1560665423531972578, guid: 89900c5b6d0b88448b6901bfabc63afc, type: 3}
       propertyPath: m_LocalPosition.x

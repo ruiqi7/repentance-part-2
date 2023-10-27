@@ -11,6 +11,8 @@ public class WalkThroughWalls : MonoBehaviour
     [SerializeField] private float minZ, maxZ;
     [SerializeField] private Camera camera;
     private Animator animator;
+    private Material cameraMat;
+    private BoxCollider bc;
     private float startTime;
     private Vector3 targetPosition;
     [SerializeField] private AudioSource audioSource;
@@ -23,6 +25,8 @@ public class WalkThroughWalls : MonoBehaviour
     {
         transform.LookAt(target.transform.position);
         animator = GetComponent<Animator>();
+        bc = GetComponent<BoxCollider>();
+        cameraMat = camera.GetComponent<PostProcess>().material;
         StartCoroutine(HandleStart());
     }
 
@@ -38,9 +42,9 @@ public class WalkThroughWalls : MonoBehaviour
     void FixedUpdate()
     {
         if(gameOver) {
-            GetComponent<Animator>().enabled = false;
+            animator.enabled = false;
+            bc.enabled = false;
             transform.position = finalPos;
-            GetComponent<BoxCollider>().enabled = false;
         } else if(!timeOut) {
             if(Vector3.Distance(target.transform.position, transform.position) < distance) {
                 if(!handling) {
@@ -91,12 +95,11 @@ public class WalkThroughWalls : MonoBehaviour
     }
     IEnumerator ShaderFlicker() {
         flickering = true;
-        var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
         for(int i = 0; i < 2; i ++) {
-            if(temp.GetFloat("_Active") == 1f) {
-                temp.SetFloat("_Active", 0);
+            if(cameraMat.GetFloat("_Active") == 1f) {
+                cameraMat.SetFloat("_Active", 0);
             } else {
-                temp.SetFloat("_Active", 1f);
+                cameraMat.SetFloat("_Active", 1f);
             }
             float wait = Random.Range(0.1f, .2f);
             yield return new WaitForSeconds(wait);
