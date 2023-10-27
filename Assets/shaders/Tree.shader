@@ -37,13 +37,15 @@ Shader "Custom/Tree"
 			#pragma multi_compile_fwdbase // shadows
 			#pragma multi_compile_fog
             #include "UnityCG.cginc"
+			#include "UnityPBSLighting.cginc"
+			#include "AutoLight.cginc"
 			
 			// Properties
 			sampler2D _MainTex;
             sampler2D _WindTex;
             float4 _WindTex_ST;
 			float4 _Color;
-			float4 _LightColor0; // provided by Unity
+			//float4 _LightColor0; // provided by Unity
             float4 _WorldSize;
 			float _Cutoff;
             float _WaveSpeed;
@@ -100,8 +102,6 @@ Shader "Custom/Tree"
                 samplePos += _Time.x * _WindSpeed.xy;
                 // sample wind texture
                 float windSample = tex2Dlod(_WindTex, float4(samplePos, 0, 0));
-                
-				//output.sp = samplePos; // test sample position
 
                 // 0 animation below _HeightCutoff
                 float heightFactor = input.vertex.y > _HeightCutoff;
@@ -117,18 +117,6 @@ Shader "Custom/Tree"
 
 			float4 frag(vertexOutput v) : SV_Target
 			{
-				
-				// normalize light dir
-				//float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
-
-				// apply lighting
-				//float ramp = clamp(dot(input.normal, lightDir), 0.001, 1.0);
-				//float3 lighting = tex2D(_MainTex, float2(ramp, 0.5)).rgb;
-
-                //return float4(frac(input.sp.x), 0, 0, 1); // test sample position
-
-				//float3 rgb = _LightColor0.rgb * lighting * _Color.rgb;
-				//return float4(rgb, 1.0);
 				
 				fixed4 unlitColor = tex2D(_MainTex, v.uv);
 				clip(unlitColor.a - _Cutoff);

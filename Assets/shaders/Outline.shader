@@ -3,6 +3,8 @@ Shader "Unlit/NewUnlitShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _OutlineThickness ("Thickness", Float) = 1.0
+        _OutlineColor ("Color", Color) = (1,1,1,1)
         _Ka("Ka", Float) = 1.0
 		_Kd("Kd", Float) = 1.0
 		_Ks("Ks", Float) = 1.0
@@ -13,7 +15,7 @@ Shader "Unlit/NewUnlitShader"
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
-
+        Cull Back
         Pass
         {
             CGPROGRAM
