@@ -1,4 +1,12 @@
-#define DISOLVE_INCLUDED
+/*
+    Adapted from and inspired by the following sources:
+        - Code Avarice: Burning Edges Dissolve Shader in Unity (http://www.codeavarice.com/dev-blog/tutorial-burning-edges-dissolve-shader-in-unity)
+        - febucci//gamedev: Dissolve Shader (https://www.febucci.com/2018/09/dissolve-shader/)
+        - Linden Reig: Dissolve Shader in Unity (https://lindenreidblog.com/2017/12/16/dissolve-shader-in-unity/)
+        - COMP30019: Workshop-9-Solution PhongShader.shader (https://github.com/COMP30019/Workshop-9-Solution/blob/main/Assets/PhongShader.shader)
+*/
+
+#define DISSOLVE_INCLUDED
 #include "UnityPBSLighting.cginc"
 #include "AutoLight.cginc"
 
@@ -52,60 +60,63 @@ v2f vert (appdata v)
 
 fixed4 frag (v2f i) : SV_Target
 {
-    // sample the texture
+
+    // dissolve part of the texture
     half dissolve_value = tex2D(_DissolveTexture, i.uv).r;
     clip(dissolve_value - _Amount);
 
+    // sample burn colour
     half burn = tex2D(_DissolveTexture, i.uv).r - _Amount;
 
     fixed4 unlitColor;
 
+    // determine unlit colour - either burning or normal
     if(burn < _BurnSize  && _Amount > 0 && _Amount < 1) {
         unlitColor = tex2D(_BurnMap, float2(burn*(1/_BurnSize), 0));
     } else {
-        float2 pixelatedUV = floor(i.uv * _PixelSize) / _PixelSize;
-        unlitColor = tex2D(_MainTex, pixelatedUV);
+        unlitColor = tex2D(_MainTex, i.uv);
     }
 
     float3 interpNormal = normalize(i.worldNormal);
 
-    // Calculate ambient RGB intensities
+
+    // Determine ambient reflection
     float Ka = _Ka;
-    #if defined(SPOT)
+    #if defined(SPOT) // no reflection if the light source is the flashlight
         Ka = 0;
     #endif
+
+
     float3 amb = unlitColor.rgb * UNITY_LIGHTMODEL_AMBIENT.rgb * Ka;
 
-    #if defined(SPOT) 
-        float3 V = normalize(_WorldSpaceCameraPos - i.worldVertex.xyz);
-    #else
-        float3 V = normalize(_WorldSpaceCameraPos - i.worldVertex.xyz);
-    #endif
+    float3 V = normalize(_WorldSpaceCameraPos - i.worldVertex.xyz);
 
-    // Calculate diffuse RBG reflections, we save the results of L.N because we will use it again
-    // (when calculating the reflected ray in our specular component)
+    // determine light attenuation
     #if defined(SPOT)
-        UNITY_LIGHT_ATTENUATION(fAtt, 0, i.worldVertex.xyz);
+        UNITY_LIGHT_ATTENUATION(fAtt, 0, i.worldVertex.xyz); // unity preset for flashlight
     #else
         float fAtt = _fAtt;
     #endif
+
     float Kd = _Kd;
 
+    // determine direction to light source
     #if defined(SPOT)
         float3 L = normalize(_WorldSpaceLightPos0 - i.worldVertex.xyz);
     #else
         float3 L = _WorldSpaceLightPos0;
     #endif
+
+
     float LdotN = dot(L, interpNormal);
+
+    // determine diffuse RGB reflections
     float3 dif = fAtt * _LightColor0 * Kd * unlitColor.rgb * saturate(LdotN);
 
-    // Calculate specular reflections
     float Ks = _Ks;
-    //float specN = _specN; // Values>>1 give tighter highlights
     
-
     // Using Blinn-Phong approximation:
-    float specN = _specN; // We usually need a higher specular power when using Blinn-Phong
+    float specN = _specN;
     float3 H = normalize(V + L);
     float3 spe = fAtt * _LightColor0 * Ks * pow(saturate(dot(interpNormal, H)), specN);
 
@@ -113,6 +124,7 @@ fixed4 frag (v2f i) : SV_Target
     float4 returnColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
     returnColor.rgb = amb.rgb + dif.rgb + spe.rgb;
     returnColor.a = 0.5;
+
     return returnColor * _Color;
 }
 

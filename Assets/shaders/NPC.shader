@@ -33,8 +33,8 @@ Shader "Custom/NPC"
             // make fog work
             #pragma multi_compile_fog
 
-            #if !defined(NPC_INCLUDED)
-			#define NPC_INCLUDED
+            #if !defined(DISSOLVE_INCLUDED)
+			#define DISSOLVE_INCLUDED
 			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
 			#endif

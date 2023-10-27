@@ -30,8 +30,8 @@ Shader "Custom/Letter"
             #pragma vertex vert
             #pragma fragment frag
 
-            #if !defined(NPC_INCLUDED)
-			#define NPC_INCLUDED
+            #if !defined(DISSOLVE_INCLUDED)
+			#define DISSOLVE_INCLUDED
 			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
 			#endif
