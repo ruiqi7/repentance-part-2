@@ -15511,6 +15511,7 @@ MonoBehaviour:
   batteryBar: {fileID: 210621640}
   maxBattery: 100
   barFill: {fileID: 805866789}
+  off: 0
 --- !u!1 &1702048258
 GameObject:
   m_ObjectHideFlags: 0
