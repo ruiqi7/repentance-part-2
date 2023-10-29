@@ -194,15 +194,15 @@ Tombstones and the house are located at the start of the maze. An NPC can also b
 
 ### 4.2 Objects 
 
-- Tombstones. Player can interact with the tombstones using a candle or withered flower. 
+- Tombstones. Player can interact with the graves using a candle or withered flower. 
   <p align="center">
   <img src="Images/Tombstone.png" width=300>
   </p>
-- Heirloom. Looks like an old knife. Starts in the player's inventory. Used for lore purposes.
+- Heirloom. Looks like an old knife. Used for lore purposes.
   <p align="center">
   <img src="Images/Heirloom.png" width=300>
   </p>
-- Flashlight. Starts in the player’s inventory. Player can turn it on or off.
+- Flashlight. Player can turn it on or off.
   <p align="center">
   <img src="Images/Flashlight.png" width=200>
   </p>
@@ -215,7 +215,7 @@ Tombstones and the house are located at the start of the maze. An NPC can also b
     <p align="center">
     <img src="Images/Doll.png" width=200>
     </p>
-  - Candle (Can be placed on the graves)
+  - Candle (Can be placed on the graves or used as light sources)
     <p align="center">
     <img src="Images/Candle.png" width=200>
     </p>
@@ -417,6 +417,6 @@ Problem: Balancing difficulty in order to ensure players of all skill levels can
 
 Solution:
 - Have different difficulty levels available.
-- The game starts at an easy difficulty setting and progressively becomes harder. This eases the player into the gameplay.
+- Players can adjust the difficulty level according to their preferences.
 
 
