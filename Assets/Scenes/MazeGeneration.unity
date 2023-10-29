@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.070943795, g: 0.07876261, b: 0.14394015, a: 1}
+  m_IndirectSpecularColor: {r: 0.07096117, g: 0.078784786, b: 0.14395368, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2457,7 +2457,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 88823f8a2246341819114db52978af27, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 53287ff3df9934168835ba227e74ec4c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2468,7 +2468,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 300
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6314,6 +6314,7 @@ MonoBehaviour:
   witheredFlower: {fileID: 5445750326216136529, guid: 26eaaf135204cc34791eb0c251d47b19, type: 3}
   NPC3: {fileID: 975686947}
   NPC2: {fileID: 1856895739}
+  NPC1: {fileID: 1446987104}
   eyeballLetter: {fileID: 65701115}
   letter1: {fileID: 1247243236}
   letter3: {fileID: 98475815}
@@ -6495,6 +6496,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
+    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
     - target: {fileID: -8166413885788164260, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
       propertyPath: npc
       value: 
@@ -6583,18 +6596,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
-    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: npc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
-    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
     m_RemovedComponents:
     - {fileID: 2478134942544210290, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
     m_RemovedGameObjects: []
@@ -7430,7 +7431,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 300
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -15212,6 +15213,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6365921985399573710, guid: 4745d1d7800129342a1b23f92c31715a, type: 3}
       propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365921985399573710, guid: 4745d1d7800129342a1b23f92c31715a, type: 3}
+      propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6365921985399573710, guid: 4745d1d7800129342a1b23f92c31715a, type: 3}

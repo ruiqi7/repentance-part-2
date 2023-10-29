@@ -63,7 +63,7 @@ public class DialogueController : MonoBehaviour
             else{
                 StopAllCoroutines();
                 textBox.text = lines[lineIndex];
-                StartCoroutine(WaitLine());
+                //StartCoroutine(WaitLine());
             }
         }
     }
