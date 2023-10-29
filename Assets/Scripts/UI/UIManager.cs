@@ -29,14 +29,14 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
-        playerController = player.GetComponent<PlayerController>();
-        TogglePause();
-        TogglePause();
     }
 
     private void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name!="StartScene"){
+            playerController = player.GetComponent<PlayerController>();
+        }
         if (Input.GetKeyDown("escape"))
         {
             TogglePause();
