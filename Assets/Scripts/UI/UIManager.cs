@@ -29,14 +29,17 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
+        if (SceneManager.GetActiveScene().name != "StartScene")
+        {
+            playerController = player.GetComponent<PlayerController>();
+        }
+        TogglePause();
+        TogglePause();
     }
 
     private void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        if(currentScene.name!="StartScene"){
-            playerController = player.GetComponent<PlayerController>();
-        }
         if (Input.GetKeyDown("escape"))
         {
             TogglePause();
@@ -82,7 +85,10 @@ public class UIManager : MonoBehaviour
             {
                 ChangePage(pausePageIndex);
                 PauseGame();
-                playerController.SetSoundFalse();
+                if (SceneManager.GetActiveScene().name != "StartScene")
+                {
+                    playerController.SetSoundFalse();
+                }
             }
         }      
     }
