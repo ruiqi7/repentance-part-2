@@ -19,6 +19,8 @@ public class WalkThroughWalls : MonoBehaviour
     [SerializeField] private AudioSource growl;
     private int noticed = 0;
     private bool handling = false;
+    private Rigidbody rb;
+    private bool isRepelled = false;
     private bool flickering = false;
     public bool gameOver = false;
     private bool timeOut = false;
@@ -26,6 +28,7 @@ public class WalkThroughWalls : MonoBehaviour
     void Start()
     {
         transform.LookAt(target.transform.position);
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         bc = GetComponent<BoxCollider>();
         cameraMat = camera.GetComponent<PostProcess>().material;
@@ -47,7 +50,7 @@ public class WalkThroughWalls : MonoBehaviour
             animator.enabled = false;
             bc.enabled = false;
             transform.position = finalPos;
-        } else if(!timeOut) {
+        } else if(!timeOut && !isRepelled) {
             if(Vector3.Distance(target.transform.position, transform.position) < distance) {
                 if(!handling) {
                     StartCoroutine(HandleAudio());
@@ -67,7 +70,7 @@ public class WalkThroughWalls : MonoBehaviour
                 startTime = Time.time;
                 targetPosition = GetRandomTarget();
                 noticed = 0;
-        } else {
+            } else {
                 Vector3 newPos;
                 string difficulty = PlayerPrefs.GetString("difficulty");
                 if (difficulty == "Easy")
@@ -87,6 +90,22 @@ public class WalkThroughWalls : MonoBehaviour
 
      private Vector3 GetRandomTarget() {
         return new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ,maxZ));
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "RepelArea")
+        {
+            isRepelled = true;
+            rb.AddForce(collision.contacts[0].normal * 300.0f);
+            Invoke("StopRepulsion", 0.3f);
+        }
+    }
+
+    private void StopRepulsion()
+    {
+        rb.velocity = Vector3.zero;
+        isRepelled = false;
     }
 
     private IEnumerator HandleStart() {

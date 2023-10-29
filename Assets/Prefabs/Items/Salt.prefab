@@ -230,7 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: C O L L E C T [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
   itemName: Salt
 --- !u!114 &8876488697933917506
@@ -245,13 +246,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c7526fdfaee2d438ae6fb107a577b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesWhenItemCollected:
+  - Salt - Repels monsters
   linesWhenItemUsed:
-  - This will repel the monsters from this area.
-  - I'm safe for now... but not for long...
+  - This will repel the monsters from this area...
   linesWhenItemNotUsed:
-  - I need more space to scatter the salt around...
+  - I need more space to scatter the salt...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07
   dissolveSpeed: 0.1
 --- !u!65 &8393263345968188860
 BoxCollider:

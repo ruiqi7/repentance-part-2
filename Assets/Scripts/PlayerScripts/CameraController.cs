@@ -23,6 +23,9 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         if(!gameOver) {
+            // Mouse sensitivity
+            sens = PlayerPrefs.GetInt("sensitivity");
+            
             // Mouse Input
             float mouseX = Input.GetAxisRaw("Mouse X")  * sens;
             float mouseY = Input.GetAxisRaw("Mouse Y")  * sens;

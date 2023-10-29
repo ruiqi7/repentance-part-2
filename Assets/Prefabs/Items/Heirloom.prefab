@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579d490ca7d2ad4da6549701eb8de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesWhenItemCollected:
+  - Heirloom
   linesWhenItemUsed: []
   linesWhenItemNotUsed:
-  - This heirloom is stained with the blood of its victims...
-  - A haunting reminder of the darkness that runs in my family's veins...
+  - This heirloom has taken innocent lives...
+  - A haunting reminder of my family's crimes...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07

@@ -6,8 +6,11 @@ public class CandleHandler : ItemHandlerInterface
 {
     [SerializeField] private int interactDistance = 2;
     
+    private GameObject player;
+
     public override bool HandleBehavior()
     {
+        player = GameObject.FindWithTag("Player");
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactDistance)) {
@@ -15,7 +18,7 @@ public class CandleHandler : ItemHandlerInterface
                 bool placed = PlaceCandle(hit.collider.gameObject);
                 if (placed)
                 {
-                    ShowMonologue(true);
+                    ShowMonologue(ItemStatus.USED, -1);
                     return true;
                 }
                 else
@@ -24,8 +27,23 @@ public class CandleHandler : ItemHandlerInterface
                 }
             }
         }
-        ShowMonologue(false);
-        return false;
+        
+        Vector3 playerPos = player.transform.position;
+        Vector3 playerDir = player.transform.forward;
+        Vector3 pos = playerPos + playerDir;
+        pos.y = 0.2f;
+        Vector3 size = GetComponent<MeshRenderer>().bounds.size;
+        if (CheckSpace(pos, size, Quaternion.identity))
+        {
+            pos.y = 0.0f;
+            Instantiate(gameObject, pos, Quaternion.identity);
+            return true;
+        }
+        else
+        {
+            ShowMonologue(ItemStatus.NOTUSED, -1);
+            return false;
+        }
     }
 
     private bool PlaceCandle(GameObject grave)
@@ -44,7 +62,6 @@ public class CandleHandler : ItemHandlerInterface
         candle.tag = "Untagged"; // cannot pick up the candle once used
         graveHandler.occupied = true;
 
-        GameObject player = GameObject.FindWithTag("Player");
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.SpeedBoost();
         

@@ -153,7 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: C O L L E C T [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
   itemName: Flower
 --- !u!114 &3588949404909888808
@@ -168,13 +169,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23a4aca7c490294197c9ab518b79520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesWhenItemCollected:
+  - Withered flower - Grave offering
   linesWhenItemUsed:
-  - I hope you find peace...
-  - It seems like the spirits have blessed me with a temporary conservation of stamina!
+  - I'm here to pay my respects...
+  - I've been blessed with a brief conservation of stamina!
   linesWhenItemNotUsed:
-  - I think I've passed by a few graves...
-  - Were they for victims of my family?
-  - I should offer this flower as a token of repentance...
+  - This flower seems fitting as a grave offering.
+  - There were graves near the house...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07
   interactDistance: 2
