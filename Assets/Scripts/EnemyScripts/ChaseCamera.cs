@@ -69,10 +69,10 @@ public class ChaseCamera : MonoBehaviour
                         StartCoroutine(ShaderFlicker());
                     }
                     if(noticed == 0){
-                    NoticeAudio();
-                    noticed = 1;
-                }
-                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                        NoticeAudio();
+                        noticed = 1;
+                    }
+                    Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                     rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
                     transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
                 } else {
