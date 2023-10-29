@@ -93,6 +93,7 @@ The story starts with the player receiving the will of their estranged parents, 
     <img src="Images/gamedia1.png" width=300>
     <img src="Images/House.png" width=300>
     <img src="Images/StartLetter.png" width=300>
+    <img src="Images/StartLetterBurn.png" width=300>
 </p>
 
 ### 2.2 Story and Game Progression
