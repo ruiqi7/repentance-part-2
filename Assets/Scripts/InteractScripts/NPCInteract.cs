@@ -16,6 +16,7 @@ public class NPCInteract : InteractableInterface
     private bool dissolve = false;
     [SerializeField] GameObject npc;
     private SkinnedMeshRenderer renderer;
+    private bool handling = false;
 
     private bool isTalking = false;
 
@@ -47,11 +48,13 @@ public class NPCInteract : InteractableInterface
     }
 
     IEnumerator TurnOff() {
+        handling = true;
         flashlight.enabled = false;
         flashlight.GetComponent<FlashLightController>().off = true;
         yield return new WaitForSeconds(10);
         flashlight.GetComponent<FlashLightController>().off = false;
         flashlight.enabled = true;
+        handling = false;
     }
     
     public void Update(){
@@ -88,7 +91,7 @@ public class NPCInteract : InteractableInterface
                     disable = false;
                 }
             }
-            if(disable) {
+            if(disable && !handling) {
                 npc.SetActive(false);
             }
         }

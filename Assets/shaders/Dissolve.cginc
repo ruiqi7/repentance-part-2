@@ -71,6 +71,7 @@ fixed4 frag (v2f i) : SV_Target
     // determine unlit colour - either burning or normal
     if(burn < _BurnSize  && _Amount > 0 && _Amount < 1) {
         unlitColor = tex2D(_BurnMap, float2(burn*(1/_BurnSize), 0));
+        unlitColor += 3*unlitColor;
     } else {
         unlitColor = tex2D(_MainTex, i.uv);
     }
