@@ -21,6 +21,7 @@ public class MazeConstructor : MonoBehaviour
     public GameObject witheredFlower;
     public GameObject NPC3;
     public GameObject NPC2;
+    public GameObject NPC1;
     public GameObject eyeballLetter;
     public GameObject letter1;
     public GameObject letter3;
@@ -48,6 +49,7 @@ public class MazeConstructor : MonoBehaviour
     private static int witheredFlowerCount = 0;
     private static int NPC3Count = 0;
     private static int NPC2Count = 0;
+    private static int NPC1Count = 0;
     private static int letterCount = 0;
 
     private MazeDataGenerator dataGenerator;
@@ -177,6 +179,13 @@ public class MazeConstructor : MonoBehaviour
                     //Instantiate(NPC2, new Vector3(j*width, 0, i*width), Quaternion.identity);
                     NPC2.transform.position = new Vector3(j*width, 0, i*width);
                     NPC2Count++;
+                    maze[i,j] = -1;
+                }
+                else if (maze[i, j] == 7 && NPC1Count<NPCNum)
+                {
+                    //Instantiate(NPC2, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC1.transform.position = new Vector3(j*width, 0, i*width);
+                    NPC1Count++;
                     maze[i,j] = -1;
                 }
                 //letters
