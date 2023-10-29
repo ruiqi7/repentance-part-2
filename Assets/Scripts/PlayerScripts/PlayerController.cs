@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targetDir), Time.deltaTime * 50f);
             var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
             temp.SetFloat("_Active", 1f);
+            isWalking = false;
+            isRunning = false;
         } else {
             float xMove = Input.GetAxisRaw("Horizontal");
             float zMove = Input.GetAxisRaw("Vertical");
