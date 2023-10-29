@@ -18,20 +18,37 @@ public class NPCInteractInventory : InteractableInterface
     [SerializeField] public string item;
     [SerializeField] public GameObject inventory;
     [SerializeField] private Slider batteryBar;
-    private bool started = false;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject particleSystem1;
+    [SerializeField] private GameObject particleSystem2;
+    [SerializeField] GameObject npc;
     private bool hadItem = false;
     private bool isTalking = false;
+    private bool started = false;
+    private bool dissolve = false;
+    private SkinnedMeshRenderer renderer;
+    private InventoryController inventoryController;
 
     public override void interact(){
         if(!isTalking){
+            if(dialogueBox.activeSelf){
+                dialogueController.SkipLine();
+                dialogueController.lines = null;
+            }
             started = true;
             interactText = "";
             speak();
         }
     }
+
+    void Start() {
+        renderer = GetComponentsInChildren<SkinnedMeshRenderer>()[0];
+        inventoryController = inventory.GetComponent<InventoryController>();
+    }
+
     public void speak(){
         isTalking = !isTalking;
-        if(inventory.GetComponent<InventoryController>().CheckInventory(item)) {
+        if(inventoryController.CheckInventory(item)) {
             dialogueController.lines = linesWithItem;
             hadItem = true;
              if(this.particle[0]){
@@ -56,16 +73,46 @@ public class NPCInteractInventory : InteractableInterface
 
     
     public void Update(){
+        if(Vector3.Distance(player.transform.position, transform.position) < 10) {
+            particleSystem1.SetActive(false);
+            particleSystem2.SetActive(true);
+        } else if(Vector3.Distance(player.transform.position, transform.position) < 200){
+            particleSystem1.SetActive(true);
+            particleSystem2.SetActive(false);
+        } else {
+            particleSystem1.SetActive(false);
+            particleSystem2.SetActive(false);
+        }
         if(dialogueController.isActiveAndEnabled == false){
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
             interactText = "I N T E R A C T [E]";
             if(started && hadItem) {
-                int index = inventory.GetComponent<InventoryController>().GetItemIndex(item);
-                inventory.GetComponent<InventoryController>().RemoveFromInventory(index);
+                int index = inventoryController.GetItemIndex(item);
+                inventoryController.RemoveFromInventory(index);
                 batteryBar.value += 25;
                 started = false;
+                dissolve = true;
+            }
+        }
+        if(dissolve)  {
+            bool disable = true;
+            for(int i = 0; i < renderer.materials.Length; i++) {
+                if(renderer.materials[i].GetFloat("_Amount") <= 1) {
+                    renderer.materials[i].SetFloat("_Amount",  renderer.materials[i].GetFloat("_Amount") + 0.004f);
+                }
+                if(renderer.materials[i].GetFloat("_BurnSize") <= 1) {
+                    renderer.materials[i].SetFloat("_BurnSize",  renderer.materials[i].GetFloat("_BurnSize") + 0.004f);
+                }
+            }
+            for(int i = 0; i < renderer.materials.Length; i++) {
+                if(renderer.materials[i].GetFloat("_Amount") < 1) {
+                    disable = false;
+                }
+            }
+            if(disable) {
+                npc.SetActive(false);
             }
         }
     }

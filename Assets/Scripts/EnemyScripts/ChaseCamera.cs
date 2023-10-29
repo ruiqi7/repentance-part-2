@@ -9,11 +9,16 @@ public class ChaseCamera : MonoBehaviour
     [SerializeField] private float minX, maxX;
     [SerializeField] private float minZ, maxZ;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource growl;
+    private int noticed = 0;
     [SerializeField] private Camera camera;
+    private Material cameraMat;
     private bool handling = false;
     private Rigidbody rb;
     private Vector3 targetPosition;
     private Animator animator;
+    private bool isRepelled = false;
+    private BoxCollider bc;
     private bool flickering = false;
     public bool gameOver = false;
     private Vector3 finalPos;
@@ -23,6 +28,8 @@ public class ChaseCamera : MonoBehaviour
         transform.LookAt(target.transform.position);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        bc = GetComponent<BoxCollider>();
+        cameraMat = camera.GetComponent<PostProcess>().material;
         StartCoroutine(HandleStart());
     }
 
@@ -44,41 +51,46 @@ public class ChaseCamera : MonoBehaviour
     void Update()
     {
         if(gameOver) {
-            GetComponent<Animator>().enabled = false;
-            GetComponent<BoxCollider>().enabled = false;
+            animator.enabled = false;
+            bc.enabled = false;
             transform.position = finalPos;
-        } else if(!timeOut) {
+        } else if(!timeOut && !isRepelled) {
             RaycastHit hit;
             Vector3 direction = target.transform.position - transform.position;
             Debug.DrawRay(transform.position, direction, Color.yellow);
             if(Physics.Raycast(transform.position, direction, out hit)) {
-                if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
+                if(hit.collider.tag == "Generated") {
                     moveRandom();
-                } else if(hit.collider.tag == "Player") {
+                    noticed = 0;
+            } else if(hit.collider.tag == "Player") {
                     if(!handling) {
                         StartCoroutine(HandleAudio());
                     }
                     if(!flickering && Vector3.Distance(target.transform.position, transform.position) < 20) {
                         StartCoroutine(ShaderFlicker());
                     }
+                    if(noticed == 0){
+                        NoticeAudio();
+                        noticed = 1;
+                    }
                     Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                     rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
                     transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
                 } else {
                     moveRandom();
-                }
+                    noticed = 0;
+            }
             } 
         }
     }
 
     IEnumerator ShaderFlicker() {
         flickering = true;
-        var temp = camera.GetComponent<PostProcess>().material;
         for(int i = 0; i < 2; i ++) {
-            if(temp.GetFloat("_Active") == 1f) {
-                temp.SetFloat("_Active", 0);
+            if(cameraMat.GetFloat("_Active") == 1f) {
+                cameraMat.SetFloat("_Active", 0);
             } else {
-                temp.SetFloat("_Active", 1f);
+                cameraMat.SetFloat("_Active", 1f);
             }
             float wait = Random.Range(0.2f, 0.4f);
             yield return new WaitForSeconds(wait);
@@ -101,7 +113,7 @@ public class ChaseCamera : MonoBehaviour
         Vector3 direction = targetPosition - transform.position;
         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, Color.green);
         if(Physics.Raycast(new Vector3(transform.position.x, transform.position.y+1, transform.position.z), direction, out hit, 4.0f)) {
-            if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
+            if(hit.collider.tag == "Generated") {
                 targetPosition = GetRandomTarget();
             }
         }
@@ -118,10 +130,30 @@ public class ChaseCamera : MonoBehaviour
         rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "RepelArea")
+        {
+            isRepelled = true;
+            rb.AddForce(collision.contacts[0].normal * 300.0f);
+            Invoke("StopRepulsion", 0.3f);
+        }
+    }
+
+    private void StopRepulsion()
+    {
+        rb.velocity = Vector3.zero;
+        isRepelled = false;
+    }
+
     private IEnumerator HandleAudio() {
         handling = true;
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
+    }
+
+    private void NoticeAudio(){
+        growl.Play();
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,7 +17,7 @@ public class InventoryController : MonoBehaviour
     
     private int capacity;
     private int numberOfUniqueItems = 0;
-    private List<int> itemPositions = new List<int>();
+    private int[] inventory;
     private Dictionary<string, int> itemIndexDict = new Dictionary<string, int>()
     {
         {"Heirloom", 0},
@@ -44,12 +45,13 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         capacity = transform.childCount;
+        inventory = new int[capacity];
         for (int i = 0; i < capacity; i++)
         {
-            itemPositions.Add(-1);
+            inventory[i] = -1;
         }
-        AddToInventory("Heirloom");
-        AddToInventory("Flashlight");
+        // AddToInventory("Heirloom");
+        // AddToInventory("Flashlight");
     }
     
     void Update()
@@ -67,7 +69,8 @@ public class InventoryController : MonoBehaviour
                 int itemIndex = itemIndexDict[itemImage.name.Substring(0, itemImage.name.Length - "(Clone)".Length)];
                 GameObject item = items[itemIndex];
                 ItemHandlerInterface itemHandler = item.GetComponent<ItemHandlerInterface>();
-                bool itemUsed = itemHandler.InitHandler(dialogueBox, dialogueController);
+                itemHandler.InitHandler(dialogueBox, dialogueController);
+                bool itemUsed = itemHandler.HandleBehavior();
                 if (itemUsed)
                 {
                     RemoveFromInventory(i);
@@ -78,13 +81,14 @@ public class InventoryController : MonoBehaviour
 
     public void AddToInventory(string itemName)
     {
+        int boxIndex;
         int itemIndex = itemIndexDict[itemName];
         GameObject itemImage = itemImages[itemIndex];
         if (numberOfUniqueItems < capacity)
         {
-            if (itemPositions.Contains(itemIndex)) // quantity was 1 or more
+            if (Array.Exists(inventory, e => e == itemIndex)) // quantity was 1 or more
             {
-                int boxIndex = itemPositions.IndexOf(itemIndex);
+                boxIndex = Array.FindIndex(inventory, e => e == itemIndex);
                 Transform inventoryBox = transform.GetChild(boxIndex);
                 TextMeshProUGUI quantityText = inventoryBox.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
                 if (!quantityText.enabled) // quantity was 1
@@ -99,28 +103,34 @@ public class InventoryController : MonoBehaviour
             }
             else // quantity was 0
             {
-                itemPositions[numberOfUniqueItems] = itemIndex;
-                Transform inventoryBox = transform.GetChild(numberOfUniqueItems);
+                boxIndex = FindFirstUnoccupiedBox();
+                inventory[boxIndex] = itemIndex;
+                Transform inventoryBox = transform.GetChild(boxIndex);
                 AddShadow(inventoryBox.gameObject);
                 Instantiate(itemImage, inventoryBox);
                 numberOfUniqueItems += 1;
+            }
+
+            if (itemIndex > 1) // exclude heirloom and flashlight
+            {
+                ShowItemUsage(items[itemIndex], (boxIndex + 1) % 10);
             }
         }
     }
 
     public bool CheckInventory(string item) {
         int itemIndex = itemIndexDict[item];
-        return itemPositions.Contains(itemIndex);
+        return Array.Exists(inventory, e => e == itemIndex);
     }
 
     public int GetItemIndex(string item) {
         int index = itemIndexDict[item];
-        return itemPositions.IndexOf(index);
+        return Array.FindIndex(inventory, e => e == index);
     }
 
     public void RemoveFromInventory(int boxIndex)
     {
-        if (boxIndex >= 0 && boxIndex < numberOfUniqueItems)
+        if (boxIndex >= 0 && boxIndex < capacity)
         {
             Transform inventoryBox = transform.GetChild(boxIndex);
             TextMeshProUGUI quantityText = inventoryBox.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
@@ -128,19 +138,11 @@ public class InventoryController : MonoBehaviour
             
             if (!quantityText.enabled) // quantity was 1
             {
-                itemPositions[boxIndex] = -1;
+                inventory[boxIndex] = -1;
                 Transform itemImage = inventoryBox.GetChild(1);
                 Destroy(itemImage.gameObject);
                 numberOfUniqueItems -= 1;
-                if (boxIndex < numberOfUniqueItems)
-                {
-                    Transform itemQuantity = inventoryBox.GetChild(0);
-                    shiftItemsLeft(boxIndex, itemQuantity);
-                }
-                else
-                {
-                    RemoveShadow(inventoryBox.gameObject);
-                }
+                RemoveShadow(inventoryBox.gameObject);
             }
             else if (quantity == 2) // quantity was 2
             {
@@ -153,26 +155,23 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    private void shiftItemsLeft(int boxIndex, Transform itemQuantity)
+    private int FindFirstUnoccupiedBox()
     {
-        Transform newInventoryBox;
-        Transform currInventoryBox = null;
-        Transform currItemQuantity;
-        Transform currItemImage;
-
-        for (int i = boxIndex; i < numberOfUniqueItems; i++)
+        for (int i = 0; i < capacity; i++)
         {
-            newInventoryBox = transform.GetChild(i);
-            currInventoryBox = transform.GetChild(i + 1);
-            currItemQuantity = currInventoryBox.GetChild(0);
-            currItemImage = currInventoryBox.GetChild(1);
-            currItemQuantity.SetParent(newInventoryBox, false);
-            currItemImage.SetParent(newInventoryBox, false);
-            itemPositions[i] = itemPositions[i + 1];
+            if (inventory[i] == -1)
+            {
+                return i;
+            }
         }
-        itemQuantity.SetParent(currInventoryBox, false);
-        itemPositions[numberOfUniqueItems] = -1;
-        RemoveShadow(currInventoryBox.gameObject);
+        return -1;
+    }
+
+    private void ShowItemUsage(GameObject item, int numToPress)
+    {
+        ItemHandlerInterface itemHandler = item.GetComponent<ItemHandlerInterface>();
+        itemHandler.InitHandler(dialogueBox, dialogueController);
+        itemHandler.ShowMonologue(ItemHandlerInterface.ItemStatus.COLLECTED, numToPress);
     }
 
     private void AddShadow(GameObject box)

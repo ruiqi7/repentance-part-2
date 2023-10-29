@@ -16,6 +16,7 @@ public class VolumeController : MonoBehaviour
             PlayerPrefs.SetFloat("volume", 1.0f);
         }
         LoadVolume();
+        AdjustVolume();
     }
 
     public void AdjustVolume()

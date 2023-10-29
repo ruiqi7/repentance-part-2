@@ -27,6 +27,18 @@ public class PlayerController : MonoBehaviour
 
     private bool conserveStamina = false;
     private bool speedBoost = false;
+
+    [SerializeField] private AudioSource walk;
+    [SerializeField] private AudioSource run;
+    [SerializeField] private AudioSource walkHouse;
+    [SerializeField] private AudioSource runHouse;
+
+    private bool isWalking = false;
+    private bool isRunning = false;
+
+    private InHouse inHouseScript;
+
+    public GameObject floor;
     private bool gameOver = false;
     private Vector3 enemyPosition;
 
@@ -34,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
+        inHouseScript = floor.GetComponent<InHouse>();
         if(camera.GetComponent<Camera>().GetComponent<PostProcess>()) {
             var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
             temp.SetFloat("_Active", 0f);
@@ -55,6 +68,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targetDir), Time.deltaTime * 50f);
             var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
             temp.SetFloat("_Active", 1f);
+            isWalking = false;
+            isRunning = false;
         } else {
             float xMove = Input.GetAxisRaw("Horizontal");
             float zMove = Input.GetAxisRaw("Vertical");
@@ -63,7 +78,8 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
             {   
                 speed = sprintSpeed;
-                if (!conserveStamina)
+                isRunning = true;
+            if (!conserveStamina)
                 {
                     string difficulty = PlayerPrefs.GetString("difficulty");
                     if (difficulty == "Easy")
@@ -77,12 +93,20 @@ public class PlayerController : MonoBehaviour
                 }
                 if(staminaBar.value <= 0){
                     speed = baseSpeed;
-                }
+                    isRunning = false;
+                isWalking = true;
+            }
             } else {
                 speed = baseSpeed;
-                staminaBar.value += 0.002f;
+                isRunning = false;
+            staminaBar.value += 0.002f;
             }
-            
+            if(!isRunning && (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D))){
+            isWalking = true;
+        } else {
+            isWalking = false;
+        }
+        
             isGrounded = Physics.Raycast(player.transform.position, Vector3.down, (player.height / 2) + 0.1f, groundMask);
             if (isGrounded && velocity.y < 0) {
                 velocity.y = 0f;
@@ -92,15 +116,17 @@ public class PlayerController : MonoBehaviour
                 player.Move(velocity * Time.deltaTime);
             }
         }
+        HandleRunSound();
+        HandleWalkSound();
     }
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "EnemyChild") {
             gameOver = true;
             enemyPosition = collision.gameObject.transform.position;
-            GameObject.Find("EnemyChild").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
+            GameObject.Find("Enemy3fixed").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
             enemyPosition = new Vector3(enemyPosition.x, 0.5f, enemyPosition.z);
-            GameObject.Find("EnemyChild").GetComponent<ChaseCamera>().SetGameOver(true);
+            GameObject.Find("Enemy3fixed").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
             uiManagerScript.GameOver();
@@ -109,7 +135,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             enemyPosition = collision.gameObject.transform.position;
             GameObject.Find("Enemy2fixed").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
-            enemyPosition = new Vector3(enemyPosition.x, 1.5f, enemyPosition.z);
+            enemyPosition = new Vector3(enemyPosition.x, 1f, enemyPosition.z);
             GameObject.Find("Enemy2fixed").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
@@ -120,7 +146,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             enemyPosition = collision.gameObject.transform.position;
             GameObject.Find("Enemy1").GetComponent<WalkThroughWalls>().SetFinalPos(enemyPosition);
-            enemyPosition = new Vector3(enemyPosition.x, 0.5f, enemyPosition.z);
+            enemyPosition = new Vector3(enemyPosition.x, 0.7f, enemyPosition.z);
             GameObject.Find("Enemy1").GetComponent<WalkThroughWalls>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
@@ -155,6 +181,43 @@ public class PlayerController : MonoBehaviour
         else
         {
             conserveStamina = false;
+        }
+    }
+
+    public void SetSoundFalse(){
+        isWalking=false;
+        isRunning=false;
+        walk.Stop();
+        run.Stop();
+        walkHouse.Stop();
+        runHouse.Stop();
+    }
+
+    private void HandleWalkSound()
+    {
+        if(isWalking && !walk.isPlaying){
+            walk.Play();
+        } else if (!isWalking || inHouseScript.inHouse){
+            walk.Stop();
+        }
+        if(isWalking && !walkHouse.isPlaying && inHouseScript.inHouse){
+            walkHouse.Play();
+        } else if (!isWalking || !inHouseScript.inHouse){
+            walkHouse.Stop();
+        }
+    }
+
+    private void HandleRunSound()
+    {
+        if(isRunning && !inHouseScript.inHouse && !run.isPlaying){
+            run.Play();
+        } else if (!isRunning || inHouseScript.inHouse){
+            run.Stop();
+        }
+        if(isRunning && !runHouse.isPlaying && inHouseScript.inHouse){
+            runHouse.Play();
+        } else if (!isRunning || !inHouseScript.inHouse){
+            runHouse.Stop();
         }
     }
 }

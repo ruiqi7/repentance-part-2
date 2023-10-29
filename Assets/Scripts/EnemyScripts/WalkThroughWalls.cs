@@ -11,10 +11,16 @@ public class WalkThroughWalls : MonoBehaviour
     [SerializeField] private float minZ, maxZ;
     [SerializeField] private Camera camera;
     private Animator animator;
+    private Material cameraMat;
+    private BoxCollider bc;
     private float startTime;
     private Vector3 targetPosition;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource growl;
+    private int noticed = 0;
     private bool handling = false;
+    private Rigidbody rb;
+    private bool isRepelled = false;
     private bool flickering = false;
     public bool gameOver = false;
     private bool timeOut = false;
@@ -22,7 +28,10 @@ public class WalkThroughWalls : MonoBehaviour
     void Start()
     {
         transform.LookAt(target.transform.position);
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        bc = GetComponent<BoxCollider>();
+        cameraMat = camera.GetComponent<PostProcess>().material;
         StartCoroutine(HandleStart());
     }
 
@@ -38,10 +47,10 @@ public class WalkThroughWalls : MonoBehaviour
     void FixedUpdate()
     {
         if(gameOver) {
-            GetComponent<Animator>().enabled = false;
+            animator.enabled = false;
+            bc.enabled = false;
             transform.position = finalPos;
-            GetComponent<BoxCollider>().enabled = false;
-        } else if(!timeOut) {
+        } else if(!timeOut && !isRepelled) {
             if(Vector3.Distance(target.transform.position, transform.position) < distance) {
                 if(!handling) {
                     StartCoroutine(HandleAudio());
@@ -49,13 +58,18 @@ public class WalkThroughWalls : MonoBehaviour
                 if(!flickering && Vector3.Distance(target.transform.position, transform.position) < 20) {
                     StartCoroutine(ShaderFlicker());
                 }
-                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                if(noticed == 0){
+                    NoticeAudio();
+                    noticed = 1;
+            }
+            Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                 transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
                 transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
             } else if(Time.time - startTime >= 10) {
                 transform.position = GetRandomTarget();
                 startTime = Time.time;
                 targetPosition = GetRandomTarget();
+                noticed = 0;
             } else {
                 Vector3 newPos;
                 string difficulty = PlayerPrefs.GetString("difficulty");
@@ -70,11 +84,28 @@ public class WalkThroughWalls : MonoBehaviour
                 transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
                 transform.LookAt(targetPosition);
             }
+            noticed = 0;
         }
     }
 
      private Vector3 GetRandomTarget() {
         return new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ,maxZ));
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "RepelArea")
+        {
+            isRepelled = true;
+            rb.AddForce(collision.contacts[0].normal * 300.0f);
+            Invoke("StopRepulsion", 0.3f);
+        }
+    }
+
+    private void StopRepulsion()
+    {
+        rb.velocity = Vector3.zero;
+        isRepelled = false;
     }
 
     private IEnumerator HandleStart() {
@@ -91,17 +122,20 @@ public class WalkThroughWalls : MonoBehaviour
     }
     IEnumerator ShaderFlicker() {
         flickering = true;
-        var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
         for(int i = 0; i < 2; i ++) {
-            if(temp.GetFloat("_Active") == 1f) {
-                temp.SetFloat("_Active", 0);
+            if(cameraMat.GetFloat("_Active") == 1f) {
+                cameraMat.SetFloat("_Active", 0);
             } else {
-                temp.SetFloat("_Active", 1f);
+                cameraMat.SetFloat("_Active", 1f);
             }
             float wait = Random.Range(0.1f, .2f);
             yield return new WaitForSeconds(wait);
         }
         yield return new WaitForSeconds(1);
         flickering = false;
+    }
+
+    private void NoticeAudio(){
+        growl.Play();
     }
 }

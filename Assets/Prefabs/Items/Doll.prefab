@@ -123,7 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: C O L L E C T [E]
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
-  particle: {fileID: 0}
+  particle:
+  - {fileID: 0}
   clip: {fileID: 0}
   itemName: Doll
 --- !u!114 &2528172211753949143
@@ -138,13 +139,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23615ed1ed50e4844aa93586edb2c5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesWhenItemCollected:
+  - Broken doll - Distracts monster child
   linesWhenItemUsed:
-  - This should momentarily distract the monster child...
-  - Time to head somewhere else before it comes this way!
+  - This will momentarily preoccupy the monster child...
   linesWhenItemNotUsed:
-  - I need more space to put this doll down...
+  - I need more space to put this down...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-  dialogueSpeed: 0.1
+  dialogueSpeed: 0.07
 --- !u!1 &7381485158997094534
 GameObject:
   m_ObjectHideFlags: 0

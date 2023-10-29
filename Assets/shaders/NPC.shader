@@ -3,12 +3,9 @@ Shader "Custom/NPC"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _DissolveColor ("Dissolve Color", Color) = (1,1,1,1)
         _DissolveTexture ("Dissolve Texture", 2D) = "white" {}
         _Amount ("Amount", Range(0,1)) = 0
         _Color ("Color", Color) = (1,1,1,1)
-
-        _PixelSize ("Pixel Size", Range(1,200)) = 10
 
         _Ka("Ka", Float) = 1.0
 		_Kd("Kd", Float) = 1.0
@@ -33,8 +30,8 @@ Shader "Custom/NPC"
             // make fog work
             #pragma multi_compile_fog
 
-            #if !defined(NPC_INCLUDED)
-			#define NPC_INCLUDED
+            #if !defined(DISSOLVE_INCLUDED)
+			#define DISSOLVE_INCLUDED
 			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
 			#endif

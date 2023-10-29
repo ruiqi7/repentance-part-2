@@ -51,7 +51,12 @@ public class NoteInteract : InteractableInterface
                 GameObject.Find("Exit").SetActive(false);
             }
             if(GameObject.Find("PaperOnTable")) {
+                GameObject.Find("PaperOnTable").tag = "Untagged";
+                GameObject.Find("Paper").tag = "Untagged";
                 GameObject.Find("PaperOnTable").SetActive(false);
+                if( GameObject.Find("DialogueBox")){
+                    GameObject.Find("DialogueBox").SetActive(false);
+                }
             }
             noteTextArea.text = string.Empty;
             if(renderer.GetFloat("_Amount") <= 1) {

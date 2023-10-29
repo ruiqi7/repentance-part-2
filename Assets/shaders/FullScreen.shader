@@ -1,3 +1,8 @@
+/*
+  Inspired by:
+    - Linden Reid: Camera Effect Shaders in Unity (https://lindenreidblog.com/2018/02/05/camera-shaders-unity/)
+*/
+
 Shader "Custom/PostProcess" {
   Properties {
     _MainTex("Texture", 2D) = "white" {}

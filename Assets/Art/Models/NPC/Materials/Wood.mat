@@ -93,7 +93,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 0
-    - _fAtt: 1
+    - _fAtt: 0.02
     - _specN: 1
     m_Colors:
     - _Color: {r: 0.1981132, g: 0.10975311, b: 0, a: 1}

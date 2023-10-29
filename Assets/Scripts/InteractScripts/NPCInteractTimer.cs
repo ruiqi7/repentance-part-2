@@ -17,19 +17,24 @@ public class NPCInteractTimer : InteractableInterface
     [SerializeField] public DialogueController dialogueController;
     [SerializeField] public Color dialogueColor = Color.white;
     [SerializeField] public GameObject UIManager;
+    private UIManager UIManagerScript;
     private bool started = false;
-    private bool dissolve = false;
-    [SerializeField] GameObject npc;
-
-    private SkinnedMeshRenderer renderer;
-
-    void Start() {
-        renderer = GetComponentsInChildren<SkinnedMeshRenderer>()[0];
-    }
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject particleSystem1;
+    [SerializeField] private GameObject particleSystem2;
 
     private bool isTalking = false;
+
+    void Start() {
+        UIManagerScript = UIManager.GetComponent<UIManager>();
+    }
+
     public override void interact(){
         if(!isTalking){
+            if(dialogueBox.activeSelf){
+                dialogueController.SkipLine();
+                dialogueController.lines = null;
+            }
             started = true;
             interactText = "";
             if(this.particle[0]){
@@ -45,9 +50,9 @@ public class NPCInteractTimer : InteractableInterface
     }
     public void speak(){
         isTalking = !isTalking;
-        if(UIManager.GetComponent<UIManager>().getTimePassed() < 150) {
+        if(UIManagerScript.getTimePassed() < 150) {
             dialogueController.lines = beggining;
-        } else if(UIManager.GetComponent<UIManager>().getTimePassed() >= 150 && UIManager.GetComponent<UIManager>().getTimePassed() < 240) {
+        } else if(UIManagerScript.getTimePassed() >= 150 && UIManagerScript.getTimePassed() < 240) {
             dialogueController.lines = halfWay;
         } else {
             dialogueController.lines = ending;
@@ -60,34 +65,23 @@ public class NPCInteractTimer : InteractableInterface
 
     
     public void Update(){
+        if(Vector3.Distance(player.transform.position, transform.position) < 10) {
+            particleSystem1.SetActive(false);
+            particleSystem2.SetActive(true);
+        } else if(Vector3.Distance(player.transform.position, transform.position) < 200){ 
+            particleSystem1.SetActive(true);
+            particleSystem2.SetActive(false);
+        } else {
+             particleSystem1.SetActive(false);
+            particleSystem2.SetActive(false);
+        }
         if(dialogueController.isActiveAndEnabled == false){
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
             interactText = "Interact [E]";
             if(started) {
-                dissolve = true;
                 started = false;
-            }
-        }
-
-        if(dissolve)  {
-            bool disable = true;
-            for(int i = 0; i < renderer.materials.Length; i++) {
-                if(renderer.materials[i].GetFloat("_Amount") <= 1) {
-                    renderer.materials[i].SetFloat("_Amount",  renderer.materials[i].GetFloat("_Amount") + 0.001f);
-                }
-                if(renderer.materials[i].GetFloat("_BurnSize") <= 1) {
-                    renderer.materials[i].SetFloat("_BurnSize",  renderer.materials[i].GetFloat("_BurnSize") + 0.001f);
-                }
-            }
-            for(int i = 0; i < renderer.materials.Length; i++) {
-                if(renderer.materials[i].GetFloat("_Amount") < 1) {
-                    disable = false;
-                }
-            }
-            if(disable) {
-                npc.SetActive(false);
             }
         }
     }

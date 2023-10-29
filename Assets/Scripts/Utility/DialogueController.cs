@@ -18,11 +18,6 @@ public class DialogueController : MonoBehaviour
             textBox.text = String.Empty;
             StartCoroutine(IntroDialogue());
         }
-        else if (SceneManager.GetActiveScene().name == "MazeGeneration")
-        {
-            textBox.text = String.Empty;
-            StartCoroutine(InstructionsDialogue());
-        }
         
     }
     public void Update(){
@@ -37,7 +32,6 @@ public class DialogueController : MonoBehaviour
             }
         }
     }
-
 
     public void StartDialogue(){
         textBox.text = String.Empty;
@@ -55,6 +49,25 @@ public class DialogueController : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    public void FlashDialogue(){
+        textBox.color = textColor;
+        StartCoroutine(FlashLine());
+    }
+    
+    public void SkipLine(){
+        if(lines[lineIndex] != null){
+             if (textBox.text == lines[lineIndex]){
+                NextLine();
+            }
+            else{
+                StopAllCoroutines();
+                textBox.text = lines[lineIndex];
+                //StartCoroutine(WaitLine());
+            }
+        }
+    }
+
     IEnumerator TypeLine(){
         foreach(char c in lines[lineIndex].ToCharArray()){
             textBox.text += c;
@@ -63,12 +76,13 @@ public class DialogueController : MonoBehaviour
         yield return new WaitForSeconds(2);
         NextLine();
     }
+    IEnumerator FlashLine(){
+        textBox.text = lines[0];
+        yield return new WaitForSeconds(2);
+        gameObject.SetActive(false);
+    }
     IEnumerator IntroDialogue(){
         yield return new WaitForSeconds(5);
-        StartDialogue();
-    }
-    IEnumerator InstructionsDialogue(){
-        yield return new WaitForSeconds(1);
         StartDialogue();
     }
     IEnumerator WaitLine(){
