@@ -13,6 +13,8 @@ public class WalkThroughWalls : MonoBehaviour
     private float startTime;
     private Vector3 targetPosition;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource growl;
+    private int noticed = 0;
     private bool handling = false;
     void Start()
     {
@@ -28,6 +30,10 @@ public class WalkThroughWalls : MonoBehaviour
             if(!handling) {
                 StartCoroutine(HandleAudio());
             }
+            if(noticed == 0){
+                    NoticeAudio();
+                    noticed = 1;
+            }
             Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
             transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
             transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
@@ -35,6 +41,7 @@ public class WalkThroughWalls : MonoBehaviour
             transform.position = GetRandomTarget();
             startTime = Time.time;
             targetPosition = GetRandomTarget();
+            noticed = 0;
         } else {
             Vector3 newPos;
             string difficulty = PlayerPrefs.GetString("difficulty");
@@ -48,6 +55,7 @@ public class WalkThroughWalls : MonoBehaviour
             }
             transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
             transform.LookAt(targetPosition);
+            noticed = 0;
         }
     }
 
@@ -60,5 +68,9 @@ public class WalkThroughWalls : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
+    }
+
+    private void NoticeAudio(){
+        growl.Play();
     }
 }
