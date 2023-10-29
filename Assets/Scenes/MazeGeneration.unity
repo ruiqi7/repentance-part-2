@@ -5885,6 +5885,7 @@ MonoBehaviour:
   batteryBar: {fileID: 1527689881}
   maxBattery: 100
   barFill: {fileID: 1791471478}
+  off: 0
 --- !u!108 &852584644
 Light:
   m_ObjectHideFlags: 0
@@ -12321,7 +12322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6117647, g: 0.07362307, b: 0, a: 1}
+  m_Color: {r: 0.043137256, g: 0.32941177, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
