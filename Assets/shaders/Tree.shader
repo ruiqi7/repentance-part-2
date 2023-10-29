@@ -94,10 +94,8 @@ Shader "Custom/Tree"
     			output.worldNormal = worldNormal;
 				UNITY_TRANSFER_FOG(output, output.pos);
 
-                // get vertex world position
-                float4 worldPos = mul(input.vertex, unity_ObjectToWorld);
                 // normalize position based on world size
-                float2 samplePos = worldPos.xz/_WorldSize.xz;
+                float2 samplePos = worldVertex.xz/_WorldSize.xz;
                 // scroll sample position based on time
                 samplePos += _Time.x * _WindSpeed.xy;
                 // sample wind texture
@@ -109,7 +107,7 @@ Shader "Custom/Tree"
 				heightFactor = heightFactor * pow(input.vertex.y, _HeightFactor);
 
                 // apply wave animation
-                output.pos.z += sin(_WaveSpeed*windSample)*_WaveAmp * heightFactor;
+                //output.pos.z += sin(_WaveSpeed*windSample)*_WaveAmp * heightFactor;
                 output.pos.x += cos(_WaveSpeed*windSample)*_WaveAmp * heightFactor;
 
 				return output;
