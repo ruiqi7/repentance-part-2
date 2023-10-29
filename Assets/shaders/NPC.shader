@@ -36,7 +36,7 @@ Shader "Custom/NPC"
 			#include "AutoLight.cginc"
 			#endif
 			
-			#include "dissolve.cginc"
+			#include "Dissolve.cginc"
 
             ENDCG
         }
@@ -50,7 +50,7 @@ Shader "Custom/NPC"
 			#pragma vertex vert
 			#pragma fragment frag
 
-			#include "dissolve.cginc"
+			#include "Dissolve.cginc"
 
             ENDCG
         }
