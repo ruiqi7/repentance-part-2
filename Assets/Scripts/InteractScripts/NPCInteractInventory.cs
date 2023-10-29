@@ -30,7 +30,11 @@ public class NPCInteractInventory : InteractableInterface
     private InventoryController inventoryController;
 
     public override void interact(){
-        if(!dialogueBox.activeSelf){
+        if(!isTalking){
+            if(dialogueBox.activeSelf){
+                dialogueController.SkipLine();
+                dialogueController.lines = null;
+            }
             started = true;
             interactText = "";
             speak();
