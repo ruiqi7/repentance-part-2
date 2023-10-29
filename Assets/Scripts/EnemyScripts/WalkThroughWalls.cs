@@ -16,6 +16,8 @@ public class WalkThroughWalls : MonoBehaviour
     private float startTime;
     private Vector3 targetPosition;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource growl;
+    private int noticed = 0;
     private bool handling = false;
     private bool flickering = false;
     public bool gameOver = false;
@@ -53,14 +55,19 @@ public class WalkThroughWalls : MonoBehaviour
                 if(!flickering && Vector3.Distance(target.transform.position, transform.position) < 20) {
                     StartCoroutine(ShaderFlicker());
                 }
-                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                if(noticed == 0){
+                    NoticeAudio();
+                    noticed = 1;
+            }
+            Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                 transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
                 transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
             } else if(Time.time - startTime >= 10) {
                 transform.position = GetRandomTarget();
                 startTime = Time.time;
                 targetPosition = GetRandomTarget();
-            } else {
+                noticed = 0;
+        } else {
                 Vector3 newPos;
                 string difficulty = PlayerPrefs.GetString("difficulty");
                 if (difficulty == "Easy")
@@ -74,6 +81,7 @@ public class WalkThroughWalls : MonoBehaviour
                 transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
                 transform.LookAt(targetPosition);
             }
+            noticed = 0;
         }
     }
 
@@ -106,5 +114,9 @@ public class WalkThroughWalls : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         flickering = false;
+    }
+
+    private void NoticeAudio(){
+        growl.Play();
     }
 }

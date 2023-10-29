@@ -12,6 +12,7 @@ TagManager:
   - EnemyChild
   - Enemy1
   - Enemy2
+  - House
   layers:
   - Default
   - TransparentFX

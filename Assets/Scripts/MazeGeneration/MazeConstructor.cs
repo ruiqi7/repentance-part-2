@@ -1,5 +1,7 @@
 // Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+// to create procedurally generated maze 
 // Parts of the code from the tutorial have been modified 
+// Code to randomly generate items, npcs and torches was not included in the tutorial 
 
 using UnityEngine;
 
@@ -27,10 +29,11 @@ public class MazeConstructor : MonoBehaviour
     public GameObject letter8;
     public GameObject letter9;
     public GameObject letter10;
+    public GameObject torch;
     public BoxCollider boxCol;
 
 
-    private int candleNum = 7;
+    private int candleNum = 10;
     private int dollNum = 6;
     private int saltNum = 8;
     private int eyeballsJarNum = 5;
@@ -118,6 +121,7 @@ public class MazeConstructor : MonoBehaviour
         rb.automaticInertiaTensor = true;
     }
 
+    // Spawns items, torches and NPCs randomly 
     private void SpawnItems()
     {
         int[,] maze = data;
@@ -128,7 +132,8 @@ public class MazeConstructor : MonoBehaviour
         for (int i = rMax; i >= 0; i--)
         {
             for (int j = 0; j <= cMax; j++)
-            {
+            {   
+                //items
                 if (maze[i, j] == 2 && candleCount<candleNum)
                 {
                     Instantiate(candle, new Vector3(j*width, 0, i*width), Quaternion.identity);
@@ -174,6 +179,7 @@ public class MazeConstructor : MonoBehaviour
                     NPC2Count++;
                     maze[i,j] = -1;
                 }
+                //letters
                 else if(maze[i,j] != 1 && Random.value < .02f && letterCount<letterNum){
                     if(letterCount==0){
                         letter1.transform.position = new Vector3(j*width, 0.01f, i*width);
@@ -227,6 +233,15 @@ public class MazeConstructor : MonoBehaviour
                     }
                 }
                 }
+                //torches
+                if(maze[i,j]==1 && j%2==0 && Random.value < .25f && i!=0 && i!=rMax && j!=0 && j!=cMax){
+                    if(maze[i-1,j]==0){
+                        Instantiate(torch, new Vector3(j*width, 4, (i-0.5f)*width), Quaternion.Euler(new Vector3(-27, 0, 0)));
+                    } else if (maze[i, j+1]==0){
+                        Instantiate(torch, new Vector3((j-0.5f)*width, 4, i*width), Quaternion.Euler(new Vector3(-27, 90, 0)));
+                    }
+                }
+                //box colliders for walls
                 if(maze[i,j]==1){
                     Instantiate(boxCol, new Vector3(j*width, 0, i*width), Quaternion.identity);
                 }
