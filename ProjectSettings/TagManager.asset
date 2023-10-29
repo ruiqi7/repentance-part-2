@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - Tombstone
   - Generated
+  - EnemyChild
+  - Enemy1
+  - Enemy2
+  - House
   layers:
   - Default
   - TransparentFX

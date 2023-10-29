@@ -54,6 +54,19 @@ public class DialogueController : MonoBehaviour
         textBox.color = textColor;
         StartCoroutine(FlashLine());
     }
+    
+    public void SkipLine(){
+        if(lines[lineIndex] != null){
+             if (textBox.text == lines[lineIndex]){
+                NextLine();
+            }
+            else{
+                StopAllCoroutines();
+                textBox.text = lines[lineIndex];
+                StartCoroutine(WaitLine());
+            }
+        }
+    }
 
     IEnumerator TypeLine(){
         foreach(char c in lines[lineIndex].ToCharArray()){

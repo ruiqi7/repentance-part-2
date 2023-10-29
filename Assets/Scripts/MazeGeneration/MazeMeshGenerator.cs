@@ -1,4 +1,5 @@
 // Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+// to create procedurally generated maze 
 // Parts of the code from the tutorial have been modified 
 
 using System.Collections.Generic;

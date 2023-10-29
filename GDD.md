@@ -93,6 +93,7 @@ The story starts with the player receiving the will of their estranged parents, 
     <img src="Images/gamedia1.png" width=300>
     <img src="Images/House.png" width=300>
     <img src="Images/StartLetter.png" width=300>
+    <img src="Images/StartLetterBurn.png" width=300>
 </p>
 
 ### 2.2 Story and Game Progression
@@ -302,6 +303,7 @@ In terms of utilising pre-built assets, they will typically be sourced from the 
 - [Dirt Texture](https://www.deviantart.com/fabooguy/art/Dirt-Ground-Texture-Tileable-2048x2048-441212191)
 - [Withered Flower Texture](https://unsplash.com/photos/jY9rX-E7ztU)
 - [Eyeball Texture](https://www.filterforge.com/filters/1174.html)
+- [Torch](https://assetstore.unity.com/packages/3d/props/old-hand-torch-156928)
 
 ## 6. User Interface
 
