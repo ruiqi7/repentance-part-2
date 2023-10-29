@@ -10,9 +10,19 @@ public class NPCInteract : InteractableInterface
     [SerializeField] public DialogueController dialogueController;
     [SerializeField] public Color dialogueColor = Color.white;
     [SerializeField] public Light flashlight;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject particleSystem1;
     private bool started = false;
+    private bool dissolve = false;
+    [SerializeField] GameObject npc;
+    private SkinnedMeshRenderer renderer;
 
     private bool isTalking = false;
+
+    void Start() {
+        renderer = GetComponentsInChildren<SkinnedMeshRenderer>()[0];
+    }
+
     public override void interact(){
         if(!isTalking){
             started = true;
@@ -38,11 +48,20 @@ public class NPCInteract : InteractableInterface
 
     IEnumerator TurnOff() {
         flashlight.enabled = false;
+        flashlight.GetComponent<FlashLightController>().off = true;
         yield return new WaitForSeconds(10);
+        flashlight.GetComponent<FlashLightController>().off = false;
         flashlight.enabled = true;
     }
     
     public void Update(){
+        if(Vector3.Distance(player.transform.position, transform.position) < 10) {
+            particleSystem1.SetActive(false);
+        } else if(Vector3.Distance(player.transform.position, transform.position) < 200){
+            particleSystem1.SetActive(true);
+        } else {
+            particleSystem1.SetActive(false);
+        }
         if(dialogueController.isActiveAndEnabled == false){
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
@@ -50,7 +69,27 @@ public class NPCInteract : InteractableInterface
             interactText = "I N T E R A C T [E]";
             if(started) {
                 StartCoroutine(TurnOff());
+                dissolve = true;
                 started = false;
+            }
+        }
+        if(dissolve)  {
+            bool disable = true;
+            for(int i = 0; i < renderer.materials.Length; i++) {
+                if(renderer.materials[i].GetFloat("_Amount") <= 1) {
+                    renderer.materials[i].SetFloat("_Amount",  renderer.materials[i].GetFloat("_Amount") + 0.004f);
+                }
+                if(renderer.materials[i].GetFloat("_BurnSize") <= 1) {
+                    renderer.materials[i].SetFloat("_BurnSize",  renderer.materials[i].GetFloat("_BurnSize") +0.004f);
+                }
+            }
+            for(int i = 0; i < renderer.materials.Length; i++) {
+                if(renderer.materials[i].GetFloat("_Amount") < 1) {
+                    disable = false;
+                }
+            }
+            if(disable) {
+                npc.SetActive(false);
             }
         }
     }

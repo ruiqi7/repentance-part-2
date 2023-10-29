@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,13 +13,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private int gameWonPageIndex = 0;
     [SerializeField] private GameObject audioManager;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] float timeRemaining = 300;
+    [SerializeField] TMP_Text text;
+    private bool running = true;
 
     private bool isPaused = false;
-    private float timePassed = 0;
     private CameraController cameraController;
 
     public float getTimePassed() {
-        return timePassed;
+        return 300 - timeRemaining;
     }
 
     void Start()
@@ -37,9 +40,27 @@ public class UIManager : MonoBehaviour
         }
         if (!isPaused && currentScene.name == "MazeGeneration")
         {
-            timePassed += Time.deltaTime;
+            if(running)
+            {
+                if(timeRemaining > 0) 
+                {
+                    timeRemaining -= Time.deltaTime;
+                    if(timeRemaining < 0) 
+                    {
+                        timeRemaining = 0;
+                        running = false;
+                    }
+                }   
+                if(timeRemaining > 295 || (timeRemaining > 145 && timeRemaining <= 151) || (timeRemaining > 27 && timeRemaining <= 31) ) {
+                    float minutes = Mathf.FloorToInt(timeRemaining / 60);
+                    float seconds = Mathf.FloorToInt(timeRemaining % 60);
+                    text.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+                } else {
+                    text.text = "";
+                }
+            }
         }
-        if (currentScene.name == "MazeGeneration" && timePassed >= 300 && !isPaused)
+        if (currentScene.name == "MazeGeneration" && timeRemaining <= 0 && !isPaused)
         {
             GameWon();
         } 
@@ -71,7 +92,7 @@ public class UIManager : MonoBehaviour
         isPaused = false;
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -93,7 +114,7 @@ public class UIManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         ChangePage(gameOverPageIndex);
-        PauseGame();
+        //PauseGame();
         allowPause = false;
         audioManager.GetComponent<AudioManager>().GameOverMusic();
     }

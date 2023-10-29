@@ -17,9 +17,21 @@ public class NPCInteractTimer : InteractableInterface
     [SerializeField] public DialogueController dialogueController;
     [SerializeField] public Color dialogueColor = Color.white;
     [SerializeField] public GameObject UIManager;
+    private UIManager UIManagerScript;
+    private bool started = false;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject particleSystem1;
+    [SerializeField] private GameObject particleSystem2;
+
     private bool isTalking = false;
+
+    void Start() {
+        UIManagerScript = UIManager.GetComponent<UIManager>();
+    }
+
     public override void interact(){
         if(!isTalking){
+            started = true;
             interactText = "";
             if(this.particle[0]){
                 for(int i = 0;i < this.particle.Count();i ++){
@@ -34,9 +46,9 @@ public class NPCInteractTimer : InteractableInterface
     }
     public void speak(){
         isTalking = !isTalking;
-        if(UIManager.GetComponent<UIManager>().getTimePassed() < 150) {
+        if(UIManagerScript.getTimePassed() < 150) {
             dialogueController.lines = beggining;
-        } else if(UIManager.GetComponent<UIManager>().getTimePassed() >= 150 && UIManager.GetComponent<UIManager>().getTimePassed() < 240) {
+        } else if(UIManagerScript.getTimePassed() >= 150 && UIManagerScript.getTimePassed() < 240) {
             dialogueController.lines = halfWay;
         } else {
             dialogueController.lines = ending;
@@ -44,15 +56,29 @@ public class NPCInteractTimer : InteractableInterface
         dialogueController.textColor = dialogueColor;
         dialogueBox.SetActive(true);
         dialogueController.StartDialogue();
+
     }
 
     
     public void Update(){
+        if(Vector3.Distance(player.transform.position, transform.position) < 10) {
+            particleSystem1.SetActive(false);
+            particleSystem2.SetActive(true);
+        } else if(Vector3.Distance(player.transform.position, transform.position) < 200){ 
+            particleSystem1.SetActive(true);
+            particleSystem2.SetActive(false);
+        } else {
+             particleSystem1.SetActive(false);
+            particleSystem2.SetActive(false);
+        }
         if(dialogueController.isActiveAndEnabled == false){
             dialogueController.lines = null;
             dialogueBox.SetActive(false);
             isTalking = !isTalking;
             interactText = "Interact [E]";
+            if(started) {
+                started = false;
+            }
         }
     }
 }
