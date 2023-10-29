@@ -6474,18 +6474,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: npc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
-    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
     - target: {fileID: -8166413885788164260, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
       propertyPath: npc
       value: 
@@ -6574,6 +6562,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
+    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
     m_RemovedComponents:
     - {fileID: 2478134942544210290, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
     m_RemovedGameObjects: []
@@ -7541,7 +7541,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f6a8898fcad964b98bf878fed746d0b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0b4e84ec479c940cbb632887c3d8d8e4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
