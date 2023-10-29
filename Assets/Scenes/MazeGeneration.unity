@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07096117, g: 0.078784786, b: 0.14395368, a: 1}
+  m_IndirectSpecularColor: {r: 0.070943795, g: 0.07876261, b: 0.14394015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1698,29 +1698,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &94079774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94079771}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c566d31c62244ad4ab3f74b0ef777175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 2
-  distance: 100
-  minX: -5
-  maxX: 5
-  minZ: -5
-  maxZ: 5
-  camera: {fileID: 0}
-  audioSource: {fileID: 0}
-  growl: {fileID: 0}
-  gameOver: 0
 --- !u!95 &94079775
 Animator:
   serializedVersion: 5
@@ -3897,9 +3874,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12d2b2e4972fa4f9d97bd64c6ffe3b65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 94079775}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12d2b2e4972fa4f9d97bd64c6ffe3b65, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 94079774}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12d2b2e4972fa4f9d97bd64c6ffe3b65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 94079773}
@@ -6496,18 +6470,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: npc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
-    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
     - target: {fileID: -8166413885788164260, guid: 1d9d9c0d2c9474090b71261c1428f233, type: 3}
       propertyPath: npc
       value: 
@@ -6596,6 +6558,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320474043906031601, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 950d5f6a3fa7e814ba0a4731caba897b, type: 3}
+    - target: {fileID: 5832790535541720031, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47d15a9c792de48be9cc4249979fd31c, type: 2}
     m_RemovedComponents:
     - {fileID: 2478134942544210290, guid: b5d9698f59da8f5478053d93ae28d9ac, type: 3}
     m_RemovedGameObjects: []
