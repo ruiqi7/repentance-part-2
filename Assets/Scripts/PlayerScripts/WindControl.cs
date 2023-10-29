@@ -22,7 +22,7 @@ public class WindControl : MonoBehaviour
     {
         float houseDistance = Vector3.Distance(player.transform.position, transform.position); 
         float lmaoNumber = (initialOffset - houseDistance) / 6;
-        Debug.Log(lmaoNumber);        
+        //Debug.Log(lmaoNumber);        
         for(int i = 0; i < materials.Length; i++) {
             materials[i].SetFloat("_WaveAmp", (lmaoNumber*0.02f));
             materials[i].SetVector("_WindSpeed", new Vector4(5+lmaoNumber,1,1,1));
