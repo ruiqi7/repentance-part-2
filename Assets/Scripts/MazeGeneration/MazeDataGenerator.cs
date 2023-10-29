@@ -1,5 +1,7 @@
 // Followed tutorial from https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2
+// to create procedurally generated maze 
 // Parts of the code from the tutorial have been modified 
+// Code to randomly generate items, npcs and torches was not included in the tutorial 
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +12,7 @@ public class MazeDataGenerator
     public float itemSpawnChance;
     public float NPCSpawnChance;
 
-    private int candleNum = 7;
+    private int candleNum = 10;
     private int dollNum = 6;
     private int saltNum = 8;
     private int eyeballsJarNum = 5;
@@ -39,7 +41,7 @@ public class MazeDataGenerator
     {
         for (int j = 0; j <= cMax; j++)
         {
-            //1
+            //1 Walls of maze 
             if (i == 0 || j == 0 || i == rMax || j == cMax)
             {   
                 maze[i, j] = 1;
@@ -55,7 +57,7 @@ public class MazeDataGenerator
                 //maze[i,j] = -1;
             }
             
-            //4
+            //4 Randomly decides where walls should be placed in maze
             else if (i % 2 == 0 && j % 2 == 0)
             {
                 if (Random.value > placementThreshold)

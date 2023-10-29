@@ -25,7 +25,7 @@ public class FlickerControler : MonoBehaviour
         flickering = true;
         for(int i = 0; i < 2; i ++) {
             if(flashlight.enabled) {
-                randomIntensity = Random.Range(1f, 10f);
+                randomIntensity = Random.Range(1f, 5f);
                 flashlight.intensity = randomIntensity;
                 wait = Random.Range(0.01f, 0.2f);
                 yield return new WaitForSeconds(wait);

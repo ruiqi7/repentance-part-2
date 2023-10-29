@@ -55,6 +55,19 @@ public class DialogueController : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    public void SkipLine(){
+        if(lines[lineIndex] != null){
+             if (textBox.text == lines[lineIndex]){
+                NextLine();
+            }
+            else{
+                StopAllCoroutines();
+                textBox.text = lines[lineIndex];
+                //StartCoroutine(WaitLine());
+            }
+        }
+    }
+
     IEnumerator TypeLine(){
         foreach(char c in lines[lineIndex].ToCharArray()){
             textBox.text += c;

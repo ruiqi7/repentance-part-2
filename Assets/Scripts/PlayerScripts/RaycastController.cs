@@ -13,9 +13,13 @@ public class RaycastController : MonoBehaviour
 
     // Update is called once per 
     void Update(){
+        RaycastHit hit;
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Input.GetKeyDown(KeyCode.E)) {
-            if(interact){
-                interact.interact();
+            if(interact && Physics.Raycast(ray, out hit, interactDistance)){
+                if(hit.collider.CompareTag("Interactable")) {
+                    interact.interact();
+                }
             }
         }
     }    
@@ -36,7 +40,7 @@ public class RaycastController : MonoBehaviour
                 //     interact.interact();
                 // }
             }
-        }
+        } 
     }
     
 }

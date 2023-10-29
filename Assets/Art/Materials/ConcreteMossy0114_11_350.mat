@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ConcreteMossy0114_11_350
-  m_Shader: {fileID: 4800000, guid: 0e5ed0b3f6fe92e46be2d13c026acf15, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,8 +68,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Ka: 0.5
-    - _Kd: 0.5
+    - _Ka: 1
+    - _Kd: 1
     - _Ks: 0
     - _Metallic: 0
     - _Mode: 0
@@ -81,7 +81,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _fAtt: 0.5
+    - _fAtt: 1
     - _specN: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
