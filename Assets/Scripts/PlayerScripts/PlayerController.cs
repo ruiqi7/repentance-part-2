@@ -124,9 +124,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyChild") {
             gameOver = true;
             enemyPosition = collision.gameObject.transform.position;
-            GameObject.Find("EnemyChild").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
+            GameObject.Find("Enemy3fixed").GetComponent<ChaseCamera>().SetFinalPos(enemyPosition);
             enemyPosition = new Vector3(enemyPosition.x, 0.5f, enemyPosition.z);
-            GameObject.Find("EnemyChild").GetComponent<ChaseCamera>().SetGameOver(true);
+            GameObject.Find("Enemy3fixed").GetComponent<ChaseCamera>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
             uiManagerScript.GameOver();
