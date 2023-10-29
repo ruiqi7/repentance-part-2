@@ -15,10 +15,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] float timeRemaining = 300;
     [SerializeField] TMP_Text text;
+    [SerializeField] private GameObject player;
     private bool running = true;
 
     private bool isPaused = false;
     private CameraController cameraController;
+    private PlayerController playerController;
 
     public float getTimePassed() {
         return 300 - timeRemaining;
@@ -27,6 +29,10 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
+        if (SceneManager.GetActiveScene().name != "StartScene")
+        {
+            playerController = player.GetComponent<PlayerController>();
+        }
         TogglePause();
         TogglePause();
     }
@@ -79,6 +85,10 @@ public class UIManager : MonoBehaviour
             {
                 ChangePage(pausePageIndex);
                 PauseGame();
+                if (SceneManager.GetActiveScene().name != "StartScene")
+                {
+                    playerController.SetSoundFalse();
+                }
             }
         }      
     }
@@ -125,6 +135,7 @@ public class UIManager : MonoBehaviour
         ChangePage(gameWonPageIndex);
         PauseGame();
         allowPause = false;
+        playerController.SetSoundFalse();
         audioManager.GetComponent<AudioManager>().GameWonMusic();
     }
 }

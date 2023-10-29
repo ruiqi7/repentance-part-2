@@ -243,7 +243,7 @@ public class MazeConstructor : MonoBehaviour
                 }
                 }
                 //torches
-                if(maze[i,j]==1 && j%2==0 && Random.value < .25f && i!=0 && i!=rMax && j!=0 && j!=cMax){
+                if(maze[i,j]==1 && j%2==0 && Random.value < .12f && i!=0 && i!=rMax && j!=0 && j!=cMax){
                     if(maze[i-1,j]==0){
                         Instantiate(torch, new Vector3(j*width, 4, (i-0.5f)*width), Quaternion.Euler(new Vector3(-27, 0, 0)));
                     } else if (maze[i, j+1]==0){

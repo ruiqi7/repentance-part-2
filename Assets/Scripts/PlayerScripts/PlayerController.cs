@@ -184,6 +184,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetSoundFalse(){
+        isWalking=false;
+        isRunning=false;
+        walk.Stop();
+        run.Stop();
+        walkHouse.Stop();
+        runHouse.Stop();
+    }
+
     private void HandleWalkSound()
     {
         if(isWalking && !walk.isPlaying){
