@@ -25,7 +25,7 @@ public class NPCInteract : InteractableInterface
     }
 
     public override void interact(){
-        if(!isTalking){
+        if(!dialogueBox.activeSelf){
             started = true;
             interactText = "";
             if(this.particle[0]){
