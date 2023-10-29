@@ -9,6 +9,8 @@ public class ChaseCamera : MonoBehaviour
     [SerializeField] private float minX, maxX;
     [SerializeField] private float minZ, maxZ;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource growl;
+    private int noticed = 0;
     private bool handling = false;
     private Rigidbody rb;
     private Vector3 targetPosition;
@@ -36,15 +38,21 @@ public class ChaseCamera : MonoBehaviour
         if(Physics.Raycast(transform.position, direction, out hit)) {
             if(hit.collider.tag == "Generated" || hit.collider.name == "RepelArea") {
                 moveRandom();
+                noticed = 0;
             } else if(hit.collider.tag == "Player") {
                 if(!handling) {
                     StartCoroutine(HandleAudio());
+                }
+                if(noticed == 0){
+                    NoticeAudio();
+                    noticed = 1;
                 }
                 Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                 rb.MovePosition(new Vector3(newPos.x, transform.position.y, newPos.z));
                 transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
             } else {
                 moveRandom();
+                noticed = 0;
             }
         } 
     }
@@ -80,5 +88,9 @@ public class ChaseCamera : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(15);
         handling = false;
+    }
+
+    private void NoticeAudio(){
+        growl.Play();
     }
 }
