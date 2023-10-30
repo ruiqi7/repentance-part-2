@@ -135,7 +135,6 @@ The participant will rank each question on a scale of 1-5
 - Each team member will have at least 4 participants (2 for querying and 2 for observabilities)
 - The team will work together to complete the data analysis and construct the priority list for changes to be made
 - The team will allocate tasks for the changes to be made to each member based on their current workload and available time
-  
 
 
 ## Evaluation Report
@@ -144,7 +143,7 @@ The participant will rank each question on a scale of 1-5
 We conducted user evaluation on participants with varying levels of gaming experience. This was helpful for identifying potential design flaws in terms of the usability and accessibility of our game. Additionally, some of our participants are not well-versed in horror games. Our broad pool of participants provided us with a wider range of perspectives, which was valuable in ensuring that our game appeals to a more general audience.
 
 ### Methodology
-For qualitative data collected, we utilized Canva to record the participant’s responses and gameplay behaviors. From the feedback received, we identified common pain points and critical issues experienced by our participants.
+For qualitative data collected, we utilized [Canva](https://www.canva.com/design/DAFx-KzXF88/kGkT5o4P14RMywuem8eTLA/edit?utm_content=DAFx-KzXF88&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) to record the participant’s responses and gameplay behaviors. From the feedback received, we identified common pain points and critical issues experienced by our participants.
 
 For quantitative data collected, we identified trends in responses through the use of graphical representations, including stacked row charts, pictograms and ring charts. This allowed us to visualize the results and identify questions that received negatively skewed responses. 
 
@@ -152,13 +151,16 @@ Based on commonalities between the qualitative and quantitative data and how fre
 
 ### Analysis of Evaluation Results
 #### Gameplay
-Overall, most participants found the game challenging and enjoyable, agreeing that Repentance is a highly replayable game that offers a unique gaming experience. 
+Overall, most participants found the game challenging and enjoyable, agreeing that _Repentance_ is a highly replayable game that offers a unique gaming experience. 
+
 <img src="Images/GamePlay.png" />
 
 However, there were a few areas of improvement that could be made to enhance the quality of gameplay. Firstly, we observed multiple instances of the player dying too quickly or too suddenly. To prevent quick deaths, we chose to incorporate a timer to prevent monsters from killing the player too quickly at the beginning of the game. Moreover, we also decided to layer sound effects by having an additional soundtrack of a faster paced heartbeat, along with a visual effect of the screen flickering to black and white with a red blood splatter, when a monster is near. The purpose of this is to indicate to the player that he is in danger and give him a chance to run away. At the same time, this helps to add more suspense to the game.  
 
 Secondly, our game also features interactable items that players can use to improve their chances of survival, adding an element of strategy to the game. However, the feedback we received was that it was difficult to find and understand the purpose of the items. Participants commented that “item description is a little unintuitive” and “how to use the items in the maze was a little confusing”.
-<img src="Images/ItemDifficulty.png" />
+
+<img src="Images/ItemDifficulty.png" width=300/>
+
 As items are randomly placed in the maze to ensure that each game experience is varied, we decided to resolve the aforementioned issues by increasing the number of items generated. This is to heighten the chances of the player coming across items while exploring the maze. To help with understanding how to use the items, it was suggested to us that the explanation should be shown when the player collects the item instead of when trying to use it from the inventory. As such, we decided to refine player-item interactions by indicating the purpose of the item and which key to press to use it when the player collects an item.  
 
 Another piece of feedback we received was regarding low visibility even when the flashlight was turned on. Participants found it overly hard to see and therefore navigate the maze, which negatively impacted their game experience. They mentioned that the “flashlight can be too dim”, which “made it very hard to see where I was going”. In response to this, we decided to increase the distance of the light from the flashlight to provide enough light for players to navigate. The player's field of view still remains relatively limited in order to make it challenging to anticipate what is ahead as this adds to the suspense of the game.  
@@ -171,7 +173,9 @@ In terms of storyline, it was highlighted to us that the transition from the int
 
 #### Game Controls
 In general, a majority of the players found the game controls, especially the WASD movement controls, fairly intuitive.
-<img src="Images/GameControls.png" />
+
+<img src="Images/GameControls.png" width=160/>
+
 However, there were a few areas we could improve on. First and foremost, a common pain point was that the mouse sensitivity was too high. However, there were also a select few who felt that it was set at an appropriate level. To accommodate different preferences, we chose to incorporate adjustable mouse sensitivity settings in the game's options menu. This will allow players to tailor their gaming experience to their comfort, enhancing gameplay and overall user satisfaction.  
 
 While carrying out the observational techniques for evaluation, we also noticed that a considerable number of players either did not read or simply skipped the instructions for the game controls, which were displayed on the screen when the player first entered the maze. The reasons given were that the instructions were too lengthy and some also found it hard to absorb information when the game had already begun. Therefore, we came to an agreement that it would be better to give the instructions in the introduction scene before the player dives into the gameplay, and also in a more concise manner to make the experience more user-friendly.  
@@ -191,8 +195,10 @@ Additionally, the objective of the game was also unclear to some participants. T
 ### Prioritization of Game Changes
 #### Severity
 To prioritize game changes effectively, we assessed the severity of each issue and suggestion. The severity was assessed based on several factors, namely the impact on the player experience, the number of players affected and whether it resulted in game-breaking problems. Game-breaking problems were given the highest priority, and issues that had a huge impact on player experience or affected a substantial number of players were also assigned a higher priority level. 
+
 #### Implementation
 Other than assessing the severity of the issue, we also considered the feasibility and how much effort it would take to implement the changes. Given the limited time frame, changes that required more extensive development were placed higher on the priority list while quick fixes were given a lower priority.
+
 #### Final Priority List
 Sorted from highest priority to lowest,  
 1. Change the particle system for the NPCs to appear more harmless
