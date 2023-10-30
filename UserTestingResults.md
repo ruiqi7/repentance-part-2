@@ -1,4 +1,4 @@
-**Tester 1**
+**Participant 1**
 
 |                                                                                                             |                                                                                                                                                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -26,7 +26,7 @@
 - One round found absolutely nothing
 - No interest in the storyline
 
-Tester 2
+**Participant 2**
 
 Task 1:
 
@@ -71,7 +71,7 @@ Overall comments:
 - Spend all the time looking at the floor
 - Without flashlight way too dark so can’t conserve it at all 
 
-**Tester 3**
+**Participant 3**
 
 |                                                                                                             |                                                                                                                                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -95,7 +95,7 @@ Overall comments:
 - “How do I kill it”
 - Monster killed immediately??
 
-**Tester 4**
+**Participant 4**
 
 Task 1
 
@@ -129,7 +129,7 @@ Task 5
 - Maybe like 3 lives to start from in the maze?
 - Some kind of message at the end to finish off the story line
 
-**Tester 5**
+**Participant 5**
 
 |                                                                                                             |                                                                                                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -146,7 +146,7 @@ Task 5
 | What would you consider to be the weakest aspect of this game?                                              | It was so hard to find the items, could be more items or easier to find                                                                                                                           |
 | If there was one thing you could add to this game, what would it be?                                        | Some kind of trap or diversion. Encounter something that pretends to help you but then it actually doesntSomething to know that the monster is behind you thats more obvious than the heart beat  |
 
-**Tester 6**
+**Participant 6**
 
 |                                                                                                             |                                                                                                                                                                                             |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -163,7 +163,7 @@ Task 5
 | What would you consider to be the weakest aspect of this game?                                              | Knowing what controls to use, didnt know how to use the candleAssumed the candle would give you lightFlowers easier to understand than a candle to put on a grave                           |
 | If there was one thing you could add to this game, what would it be?                                        | Some guide to using the itemsSome kind of tutorial section?Sprinting better mentioned somewhere elseLetter could reveal more of the story                                                   |
 
-1
+**Participant 7**
 
 |                                                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -180,7 +180,7 @@ Task 5
 | What would you consider to be the weakest aspect of this game?                                              | I think probably the whole explanation of the purpose behind the items. Playing it for the first time, I didn’t really understand what I was supposed to do, even after reading the text.                                                                                                                                                                                                                                                                                                                                               |
 | If there was one thing you could add to this game, what would it be?                                        | I think weaving the significance of the items into the storyline and gameplay would be useful. Context such as the graves and items and how they were related to the monsters wasn’t very clear. I wouldn’t have known about it if I wasn’t told. I think it relies too heavily on the player finding the specific letters to discover this information, and if they don’t they would be left feeling confused.                                                                                                                         |
 
-2
+**Participant 8**
 
 |                                                                                                             |                                                                                                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -197,7 +197,7 @@ Task 5
 | What would you consider to be the weakest aspect of this game?                                              | Maybe time restraints prevent users from really exploring all the nice detail, like how to use some of the items within.                                                                                 |
 | If there was one thing you could add to this game, what would it be?                                        | Brighter flashlight would help gameplay!                                                                                                                                                                 |
 
-3
+**Participant 9**
 
 - blindly ran around the maze
 - Didn’t know if they should wait for stamina to refill before running or just run instantly from monster when it wasn’t too close yet
@@ -211,7 +211,7 @@ Task 5
 - Found items but didn’t know what to do with them
 - Tried to kill monster with the knife
 
-4
+**Participant 10**
 
 - Sensitivity option needed (sensitivity was too high)
 - No thank you to the NPC 
@@ -236,7 +236,7 @@ Task 5
 - Did not notice game started instantly after getting to the maze part since it was so dark
 - Initially did not realise they started at the house in the maze (they ran straight ahead without looking around starting area first)
 
-5
+**Participant 11**
 
 - did not notice you could pick up items for a while
 - Didn’t know game started instantly when getting into the maze 
@@ -249,7 +249,7 @@ Task 5
 - Could not find any of the other npcs
 - Read most of the notes they found 
 
-6
+**Participant 12**
 
 - Tried to kill monster with the knife
 - Tried to use flashlight by pressing 2 
@@ -271,7 +271,8 @@ Bugs
 - Random glitch where enemy instantly teleports to player after starting the game 
 - Need dialogue to tell the player they shouldn’t try to go back into the house 
 - Heartbeat does not always play when monster is near
-
+- 
+**Participant 12 - 20 summary**
 _General_
 
 - Unclear that the goal of the game is to survive
