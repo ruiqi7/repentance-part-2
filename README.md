@@ -35,6 +35,7 @@
     - [3D Modeling Software](#3d-modeling-software)
     - [Software for Textures and Sketches](#software-used-for-creating-textures-and-sketches)
     - [Tutorials Followed](#tutorials-followed-and-links-to-the-files-that-followed-the-tutorial)
+  - [Other](#other)
 
 
 ## Evaluation Plan
