@@ -304,6 +304,9 @@ In terms of utilising pre-built assets, they will typically be sourced from the 
 - [Withered Flower Texture](https://unsplash.com/photos/jY9rX-E7ztU)
 - [Eyeball Texture](https://www.filterforge.com/filters/1174.html)
 - [Torch](https://assetstore.unity.com/packages/3d/props/old-hand-torch-156928)
+- [House](https://elegantcrow.itch.io/retro-house-pack)
+- [Car](https://ggbot.itch.io/psx-style-cars)
+- [Trees](https://elegantcrow.itch.io/psx-retro-style-tree-pack) 
 
 ## 6. User Interface
 
