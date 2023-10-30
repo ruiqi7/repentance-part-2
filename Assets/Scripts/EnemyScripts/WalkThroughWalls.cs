@@ -23,7 +23,6 @@ public class WalkThroughWalls : MonoBehaviour
     private bool isRepelled = false;
     private bool flickering = false;
     public bool gameOver = false;
-    private bool timeOut = false;
     private Vector3 finalPos;
     void Start()
     {
@@ -32,7 +31,6 @@ public class WalkThroughWalls : MonoBehaviour
         animator = GetComponent<Animator>();
         bc = GetComponent<BoxCollider>();
         cameraMat = camera.GetComponent<PostProcess>().material;
-        StartCoroutine(HandleStart());
     }
 
 
@@ -50,7 +48,7 @@ public class WalkThroughWalls : MonoBehaviour
             animator.enabled = false;
             bc.enabled = false;
             transform.position = finalPos;
-        } else if(!timeOut && !isRepelled) {
+        } else if(!isRepelled) {
             if(Vector3.Distance(target.transform.position, transform.position) < distance) {
                 if(!handling) {
                     StartCoroutine(HandleAudio());
@@ -61,8 +59,8 @@ public class WalkThroughWalls : MonoBehaviour
                 if(noticed == 0){
                     NoticeAudio();
                     noticed = 1;
-            }
-            Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                }
+                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                 transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
                 transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
             } else if(Time.time - startTime >= 10) {
@@ -83,8 +81,8 @@ public class WalkThroughWalls : MonoBehaviour
                 }
                 transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
                 transform.LookAt(targetPosition);
+                noticed = 0;
             }
-            noticed = 0;
         }
     }
 
@@ -106,12 +104,6 @@ public class WalkThroughWalls : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         isRepelled = false;
-    }
-
-    private IEnumerator HandleStart() {
-        timeOut = true;
-        yield return new WaitForSeconds(15);
-        timeOut = false;
     }
 
     private IEnumerator HandleAudio() {
