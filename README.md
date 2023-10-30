@@ -187,9 +187,14 @@ Secondly, our game also features interactable items that players can use to impr
 
 As items are randomly placed in the maze to ensure that each game experience is varied, we decided to resolve the aforementioned issues by increasing the number of items generated. This is to heighten the chances of the player coming across items while exploring the maze. To help with understanding how to use the items, it was suggested to us that the explanation should be shown when the player collects the item instead of when trying to use it from the inventory. As such, we decided to refine player-item interactions by indicating the purpose of the item and which key to press to use it when the player collects an item.  
 
+<img src="Images/ItemCollection.png" />
+<img src="Images/ItemInstructions.png" />
+
 Another piece of feedback we received was regarding low visibility even when the flashlight was turned on. Participants found it overly hard to see and therefore navigate the maze, which negatively impacted their game experience. They mentioned that the “flashlight can be too dim”, which “made it very hard to see where I was going”. In response to this, we decided to increase the distance of the light from the flashlight to provide enough light for players to navigate. The player's field of view still remains relatively limited in order to make it challenging to anticipate what is ahead as this adds to the suspense of the game.  
 
 Lastly, it was also commonly pointed out that it was hard to navigate the maze and survive once the flashlight ran out of battery as the player would be thrown into nearly pitch black darkness. A significant number of players also found it hard to navigate back to the house in the center of the maze after leaving it. Some suggestions were to add some light sources throughout the maze and “lit up the area of the house so that you can see the graves, and use it as an anchor point”. Taking those ideas into consideration while making sure to maintain a mysterious and spooky atmosphere, we decided to add fire torches on some walls of the maze and around the house. Furthermore, we chose to make the use of candles more versatile and functional by allowing them to be placed anywhere in the maze instead of being restricted to only be placed in front of the graves in our game. The basis for this is to provide alternative light sources for the player and to allow them to be potentially used as markers for route tracing back to the house. Since participants “assumed the candle would give you light”, gameplay will become more intuitive with this change. This may also encourage players to think more critically about how they can utilize their inventory to enhance their odds of staying alive, leading to more varied and strategic gameplay experiences.  
+
+<img src="Images/FireTorches.png" />
 
 #### Storyline
 
@@ -204,7 +209,11 @@ In general, a majority of the players found the game controls, especially the WA
 
 However, there were a few areas we could improve on. First and foremost, a common pain point was that the mouse sensitivity was too high. However, there were also a select few who felt that it was set at an appropriate level. To accommodate different preferences, we chose to incorporate adjustable mouse sensitivity settings in the game's options menu. This will allow players to tailor their gaming experience to their comfort, enhancing gameplay and overall user satisfaction.  
 
+<img src="Images/Options.png"/>
+
 While carrying out the observational techniques for evaluation, we also noticed that a considerable number of players either did not read or simply skipped the instructions for the game controls, which were displayed on the screen when the player first entered the maze. The reasons given were that the instructions were too lengthy and some also found it hard to absorb information when the game had already begun. Therefore, we came to an agreement that it would be better to give the instructions in the introduction scene before the player dives into the gameplay, and also in a more concise manner to make the experience more user-friendly.  
+
+<img src="Images/GameInstructions.png"/>
 
 Moreover, an issue frequently raised by players was the use of the heirloom and flashlight in the inventory. The heirloom was included as an item in the inventory simply for lore and it served no purpose in terms of gameplay. However, it has been brought to our attention that participants found the heirloom knife “deceptive since you can't use it”. During gameplay, numerous participants tried to kill the monster with it or asked if they could “fight the monsters with the knife”. Additionally, as the flashlight can only be toggled on and off by pressing ‘F’ and not by interacting with the inventory like other items, it caused some confusion about the game controls. To resolve this disparity, we decided that it would be best to remove the heirloom and flashlight as items in the inventory. 
 
@@ -216,8 +225,11 @@ From the questionnaire results, we can see that the game art and music helped to
 In particular, the game’s audio and unique art style were highlighted, with participants commenting that the game has “a very nice indie-game atmosphere and design” and “the pixelation and antique vibe was nice”. The pixelated graphics contributed to the indie horror vibe of the game, creating an unsettling and eerie atmosphere. The terrifying ambiance is further heightened through the use of a dark environment combined with a flickering flashlight, creepy sound effects (eg. pounding heartbeat, demonic whispers), as well as unnatural movements and distorted features of the monsters.  
 
 However, one prominent issue was that the appearance of the NPCs was too similar to the monsters that players misunderstood them as being harmful, causing them to avoid interaction with the NPCs. Participants “keep hesitating to approach them because they actually look quite creepy” or wondered “why do the NPCs look like the monsters”. As the NPCs are used to deliver elements of the storyline and can impact the outcome of the game, we decided to change the particle system for the NPCs to make them look more harmless and encourage player interaction.
+
 Additionally, the objective of the game was also unclear to some participants. They were “quite confused about what to do”. To highlight the time-survival aspect of the game, we decided to periodically display the amount of time left on the screen instead of using an NPC that hints about the amount of time left when the player interacts with it.
  
+<img src="Images/Timer.png" />
+
 ### Prioritization of Game Changes
 #### Severity
 To prioritize game changes effectively, we assessed the severity of each issue and suggestion. The severity was assessed based on several factors, namely the impact on the player experience, the number of players affected and whether it resulted in game-breaking problems. Game-breaking problems were given the highest priority, and issues that had a huge impact on player experience or affected a substantial number of players were also assigned a higher priority level. 
