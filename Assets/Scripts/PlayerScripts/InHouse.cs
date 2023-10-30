@@ -9,7 +9,9 @@ public class InHouse : MonoBehaviour
 
     // Update is called once per frame
     void Start(){
-        windAudio = GameObject.Find("Wind_Loop").GetComponentInChildren<AudioSource>();
+        if(GameObject.Find("Wind_Loop")) {
+            windAudio = GameObject.Find("Wind_Loop").GetComponentInChildren<AudioSource>();
+        }
     }
     void Update()
         {
