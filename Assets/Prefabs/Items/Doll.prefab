@@ -147,6 +147,7 @@ MonoBehaviour:
   - I need more space to put this down...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.07
+  clip: {fileID: 8300000, guid: 42f1923b296627643b953d11527bcf09, type: 3}
 --- !u!1 &7381485158997094534
 GameObject:
   m_ObjectHideFlags: 0

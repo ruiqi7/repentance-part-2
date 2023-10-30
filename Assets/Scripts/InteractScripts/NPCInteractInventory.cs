@@ -22,6 +22,7 @@ public class NPCInteractInventory : InteractableInterface
     [SerializeField] private GameObject particleSystem1;
     [SerializeField] private GameObject particleSystem2;
     [SerializeField] GameObject npc;
+    [SerializeField] public AudioClip successClip;
     private bool hadItem = false;
     private bool isTalking = false;
     private bool started = false;
@@ -37,9 +38,6 @@ public class NPCInteractInventory : InteractableInterface
             }
             started = true;
             interactText = "";
-            if(clip){
-                AudioSource.PlayClipAtPoint(clip, this.transform.position);
-            }
             speak();
         }
     }
@@ -54,14 +52,21 @@ public class NPCInteractInventory : InteractableInterface
         if(inventoryController.CheckInventory(item)) {
             dialogueController.lines = linesWithItem;
             hadItem = true;
-             if(this.particle[0]){
+            if(successClip){
+                AudioSource.PlayClipAtPoint(successClip, this.transform.position);
+            }
+            if(this.particle[0]){
                 for(int i = 0;i < this.particle.Count();i ++){
                     this.particle[i].Play();
                 }
             }
             
         } else {
+            
             dialogueController.lines = linesWithoutItem;
+            if(clip){
+                AudioSource.PlayClipAtPoint(clip, this.transform.position);
+            }
            if(this.particle[0]){
                 this.particle[0].Play();
             }

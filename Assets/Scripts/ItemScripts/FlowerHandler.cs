@@ -40,9 +40,12 @@ public class FlowerHandler : ItemHandlerInterface
         Vector3 graveDir = grave.transform.up;
         Vector3 pos = gravePos + graveDir * 0.6f;
         pos.y = -0.05f;
-
+        
         Vector3 graveRot = grave.transform.localEulerAngles;
         GameObject flower = Instantiate(gameObject, pos, Quaternion.Euler(0.0f, graveRot.y - 90.0f, 0.0f));
+        if(clip){
+            AudioSource.PlayClipAtPoint(clip, pos);
+        }
         flower.tag = "Untagged"; // cannot pick up the flower once used
         grave.GetComponent<GraveHandler>().occupied = true;
 
