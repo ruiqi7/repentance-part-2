@@ -277,18 +277,21 @@ The fragment shader is used to apply texture clipping and coloring individual pi
 This shader acts as visual flair and an additional aesthetic that can be used to elevate the atmosphere of the beginning scene of the game.  
 
 The shader is mainly utilised on the foliage that can be found in the introduction scene with the house, the trees and bushes are made to sway in manner that resembles the effects of wind acting upon the foliage. This shader is implemented across one primary file namely Tree.shader. 
-<img src="Images/WindShader.gif" />
+Accessible here [Assets/shaders/Tree.shader](Assets/shaders/Tree.shader)  
+<p align="center">
+    <img src="Images/tree.gif">
+</p>
 
 ##### Relevant Materials and Scripts
-- [tree28]
-- [tree29]
-- [tree30]
-- [tree31]
-- [tree34]
-- [tree36]
-- [bush05]
-- [bush07]
-- [WindController.cs]
+- [tree28](Assets/Art/Models/Nature/Materials/tree28.mat) 
+- [tree29](Assets/Art/Models/Nature/Materials/tree29.mat) 
+- [tree30](Assets/Art/Models/Nature/Materials/tree30.mat) 
+- [tree31](Assets/Art/Models/Nature/Materials/tree31.mat) 
+- [tree34](Assets/Art/Models/Nature/Materials/tree34.mat) 
+- [tree36](Assets/Art/Models/Nature/Materials/tree36.mat) 
+- [bush05](Assets/Art/Models/Nature/Materials/bush05.mat) 
+- [bush07](Assets/Art/Models/Nature/Materials/bush07.mat) 
+- [WindController.cs](Assets/Scripts/PlayerScripts/WindControl.cs)
 
 ##### Properties
 ###### _MainTex 
@@ -334,6 +337,10 @@ Access [here](Assets/Art/Particles/Haze.prefab)
 The current particle system haze is currently in use by a malevolent NPC in the game. Adding particle effects in this manner helps to build atmosphere, adds important visual stimuli and flare to the game whilst revealing subtle information to the player.   
 
 In this case, the goal of this particle system was to inform the player of a malicious entity, namely the NPC that this is being implemented on. The implementation of trailing shapes and dark colours were utilised to convey feelings of discomfort whilst simulating shadow like entities. The particles themselves can represent leering tendrils or shadowy hands, but primarily serve as a visual aesthetic to the game.
+
+<p align="center">
+    <img src="Images/haze.gif">
+</p>
 
 ##### Properties
 In order to simulate and replicate the particle system, the initial properties used on the system included a slow start speed and low gravity modifier to evoke a creeping sensation.   
