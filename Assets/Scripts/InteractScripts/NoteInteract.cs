@@ -42,7 +42,7 @@ public class NoteInteract : InteractableInterface
         Cursor.visible = false;
         isOpen = false;
         if(SceneManager.GetActiveScene().name == "IntroScene"){
-            SceneManager.LoadScene("MazeGeneration");
+            SceneManager.LoadScene("Cutscene");
         }
     }
     private void Update(){
