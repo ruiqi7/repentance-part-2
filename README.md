@@ -15,6 +15,7 @@
     - [Responsibilities](#responsibilities)
   - [Evaluation Report](#evaluation-report)
     - [Participant Demographic](#participant-demographic)
+    - [User Testing Results](#user-testing-results)
     - [Methodology](#methodology)
     - [Analysis of Evaluation Results](#analysis-of-evaluation-results)
     - [Prioritization of Game Changes](#prioritization-of-game-changes)
