@@ -232,7 +232,7 @@ MonoBehaviour:
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   particle:
   - {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 923eae748fa497f4c8b502822b7e5ec7, type: 3}
   itemName: Salt
 --- !u!114 &8876488697933917506
 MonoBehaviour:

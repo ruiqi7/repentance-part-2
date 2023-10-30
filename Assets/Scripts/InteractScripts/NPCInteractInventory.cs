@@ -37,6 +37,9 @@ public class NPCInteractInventory : InteractableInterface
             }
             started = true;
             interactText = "";
+            if(clip){
+                AudioSource.PlayClipAtPoint(clip, this.transform.position);
+            }
             speak();
         }
     }
@@ -54,9 +57,6 @@ public class NPCInteractInventory : InteractableInterface
              if(this.particle[0]){
                 for(int i = 0;i < this.particle.Count();i ++){
                     this.particle[i].Play();
-                }
-                if(clip){
-                    AudioSource.PlayClipAtPoint(clip, this.transform.position);
                 }
             }
             

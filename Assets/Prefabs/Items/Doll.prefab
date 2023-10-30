@@ -125,7 +125,7 @@ MonoBehaviour:
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   particle:
   - {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 15a0dce775b7eba48a5c3e30c7f5d503, type: 3}
   itemName: Doll
 --- !u!114 &2528172211753949143
 MonoBehaviour:

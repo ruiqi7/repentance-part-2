@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7572782, g: 0.33971342, b: 0.030203646, a: 1}
+  m_IndirectSpecularColor: {r: 0.75727844, g: 0.339713, b: 0.030203605, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17466,7 +17466,7 @@ MonoBehaviour:
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   particle:
   - {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 22a5695d68e090145a20edc9d07f50c6, type: 3}
   noteCanvas: {fileID: 2101130331}
   noteTextArea: {fileID: 1982722067}
   noteText: '1732 They Left their belongings Here
@@ -25875,7 +25875,7 @@ MonoBehaviour:
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   particle:
   - {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 22a5695d68e090145a20edc9d07f50c6, type: 3}
   noteCanvas: {fileID: 2101130331}
   noteTextArea: {fileID: 1982722067}
   noteText: 'If you have stumbled across this house, you must be a descendant of

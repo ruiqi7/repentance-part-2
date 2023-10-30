@@ -16,6 +16,9 @@ public class ItemInteract : InteractableInterface
     public override void interact()
     {
         inventoryController.AddToInventory(itemName);
+        if(clip){
+            AudioSource.PlayClipAtPoint(clip, this.transform.position);
+        }
         Destroy(gameObject);
     }
 }

@@ -22,6 +22,9 @@ public class NoteInteract : InteractableInterface
         if(!isOpen){ShowNote();}    
     }
     public void ShowNote(){
+        if(clip){
+            AudioSource.PlayClipAtPoint(clip, this.transform.position);
+        }
         noteTextArea.text = noteText;
         noteCanvas.SetActive(true);
         renderer = noteCanvas.GetComponent<Image>().material;

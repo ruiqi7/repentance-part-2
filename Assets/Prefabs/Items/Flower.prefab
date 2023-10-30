@@ -155,7 +155,7 @@ MonoBehaviour:
   font: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   particle:
   - {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ce0f8ba7f24d3ee478acdc3cf3f0ce0d, type: 3}
   itemName: Flower
 --- !u!114 &3588949404909888808
 MonoBehaviour:
