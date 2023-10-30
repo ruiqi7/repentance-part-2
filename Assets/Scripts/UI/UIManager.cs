@@ -28,13 +28,12 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        cameraController = Camera.main.GetComponent<CameraController>();
         if (SceneManager.GetActiveScene().name != "StartScene")
         {
+            cameraController = Camera.main.GetComponent<CameraController>();
             playerController = player.GetComponent<PlayerController>();
+            ResumeGame();
         }
-        TogglePause();
-        TogglePause();
     }
 
     private void Update()
