@@ -504,6 +504,9 @@ Unity’s standard render was used as adding additional custom shaders on top of
 ### Fonts
 
 - Retro Font <https://www.dafont.com/depixel.font>
+- Bloody Lake University <https://www.dafont.com/bloody-lake-university.font>
+- Montserrat Subrayada <https://fonts.google.com/specimen/Montserrat+Subrayada>
+- Rubik Glitch <https://fonts.google.com/specimen/Rubik+Glitch>
 
 ### Audio 
 
