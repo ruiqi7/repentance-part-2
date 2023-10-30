@@ -579,6 +579,7 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - <https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/> 
   - <https://forum.unity.com/threads/shader-alpha-cutout.486766/> 
   - Files:
+    - [Tree.shader](Assets/shaders/Tree.shader)
 
 - Full screen effect shader
 
