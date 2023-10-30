@@ -36,6 +36,8 @@
     - [Software for Textures and Sketches](#software-used-for-creating-textures-and-sketches)
     - [Tutorials Followed](#tutorials-followed-and-links-to-the-files-that-followed-the-tutorial)
   - [Other](#other)
+    - [Interesting Challenges](#interesting-challenges)
+    - [Highlighted Areas](#highlighted-areas)
 
 
 ## Evaluation Plan
