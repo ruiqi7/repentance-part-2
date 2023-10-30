@@ -14,9 +14,26 @@
     - [Timeline](#timeline)
     - [Responsibilities](#responsibilities)
   - [Evaluation Report](#evaluation-report)
+    - [Participant Demographic](#participant-demographic)
+    - [Methodology](#methodology)
+    - [Analysis of Evaluation Results](#analysis-of-evaluation-results)
+    - [Prioritization of Game Changes](#prioritization-of-game-changes)
   - [Shaders and Special Effects](#shaders-and-special-effects)
+    - [Burning Dissolve Shader](#burning-dissolve-shader)
+    - [Tree Wind Shader](#tree-wind-shader)
+    - [Particle System](#particle-system)
   - [Summary of Contributions](#summary-of-contributions)
   - [References and External Resources](#references-and-external-resources)
+    - [Models](#models)
+    - [Materials](#materials)
+    - [Fonts](#fonts)
+    - [Audio](#audio)
+    - [Music for Trailer](#music-for-trailer)
+    - [Sound Effects for Trailer](#sound-effects-for-trailer)
+    - [Video Editing Software](#video-editing-software)
+    - [3D Modeling Software](#3d-modeling-software)
+    - [Software for Textures and Sketches](#software-used-for-creating-textures-and-sketches)
+    - [Tutorials Followed](#tutorials-followed-and-links-to-the-files-that-followed-the-tutorial)
 
 
 ## Evaluation Plan
@@ -222,12 +239,19 @@ The following shaders can be found through these folders: Assets/shaders.
 Links are also provided below.
 
 #### Burning Dissolve Shader
+
 This shader acts as the visual tie between the introduction scene and the maze. The shader is applied to the letter that the player reads at the beginning of the game and to the NPCs within the maze. The shader acts to burn away the game object once its objective in the game is fulfilled. The letter is burnt when the user closes it and NPCs are burnt and disabled once the user completes their task.  
 
 This shader is implemented across three different shader files. Firstly, Dissolve.cginc forms the base of the shader. It includes the vertex and fragment shader that implements the visual effect of dissolving and burning the texture. Secondly, the NPC.shader file is applied specifically to the NPCs and completes two passes, allowing the multiple light sources within the scene to be implemented correctly. Finally, the Letter.shader file is created as a UI shader and includes no culling or depth. This was to ensure it was not impacted by the full screen camera pixelation shader.
-
+<p align="center">
 <img src="Images/StartLetterBurn.png" width=300 />
-<img src="Images/NPCBurn.png" />
+<img src="Images/BurningNPC.png" width=300 />
+</p>
+
+##### Shader Files
+- [Dissolve.cginc](Assets/shaders/Dissolve.cginc)
+- [NPC.shader](Assets/shaders/NPC.shader)
+- [Letter.shader](Assets/shaders/Letter.shader)
 
 ##### Relevant Materials and Scripts
 - [NPCBody](Assets/Art/Models/NPC/Materials/NPCBody.mat)
@@ -265,13 +289,16 @@ BurnSize controls how much of the texture has been burnt. The implementation and
 BurnMap is a black and white texture that defines the areas of the object to burn fastest. This property is set in the material of the object. Specifically, NPCBody, Face, Body, Wood, Material and Letter. The black and white map used in BurnMap is the same as the texture used in DissolveTexture. This ensures the burn areas and dissolve areas line up correctly. 
 
 ##### Rendering Pipeline
-<img src="Images/Pipeline.png" />  
+<p align="center">
+<img src="Images/Pipeline.png"/>
+</p>  
 
 This shader implements two parts of the rendering pipeline. The vertex shader and the pixel shader.  
 
 The vertex shader is used to calculate the world vertex, world normal and UV coordinates from _MainTex.   
 
 The fragment shader is used to apply texture clipping and coloring individual pixels to reflect the stage of burning and dissolving.
+
 
 #### Tree Wind Shader
 This shader acts as visual flair and an additional aesthetic that can be used to elevate the atmosphere of the beginning scene of the game.  
@@ -281,6 +308,9 @@ Accessible here [Assets/shaders/Tree.shader](Assets/shaders/Tree.shader)
 <p align="center">
     <img src="Images/tree.gif">
 </p>
+
+##### Shader Files
+- [Tree.shader](Assets/shaders/Tree.shader)
 
 ##### Relevant Materials and Scripts
 - [tree28](Assets/Art/Models/Nature/Materials/tree28.mat) 
@@ -326,7 +356,9 @@ fAtt is the shininess of the object. This constant is set in the material of the
 specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
 
 ##### Rendering Pipeline
-<img src="Images/Pipeline.png" />  
+<p align="center">
+<img src="Images/Pipeline.png"/>
+</p> 
 This shader would primarily be categorised as a vertex shader, as for this shader our goal is to mostly adjust the position of the material rather than changing it’s visual appearance. The properties used included _WindTex, _WindSpeed, _WaveAmp, _WaveSpeed, _HeightCutoff and _HeightFactor to adjust vertex position based on a wave function.  
 
  In the fragment shader, standard texture mapping is applied given _MainTex with standard Phong Shading applied, additionally alpha clipping is used to render the trees with leaves and transparent segments with _Cutoff. 
@@ -361,23 +393,7 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
 ## Summary of Contributions
 
-### Jessica Pollard
-- Full screen shader
-- NPC interaction
-- Enemy movement logic
-- Enemy collision with player logic
-- Flashlight battery
-- Cutscene after reading letter
-- Dissolve shader
-- Timer in maze
-- GoodNPC and CloseToNPC particle systems
-- Game over character movement
-- Post processing effects
-- Sound effects
-  - Player heart beat
-  - Child monster crying
-
-### Elyse Tan
+#### Elyse Tan
 - Procedural maze generation 
 - Random item, letters and npc generation 
 - Enemy models + animation
@@ -390,15 +406,47 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - Footsteps 
 - Put together recorded clips and edited game trailer 
 
-### Vincent Khuat
-Player and camera movement 
-Interactable System
-Dialogue System
-Tree wind Shader
-Initial Flashlight implementation
-Starting Scene design and implementation
-PSX Assets
-Wind effects 
+#### Vincent Khuat
+- Player and camera movement 
+- Interactable System
+- Dialogue System
+- Tree wind Shader
+- Initial Flashlight implementation
+- Starting Scene design and implementation
+- PSX Assets
+- Wind effects 
+- Particle Systems / Effects
+
+#### Jessica Pollard
+- Full screen shader
+- NPC interaction
+- Enemy movement collision with player logic
+- Flashlight battery
+- Cutscene after reading letter
+- Dissolve shader
+- Timer in maze
+- GoodNPC and CloseToNPC particle systems
+- Game over character movement
+- Post processing effects
+- Sound effects
+  - Player heart beat
+  - Child monster crying
+
+#### Ruiqi Tin
+- Game menu + music (StartScene)
+- Options menu
+  - Brightness
+  - Volume
+  - Sensitivity
+  - Difficulty
+- Instructions popup (IntroScene)
+- Inventory UI and logic
+- Game win + game over screens
+- Item logic
+  - Player-item interactions
+  - Enemy-item interactions
+- Recorded clips for trailer video
+
 
 
 ## References and External Resources
