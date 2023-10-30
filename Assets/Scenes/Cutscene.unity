@@ -668,7 +668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I must survive
+  m_text: 'I must survive this nightmare... '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   m_sharedMaterial: {fileID: 96723136036717698, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: My family must have been cursed
+  m_text: My family must have been cursed...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}
   m_sharedMaterial: {fileID: 96723136036717698, guid: 6f0a049204e0a4243aaf6423ae55828e, type: 2}

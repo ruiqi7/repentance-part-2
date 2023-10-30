@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Source: https://www.youtube.com/watch?v=yWCHaTwVblk&t=3s
+// Followed tutorial from https://www.youtube.com/watch?v=yWCHaTwVblk&t=3s
+// to create the volume controller 
+// Parts of the code from the tutorial have been modified
 
 public class VolumeController : MonoBehaviour
 {
