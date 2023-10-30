@@ -309,7 +309,6 @@ This shader acts as visual flair and an additional aesthetic that can be used to
 
 The shader is mainly utilised on the foliage that can be found in the introduction scene with the house, the trees and bushes are made to sway in manner that resembles the effects of wind acting upon the foliage. This shader is implemented across one primary file namely Tree.shader. 
 
-Accessible here [Assets/shaders/Tree.shader](Assets/shaders/Tree.shader)  
 <p align="center">
     <img src="Images/tree.gif">
 </p>
@@ -477,7 +476,7 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
 ### Fonts
 
-- <https://www.dafont.com/depixel.font>
+- Retro Font <https://www.dafont.com/depixel.font>
 
 ### Audio 
 
@@ -523,7 +522,9 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
 - Item pickup and use sound effects(excluding salt item): Anusha Yellapragada
 
-- Salt item sounds: <https://freesound.org/people/Elsje_/sounds/655761/> 
+- Salt item sounds: <https://freesound.org/people/Elsje_/sounds/655761/>
+
+- NPC Sound effects: Anusha Yellapragada
 
 ### Music for trailer
 
