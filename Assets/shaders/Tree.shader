@@ -1,3 +1,10 @@
+/*
+    Adapted from and inspired by the following sources:
+        - COMP30019: Workshop-9-Solution PhongShader.shader (https://github.com/COMP30019/Workshop-9-Solution/blob/main/Assets/PhongShader.shader)
+		- Linden Reig: Waving Grass Shader in Unity https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/ 
+		- Adding alpha cutout to shader https://forum.unity.com/threads/shader-alpha-cutout.486766/ 
+*/
+
 Shader "Custom/Tree"
 {
 	Properties
