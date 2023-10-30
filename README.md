@@ -569,6 +569,9 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - <https://www.febucci.com/2018/09/dissolve-shader/>
   - <https://github.com/COMP30019/Workshop-9-Solution/blob/main/Assets/PhongShader.shader>
   - Files:
+    - [Dissolve.cginc](Assets/shaders/Dissolve.cginc)
+    - [NPC.shader](Assets/shaders/NPC.shader)
+    - [Letter.shader](Assets/shaders/Letter.shader)
 
 - Tree wind shader
 
@@ -581,6 +584,7 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
   - <https://lindenreidblog.com/2018/02/05/camera-shaders-unity/> 
   - Files:
+    - [FullScreen.shader](Assets/shaders/FullScreen.shader)
 
 - Camera and Player Controls
 
@@ -592,8 +596,8 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - <https://www.youtube.com/watch?v=yWCHaTwVblk&t=3s>
 
 
-  - Files: [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
+  - Files: 
+    - [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
 - Dialogue System
-
-<https://youtu.be/8oTYabhj248?si=JzDSgixQuQAN8zD>
+  - <https://youtu.be/8oTYabhj248?si=JzDSgixQuQAN8zD>
 
