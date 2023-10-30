@@ -19,6 +19,8 @@ public class MazeConstructor : MonoBehaviour
     public GameObject salt;
     public GameObject eyeballsJar;
     public GameObject witheredFlower;
+    public GameObject NPC5;
+    public GameObject NPC4;
     public GameObject NPC3;
     public GameObject NPC2;
     public GameObject NPC1;
@@ -47,6 +49,8 @@ public class MazeConstructor : MonoBehaviour
     private static int saltCount = 0;
     private static int eyeballsJarCount = 0;
     private static int witheredFlowerCount = 0;
+    private static int NPC5Count = 0;
+    private static int NPC4Count = 0;
     private static int NPC3Count = 0;
     private static int NPC2Count = 0;
     private static int NPC1Count = 0;
@@ -167,6 +171,13 @@ public class MazeConstructor : MonoBehaviour
                     witheredFlowerCount++;
                     maze[i,j] = -1;
                 }
+                else if (maze[i, j] == 7 && NPC4Count<NPCNum)
+                {
+                    //Instantiate(NPC3, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC4.transform.position = new Vector3(j*width, 0, i*width);
+                    NPC4Count++;
+                    maze[i,j] = -1;
+                }
                 else if (maze[i, j] == 7 && NPC3Count<NPCNum)
                 {
                     //Instantiate(NPC3, new Vector3(j*width, 0, i*width), Quaternion.identity);
@@ -186,6 +197,13 @@ public class MazeConstructor : MonoBehaviour
                     //Instantiate(NPC2, new Vector3(j*width, 0, i*width), Quaternion.identity);
                     NPC1.transform.position = new Vector3(j*width, 0, i*width);
                     NPC1Count++;
+                    maze[i,j] = -1;
+                }
+                else if (maze[i, j] == 7 && NPC5Count<NPCNum)
+                {
+                    //Instantiate(NPC3, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    NPC5.transform.position = new Vector3(j*width, 0, i*width);
+                    NPC5Count++;
                     maze[i,j] = -1;
                 }
                 //letters
@@ -209,14 +227,42 @@ public class MazeConstructor : MonoBehaviour
                 }
                 // Spawns NPCs and eyeball jar at first possible spot if random generation fails
                 if(NPC3Count == 0 && i==0){
-                    for (int m = rMax-10; m >= 0; m--)
+                    for (int m = rMax-15; m >= 0; m--)
                     {
-                        for (int n = 7; n <= cMax; n++)
+                        for (int n = 2; n <= cMax; n++)
                         {
                             if(maze[m,n] != 1 && maze[m,n] != -1 && NPC3Count == 0){
                                 //Instantiate(NPC3, new Vector3(n*width, 0, m*width), Quaternion.identity);
                                 NPC3.transform.position = new Vector3(n*width, 0, m*width);
                                 NPC3Count++;
+                                maze[m,n] = -1;
+                            }
+                        }
+                    }
+                }
+                if(NPC4Count == 0 && i==0){
+                    for (int m = rMax-3; m >= 0; m--)
+                    {
+                        for (int n = 7; n <= cMax; n++)
+                        {
+                            if(maze[m,n] != 1 && maze[m,n] != -1 && NPC4Count == 0){
+                                //Instantiate(NPC3, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                NPC4.transform.position = new Vector3(n*width, 0, m*width);
+                                NPC4Count++;
+                                maze[m,n] = -1;
+                            }
+                        }
+                    }
+                }
+                if(NPC5Count == 0 && i==0){
+                    for (int m = rMax-5; m >= 0; m--)
+                    {
+                        for (int n = 2; n <= cMax; n++)
+                        {
+                            if(maze[m,n] != 1 && maze[m,n] != -1 && NPC5Count == 0){
+                                //Instantiate(NPC3, new Vector3(n*width, 0, m*width), Quaternion.identity);
+                                NPC5.transform.position = new Vector3(n*width, 0, m*width);
+                                NPC5Count++;
                                 maze[m,n] = -1;
                             }
                         }
@@ -252,15 +298,18 @@ public class MazeConstructor : MonoBehaviour
                 // }
                 //box colliders for walls
                 if(maze[i,j]==1){
-                    Instantiate(boxCol, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    //Instantiate(boxCol, new Vector3(j*width, 0, i*width), Quaternion.identity);
                 }
 
             }                   
         }
         candleCount=0;
         dollCount=0;
+        NPC1Count=0;
         NPC2Count=0;
         NPC3Count=0;
+        NPC4Count=0;
+        NPC5Count=0;
         eyeballsJarCount=0;
         saltCount=0;
         witheredFlowerCount=0;
