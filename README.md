@@ -159,7 +159,9 @@ However, there were a few areas of improvement that could be made to enhance the
 
 Secondly, our game also features interactable items that players can use to improve their chances of survival, adding an element of strategy to the game. However, the feedback we received was that it was difficult to find and understand the purpose of the items. Participants commented that “item description is a little unintuitive” and “how to use the items in the maze was a little confusing”.
 
-<img src="Images/ItemDifficulty.png" width=300/>
+<p align="center">
+  <img src="Images/ItemDifficulty.png" width=400/>
+</p>
 
 As items are randomly placed in the maze to ensure that each game experience is varied, we decided to resolve the aforementioned issues by increasing the number of items generated. This is to heighten the chances of the player coming across items while exploring the maze. To help with understanding how to use the items, it was suggested to us that the explanation should be shown when the player collects the item instead of when trying to use it from the inventory. As such, we decided to refine player-item interactions by indicating the purpose of the item and which key to press to use it when the player collects an item.  
 
@@ -174,7 +176,9 @@ In terms of storyline, it was highlighted to us that the transition from the int
 #### Game Controls
 In general, a majority of the players found the game controls, especially the WASD movement controls, fairly intuitive.
 
-<img src="Images/GameControls.png" width=160/>
+<p align="center">
+  <img src="Images/GameControls.png" width=200/>
+</p>
 
 However, there were a few areas we could improve on. First and foremost, a common pain point was that the mouse sensitivity was too high. However, there were also a select few who felt that it was set at an appropriate level. To accommodate different preferences, we chose to incorporate adjustable mouse sensitivity settings in the game's options menu. This will allow players to tailor their gaming experience to their comfort, enhancing gameplay and overall user satisfaction.  
 
@@ -391,14 +395,29 @@ Unity’s standard render was used as adding additional custom shaders on top of
 - Put together recorded clips and edited game trailer 
 
 ### Vincent Khuat
-Player and camera movement 
-Interactable System
-Dialogue System
-Tree wind Shader
-Initial Flashlight implementation
-Starting Scene design and implementation
-PSX Assets
-Wind effects 
+- Player and camera movement 
+- Interactable System
+- Dialogue System
+- Tree wind Shader
+- Initial Flashlight implementation
+- Starting Scene design and implementation
+- PSX Assets
+- Wind effects 
+
+### Tin Ruiqi
+- Game menu + music (StartScene)
+- Options menu
+  - Brightness
+  - Volume
+  - Sensitivity
+  - Difficulty
+- Instructions popup (IntroScene)
+- Inventory UI and logic
+- Game win + game over screens
+- Item logic
+  - Player-item interactions
+  - Enemy-item interactions
+- Recorded clips for trailer video
 
 
 ## References and External Resources
