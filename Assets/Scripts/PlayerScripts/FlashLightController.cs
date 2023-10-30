@@ -17,6 +17,7 @@ public class FlashLightController : MonoBehaviour
     [SerializeField] private AudioSource lightOn;
     [SerializeField] private AudioSource lightOff;
     public bool off = false;
+    private bool audioPlayed = false;
     private Light flashlight;
     void Start()
     {
@@ -36,6 +37,7 @@ public class FlashLightController : MonoBehaviour
         {
             flashlight.enabled = !flashlight.enabled;
             lightOn.Play();
+            audioPlayed = false;
         }
     }
     void FixedUpdate()
@@ -56,7 +58,10 @@ public class FlashLightController : MonoBehaviour
 
         if(batteryBar.value <= 0) {
             flashlight.enabled = false;
-            lightOff.Play();
+            if(!audioPlayed){
+                lightOff.Play();
+                audioPlayed = true;
+            }
         }
 
         if(batteryBar.value < (0.5*maxBattery) && SceneManager.GetActiveScene().name == "MazeGeneration") {

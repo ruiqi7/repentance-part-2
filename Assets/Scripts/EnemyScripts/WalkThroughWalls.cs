@@ -95,8 +95,15 @@ public class WalkThroughWalls : MonoBehaviour
         if (collider.gameObject.name == "RepelArea")
         {
             isRepelled = true;
-            Vector3 collisionPoint = transform.position - collider.ClosestPoint(transform.position);
+            Vector3 collisionPoint = collider.ClosestPoint(transform.position).normalized;
             rb.AddForce(collisionPoint * 300.0f);
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.name == "RepelArea")
+        {
             Invoke("StopRepulsion", 0.3f);
         }
     }

@@ -179,4 +179,5 @@ MonoBehaviour:
   - There were graves near the house...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.07
+  clip: {fileID: 8300000, guid: d1b32069541cb0b48b3c9219afc4527c, type: 3}
   interactDistance: 2
