@@ -265,8 +265,8 @@ This shader acts as the visual tie between the introduction scene and the maze. 
 
 This shader is implemented across three different shader files. Firstly, Dissolve.cginc forms the base of the shader. It includes the vertex and fragment shader that implements the visual effect of dissolving and burning the texture. Secondly, the NPC.shader file is applied specifically to the NPCs and completes two passes, allowing the multiple light sources within the scene to be implemented correctly. Finally, the Letter.shader file is created as a UI shader and includes no culling or depth. This was to ensure it was not impacted by the full screen camera pixelation shader.
 <p align="center">
-<img src="Images/StartLetterBurn.png" width=300 />
-<img src="Images/BurningNPC.png" width=300 />
+  <img src="Images/LetterBurn.gif" width=300 />
+  <img src="Images/BurningNPC.gif" width=300 />
 </p>
 
 ##### Shader Files
