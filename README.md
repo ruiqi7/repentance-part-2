@@ -623,8 +623,8 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
   - <https://youtu.be/_QajrabyTJc?si=UdRDtyAJeW2XDKjG>  
   - Files: 
-    - [Assets/Scripts/PlayerScripts/CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
-    - [Assets/Scripts/PlayerScripts/PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
+    - [CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
+    - [PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
 
 - Volume Control
 
@@ -636,12 +636,12 @@ Unity’s standard render was used as adding additional custom shaders on top of
 - Interaction System
   - <https://youtu.be/gPPGnpV1Y1c?si=SAQ9WT-HTEw2CLDQ>
   - Files:
-    - [Assets/Scripts/Interfaces/InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
+    - [InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
  
 - Dialogue System
   - <https://youtu.be/8oTYabhj248?si=76Xanbat33skaOsk>
   - Files:
-    - [Assets/Scripts/Utility/DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)
+    - [DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)
    
 ## Other
 
