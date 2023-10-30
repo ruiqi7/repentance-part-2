@@ -410,7 +410,7 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - Footsteps 
 - Put together recorded clips and edited game trailer 
 
-### Vincent Khuat
+#### Vincent Khuat
 - Player and camera movement 
 - Interactable System
 - Dialogue System
