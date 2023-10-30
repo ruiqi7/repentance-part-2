@@ -618,7 +618,8 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - <https://www.youtube.com/watch?v=yWCHaTwVblk&t=3s>
 
 
-  - Files: [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
+  - Files:
+    - [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
 - Interaction System
   - <https://youtu.be/gPPGnpV1Y1c?si=SAQ9WT-HTEw2CLDQ>
   - Files:
