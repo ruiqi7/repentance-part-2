@@ -9,7 +9,8 @@ public abstract class ItemHandlerInterface : MonoBehaviour
     [SerializeField] private string[] linesWhenItemNotUsed;
     [SerializeField] private Color dialogueColor = Color.white;
     [SerializeField] private float dialogueSpeed = 0.07f;
-    
+    [SerializeField] public AudioClip clip;
+
     private GameObject dialogueBox;
     private DialogueController dialogueController;
 
