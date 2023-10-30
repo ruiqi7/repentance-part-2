@@ -254,6 +254,7 @@ MonoBehaviour:
   - I need more space to scatter the salt...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.07
+  clip: {fileID: 8300000, guid: 923eae748fa497f4c8b502822b7e5ec7, type: 3}
   dissolveSpeed: 0.1
 --- !u!65 &8393263345968188860
 BoxCollider:

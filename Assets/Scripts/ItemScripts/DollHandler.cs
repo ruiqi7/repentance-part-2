@@ -16,6 +16,9 @@ public class DollHandler : ItemHandlerInterface
         Quaternion rot = playerRot * Quaternion.Euler(-90.0f, 180.0f, 0.0f);
         if (CheckSpace(pos, size, rot))
         {
+            if(clip){
+                AudioSource.PlayClipAtPoint(clip, pos);
+            }
             Instantiate(gameObject, pos, rot);
             ShowMonologue(ItemStatus.USED, -1);
             return true;

@@ -59,6 +59,9 @@ public class CandleHandler : ItemHandlerInterface
         Vector3 pos = gravePos + graveDir * 0.6f;
         pos.y = 0.0f;
         GameObject candle = Instantiate(gameObject, pos, Quaternion.identity);
+        if(clip){
+            AudioSource.PlayClipAtPoint(clip, pos);
+        }
         candle.tag = "Untagged"; // cannot pick up the candle once used
         graveHandler.occupied = true;
 

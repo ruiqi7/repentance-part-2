@@ -19,6 +19,9 @@ public class SaltHandler : ItemHandlerInterface
         if (CheckSpace(pos, scaledSize, rot))
         {
             GameObject salt = Instantiate(gameObject, pos, rot);
+            if(clip){
+                AudioSource.PlayClipAtPoint(clip, pos);
+            }
             salt.tag = "Untagged"; // cannot pick up the salt once used
             ShowMonologue(ItemStatus.USED, -1);
             return true;

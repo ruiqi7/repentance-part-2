@@ -232,6 +232,7 @@ MonoBehaviour:
   - I need more space to put this down...
   dialogueColor: {r: 1, g: 1, b: 1, a: 1}
   dialogueSpeed: 0.07
+  clip: {fileID: 8300000, guid: 62ba9aaffaf19394d9d4e06003fed6f0, type: 3}
   interactDistance: 2
 --- !u!65 &4054458760708575915
 BoxCollider:
