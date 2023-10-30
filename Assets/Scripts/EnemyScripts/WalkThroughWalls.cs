@@ -90,12 +90,13 @@ public class WalkThroughWalls : MonoBehaviour
         return new Vector3(Random.Range(minX, maxX), transform.position.y, Random.Range(minZ,maxZ));
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.name == "RepelArea")
+        if (collider.gameObject.name == "RepelArea")
         {
             isRepelled = true;
-            rb.AddForce(collision.contacts[0].normal * 300.0f);
+            Vector3 collisionPoint = transform.position - collider.ClosestPoint(transform.position);
+            rb.AddForce(collisionPoint * 300.0f);
             Invoke("StopRepulsion", 0.3f);
         }
     }
