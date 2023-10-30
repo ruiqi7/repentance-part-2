@@ -124,7 +124,7 @@ Standard story implementation into the game through use of cut scenes and dialog
 
 #### 2.3.1 NPC Drafting and Model
 
-This particular NPC is mute, and has no eyes, but will return an item when given the Jar of Eyeballs. The NPCs are ghosts and are therefore transparent.
+This particular NPC is mute, and has no eyes, but will return an item when given the Jar of Eyeballs. The NPCs are ghosts and are therefore transparent. Once you complete the NPCs task, it burns and disappears.
 <p align="center">
     <img src="Images/npc_draft.png" width=400>
     <img src="Images/NPC.png" width=300>
