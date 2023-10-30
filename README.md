@@ -121,6 +121,7 @@ The participant will rank each question on a scale of 1-5
 - Determine how the different themes relate to each other
 - identify common terms and phrases across different responses
 - Based on the common ideas found construct a priority list of changes that can be made to address the issues identified 
+
 #### Analysing the quantitative data
 - Look for trends in responses 
 - Construct graphs to aid visualization of the result
@@ -142,8 +143,11 @@ The participant will rank each question on a scale of 1-5
 ### Participant Demographic
 We conducted user evaluation on participants with varying levels of gaming experience. This was helpful for identifying potential design flaws in terms of the usability and accessibility of our game. Additionally, some of our participants are not well-versed in horror games. Our broad pool of participants provided us with a wider range of perspectives, which was valuable in ensuring that our game appeals to a more general audience.
 
+### User Testing Results
+Our user testing results are documented [here](https://github.com/COMP30019/project-2-not-minecraft/blob/main/UserTestingResults.md).
+
 ### Methodology
-For qualitative data collected, we utilized [Canva](https://www.canva.com/design/DAFx-KzXF88/kGkT5o4P14RMywuem8eTLA/edit?utm_content=DAFx-KzXF88&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) to record the participant’s responses and gameplay behaviors. From the feedback received, we identified common pain points and critical issues experienced by our participants.
+For qualitative data collected, we utilized [Canva](https://www.canva.com/design/DAFx-KzXF88/kGkT5o4P14RMywuem8eTLA/edit?utm_content=DAFx-KzXF88&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) to categorize the participant’s responses and gameplay behaviors. From the feedback received, we identified common pain points and critical issues experienced by our participants.
 
 For quantitative data collected, we identified trends in responses through the use of graphical representations, including stacked row charts, pictograms and ring charts. This allowed us to visualize the results and identify questions that received negatively skewed responses. 
 

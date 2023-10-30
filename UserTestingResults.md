@@ -283,12 +283,12 @@ _General_
 <!---->
 
 - Difference between easy and hard mode is unclear
-- Troublesome to have to enter the game through the house → add a button to restart the game in the maze directly DONE
+- Troublesome to have to enter the game through the house → add a button to restart the game in the maze directly
 
  _Instructions / Controls_
 
-- Instructions dialogue is too slow and long, and most don’t read → freeze the monsters for a while at the start OR give instructions in the intro scene instead and don’t allow skipping of the text DONE
-- Mouse sensitivity is a little high → allow the player to adjust DONE
+- Instructions dialogue is too slow and long, and most don’t read → freeze the monsters for a while at the start OR give instructions in the intro scene instead and don’t allow skipping of the text
+- Mouse sensitivity is a little high → allow the player to adjust
 
 _IntroScene & Storyline_
 
@@ -337,7 +337,7 @@ _Player Death_
 - Dies right at the start → freeze the monsters for a while at the start
 - Dies without seeing the monster → maybe include sounds / dialogue to indicate that a monster is near, turn on the flashlight if the player didn't have it on when he died
 - Sound upon death is too soft
-- Could still toggle the flashlight → disable it?
+- Could still toggle the flashlight
 
 _Flashlight_
 
@@ -351,7 +351,7 @@ _Items & Inventory_
 - Thought the heirloom can be used to kill the monsters → maybe remove it / give it some purpose other than lore
 - Thought the flashlight can be used by interacting with the inventory → maybe allow that instead of using F / remove flashlight from inventory
 - Unclear how to use the items in the inventory → maybe explain upon item collection (eg. mention name of item + which number to click to use it)
-- Some thought the salt looked like a Vietnamese farmer hat XD
+- Some thought the salt looked like a Vietnamese farmer hat
 - A bit hard to pick up → increase the range of the raycast
 - Salt didn’t repel the monster once the monster already got too close (player just put down the salt and then died)
 - Unclear that graves are at the side of the house and also hard to find the way back to the graves after leaving it → maybe give some guidance to return eg. light / map with just the relative position of the player to the house shown
@@ -359,7 +359,7 @@ _Items & Inventory_
 
 _NPCs_
 
-- Player thought they are monsters / harmful → maybe we can include a harmless-looking NPC in the intro scene to familiarize the player with interacting with NPCs + understand that they are not harmful
+- Player thought they are monsters / harmful → maybe include a harmless-looking NPC in the intro scene to familiarize the player with interacting with NPCs + understand that they are not harmful
 - Purpose of the NPC near the house is unclear
 - Could interact with the NPC near the house even when the player is not looking at it
 - Mouse control doesn’t work after the player gives eyeballs to the NPC
