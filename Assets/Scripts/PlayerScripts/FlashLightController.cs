@@ -14,6 +14,8 @@ public class FlashLightController : MonoBehaviour
     [SerializeField] private Slider batteryBar;
     [SerializeField] private float maxBattery;
     [SerializeField] private Image barFill;
+    [SerializeField] private AudioSource lightOn;
+    [SerializeField] private AudioSource lightOff;
     public bool off = false;
     private Light flashlight;
     void Start()
@@ -33,6 +35,7 @@ public class FlashLightController : MonoBehaviour
          if (Input.GetKeyDown(KeyCode.F) && batteryBar.value > 0 && !off)
         {
             flashlight.enabled = !flashlight.enabled;
+            lightOn.Play();
         }
     }
     void FixedUpdate()
@@ -53,6 +56,7 @@ public class FlashLightController : MonoBehaviour
 
         if(batteryBar.value <= 0) {
             flashlight.enabled = false;
+            lightOff.Play();
         }
 
         if(batteryBar.value < (0.5*maxBattery) && SceneManager.GetActiveScene().name == "MazeGeneration") {
