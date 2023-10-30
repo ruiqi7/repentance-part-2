@@ -606,6 +606,12 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
 
   - Files: [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
+- Interaction System
+  - <https://youtu.be/gPPGnpV1Y1c?si=SAQ9WT-HTEw2CLDQ>
+  - Files:
+    - [Assets/Scripts/Interfaces/InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
+ 
 - Dialogue System
-  - <https://youtu.be/8oTYabhj248?si=JzDSgixQuQAN8zD>
-  - Files: [Assets/Scripts/Interfaces/InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
+  - <https://youtu.be/8oTYabhj248?si=76Xanbat33skaOsk>
+  - Files:
+    - [Assets/Scripts/Utility/DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)   
