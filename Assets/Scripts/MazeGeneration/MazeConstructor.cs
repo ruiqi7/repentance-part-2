@@ -298,7 +298,7 @@ public class MazeConstructor : MonoBehaviour
                 // }
                 //box colliders for walls
                 if(maze[i,j]==1){
-                    //Instantiate(boxCol, new Vector3(j*width, 0, i*width), Quaternion.identity);
+                    Instantiate(boxCol, new Vector3(j*width, 0, i*width), Quaternion.identity);
                 }
 
             }                   
