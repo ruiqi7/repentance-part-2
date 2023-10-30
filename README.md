@@ -510,6 +510,10 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
 - Adobe Photoshop
 
+### Audio Editor 
+
+- <https://audiomass.co/>
+
 ### Tutorials followed and links to the files that followed the tutorial
 
 - Procedural Maze Generation
@@ -517,8 +521,10 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - <https://www.kodeco.com/82-procedural-generation-of-mazes-with-unity?page=2> 
 
   - Files:
-
-    -
+    - [GameController.cs](https://github.com/COMP30019/project-2-not-minecraft/blob/main/Assets/Scripts/MazeGeneration/GameController.cs)
+    - [MazeConstructor.cs](https://github.com/COMP30019/project-2-not-minecraft/blob/main/Assets/Scripts/MazeGeneration/MazeConstructor.cs)
+    - [MazeDataGenrator.cs](https://github.com/COMP30019/project-2-not-minecraft/blob/main/Assets/Scripts/MazeGeneration/MazeDataGenerator.cs)
+    - [MazeMeshGenerator.cs](https://github.com/COMP30019/project-2-not-minecraft/blob/main/Assets/Scripts/MazeGeneration/MazeMeshGenerator.cs)
 
 - Dissolve Shader 
 
