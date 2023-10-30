@@ -382,7 +382,8 @@ Unity’s standard render was used as adding additional custom shaders on top of
   - Child monster crying
 
 ### Elyse Tan
-- Procedural maze generation 
+- Procedural maze generation
+- Enemy spawn points
 - Random item, letters and npc generation 
 - Enemy models + animation
 - NPC models 
@@ -487,6 +488,10 @@ Unity’s standard render was used as adding additional custom shaders on top of
 - Bird sounds - Ravens\_Spec: <https://assetstore.unity.com/packages/audio/sound-fx/horror-game-essentials-153417> 
 
 - Maze Music: <https://www.youtube.com/watch?v=StokTsh-EOk&list=PL90-FQWC0So2-RmPMUirJCk60vfYcwnk0&index=4&ab_channel=DerkDrago>
+
+- Item pickup and use sound effects(excluding salt item): Anusha Yellapragada
+
+- Salt item sounds: <https://freesound.org/people/Elsje_/sounds/655761/> 
 
 ### Music for trailer
 
