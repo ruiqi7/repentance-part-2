@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
         inHouseScript = floor.GetComponent<InHouse>();
+        GameObject.Find("Timer").SetActive(true);
         if(camera.GetComponent<Camera>().GetComponent<PostProcess>()) {
             var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
             temp.SetFloat("_Active", 0f);
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
             uiManagerScript.GameOver();
+            GameObject.Find("Timer").SetActive(false);
         }
         if (collision.gameObject.tag == "Enemy2") {
             gameOver = true;
@@ -140,17 +142,21 @@ public class PlayerController : MonoBehaviour
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
             uiManagerScript.GameOver();
+            GameObject.Find("Timer").SetActive(false);
         }
+    }
 
-        if (collision.gameObject.tag == "Enemy1") {
+    void OnTriggerEnter(Collider enemy) {
+        if (enemy.gameObject.tag == "Enemy1") {
             gameOver = true;
-            enemyPosition = collision.gameObject.transform.position;
+            enemyPosition = enemy.gameObject.transform.position;
             GameObject.Find("Enemy1").GetComponent<WalkThroughWalls>().SetFinalPos(enemyPosition);
             enemyPosition = new Vector3(enemyPosition.x, 0.7f, enemyPosition.z);
             GameObject.Find("Enemy1").GetComponent<WalkThroughWalls>().SetGameOver(true);
             GetComponent<CapsuleCollider>().enabled = false;
             camera.GetComponent<CameraController>().SetGameOver(true);
             uiManagerScript.GameOver();
+            GameObject.Find("Timer").SetActive(false);
         }
     }
 

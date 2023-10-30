@@ -96,7 +96,7 @@ Material:
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveAmp: 0.17617801
+    - _WaveAmp: 0.1768037
     - _WaveSpeed: 2
     - _ZWrite: 1
     - _fAtt: 1
@@ -105,6 +105,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WindSpeed: {r: 13.808901, g: 1, b: 1, a: 1}
+    - _WindSpeed: {r: 13.840185, g: 1, b: 1, a: 1}
     - _WorldSize: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

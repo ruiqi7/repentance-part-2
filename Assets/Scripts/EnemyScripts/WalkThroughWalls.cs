@@ -61,8 +61,8 @@ public class WalkThroughWalls : MonoBehaviour
                 if(noticed == 0){
                     NoticeAudio();
                     noticed = 1;
-            }
-            Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                }
+                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
                 transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
                 transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
             } else if(Time.time - startTime >= 10) {
@@ -83,8 +83,8 @@ public class WalkThroughWalls : MonoBehaviour
                 }
                 transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
                 transform.LookAt(targetPosition);
+                noticed = 0;
             }
-            noticed = 0;
         }
     }
 
