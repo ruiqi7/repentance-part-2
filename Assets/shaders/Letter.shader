@@ -33,7 +33,7 @@ Shader "Custom/Letter"
 			#include "AutoLight.cginc"
 			#endif
 			
-			#include "dissolve.cginc"
+			#include "Dissolve.cginc"
 
             ENDCG
         }

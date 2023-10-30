@@ -18,7 +18,7 @@ public class WindControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float houseDistance = Vector3.Distance(player.transform.position, transform.position); 
         float lmaoNumber = (initialOffset - houseDistance) / 6;

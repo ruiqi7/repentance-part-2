@@ -22,7 +22,6 @@ public class ChaseCamera : MonoBehaviour
     private bool flickering = false;
     public bool gameOver = false;
     private Vector3 finalPos;
-    private bool timeOut = false;
     void Start()
     {
         transform.LookAt(target.transform.position);
@@ -30,7 +29,6 @@ public class ChaseCamera : MonoBehaviour
         animator = GetComponent<Animator>();
         bc = GetComponent<BoxCollider>();
         cameraMat = camera.GetComponent<PostProcess>().material;
-        StartCoroutine(HandleStart());
     }
 
     public void SetGameOver(bool var) {
@@ -54,7 +52,7 @@ public class ChaseCamera : MonoBehaviour
             animator.enabled = false;
             bc.enabled = false;
             transform.position = finalPos;
-        } else if(!timeOut && !isRepelled) {
+        } else if(!isRepelled) {
             RaycastHit hit;
             Vector3 direction = target.transform.position - transform.position;
             Debug.DrawRay(transform.position, direction, Color.yellow);
@@ -96,12 +94,6 @@ public class ChaseCamera : MonoBehaviour
             yield return new WaitForSeconds(wait);
         }
         flickering = false;
-    }
-
-    private IEnumerator HandleStart() {
-        timeOut = true;
-        yield return new WaitForSeconds(15);
-        timeOut = false;
     }
 
     private void moveRandom() {
