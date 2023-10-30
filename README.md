@@ -35,6 +35,8 @@
     - [3D Modeling Software](#3d-modeling-software)
     - [Software for Textures and Sketches](#software-used-for-creating-textures-and-sketches)
     - [Tutorials Followed](#tutorials-followed-and-links-to-the-files-that-followed-the-tutorial)
+  - [Other](#other)
+    - [Interesting Challenges](#interesting-challenges)
 
 
 ## Evaluation Plan
@@ -623,8 +625,8 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
   - <https://youtu.be/_QajrabyTJc?si=UdRDtyAJeW2XDKjG>  
   - Files: 
-    - [Assets/Scripts/PlayerScripts/CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
-    - [Assets/Scripts/PlayerScripts/PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
+    - [CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
+    - [PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
 
 - Volume Control
 
@@ -636,9 +638,18 @@ Unity’s standard render was used as adding additional custom shaders on top of
 - Interaction System
   - <https://youtu.be/gPPGnpV1Y1c?si=SAQ9WT-HTEw2CLDQ>
   - Files:
-    - [Assets/Scripts/Interfaces/InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
+    - [InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
  
 - Dialogue System
   - <https://youtu.be/8oTYabhj248?si=76Xanbat33skaOsk>
   - Files:
-    - [Assets/Scripts/Utility/DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)   
+    - [DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)
+   
+## Other
+
+### Interesting Challenges
+
+Implementing the procedurally generated maze was an interesting challenge as not much was taught about it in lectures and workshops. Finding the right tutorial took time as there were many different ways of implementing the maze and some methods were much more complex compared to others. Modifications were made to the code from the tutorial to include a spawn area, enemy spawn points and box colliders in the walls. 
+
+In addition to the procedural maze generation, randomly generated items and NPCs were implemented and some difficulty was encountered initially since a tutorial was not followed for this part. Most of the random item generation tutorials found online did not work well with the procedurally generated maze. Therefore, it took a while to implement a solution that worked with the code from the maze generation tutorial. The code for random item generation was written in the maze generation files as they work together. Multiple bugs were encountered such as items spawning in walls, items ceased to exist after replaying the game and items could be placed inside walls. Although it was a struggle, the results we wanted were eventually achieved and it was satisfying to eventually get it all working. 
+

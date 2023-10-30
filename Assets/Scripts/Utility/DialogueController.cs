@@ -1,3 +1,7 @@
+/*
+    Adapted from and inspired by the following sources:
+    - BMo: https://www.youtube.com/watch?v=8oTYabhj248
+*/
 using System;
 using System.Collections;
 using System.Collections.Generic;
