@@ -308,6 +308,7 @@ The fragment shader is used to apply texture clipping and coloring individual pi
 This shader acts as visual flair and an additional aesthetic that can be used to elevate the atmosphere of the beginning scene of the game.  
 
 The shader is mainly utilised on the foliage that can be found in the introduction scene with the house, the trees and bushes are made to sway in manner that resembles the effects of wind acting upon the foliage. This shader is implemented across one primary file namely Tree.shader. 
+
 Accessible here [Assets/shaders/Tree.shader](Assets/shaders/Tree.shader)  
 <p align="center">
     <img src="Images/tree.gif">
@@ -590,15 +591,16 @@ Unity’s standard render was used as adding additional custom shaders on top of
 - Camera and Player Controls
 
   - <https://youtu.be/_QajrabyTJc?si=UdRDtyAJeW2XDKjG>  
-  - Files:
+  - Files: 
+    - [Assets/Scripts/PlayerScripts/CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
+    - [Assets/Scripts/PlayerScripts/PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
 
 - Volume Control
 
   - <https://www.youtube.com/watch?v=yWCHaTwVblk&t=3s>
 
 
-  - Files: 
-    - [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
+  - Files: [VolumeController.cs](Assets/Scripts/Options/VolumeController.cs) 
 - Dialogue System
   - <https://youtu.be/8oTYabhj248?si=JzDSgixQuQAN8zD>
-
+  - Files: [Assets/Scripts/Interfaces/InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
