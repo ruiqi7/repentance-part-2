@@ -124,6 +124,7 @@ Shader "Custom/Tree"
 			{
 				
 				fixed4 unlitColor = tex2D(_MainTex, v.uv);
+				// Add alpha transparency based off cutoff value
 				clip(unlitColor.a - _Cutoff);
 				float3 interpNormal = normalize(v.worldNormal);
 

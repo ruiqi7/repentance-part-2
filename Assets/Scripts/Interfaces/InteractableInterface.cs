@@ -1,3 +1,7 @@
+/* 
+    Adapted from and inspired by the following sources:
+    - Natty GameDev: https://youtu.be/gPPGnpV1Y1c?si=SAQ9WT-HTEw2CLDQ
+*/
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;

@@ -1,3 +1,7 @@
+/*
+    Adapted from and inspired by the following sources:
+    - Brackeys: https://youtu.be/_QajrabyTJc?si=hcIl26hIaZXedLhx
+*/
 using System;
 using System.Collections;
 using System.Collections.Generic;
