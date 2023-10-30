@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,7 +48,9 @@ public class PlayerController : MonoBehaviour
         uiManagerScript = uiManager.GetComponent<UIManager>();
         staminaBar.value = maxStamina;
         inHouseScript = floor.GetComponent<InHouse>();
-        GameObject.Find("Timer").SetActive(true);
+        if(SceneManager.GetActiveScene().name == "MazeGeneration"){
+            GameObject.Find("Timer").SetActive(true);
+        }
         if(camera.GetComponent<Camera>().GetComponent<PostProcess>()) {
             var temp = camera.GetComponent<Camera>().GetComponent<PostProcess>().material;
             temp.SetFloat("_Active", 0f);
