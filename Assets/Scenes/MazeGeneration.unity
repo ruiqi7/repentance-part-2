@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -8792,6 +8792,7 @@ MonoBehaviour:
   camera: {fileID: 1094900905}
   staminaBar: {fileID: 1512481883}
   maxStamina: 100
+  speedBoost: 3
   walk: {fileID: 993362908}
   run: {fileID: 5759887}
   walkHouse: {fileID: 1845948121}
