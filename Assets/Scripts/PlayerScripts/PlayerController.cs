@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxStamina;
 
     private bool conserveStamina = false;
-    private bool speedBoost = false;
+    [SerializeField] private float speedBoost = 3.0f;
 
     [SerializeField] private AudioSource walk;
     [SerializeField] private AudioSource run;
@@ -169,32 +169,28 @@ public class PlayerController : MonoBehaviour
 
     public void SpeedBoost()
     {
-        if (!speedBoost)
-        {
-            speedBoost = true;
-            baseSpeed += 0.05f;
-            sprintSpeed += 0.05f;
-            Invoke("SpeedBoost", 20.0f);
-        }
-        else
-        {
-            speedBoost = false;
-            baseSpeed -= 0.05f;
-            sprintSpeed -= 0.05f;
-        }
+        baseSpeed += speedBoost;
+        sprintSpeed += speedBoost;
+        Invoke("RevertSpeedBoost", 20.0f);
+    }
+
+    private void RevertSpeedBoost()
+    {
+        baseSpeed -= speedBoost;
+        sprintSpeed -= speedBoost;
     }
 
     public void ConserveStamina()
     {
-        if (!conserveStamina)
-        {
-            conserveStamina = true;
-            Invoke("ConserveStamina", 20.0f);
-        }
-        else
-        {
-            conserveStamina = false;
-        }
+        StopAllCoroutines();
+        conserveStamina = true;
+        StartCoroutine(RevokeConserveStamina());
+    }
+
+    IEnumerator RevokeConserveStamina()
+    {
+        yield return new WaitForSeconds(20.0f);
+        conserveStamina = false;
     }
 
     public void SetSoundFalse(){
