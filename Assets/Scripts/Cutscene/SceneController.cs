@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour
                 StartCoroutine(HandleText(text3, 2));
                 text3Done = true;
             }else if(!text4Done) {
-                StartCoroutine(HandleText(text4, 2));
+                StartCoroutine(HandleText(text4, 4));
                 text4Done = true;
             }
         }
