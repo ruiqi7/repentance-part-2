@@ -18,9 +18,10 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator StartTimer() {
         yield return new WaitForSecondsRealtime(15);
-        enemy1.SetActive(true);
         enemy2.SetActive(true);
         enemy3.SetActive(true);
+        yield return new WaitForSecondsRealtime(30);
+        enemy1.SetActive(true);
     }
 
 }

@@ -60,7 +60,7 @@ public class WalkThroughWalls : MonoBehaviour
                     NoticeAudio();
                     noticed = 1;
                 }
-                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed*2);
+                Vector3 newPos = Vector3.MoveTowards(transform.position, target.transform.position, speed);
                 transform.position = new Vector3(newPos.x,transform.position.y, newPos.z);
                 transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
             } else if(Time.time - startTime >= 10) {
