@@ -19,7 +19,9 @@ public class DollHandler : ItemHandlerInterface
             if(clip){
                 AudioSource.PlayClipAtPoint(clip, pos);
             }
-            Instantiate(gameObject, pos, rot);
+            GameObject doll = Instantiate(gameObject, pos, rot);
+            GameObject distractArea = doll.transform.GetChild(0).gameObject;
+            distractArea.SetActive(true);
             ShowMonologue(ItemStatus.USED, -1);
             return true;
         }

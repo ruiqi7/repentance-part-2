@@ -23,6 +23,8 @@ public class SaltHandler : ItemHandlerInterface
                 AudioSource.PlayClipAtPoint(clip, pos);
             }
             salt.tag = "Untagged"; // cannot pick up the salt once used
+            GameObject repelArea = salt.transform.GetChild(1).gameObject;
+            repelArea.SetActive(true);
             ShowMonologue(ItemStatus.USED, -1);
             return true;
         }
