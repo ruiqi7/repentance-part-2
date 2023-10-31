@@ -50,7 +50,7 @@ public class FlashLightController : MonoBehaviour
             }
             else
             {
-                batteryBar.value -= 0.015f;
+                batteryBar.value -= 0.008f;
             }
         }
         transform.position = Camera.position;
