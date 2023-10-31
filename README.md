@@ -371,30 +371,29 @@ Base color of the texture. Set in the editor and applies a light tint to the obj
 ###### _Cutoff  
 Alpha Transparency cutoff threshold, an alpha value for a pixel lower than this value will be culled.
 ###### _Wavespeed 
-Speed of the swaying, Set in the editor with the material
+Speed of the swaying, Set in the editor with the material.
 ###### _Waveamp 
-Amplitude of the swaying, this affects how magnitude of the the foliage sway. Set in the editor with the material
+Amplitude of the swaying, this affects how magnitude of the the foliage sway. This attribute was also additionally adjusted via Script in the WindControl.cs, its value was changed by some float 0 - 0.1 based on the player's distance to the house.
 ###### _HeightFactor 
 Higher height factor results in stronger wind based on taller height. This is to simulate the effect of the higher portions of trees will bend further based off of wind effects.
 ###### _HeightCutoff 
-Limits what is affected by the wind based on height value. This value is used so that the trunk of the tree would not be affected by the swaying motion. 
+Limits what is affected by the wind based on height value. This value is used so that the trunk of the tree would not be affected by the swaying motion. This value was adjusted to 6 to account for the tree models trunk texture.
 ###### _WindTex 
 Black and white gradient sample texture used to simulate the swaying of an object under windy conditions. The texture is a uniform gradient which simulates a higher sway based on darker pixels, due to this property, the texture goes from darker to lighter to darker.
 ###### _WorldSize 
 Define worldsize as xyz
 ###### _WindSpeed 
-Strength of the wind which affects the properties for _HeightFactor, _Waveamp and_Wavespeed, Set in the editor with the material
+Strength of the wind which affects the properties for _HeightFactor, _Waveamp and_Wavespeed, Set in the editor with the material. This attribute was also additionally adjusted via Script in the WindControl.cs, its x value was changed by some float 0 - 5 based on the player's distance to the house.
 ###### _Ka 
-Ka is the ambient reflection constant. This constant is set in the material of the object and determines the strength of ambient reflection for Phong Shading 
-
+Ka is the ambient reflection constant. This constant is set in the material of the object and determines the strength of ambient reflection for Phong Shading. Used on the various tree and bush materials.
 ###### _Kd 
-Kd is the diffuse reflection constant. This constant is set in the material of the object and determines the strength of diffuse reflection for Phong Shading. 
+Kd is the diffuse reflection constant. This constant is set in the material of the object and determines the strength of diffuse reflection for Phong Shading. Used on the various tree and bush materials.
 ###### _Ks 
-Ks is the specular reflection constant. This constant is set in the material of the object and determines the strength of specular reflection for Phong Shading. 
+Ks is the specular reflection constant. This constant is set in the material of the object and determines the strength of specular reflection for Phong Shading. Used on the various tree and bush materials.
 ###### _fAtt 
-fAtt is the shininess of the object. This constant is set in the material of the object and determines the shininess of the object for Phong Shading. 
+fAtt is the shininess of the object. This constant is set in the material of the object and determines the shininess of the object for Phong Shading. Used on the various tree and bush materials.
 ###### _specN 
-specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. 
+specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. Used on the various tree and bush materials.
 
 
 ##### Rendering Pipeline
