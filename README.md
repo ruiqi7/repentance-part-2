@@ -37,7 +37,6 @@
     - [Tutorials Followed](#tutorials-followed-and-links-to-the-files-that-followed-the-tutorial)
   - [Other](#other)
     - [Interesting Challenges](#interesting-challenges)
-    - [Highlighted Areas](#highlighted-areas)
 
 
 ## Evaluation Plan
@@ -180,7 +179,7 @@ Overall, most participants found the game challenging and enjoyable, agreeing th
 
 <img src="Images/GamePlay.png" />
 
-However, there were a few areas of improvement that could be made to enhance the quality of gameplay. Firstly, we observed multiple instances of the player dying too quickly or too suddenly. To prevent quick deaths, we chose to incorporate a timer to prevent monsters from killing the player too quickly at the beginning of the game. Moreover, we also decided to layer sound effects by having an additional soundtrack of a faster paced heartbeat, along with a visual effect of the screen flickering to black and white with a red blood splatter, when a monster is near. The purpose of this is to indicate to the player that he is in danger and give him a chance to run away. At the same time, this helps to add more suspense to the game.  
+However, there were a few areas of improvement that could be made to enhance the quality of gameplay. Firstly, we observed multiple instances of the player dying too quickly or too suddenly. To prevent quick deaths, we chose to incorporate a timer to prevent monsters from killing the player too quickly at the beginning of the game. Moreover, we also decided to add a visual effect of the screen flickering to black and white with a red blood splatter, when a monster is near. The purpose of this is to indicate to the player that he is in danger and give him a chance to run away. At the same time, this helps to add more suspense to the game.  
 
 Secondly, our game also features interactable items that players can use to improve their chances of survival, adding an element of strategy to the game. However, the feedback we received was that it was difficult to find and understand the purpose of the items. Participants commented that “item description is a little unintuitive” and “how to use the items in the maze was a little confusing”.
 
@@ -191,13 +190,12 @@ Secondly, our game also features interactable items that players can use to impr
 As items are randomly placed in the maze to ensure that each game experience is varied, we decided to resolve the aforementioned issues by increasing the number of items generated. This is to heighten the chances of the player coming across items while exploring the maze. To help with understanding how to use the items, it was suggested to us that the explanation should be shown when the player collects the item instead of when trying to use it from the inventory. As such, we decided to refine player-item interactions by indicating the purpose of the item and which key to press to use it when the player collects an item.  
 
 <p align="center">
-  <img src="Images/ItemCollection.png" width=300/>
-  <img src="Images/ItemInstructions.png" width=300/>
+  <img src="Images/ItemCollection.gif" width=300/>
 </p>
 
 Another piece of feedback we received was regarding low visibility even when the flashlight was turned on. Participants found it overly hard to see and therefore navigate the maze, which negatively impacted their game experience. They mentioned that the “flashlight can be too dim”, which “made it very hard to see where I was going”. In response to this, we decided to increase the distance of the light from the flashlight to provide enough light for players to navigate. The player's field of view still remains relatively limited in order to make it challenging to anticipate what is ahead as this adds to the suspense of the game.  
 
-Lastly, it was also commonly pointed out that it was hard to navigate the maze and survive once the flashlight ran out of battery as the player would be thrown into nearly pitch black darkness. A significant number of players also found it hard to navigate back to the house in the center of the maze after leaving it. Some suggestions were to add some light sources throughout the maze and “lit up the area of the house so that you can see the graves, and use it as an anchor point”. Taking those ideas into consideration while making sure to maintain a mysterious and spooky atmosphere, we decided to add fire torches on some walls of the maze and around the house. Furthermore, we chose to make the use of candles more versatile and functional by allowing them to be placed anywhere in the maze instead of being restricted to only be placed in front of the graves in our game. The basis for this is to provide alternative light sources for the player and to allow them to be potentially used as markers for route tracing back to the house. Since participants “assumed the candle would give you light”, gameplay will become more intuitive with this change. This may also encourage players to think more critically about how they can utilize their inventory to enhance their odds of staying alive, leading to more varied and strategic gameplay experiences.  
+Lastly, it was also commonly pointed out that it was hard to navigate the maze and survive once the flashlight ran out of battery as the player would be thrown into nearly pitch black darkness. A significant number of players also found it hard to navigate back to the house in the center of the maze after leaving it. Some suggestions were to add some light sources throughout the maze and “lit up the area of the house so that you can see the graves, and use it as an anchor point”. Taking those ideas into consideration while making sure to maintain a mysterious and spooky atmosphere, we chose to make the use of candles more versatile and functional by allowing them to be placed anywhere in the maze instead of being restricted to only be placed in front of the graves in our game. The basis for this is to provide alternative light sources for the player and to allow them to be potentially used as markers for route tracing back to the house. Since participants “assumed the candle would give you light”, gameplay will become more intuitive with this change. This may also encourage players to think more critically about how they can utilize their inventory to enhance their odds of staying alive, leading to more varied and strategic gameplay experiences.  
 
 <p align="center">
   <img src="Images/FireTorches.png" width=300/>
@@ -206,6 +204,10 @@ Lastly, it was also commonly pointed out that it was hard to navigate the maze a
 #### Storyline
 
 In terms of storyline, it was highlighted to us that the transition from the introduction scene into the maze was jarring and lacked explanation. Participants said that it was “confusing going directly to the maze”. For a more seamless and explanatory narrative flow, we decided to add a cutscene in-between to provide players with a more engaging and meaningful context for the maze's appearance.
+
+<p align="center">
+  <img src="Images/Cutscene.gif" width=300/>
+</p>
 
 #### Game Controls
 In general, a majority of the players found the game controls, especially the WASD movement controls, fairly intuitive.
@@ -223,7 +225,7 @@ However, there were a few areas we could improve on. First and foremost, a commo
 While carrying out the observational techniques for evaluation, we also noticed that a considerable number of players either did not read or simply skipped the instructions for the game controls, which were displayed on the screen when the player first entered the maze. The reasons given were that the instructions were too lengthy and some also found it hard to absorb information when the game had already begun. Therefore, we came to an agreement that it would be better to give the instructions in the introduction scene before the player dives into the gameplay, and also in a more concise manner to make the experience more user-friendly.  
 
 <p align="center">
-  <img src="Images/GameInstructions.png" width=300/>
+  <img src="Images/GameInstructions.gif" width=300/>
 </p>
 
 Moreover, an issue frequently raised by players was the use of the heirloom and flashlight in the inventory. The heirloom was included as an item in the inventory simply for lore and it served no purpose in terms of gameplay. However, it has been brought to our attention that participants found the heirloom knife “deceptive since you can't use it”. During gameplay, numerous participants tried to kill the monster with it or asked if they could “fight the monsters with the knife”. Additionally, as the flashlight can only be toggled on and off by pressing ‘F’ and not by interacting with the inventory like other items, it caused some confusion about the game controls. To resolve this disparity, we decided that it would be best to remove the heirloom and flashlight as items in the inventory. 
@@ -236,6 +238,10 @@ From the questionnaire results, we can see that the game art and music helped to
 In particular, the game’s audio and unique art style were highlighted, with participants commenting that the game has “a very nice indie-game atmosphere and design” and “the pixelation and antique vibe was nice”. The pixelated graphics contributed to the indie horror vibe of the game, creating an unsettling and eerie atmosphere. The terrifying ambiance is further heightened through the use of a dark environment combined with a flickering flashlight, creepy sound effects (eg. pounding heartbeat, demonic whispers), as well as unnatural movements and distorted features of the monsters.  
 
 However, one prominent issue was that the appearance of the NPCs was too similar to the monsters that players misunderstood them as being harmful, causing them to avoid interaction with the NPCs. Participants “keep hesitating to approach them because they actually look quite creepy” or wondered “why do the NPCs look like the monsters”. As the NPCs are used to deliver elements of the storyline and can impact the outcome of the game, we decided to change the particle system for the NPCs to make them look more harmless and encourage player interaction.
+
+<p align="center">
+  <img src="Images/NPCParticleSystem.gif" width=300/>
+</p>
 
 Additionally, the objective of the game was also unclear to some participants. They were “quite confused about what to do”. To highlight the time-survival aspect of the game, we decided to periodically display the amount of time left on the screen instead of using an NPC that hints about the amount of time left when the player interacts with it.
 
@@ -254,10 +260,10 @@ Other than assessing the severity of the issue, we also considered the feasibili
 Sorted from highest priority to lowest,  
 1. Change the particle system for the NPCs to appear more harmless
 2. Have a timer on the screen instead of indicating the time left through an NPC
-3. Have indication of a monster nearby through the use of a faster paced heartbeat audio and visual effect 
+3. Have indication of a monster nearby through the use of a blood splatter visual effect 
 4. Explain the purpose of each item when the player collects it instead of when it is being used
 5. Add a cutscene in between the introduction and maze scene to explain the maze’s appearance
-6. Add fire torches around the maze and the house to serve as light sources
+6. Add fire torches around the house to serve as light sources
 7. Allow candles to be placed anywhere in the maze to serve as light sources and path markers
 8. Increase the distance of light from the flashlight
 9. Add mouse sensitivity controls in the options menu
@@ -365,29 +371,30 @@ Base color of the texture. Set in the editor and applies a light tint to the obj
 ###### _Cutoff  
 Alpha Transparency cutoff threshold, an alpha value for a pixel lower than this value will be culled.
 ###### _Wavespeed 
-Speed of the swaying, Set in the editor with the material
+Speed of the swaying, Set in the editor with the material.
 ###### _Waveamp 
-Amplitude of the swaying, this affects how magnitude of the the foliage sway. Set in the editor with the material
+Amplitude of the swaying, this affects how magnitude of the the foliage sway. This attribute was also additionally adjusted via Script in the WindControl.cs, its value was changed by some float 0 - 0.1 based on the player's distance to the house.
 ###### _HeightFactor 
 Higher height factor results in stronger wind based on taller height. This is to simulate the effect of the higher portions of trees will bend further based off of wind effects.
 ###### _HeightCutoff 
-Limits what is affected by the wind based on height value. This value is used so that the trunk of the tree would not be affected by the swaying motion. 
+Limits what is affected by the wind based on height value. This value is used so that the trunk of the tree would not be affected by the swaying motion. This value was adjusted to 6 to account for the tree models trunk texture.
 ###### _WindTex 
 Black and white gradient sample texture used to simulate the swaying of an object under windy conditions. The texture is a uniform gradient which simulates a higher sway based on darker pixels, due to this property, the texture goes from darker to lighter to darker.
 ###### _WorldSize 
 Define worldsize as xyz
 ###### _WindSpeed 
-Strength of the wind which affects the properties for _HeightFactor, _Waveamp and_Wavespeed, Set in the editor with the material
+Strength of the wind which affects the properties for _HeightFactor, _Waveamp and_Wavespeed, Set in the editor with the material. This attribute was also additionally adjusted via Script in the WindControl.cs, its x value was changed by some float 0 - 5 based on the player's distance to the house.
 ###### _Ka 
-Ka is the ambient reflection constant. This constant is set in the material of the object and determines the strength of ambient reflection for Phong Shading. 
+Ka is the ambient reflection constant. This constant is set in the material of the object and determines the strength of ambient reflection for Phong Shading. Used on the various tree and bush materials.
 ###### _Kd 
-Kd is the diffuse reflection constant. This constant is set in the material of the object and determines the strength of diffuse reflection for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+Kd is the diffuse reflection constant. This constant is set in the material of the object and determines the strength of diffuse reflection for Phong Shading. Used on the various tree and bush materials.
 ###### _Ks 
-Ks is the specular reflection constant. This constant is set in the material of the object and determines the strength of specular reflection for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+Ks is the specular reflection constant. This constant is set in the material of the object and determines the strength of specular reflection for Phong Shading. Used on the various tree and bush materials.
 ###### _fAtt 
-fAtt is the shininess of the object. This constant is set in the material of the object and determines the shininess of the object for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+fAtt is the shininess of the object. This constant is set in the material of the object and determines the shininess of the object for Phong Shading. Used on the various tree and bush materials.
 ###### _specN 
-specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. Used on the various tree and bush materials.
+
 
 ##### Rendering Pipeline
 <p align="center">
@@ -507,6 +514,9 @@ Unity’s standard render was used as adding additional custom shaders on top of
 ### Fonts
 
 - Retro Font <https://www.dafont.com/depixel.font>
+- Bloody Lake University <https://www.dafont.com/bloody-lake-university.font>
+- Montserrat Subrayada <https://fonts.google.com/specimen/Montserrat+Subrayada>
+- Rubik Glitch <https://fonts.google.com/specimen/Rubik+Glitch>
 
 ### Audio 
 
@@ -623,8 +633,8 @@ Unity’s standard render was used as adding additional custom shaders on top of
 
   - <https://youtu.be/_QajrabyTJc?si=UdRDtyAJeW2XDKjG>  
   - Files: 
-    - [Assets/Scripts/PlayerScripts/CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
-    - [Assets/Scripts/PlayerScripts/PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
+    - [CameraController.cs](Assets/Scripts/PlayerScripts/CameraController.cs)
+    - [PlayerController.cs](Assets/Scripts/PlayerScripts/PlayerController.cs)
 
 - Volume Control
 
@@ -636,12 +646,12 @@ Unity’s standard render was used as adding additional custom shaders on top of
 - Interaction System
   - <https://youtu.be/gPPGnpV1Y1c?si=SAQ9WT-HTEw2CLDQ>
   - Files:
-    - [Assets/Scripts/Interfaces/InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
+    - [InteractableInterface.cs](Assets/Scripts/Interfaces/InteractableInterface.cs)
  
 - Dialogue System
   - <https://youtu.be/8oTYabhj248?si=76Xanbat33skaOsk>
   - Files:
-    - [Assets/Scripts/Utility/DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)
+    - [DialogueController.cs](Assets/Scripts/Utility/DialogueController.cs)
    
 ## Other
 
@@ -650,7 +660,4 @@ Unity’s standard render was used as adding additional custom shaders on top of
 Implementing the procedurally generated maze was an interesting challenge as not much was taught about it in lectures and workshops. Finding the right tutorial took time as there were many different ways of implementing the maze and some methods were much more complex compared to others. Modifications were made to the code from the tutorial to include a spawn area, enemy spawn points and box colliders in the walls. 
 
 In addition to the procedural maze generation, randomly generated items and NPCs were implemented and some difficulty was encountered initially since a tutorial was not followed for this part. Most of the random item generation tutorials found online did not work well with the procedurally generated maze. Therefore, it took a while to implement a solution that worked with the code from the maze generation tutorial. The code for random item generation was written in the maze generation files as they work together. Multiple bugs were encountered such as items spawning in walls, items ceased to exist after replaying the game and items could be placed inside walls. Although it was a struggle, the results we wanted were eventually achieved and it was satisfying to eventually get it all working. 
-
-### Highlighted Areas
-
 
