@@ -385,15 +385,17 @@ Define worldsize as xyz
 ###### _WindSpeed 
 Strength of the wind which affects the properties for _HeightFactor, _Waveamp and_Wavespeed, Set in the editor with the material
 ###### _Ka 
-Ka is the ambient reflection constant. This constant is set in the material of the object and determines the strength of ambient reflection for Phong Shading. 
+Ka is the ambient reflection constant. This constant is set in the material of the object and determines the strength of ambient reflection for Phong Shading 
+
 ###### _Kd 
-Kd is the diffuse reflection constant. This constant is set in the material of the object and determines the strength of diffuse reflection for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+Kd is the diffuse reflection constant. This constant is set in the material of the object and determines the strength of diffuse reflection for Phong Shading. 
 ###### _Ks 
-Ks is the specular reflection constant. This constant is set in the material of the object and determines the strength of specular reflection for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+Ks is the specular reflection constant. This constant is set in the material of the object and determines the strength of specular reflection for Phong Shading. 
 ###### _fAtt 
-fAtt is the shininess of the object. This constant is set in the material of the object and determines the shininess of the object for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+fAtt is the shininess of the object. This constant is set in the material of the object and determines the shininess of the object for Phong Shading. 
 ###### _specN 
-specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. Specifically, NPCBody, Face, Body, Wood, Material and Letter.
+specN in the specular power of the object. This constant is set in the material of the object and determines the specular power of the object for Phong Shading. 
+
 
 ##### Rendering Pipeline
 <p align="center">
